@@ -1,11 +1,13 @@
 use prelude::{HEIGHT, WIDTH};
 
+mod assets;
 mod debug;
 mod game;
 mod inputs;
 mod world;
 
 mod prelude {
+    pub use crate::assets::*;
     pub use crate::debug::*;
     pub use crate::inputs::*;
     pub use crate::world::*;
@@ -18,7 +20,7 @@ mod prelude {
 
 fn main() {
     let (mut rl, thread) = raylib::init()
-        .size(WIDTH * 3, HEIGHT * 3)
+        .size(WIDTH, HEIGHT)
         .title("Neuch")
         .build();
     rl.set_target_fps(60);

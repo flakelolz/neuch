@@ -8,11 +8,12 @@ pub enum Player {
 
 pub fn world() -> World {
     let mut world = World::new();
+
     // Player 1
-    world.spawn((Input::default(), InputConfig::one(), Player::One));
+    world.spawn((Player::One, Input::default(), InputConfig::one()));
 
     // Player 2
-    world.spawn((Input::default(), InputConfig::two(), Player::Two));
+    world.spawn((Player::Two, Input::default(), InputConfig::two()));
 
     world
 }

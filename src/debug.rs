@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 use crate::prelude::*;
 
 pub fn show_inputs(world: &World, d: &mut RaylibDrawHandle) {
