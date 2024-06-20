@@ -1,0 +1,8 @@
+[package]
+name = "neuch"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hecs = "0.10.5"
+raylib = "5.0.1"
