@@ -20,3 +20,32 @@ impl std::ops::AddAssign<IVec2> for IVec2 {
         self.y += rhs.y;
     }
 }
+
+impl IVec2 {
+    pub fn from_screen(x: i32, y: i32) -> Self {
+        Self {
+            x: screen_to_world(x),
+            y: screen_to_world(y),
+        }
+    }
+}
+
+pub fn world_to_screen(coord: i32) -> i32 {
+    coord / 1000
+}
+
+pub fn screen_to_world(coord: i32) -> i32 {
+    coord * 1000
+}
+
+pub fn world_to_screen_vec(coord: IVec2) -> (i32, i32) {
+    (coord.x / 1000, coord.y / 1000)
+}
+
+pub fn screen_to_world_vec(coord: IVec2) -> (i32, i32) {
+    (coord.x * 1000, coord.y * 1000)
+}
+
+pub fn calculate_ground(ground: i32) -> i32 {
+    ground * 1000
+}

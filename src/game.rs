@@ -18,9 +18,9 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTex
             .into_iter()
             .for_each(|(_, (physics, input))| {
                 if input.forward {
-                    physics.velocity.x += 1;
+                    physics.velocity.x = 3000;
                 } else if input.back {
-                    physics.velocity.x -= 1;
+                    physics.velocity.x = -3000;
                 } else {
                     physics.velocity.x = 0;
                 }
