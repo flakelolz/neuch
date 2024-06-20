@@ -3,4 +3,6 @@
 - [x] World
 - [x] Player input
 - [x] Letterbox display
-- [ ] Physics component
+- [x] Physics component
+- [x] Character data
+- [ ] Animation system

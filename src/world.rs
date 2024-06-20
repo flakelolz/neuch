@@ -8,6 +8,8 @@ pub enum Player {
 
 pub fn world() -> World {
     let mut world = World::new();
+    // Global
+    world.spawn((GameData::new(),));
 
     // Player 1
     world.spawn((

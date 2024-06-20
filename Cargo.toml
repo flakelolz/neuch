@@ -5,4 +5,5 @@ edition = "2021"
 
 [dependencies]
 hecs = "0.10.5"
+miniserde = "0.1.39"
 raylib = "5.0.1"

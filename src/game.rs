@@ -1,4 +1,4 @@
-use crate::prelude::*;
+use crate::{physics, prelude::*};
 
 pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTexture2D) {
     // Setup
@@ -11,6 +11,20 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTex
         update_inputs(&mut world, rl);
         // Logic
         update_physics(&mut world);
+
+        // Move player
+        world
+            .query::<(&mut Physics, &mut Input)>()
+            .into_iter()
+            .for_each(|(_, (physics, input))| {
+                if input.forward {
+                    physics.velocity.x += 1;
+                } else if input.back {
+                    physics.velocity.x -= 1;
+                } else {
+                    physics.velocity.x = 0;
+                }
+            });
 
         // Calculate window
         let width = rl.get_screen_width();

@@ -1,6 +1,7 @@
 use prelude::{HEIGHT, WIDTH};
 
 mod assets;
+mod data;
 mod debug;
 mod draw;
 mod game;
@@ -11,6 +12,7 @@ mod world;
 
 mod prelude {
     pub use crate::assets::*;
+    pub use crate::data::*;
     pub use crate::debug::*;
     pub use crate::draw::*;
     pub use crate::inputs::*;
@@ -18,6 +20,7 @@ mod prelude {
     pub use crate::utils::*;
     pub use crate::world::*;
     pub use hecs::World;
+    pub use miniserde::{json, Deserialize};
     pub use raylib::prelude::*;
 
     pub const WIDTH: i32 = 384;
@@ -28,7 +31,7 @@ mod prelude {
 
 fn main() {
     let (mut rl, thread) = raylib::init()
-        .size(WIDTH, HEIGHT)
+        .size(WIDTH * 3, HEIGHT * 3)
         .title("Neuch")
         .resizable()
         .build();
