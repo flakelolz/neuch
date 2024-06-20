@@ -2,4 +2,5 @@
 
 - [x] World
 - [x] Player input
-- [ ] Letterbox display
+- [x] Letterbox display
+- [ ] Physics component

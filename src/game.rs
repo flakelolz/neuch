@@ -1,6 +1,6 @@
 use crate::prelude::*;
 
-pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread) {
+pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTexture2D) {
     // Setup
     let mut world = world();
     let assets = Assets::new(rl, thread);
@@ -11,12 +11,36 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread) {
         update_inputs(&mut world, rl);
         // Logic
 
+        // Calculate window
+        let width = rl.get_screen_width();
+        let height = rl.get_screen_height();
+        let scale = (width / WIDTH).min(height / HEIGHT) as f32;
+
         // Drawing
         let mut d = rl.begin_drawing(thread);
-
         d.clear_background(Color::BLACK);
-        d.draw_texture(&assets.ken, 0, 0, Color::WHITE);
 
+        {
+            // Render to texture
+            let mut d = d.begin_texture_mode(thread, target);
+            d.clear_background(Color::BLACK);
+            d.draw_texture(&assets.ken, 0, 0, Color::WHITE);
+        }
+
+        // Render texture to screen with proper scaling
+        d.draw_texture_pro(
+            target.texture(),
+            rrect(0.0, 0.0, target.texture.width, -target.texture.height),
+            rrect(
+                (d.get_screen_width() as f32 - (FWIDTH * scale)) * 0.5,
+                (d.get_screen_height() as f32 - (FHEIGHT * scale)) * 0.5,
+                FWIDTH * scale,
+                FHEIGHT * scale,
+            ),
+            rvec2(0, 0),
+            0.0,
+            Color::WHITE,
+        );
         // Debug
         // show_inputs(&world, &mut d);
     }
