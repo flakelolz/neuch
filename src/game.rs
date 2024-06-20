@@ -10,6 +10,7 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTex
         // Input
         update_inputs(&mut world, rl);
         // Logic
+        update_physics(&mut world);
 
         // Calculate window
         let width = rl.get_screen_width();
@@ -24,7 +25,7 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTex
             // Render to texture
             let mut d = d.begin_texture_mode(thread, target);
             d.clear_background(Color::BLACK);
-            d.draw_texture(&assets.ken, 0, 0, Color::WHITE);
+            draw_player(&mut d, &world, &assets);
         }
 
         // Render texture to screen with proper scaling

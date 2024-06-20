@@ -10,10 +10,20 @@ pub fn world() -> World {
     let mut world = World::new();
 
     // Player 1
-    world.spawn((Player::One, Input::default(), InputConfig::one()));
+    world.spawn((
+        Player::One,
+        Input::default(),
+        InputConfig::one(),
+        Physics::one(),
+    ));
 
     // Player 2
-    world.spawn((Player::Two, Input::default(), InputConfig::two()));
+    world.spawn((
+        Player::Two,
+        Input::default(),
+        InputConfig::two(),
+        Physics::two(),
+    ));
 
     world
 }

@@ -2,14 +2,20 @@ use prelude::{HEIGHT, WIDTH};
 
 mod assets;
 mod debug;
+mod draw;
 mod game;
 mod inputs;
+mod physics;
+mod utils;
 mod world;
 
 mod prelude {
     pub use crate::assets::*;
     pub use crate::debug::*;
+    pub use crate::draw::*;
     pub use crate::inputs::*;
+    pub use crate::physics::*;
+    pub use crate::utils::*;
     pub use crate::world::*;
     pub use hecs::World;
     pub use raylib::prelude::*;
