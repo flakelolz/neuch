@@ -1,4 +1,4 @@
-use crate::prelude::*;
+use crate::{prelude::*, state_machine::transitions::attack_transitions};
 
 pub struct Idle;
 impl State for Idle {
@@ -11,6 +11,8 @@ impl State for Idle {
 
     fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
         physics.velocity.x = 0;
+
+        attack_transitions(context, input);
 
         if input.forward {
             context.next = Some(Box::new(super::WalkForward));
