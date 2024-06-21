@@ -6,5 +6,6 @@
 - [x] Physics component
 - [x] Character data
 - [x] World to screen utilities
-- [ ] State machine
+- [x] State machine
+- [ ] State transition utilities
 - [ ] Animation system
