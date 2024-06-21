@@ -10,7 +10,6 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTex
         // Input
         update_inputs(&mut world, rl);
         // Logic
-        update_context(&mut world);
         update_physics(&mut world);
         update_state(&mut world);
 

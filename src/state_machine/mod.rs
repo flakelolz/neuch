@@ -6,15 +6,17 @@ pub use context::*;
 use self::states::*;
 
 pub fn update_state(world: &mut World) {
-    for (_, state) in world.query_mut::<&mut StateMachine>() {
-        state.processor.update(&mut state.context);
+    for (_, (state, input, physics)) in
+        world.query_mut::<(&mut StateMachine, &Input, &mut Physics)>()
+    {
+        state.processor.update(&mut state.context, input, physics);
     }
 }
 
 pub trait State: Send + Sync {
-    fn on_enter(&mut self, context: &mut Context);
-    fn on_update(&mut self, context: &mut Context);
-    fn on_exit(&mut self, context: &mut Context);
+    fn on_enter(&mut self, context: &mut Context, input: &Input, physics: &mut Physics);
+    fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics);
+    fn on_exit(&mut self, context: &mut Context, input: &Input, physics: &mut Physics);
 }
 
 #[derive(Default)]
@@ -36,12 +38,12 @@ impl Default for StateProcessor {
 }
 
 impl StateProcessor {
-    fn update(&mut self, context: &mut Context) {
-        self.current.on_update(context);
+    fn update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
+        self.current.on_update(context, input, physics);
 
         if let Some(mut next) = context.next.take() {
-            self.current.on_exit(context);
-            next.on_enter(context);
+            self.current.on_exit(context, input, physics);
+            next.on_enter(context, input, physics);
             self.current = next;
         }
     }
