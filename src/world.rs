@@ -28,7 +28,7 @@ pub fn world() -> World {
         InputConfig::one(),
         Physics::one(),
         StateMachine::default(),
-        Character::ken()
+        Character::ken(),
     ));
 
     // Player 2 components

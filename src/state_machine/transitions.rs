@@ -13,14 +13,18 @@ pub fn handle_transition(
     // Advance the timeline of the animation until it reaches the state duration
     // Then either loop if looping is true or change state if looping is false
     // based on the current state's transition conditions
+    context.elapsed += 1;
 
     let name = processor.current.name();
     let action = find_action(character, &name);
 
     match action {
-        Some(_action) => {
-            // timeline frames elapsed for animation
-            // println!("{}", action.name);
+        Some(action) => {
+            context.duration = action.duration;
+
+            if context.elapsed >= action.duration && action.looping {
+                context.elapsed = 0;
+            }
         }
         None => {
             println!("Action not found");
@@ -28,6 +32,7 @@ pub fn handle_transition(
     }
 
     if let Some(mut next) = context.next.take() {
+        context.elapsed = 0;
         processor.current.on_exit(context, input, physics);
         next.on_enter(context, input, physics);
         processor.current = next;

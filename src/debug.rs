@@ -31,9 +31,17 @@ pub fn show_state(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
         .into_iter()
         .for_each(|(_, (state, physics))| {
             let (x, y) = world_to_screen_vec(physics.position);
-            let state = state.processor.current.as_ref();
+            let current = state.processor.current.as_ref();
+            let timeline = state.context.elapsed;
 
-            d.draw_text(&state.name(), x - 30, y - 130, 10, Color::WHITE);
+            d.draw_text(&current.name(), x - 30, y - 130, 10, Color::WHITE);
+            d.draw_text(
+                format!("{}", timeline + 1).as_str(),
+                x - 30,
+                y - 120,
+                10,
+                Color::WHITE,
+            );
         });
 }
 

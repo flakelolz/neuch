@@ -10,7 +10,9 @@ pub fn update_state(world: &mut World) {
     for (_, (state, input, physics, character)) in
         world.query_mut::<(&mut StateMachine, &Input, &mut Physics, &Character)>()
     {
-        state.processor.update(&mut state.context, input, physics, character);
+        state
+            .processor
+            .update(&mut state.context, input, physics, character);
     }
 }
 
@@ -24,7 +26,7 @@ pub trait State: Send + Sync {
 #[derive(Default)]
 pub struct StateMachine {
     pub processor: StateProcessor,
-    context: Context,
+    pub context: Context,
 }
 
 pub struct StateProcessor {
@@ -40,7 +42,13 @@ impl Default for StateProcessor {
 }
 
 impl StateProcessor {
-    fn update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics, character: &Character) {
+    fn update(
+        &mut self,
+        context: &mut Context,
+        input: &Input,
+        physics: &mut Physics,
+        character: &Character,
+    ) {
         self.current.on_update(context, input, physics);
 
         handle_transition(self, context, input, physics, character);

@@ -38,8 +38,10 @@ impl State for LightPunch {
         println!("St LightPunch on_enter");
     }
 
-    fn on_update(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
-        println!("St LightPunch on_update");
+    fn on_update(&mut self, context: &mut Context, _input: &Input, _physics: &mut Physics) {
+        if context.elapsed >= context.duration {
+            context.next = Some(Box::new(Idle));
+        }
     }
 
     fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {

@@ -53,6 +53,18 @@
             }
           ]
         }
+      ],
+      "timeline": [
+        { "index": 0, "start": 0, "duration": 8 },
+        { "index": 1, "start": 9, "duration": 8 },
+        { "index": 2, "start": 17, "duration": 8 },
+        { "index": 3, "start": 25, "duration": 8 },
+        { "index": 4, "start": 33, "duration": 8 },
+        { "index": 5, "start": 41, "duration": 8 },
+        { "index": 6, "start": 49, "duration": 8 },
+        { "index": 7, "start": 57, "duration": 8 },
+        { "index": 8, "start": 65, "duration": 8 },
+        { "index": 9, "start": 73, "duration": 8 }
       ]
     },
     {
@@ -100,6 +112,18 @@
             }
           ]
         }
+      ],
+      "timeline": [
+        { "index": 0, "start": 0, "duration": 8 },
+        { "index": 1, "start": 9, "duration": 8 },
+        { "index": 2, "start": 17, "duration": 8 },
+        { "index": 3, "start": 25, "duration": 8 },
+        { "index": 4, "start": 33, "duration": 8 },
+        { "index": 5, "start": 41, "duration": 8 },
+        { "index": 6, "start": 49, "duration": 8 },
+        { "index": 7, "start": 57, "duration": 8 },
+        { "index": 8, "start": 65, "duration": 8 },
+        { "index": 9, "start": 73, "duration": 8 }
       ]
     },
     {
@@ -147,6 +171,18 @@
             }
           ]
         }
+      ],
+      "timeline": [
+        { "index": 0, "start": 0, "duration": 8 },
+        { "index": 1, "start": 9, "duration": 8 },
+        { "index": 2, "start": 17, "duration": 8 },
+        { "index": 3, "start": 25, "duration": 8 },
+        { "index": 4, "start": 33, "duration": 8 },
+        { "index": 5, "start": 41, "duration": 8 },
+        { "index": 6, "start": 49, "duration": 8 },
+        { "index": 7, "start": 57, "duration": 8 },
+        { "index": 8, "start": 65, "duration": 8 },
+        { "index": 9, "start": 73, "duration": 8 }
       ]
     },
     {
@@ -194,6 +230,18 @@
             }
           ]
         }
+      ],
+      "timeline": [
+        { "index": 0, "start": 0, "duration": 8 },
+        { "index": 1, "start": 9, "duration": 8 },
+        { "index": 2, "start": 17, "duration": 8 },
+        { "index": 3, "start": 25, "duration": 8 },
+        { "index": 4, "start": 33, "duration": 8 },
+        { "index": 5, "start": 41, "duration": 8 },
+        { "index": 6, "start": 49, "duration": 8 },
+        { "index": 7, "start": 57, "duration": 8 },
+        { "index": 8, "start": 65, "duration": 8 },
+        { "index": 9, "start": 73, "duration": 8 }
       ]
     }
   ]

@@ -23,6 +23,7 @@ pub struct Action {
     pub pushbox: Vec<HitboxGroup>,
     pub hurtbox: Vec<HitboxGroup>,
     pub hitbox: Vec<HitboxGroup>,
+    pub timeline: Vec<Timeline>,
 }
 
 #[derive(Debug, Clone, Default, Deserialize)]
@@ -72,4 +73,11 @@ pub fn generate_action_map(character: &CharacterData) -> HashMap<String, Action>
 
 pub fn find_action<'a>(character: &'a Character, action_name: &'a String) -> Option<&'a Action> {
     character.action_map.get(action_name)
+}
+
+#[derive(Debug, Clone, Copy, Deserialize)]
+pub struct Timeline {
+    index: i32,
+    start: i32,
+    duration: i32,
 }
