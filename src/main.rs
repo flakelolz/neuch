@@ -24,6 +24,7 @@ mod prelude {
     pub use hecs::World;
     pub use miniserde::{json, Deserialize};
     pub use raylib::prelude::*;
+    pub use std::collections::HashMap;
 
     pub const WIDTH: i32 = 384;
     pub const HEIGHT: i32 = 216;

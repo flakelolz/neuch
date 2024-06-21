@@ -1,4 +1,5 @@
 {
+  "name": "Ken",
   "health": 1000,
   "pushbox": {
     "top": 0,
@@ -8,9 +9,150 @@
   },
   "actions": [
     {
-      "name": "standing",
+      "name": "St Idle",
       "duration": 9,
       "looping": true,
+      "pushbox": [
+        {
+          "start": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hurtbox": [
+        {
+          "start": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hitbox": [
+        {
+          "start": 0,
+          "duration": 0,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WalkForward",
+      "duration": 9,
+      "looping": true,
+      "pushbox": [
+        {
+          "start": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hurtbox": [
+        {
+          "start": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hitbox": [
+        {
+          "start": 0,
+          "duration": 0,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WalkBackward",
+      "duration": 9,
+      "looping": true,
+      "pushbox": [
+        {
+          "start": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hurtbox": [
+        {
+          "start": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hitbox": [
+        {
+          "start": 0,
+          "duration": 0,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "St LightPunch",
+      "duration": 9,
+      "looping": false,
       "pushbox": [
         {
           "start": 0,

@@ -7,15 +7,15 @@ pub use context::*;
 use self::{states::*, transitions::handle_transition};
 
 pub fn update_state(world: &mut World) {
-    for (_, (state, input, physics)) in
-        world.query_mut::<(&mut StateMachine, &Input, &mut Physics)>()
+    for (_, (state, input, physics, character)) in
+        world.query_mut::<(&mut StateMachine, &Input, &mut Physics, &Character)>()
     {
-        state.processor.update(&mut state.context, input, physics);
+        state.processor.update(&mut state.context, input, physics, character);
     }
 }
 
 pub trait State: Send + Sync {
-    fn name(&self) -> &'static str;
+    fn name(&self) -> String;
     fn on_enter(&mut self, context: &mut Context, input: &Input, physics: &mut Physics);
     fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics);
     fn on_exit(&mut self, context: &mut Context, input: &Input, physics: &mut Physics);
@@ -40,9 +40,9 @@ impl Default for StateProcessor {
 }
 
 impl StateProcessor {
-    fn update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
+    fn update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics, character: &Character) {
         self.current.on_update(context, input, physics);
 
-        handle_transition(self, context, input, physics);
+        handle_transition(self, context, input, physics, character);
     }
 }

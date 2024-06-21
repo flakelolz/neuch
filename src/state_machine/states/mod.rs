@@ -3,8 +3,8 @@ use crate::prelude::*;
 
 pub struct WalkForward;
 impl State for WalkForward {
-    fn name(&self) -> &'static str {
-        "WalkForward"
+    fn name(&self) -> String {
+        String::from("WalkForward")
     }
     fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
         println!("WalkForward on_enter");
@@ -25,8 +25,8 @@ impl State for WalkForward {
 
 pub struct WalkBackward;
 impl State for WalkBackward {
-    fn name(&self) -> &'static str {
-        "WalkBackward"
+    fn name(&self) -> String {
+        String::from("WalkBackward")
     }
     fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
         println!("WalkBackward on_enter");

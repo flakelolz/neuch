@@ -7,13 +7,25 @@ pub fn handle_transition(
     context: &mut Context,
     input: &Input,
     physics: &mut Physics,
-    // action_data: &ActionData,
-    // action_map: &ActionMap
+    character: &Character,
 ) {
     // state name to find the action. Needs both ActionData and ActionMap
     // Advance the timeline of the animation until it reaches the state duration
     // Then either loop if looping is true or change state if looping is false
     // based on the current state's transition conditions
+
+    let name = processor.current.name();
+    let action = find_action(character, &name);
+
+    match action {
+        Some(_action) => {
+            // timeline frames elapsed for animation
+            // println!("{}", action.name);
+        }
+        None => {
+            println!("Action not found");
+        }
+    }
 
     if let Some(mut next) = context.next.take() {
         processor.current.on_exit(context, input, physics);
@@ -28,30 +40,30 @@ pub fn attack_transitions(context: &mut Context, input: &Input) -> bool {
         return true;
     }
 
-    if input.lk {
-        context.next = Some(Box::new(standing::LightKick));
-        return true;
-    }
-
-    if input.mp {
-        context.next = Some(Box::new(standing::MediumPunch));
-        return true;
-    }
-
-    if input.mk {
-        context.next = Some(Box::new(standing::MediumKick));
-        return true;
-    }
-
-    if input.hp {
-        context.next = Some(Box::new(standing::HeavyPunch));
-        return true;
-    }
-
-    if input.hk {
-        context.next = Some(Box::new(standing::HeavyKick));
-        return true;
-    }
+    // if input.lk {
+    //     context.next = Some(Box::new(standing::LightKick));
+    //     return true;
+    // }
+    //
+    // if input.mp {
+    //     context.next = Some(Box::new(standing::MediumPunch));
+    //     return true;
+    // }
+    //
+    // if input.mk {
+    //     context.next = Some(Box::new(standing::MediumKick));
+    //     return true;
+    // }
+    //
+    // if input.hp {
+    //     context.next = Some(Box::new(standing::HeavyPunch));
+    //     return true;
+    // }
+    //
+    // if input.hk {
+    //     context.next = Some(Box::new(standing::HeavyKick));
+    //     return true;
+    // }
 
     false
 }

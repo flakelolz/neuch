@@ -33,7 +33,7 @@ pub fn show_state(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
             let (x, y) = world_to_screen_vec(physics.position);
             let state = state.processor.current.as_ref();
 
-            d.draw_text(state.name(), x - 30, y - 130, 10, Color::WHITE);
+            d.draw_text(&state.name(), x - 30, y - 130, 10, Color::WHITE);
         });
 }
 

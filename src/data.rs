@@ -27,6 +27,7 @@ pub struct Action {
 
 #[derive(Debug, Clone, Default, Deserialize)]
 pub struct CharacterData {
+    pub name: String,
     pub health: i32,
     pub pushbox: Hitbox,
     pub actions: Vec<Action>,
@@ -41,15 +42,34 @@ impl CharacterData {
     }
 }
 
-#[derive(Debug)]
-pub struct GameData {
-    pub characters: Vec<CharacterData>,
+pub struct Character {
+    pub name: String,
+    pub data: CharacterData,
+    pub action_map: HashMap<String, Action>,
 }
 
-impl GameData {
-    pub fn new() -> Self {
+impl Character {
+    pub fn ken() -> Self {
+        let data = CharacterData::load("assets/data/data.json");
+        let action_map = generate_action_map(&data);
         Self {
-            characters: vec![CharacterData::load("assets/data/data.json")],
+            name: "Ken".to_string(),
+            data,
+            action_map,
         }
     }
+}
+
+pub fn generate_action_map(character: &CharacterData) -> HashMap<String, Action> {
+    let mut hashmap = HashMap::new();
+
+    for action in &character.actions {
+        hashmap.insert(action.name.clone(), action.clone());
+    }
+
+    hashmap
+}
+
+pub fn find_action<'a>(character: &'a Character, action_name: &'a String) -> Option<&'a Action> {
+    character.action_map.get(action_name)
 }
