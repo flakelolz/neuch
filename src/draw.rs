@@ -14,11 +14,11 @@ pub fn draw_player(d: &mut RaylibTextureMode<RaylibDrawHandle>, world: &World, a
                 let (pos_x, pos_y) = world_to_screen_vec(physics.position);
                 let source_rec = rrect(0, 0, texture.width, texture.height);
                 let dest_rec = rrect(pos_x, pos_y, texture.width, texture.height);
-                let origin = rvec2(texture.width / 2, texture.height / 2);
+                let origin = rvec2(180, 190);
                 let rotation = 0.;
                 let tint = Color::WHITE;
 
                 d.draw_texture_pro(texture, source_rec, dest_rec, origin, rotation, tint)
             }
-        })
+        });
 }

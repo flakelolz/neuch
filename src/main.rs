@@ -14,7 +14,7 @@ mod world;
 mod prelude {
     pub use crate::assets::*;
     pub use crate::data::*;
-    // pub use crate::debug::*;
+    pub use crate::debug::*;
     pub use crate::draw::*;
     pub use crate::inputs::*;
     pub use crate::physics::*;
@@ -29,6 +29,7 @@ mod prelude {
     pub const HEIGHT: i32 = 216;
     pub const FWIDTH: f32 = WIDTH as f32;
     pub const FHEIGHT: f32 = HEIGHT as f32;
+    pub const GROUND: i32 = 180;
 }
 
 fn main() {
