@@ -12,19 +12,21 @@ pub fn world() -> World {
     world.spawn((GameData::new(),));
 
     // Player 1
-    world.spawn((
+    let _player1 = world.spawn((
         Player::One,
         Input::default(),
         InputConfig::one(),
         Physics::one(),
+        StateMachine::default(),
     ));
 
     // Player 2
-    world.spawn((
+    let _player2 = world.spawn((
         Player::Two,
         Input::default(),
         InputConfig::two(),
         Physics::two(),
+        // StateMachine::default(),
     ));
 
     world

@@ -1,5 +1,6 @@
 use crate::prelude::*;
 
+#[derive(Debug, Clone, Copy, Default)]
 pub struct Physics {
     pub position: IVec2,
     pub velocity: IVec2,

@@ -111,7 +111,7 @@ impl InputConfig {
 pub struct Input {
     pub up: bool,
     pub down: bool,
-    pub back: bool,
+    pub backward: bool,
     pub forward: bool,
     pub lp: bool,
     pub mp: bool,
@@ -132,7 +132,7 @@ impl Input {
             || rl.is_gamepad_button_down(port, config.gamepad.up);
         self.down = rl.is_key_down(config.keyboard.down)
             || rl.is_gamepad_button_down(port, config.gamepad.down);
-        self.back = rl.is_key_down(config.keyboard.left)
+        self.backward = rl.is_key_down(config.keyboard.left)
             || rl.is_gamepad_button_down(port, config.gamepad.left);
         self.forward = rl.is_key_down(config.keyboard.right)
             || rl.is_gamepad_button_down(port, config.gamepad.right);

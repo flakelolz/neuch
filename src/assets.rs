@@ -10,4 +10,3 @@ impl Assets {
         Self { ken: image }
     }
 }
-
