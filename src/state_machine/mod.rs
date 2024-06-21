@@ -1,9 +1,10 @@
 mod context;
 mod states;
+mod transitions;
 use crate::prelude::*;
 pub use context::*;
 
-use self::states::*;
+use self::{states::*, transitions::handle_transition};
 
 pub fn update_state(world: &mut World) {
     for (_, (state, input, physics)) in
@@ -14,6 +15,7 @@ pub fn update_state(world: &mut World) {
 }
 
 pub trait State: Send + Sync {
+    fn name(&self) -> &'static str;
     fn on_enter(&mut self, context: &mut Context, input: &Input, physics: &mut Physics);
     fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics);
     fn on_exit(&mut self, context: &mut Context, input: &Input, physics: &mut Physics);
@@ -21,18 +23,18 @@ pub trait State: Send + Sync {
 
 #[derive(Default)]
 pub struct StateMachine {
-    processor: StateProcessor,
+    pub processor: StateProcessor,
     context: Context,
 }
 
 pub struct StateProcessor {
-    current: Box<dyn State>,
+    pub current: Box<dyn State>,
 }
 
 impl Default for StateProcessor {
     fn default() -> Self {
         Self {
-            current: Box::new(Standing),
+            current: Box::new(standing::Idle),
         }
     }
 }
@@ -41,10 +43,6 @@ impl StateProcessor {
     fn update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
         self.current.on_update(context, input, physics);
 
-        if let Some(mut next) = context.next.take() {
-            self.current.on_exit(context, input, physics);
-            next.on_enter(context, input, physics);
-            self.current = next;
-        }
+        handle_transition(self, context, input, physics);
     }
 }
