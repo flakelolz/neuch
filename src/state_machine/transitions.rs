@@ -8,6 +8,7 @@ pub fn handle_transition(
     input: &Input,
     physics: &mut Physics,
     character: &Character,
+    animator: &mut Animator,
 ) {
     // state name to find the action. Needs both ActionData and ActionMap
     // Advance the timeline of the animation until it reaches the state duration
@@ -20,9 +21,12 @@ pub fn handle_transition(
 
     match action {
         Some(action) => {
-            context.duration = action.duration;
+            context.duration = action.total;
+            animator.total = context.duration;
+            animator.current = context.elapsed;
+            animator.keyframes.clone_from(&action.timeline);
 
-            if context.elapsed >= action.duration && action.looping {
+            if context.elapsed >= action.total && action.looping {
                 context.elapsed = 0;
             }
         }
@@ -36,6 +40,7 @@ pub fn handle_transition(
         processor.current.on_exit(context, input, physics);
         next.on_enter(context, input, physics);
         processor.current = next;
+        animator.reset();
     }
 }
 

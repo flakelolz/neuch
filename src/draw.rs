@@ -2,9 +2,9 @@ use crate::prelude::*;
 
 pub fn draw_player(d: &mut RaylibTextureMode<RaylibDrawHandle>, world: &World, assets: &Assets) {
     world
-        .query::<(&Physics, &Player)>()
+        .query::<(&Physics, &Player, &Character)>()
         .into_iter()
-        .for_each(|(_, (physics, player))| {
+        .for_each(|(_, (physics, player, character))| {
             let texture = match player {
                 Player::One => Some(&assets.ken),
                 Player::Two => None,

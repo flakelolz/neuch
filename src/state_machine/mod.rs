@@ -7,12 +7,16 @@ pub use context::*;
 use self::{states::*, transitions::handle_transition};
 
 pub fn update_state(world: &mut World) {
-    for (_, (state, input, physics, character)) in
-        world.query_mut::<(&mut StateMachine, &Input, &mut Physics, &Character)>()
-    {
+    for (_, (state, input, physics, character, animator)) in world.query_mut::<(
+        &mut StateMachine,
+        &Input,
+        &mut Physics,
+        &Character,
+        &mut Animator,
+    )>() {
         state
             .processor
-            .update(&mut state.context, input, physics, character);
+            .update(&mut state.context, input, physics, character, animator);
     }
 }
 
@@ -48,9 +52,10 @@ impl StateProcessor {
         input: &Input,
         physics: &mut Physics,
         character: &Character,
+        animator: &mut Animator,
     ) {
         self.current.on_update(context, input, physics);
 
-        handle_transition(self, context, input, physics, character);
+        handle_transition(self, context, input, physics, character, animator);
     }
 }

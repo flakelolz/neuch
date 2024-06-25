@@ -9,16 +9,6 @@ pub enum Player {
 pub fn world() -> World {
     let mut world = World::new();
 
-    // GameData components
-    // let character_data = CharacterData::load("assets/data/data.json");
-    // let action_map = generate_action_map(&character_data);
-    //
-    // let mut gamedata = GameData::new();
-    // gamedata.add_character_data(character_data);
-    // gamedata.add_action_map(action_map);
-
-    // Global components
-    // world.spawn((gamedata,));
     world.spawn((0,)); // Frame count
 
     // Player 1 components
@@ -29,6 +19,7 @@ pub fn world() -> World {
         Physics::one(),
         StateMachine::default(),
         Character::ken(),
+        Animator::default(),
     ));
 
     // Player 2 components

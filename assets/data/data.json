@@ -1,20 +1,14 @@
 {
   "name": "Ken",
   "health": 1000,
-  "pushbox": {
-    "top": 0,
-    "left": 0,
-    "bottom": 0,
-    "right": 0
-  },
   "actions": [
     {
       "name": "St Idle",
-      "duration": 9,
+      "total": 60,
       "looping": true,
       "pushbox": [
         {
-          "start": 0,
+          "frame": 0,
           "duration": 9,
           "hitboxes": [
             {
@@ -28,7 +22,7 @@
       ],
       "hurtbox": [
         {
-          "start": 0,
+          "frame": 0,
           "duration": 9,
           "hitboxes": [
             {
@@ -42,7 +36,7 @@
       ],
       "hitbox": [
         {
-          "start": 0,
+          "frame": 0,
           "duration": 0,
           "hitboxes": [
             {
@@ -55,25 +49,25 @@
         }
       ],
       "timeline": [
-        { "index": 0, "start": 0, "duration": 8 },
-        { "index": 1, "start": 9, "duration": 8 },
-        { "index": 2, "start": 17, "duration": 8 },
-        { "index": 3, "start": 25, "duration": 8 },
-        { "index": 4, "start": 33, "duration": 8 },
-        { "index": 5, "start": 41, "duration": 8 },
-        { "index": 6, "start": 49, "duration": 8 },
-        { "index": 7, "start": 57, "duration": 8 },
-        { "index": 8, "start": 65, "duration": 8 },
-        { "index": 9, "start": 73, "duration": 8 }
+        { "x": 0, "y": 0, "w": 141, "h":  113, "duration": 6 },
+        { "x": 141, "y": 0, "w": 141, "h":  113, "duration": 6 },
+        { "x": 282, "y": 0, "w": 141, "h":  113, "duration": 6 },
+        { "x": 423, "y": 0, "w": 141, "h":  113, "duration": 6 },
+        { "x": 564, "y": 0, "w": 141, "h":  113, "duration": 6 },
+        { "x": 705, "y": 0, "w": 141, "h":  113, "duration": 6 },
+        { "x": 846, "y": 0, "w": 141, "h":  113, "duration": 6 },
+        { "x": 987, "y": 0, "w": 141, "h":  113, "duration": 6 },
+        { "x": 1128, "y": 0, "w": 141, "h":  113, "duration": 6 },
+        { "x": 1269, "y": 0, "w": 141, "h":  113, "duration": 6 }
       ]
     },
     {
       "name": "WalkForward",
-      "duration": 9,
+      "total": 104,
       "looping": true,
       "pushbox": [
         {
-          "start": 0,
+          "frame": 0,
           "duration": 9,
           "hitboxes": [
             {
@@ -87,7 +81,7 @@
       ],
       "hurtbox": [
         {
-          "start": 0,
+          "frame": 0,
           "duration": 9,
           "hitboxes": [
             {
@@ -101,7 +95,7 @@
       ],
       "hitbox": [
         {
-          "start": 0,
+          "frame": 0,
           "duration": 0,
           "hitboxes": [
             {
@@ -114,25 +108,26 @@
         }
       ],
       "timeline": [
-        { "index": 0, "start": 0, "duration": 8 },
-        { "index": 1, "start": 9, "duration": 8 },
-        { "index": 2, "start": 17, "duration": 8 },
-        { "index": 3, "start": 25, "duration": 8 },
-        { "index": 4, "start": 33, "duration": 8 },
-        { "index": 5, "start": 41, "duration": 8 },
-        { "index": 6, "start": 49, "duration": 8 },
-        { "index": 7, "start": 57, "duration": 8 },
-        { "index": 8, "start": 65, "duration": 8 },
-        { "index": 9, "start": 73, "duration": 8 }
+        { "x": 0, "y": 113, "w": 141, "h":  113, "duration": 6 },
+        { "x": 141, "y": 113, "w": 141, "h":  113, "duration": 6 },
+        { "x": 282, "y": 113, "w": 141, "h":  113, "duration": 6 },
+        { "x": 423, "y": 113, "w": 141, "h":  113, "duration": 6 },
+        { "x": 564, "y": 113, "w": 141, "h":  113, "duration": 6 },
+        { "x": 705, "y": 113, "w": 141, "h":  113, "duration": 6 },
+        { "x": 846, "y": 113, "w": 141, "h":  113, "duration": 6 },
+        { "x": 987, "y": 113, "w": 141, "h":  113, "duration": 6 },
+        { "x": 1128, "y": 113, "w": 141, "h":  113, "duration": 6 },
+        { "x": 1269, "y": 113, "w": 141, "h":  113, "duration": 6 },
+        { "x": 1410, "y": 113, "w": 141, "h":  113, "duration": 6 }
       ]
     },
     {
       "name": "WalkBackward",
-      "duration": 9,
+      "total": 104,
       "looping": true,
       "pushbox": [
         {
-          "start": 0,
+          "frame": 0,
           "duration": 9,
           "hitboxes": [
             {
@@ -146,7 +141,7 @@
       ],
       "hurtbox": [
         {
-          "start": 0,
+          "frame": 0,
           "duration": 9,
           "hitboxes": [
             {
@@ -160,7 +155,7 @@
       ],
       "hitbox": [
         {
-          "start": 0,
+          "frame": 0,
           "duration": 0,
           "hitboxes": [
             {
@@ -173,25 +168,26 @@
         }
       ],
       "timeline": [
-        { "index": 0, "start": 0, "duration": 8 },
-        { "index": 1, "start": 9, "duration": 8 },
-        { "index": 2, "start": 17, "duration": 8 },
-        { "index": 3, "start": 25, "duration": 8 },
-        { "index": 4, "start": 33, "duration": 8 },
-        { "index": 5, "start": 41, "duration": 8 },
-        { "index": 6, "start": 49, "duration": 8 },
-        { "index": 7, "start": 57, "duration": 8 },
-        { "index": 8, "start": 65, "duration": 8 },
-        { "index": 9, "start": 73, "duration": 8 }
+        { "x": 0, "y": 226, "w": 141, "h":  113, "duration": 6 },
+        { "x": 141, "y": 226, "w": 141, "h":  113, "duration": 6 },
+        { "x": 282, "y": 226, "w": 141, "h":  113, "duration": 6 },
+        { "x": 423, "y": 226, "w": 141, "h":  113, "duration": 6 },
+        { "x": 564, "y": 226, "w": 141, "h":  113, "duration": 6 },
+        { "x": 705, "y": 226, "w": 141, "h":  113, "duration": 6 },
+        { "x": 846, "y": 226, "w": 141, "h":  113, "duration": 6 },
+        { "x": 987, "y": 226, "w": 141, "h":  113, "duration": 6 },
+        { "x": 1128, "y": 226, "w": 141, "h":  113, "duration": 6 },
+        { "x": 1269, "y": 226, "w": 141, "h":  113, "duration": 6 },
+        { "x": 1410, "y": 226, "w": 141, "h":  113, "duration": 6 }
       ]
     },
     {
       "name": "St LightPunch",
-      "duration": 9,
+      "total": 19,
       "looping": false,
       "pushbox": [
         {
-          "start": 0,
+          "frame": 0,
           "duration": 9,
           "hitboxes": [
             {
@@ -205,7 +201,7 @@
       ],
       "hurtbox": [
         {
-          "start": 0,
+          "frame": 0,
           "duration": 9,
           "hitboxes": [
             {
@@ -219,7 +215,7 @@
       ],
       "hitbox": [
         {
-          "start": 0,
+          "frame": 0,
           "duration": 0,
           "hitboxes": [
             {
@@ -232,16 +228,11 @@
         }
       ],
       "timeline": [
-        { "index": 0, "start": 0, "duration": 8 },
-        { "index": 1, "start": 9, "duration": 8 },
-        { "index": 2, "start": 17, "duration": 8 },
-        { "index": 3, "start": 25, "duration": 8 },
-        { "index": 4, "start": 33, "duration": 8 },
-        { "index": 5, "start": 41, "duration": 8 },
-        { "index": 6, "start": 49, "duration": 8 },
-        { "index": 7, "start": 57, "duration": 8 },
-        { "index": 8, "start": 65, "duration": 8 },
-        { "index": 9, "start": 73, "duration": 8 }
+        { "x": 0, "y": 339, "w": 141, "h":  113, "duration": 1 },
+        { "x": 141, "y": 339, "w": 141, "h":  113, "duration": 1 },
+        { "x": 282, "y": 339, "w": 141, "h":  113, "duration": 5 },
+        { "x": 423, "y": 339, "w": 141, "h":  113, "duration": 6 },
+        { "x": 564, "y": 339, "w": 141, "h":  113, "duration": 6 }
       ]
     }
   ]

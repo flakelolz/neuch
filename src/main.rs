@@ -1,5 +1,6 @@
 use prelude::{HEIGHT, WIDTH};
 
+mod animation;
 mod assets;
 mod data;
 mod debug;
@@ -12,6 +13,7 @@ mod utils;
 mod world;
 
 mod prelude {
+    pub use crate::animation::*;
     pub use crate::assets::*;
     pub use crate::data::*;
     pub use crate::debug::*;

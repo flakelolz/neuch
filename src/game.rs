@@ -17,6 +17,7 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTex
         let mut advance = false;
         if rl.is_key_pressed(KeyboardKey::KEY_ENTER) {
             paused = !paused;
+            println!("Paused");
         } else if rl.is_key_pressed(KeyboardKey::KEY_BACKSLASH) {
             advance = true;
         }
@@ -40,8 +41,12 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTex
         {
             // Render to texture
             let mut d = d.begin_texture_mode(thread, target);
-            d.clear_background(Color::BLACK);
-            draw_player(&mut d, &world, &assets);
+
+            if !paused || advance {
+                d.clear_background(Color::BLACK);
+                // draw_player(&mut d, &world, &assets);
+                animation(&mut d, &world, &assets);
+            }
 
             // Debug
             d.draw_fps(WIDTH - 30, 20);
