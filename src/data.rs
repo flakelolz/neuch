@@ -1,6 +1,6 @@
 use crate::prelude::*;
 
-#[derive(Debug, Clone, Copy, Default, Deserialize)]
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
 pub struct Hitbox {
     pub top: i32,
     pub left: i32,
@@ -8,14 +8,14 @@ pub struct Hitbox {
     pub right: i32,
 }
 
-#[derive(Debug, Clone, Default, Deserialize)]
+#[derive(Debug, Clone, Default, Deserialize, Serialize)]
 pub struct HitboxGroup {
     pub frame: i32,
     pub duration: i32,
     pub hitboxes: Vec<Hitbox>,
 }
 
-#[derive(Debug, Clone, Default, Deserialize)]
+#[derive(Debug, Clone, Default, Deserialize, Serialize)]
 pub struct Action {
     pub name: String,
     pub total: i32,
@@ -26,7 +26,7 @@ pub struct Action {
     pub timeline: Vec<Keyframe>,
 }
 
-#[derive(Debug, Clone, Copy, Deserialize, Default)]
+#[derive(Debug, Clone, Copy, Deserialize, Serialize, Default)]
 pub struct Keyframe {
     pub x: i32,
     pub y: i32,
@@ -35,7 +35,7 @@ pub struct Keyframe {
     pub duration: i32,
 }
 
-#[derive(Debug, Clone, Default, Deserialize)]
+#[derive(Debug, Clone, Default, Deserialize, Serialize)]
 pub struct CharacterData {
     pub name: String,
     pub health: i32,
@@ -45,7 +45,7 @@ pub struct CharacterData {
 impl CharacterData {
     pub fn load(path: &str) -> Self {
         match std::fs::read_to_string(path) {
-            Ok(contents) => match json::from_str(&contents) {
+            Ok(contents) => match serde_json::from_str(&contents) {
                 Ok(content) => content,
                 Err(e) => panic!("{}", e),
             },
@@ -62,7 +62,7 @@ pub struct Character {
 
 impl Character {
     pub fn ken() -> Self {
-        let data = CharacterData::load("assets/data/data.json");
+        let data = CharacterData::load("assets/data/ken_data.json");
         let action_map = generate_action_map(&data);
         Self {
             name: data.name.clone(),

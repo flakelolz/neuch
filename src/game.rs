@@ -1,6 +1,7 @@
 use crate::prelude::*;
 
 pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTexture2D) {
+    update_all_data();
     // Setup
     let mut world = world();
     let assets = Assets::new(rl, thread);

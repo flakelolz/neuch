@@ -24,8 +24,8 @@ mod prelude {
     pub use crate::utils::*;
     pub use crate::world::*;
     pub use hecs::World;
-    pub use miniserde::{json, Deserialize};
     pub use raylib::prelude::*;
+    pub use serde::{Deserialize, Serialize};
     pub use std::collections::HashMap;
 
     pub const WIDTH: i32 = 384;

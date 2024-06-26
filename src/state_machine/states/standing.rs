@@ -15,16 +15,60 @@ impl State for Idle {
         attack_transitions(context, input);
 
         if input.forward {
-            context.next = Some(Box::new(super::WalkForward));
+            context.next = Some(Box::new(WalkForward));
         }
 
         if input.backward {
-            context.next = Some(Box::new(super::WalkBackward));
+            context.next = Some(Box::new(WalkBackward));
         }
     }
 
     fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
         println!("St Idle on_exit");
+    }
+}
+
+pub struct WalkForward;
+impl State for WalkForward {
+    fn name(&self) -> String {
+        String::from("St WalkForward")
+    }
+    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+        println!("WalkForward on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
+        physics.velocity.x = 3000;
+
+        if !input.forward {
+            context.next = Some(Box::new(Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+        println!("WalkForward on_exit");
+    }
+}
+
+pub struct WalkBackward;
+impl State for WalkBackward {
+    fn name(&self) -> String {
+        String::from("St WalkBackward")
+    }
+    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+        println!("WalkBackward on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
+        physics.velocity.x = -3000;
+
+        if !input.backward {
+            context.next = Some(Box::new(Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+        println!("WalkBackward on_exit");
     }
 }
 

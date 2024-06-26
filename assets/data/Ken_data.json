@@ -1,0 +1,461 @@
+{
+  "name": "Ken",
+  "health": 1000,
+  "actions": [
+    {
+      "name": "St Idle",
+      "total": 40,
+      "looping": true,
+      "pushbox": [
+        {
+          "frame": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hurtbox": [
+        {
+          "frame": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hitbox": [
+        {
+          "frame": 0,
+          "duration": 0,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 320,
+          "y": 0,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 480,
+          "y": 0,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 640,
+          "y": 0,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 800,
+          "y": 0,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 960,
+          "y": 0,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 1120,
+          "y": 0,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 1280,
+          "y": 0,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 1440,
+          "y": 0,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "name": "St WalkForward",
+      "total": 44,
+      "looping": true,
+      "pushbox": [
+        {
+          "frame": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hurtbox": [
+        {
+          "frame": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hitbox": [
+        {
+          "frame": 0,
+          "duration": 0,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "x": 0,
+          "y": 122,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 160,
+          "y": 122,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 320,
+          "y": 122,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 480,
+          "y": 122,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 640,
+          "y": 122,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 800,
+          "y": 122,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 960,
+          "y": 122,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 1120,
+          "y": 122,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 1280,
+          "y": 122,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 1440,
+          "y": 122,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 1600,
+          "y": 122,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "name": "St WalkBackward",
+      "total": 44,
+      "looping": true,
+      "pushbox": [
+        {
+          "frame": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hurtbox": [
+        {
+          "frame": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hitbox": [
+        {
+          "frame": 0,
+          "duration": 0,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "x": 0,
+          "y": 244,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 160,
+          "y": 244,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 320,
+          "y": 244,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 480,
+          "y": 244,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 640,
+          "y": 244,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 800,
+          "y": 244,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 960,
+          "y": 244,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 1120,
+          "y": 244,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 1280,
+          "y": 244,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 1440,
+          "y": 244,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        },
+        {
+          "x": 1600,
+          "y": 244,
+          "w": 160,
+          "h": 122,
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "name": "St LightPunch",
+      "total": 12,
+      "looping": false,
+      "pushbox": [
+        {
+          "frame": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hurtbox": [
+        {
+          "frame": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hitbox": [
+        {
+          "frame": 0,
+          "duration": 0,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "x": 0,
+          "y": 366,
+          "w": 160,
+          "h": 122,
+          "duration": 5
+        },
+        {
+          "x": 160,
+          "y": 366,
+          "w": 160,
+          "h": 122,
+          "duration": 1
+        },
+        {
+          "x": 320,
+          "y": 366,
+          "w": 160,
+          "h": 122,
+          "duration": 3
+        },
+        {
+          "x": 480,
+          "y": 366,
+          "w": 160,
+          "h": 122,
+          "duration": 2
+        },
+        {
+          "x": 640,
+          "y": 366,
+          "w": 160,
+          "h": 122,
+          "duration": 1
+        }
+      ]
+    }
+  ]
+}
