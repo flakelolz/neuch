@@ -32,18 +32,18 @@ pub fn animation(d: &mut RaylibTextureMode<RaylibDrawHandle>, world: &World, ass
             };
 
             if let Some(texture) = texture {
-                if animator.tick > animator.duration {
+                if let Some(keyframe) = animator.keyframes.get(animator.index) {
+                    animator.duration = keyframe.duration;
+                    draw(d, physics, keyframe, texture);
+                    animator.tick += 1;
+                }
+
+                if animator.tick >= animator.duration {
                     animator.tick = 0;
                     animator.index += 1;
                     if animator.index >= animator.keyframes.len() {
                         animator.index = 0;
                     }
-                }
-
-                if let Some(keyframe) = animator.keyframes.get(animator.index) {
-                    animator.duration = keyframe.duration;
-                    draw(d, physics, keyframe, texture);
-                    animator.tick += 1;
                 }
             }
         });

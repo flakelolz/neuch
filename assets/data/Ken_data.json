@@ -456,6 +456,146 @@
           "duration": 1
         }
       ]
+    },
+    {
+      "name": "St HeavyKick",
+      "total": 35,
+      "looping": true,
+      "pushbox": [
+        {
+          "frame": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hurtbox": [
+        {
+          "frame": 0,
+          "duration": 9,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hitbox": [
+        {
+          "frame": 0,
+          "duration": 0,
+          "hitboxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "x": 0,
+          "y": 488,
+          "w": 160,
+          "h": 122,
+          "duration": 2
+        },
+        {
+          "x": 160,
+          "y": 488,
+          "w": 160,
+          "h": 122,
+          "duration": 3
+        },
+        {
+          "x": 320,
+          "y": 488,
+          "w": 160,
+          "h": 122,
+          "duration": 2
+        },
+        {
+          "x": 480,
+          "y": 488,
+          "w": 160,
+          "h": 122,
+          "duration": 2
+        },
+        {
+          "x": 640,
+          "y": 488,
+          "w": 160,
+          "h": 122,
+          "duration": 2
+        },
+        {
+          "x": 800,
+          "y": 488,
+          "w": 160,
+          "h": 122,
+          "duration": 3
+        },
+        {
+          "x": 960,
+          "y": 488,
+          "w": 160,
+          "h": 122,
+          "duration": 3
+        },
+        {
+          "x": 1120,
+          "y": 488,
+          "w": 160,
+          "h": 122,
+          "duration": 3
+        },
+        {
+          "x": 1280,
+          "y": 488,
+          "w": 160,
+          "h": 122,
+          "duration": 3
+        },
+        {
+          "x": 1440,
+          "y": 488,
+          "w": 160,
+          "h": 122,
+          "duration": 3
+        },
+        {
+          "x": 1600,
+          "y": 488,
+          "w": 160,
+          "h": 122,
+          "duration": 3
+        },
+        {
+          "x": 1760,
+          "y": 488,
+          "w": 160,
+          "h": 122,
+          "duration": 3
+        },
+        {
+          "x": 1920,
+          "y": 488,
+          "w": 160,
+          "h": 122,
+          "duration": 3
+        }
+      ]
     }
   ]
 }

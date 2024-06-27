@@ -75,10 +75,10 @@ pub fn attack_transitions(context: &mut Context, input: &Input) -> bool {
     //     return true;
     // }
     //
-    // if input.hk {
-    //     context.next = Some(Box::new(standing::HeavyKick));
-    //     return true;
-    // }
+    if input.hk {
+        context.next = Some(Box::new(standing::HeavyKick));
+        return true;
+    }
 
     false
 }

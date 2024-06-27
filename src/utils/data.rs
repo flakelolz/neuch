@@ -58,7 +58,13 @@ pub fn update_animation_data(name: &str) {
                 y: frame.frame.y as i32,
                 w: frame.frame.w as i32,
                 h: frame.frame.h as i32,
-                duration: frame.duration as i32 / 16,
+                duration: {
+                    if frame.duration == 16 {
+                        1
+                    } else {
+                        frame.duration as i32 / 16
+                    }
+                },
             });
 
             action_total += frame.duration as i32 / 16;

@@ -185,21 +185,23 @@ impl State for LightPunch {
 //     }
 // }
 //
-// pub struct HeavyKick;
-// impl State for HeavyKick {
-//     fn name(&self) -> &'static str {
-//         "St HeavyKick"
-//     }
-//
-//     fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
-//         println!("St HeavyKick on_enter");
-//     }
-//
-//     fn on_update(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
-//         println!("St HeavyKick on_update");
-//     }
-//
-//     fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
-//         println!("St HeavyKick on_exit");
-//     }
-// }
+pub struct HeavyKick;
+impl State for HeavyKick {
+    fn name(&self) -> String {
+        String::from("St HeavyKick")
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+        println!("St HeavyKick on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, _input: &Input, _physics: &mut Physics) {
+        if context.elapsed >= context.duration - 1 {
+            context.next = Some(Box::new(Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+        println!("St HeavyKick on_exit");
+    }
+}
