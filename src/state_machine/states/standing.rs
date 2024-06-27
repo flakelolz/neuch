@@ -44,6 +44,7 @@ impl State for WalkForward {
 
         if input.backward {
             context.next = Some(Box::new(WalkBackward));
+            return;
         }
 
         if !input.forward {
@@ -73,6 +74,7 @@ impl State for WalkBackward {
 
         if input.forward {
             context.next = Some(Box::new(WalkForward));
+            return;
         }
 
         if !input.backward {
