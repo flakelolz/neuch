@@ -47,14 +47,15 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTex
                 d.clear_background(Color::BLACK);
                 // draw_player(&mut d, &world, &assets);
                 animation(&mut d, &world, &assets);
+
+                show_frame_count(&world, &mut d);
+                show_inputs(&world, &mut d);
+                show_state(&world, &mut d);
+                show_position(&world, &mut d);
             }
 
             // Debug
             d.draw_fps(WIDTH - 30, 20);
-            show_frame_count(&world, &mut d);
-            // show_inputs(&world, &mut d);
-            show_state(&world, &mut d);
-            show_position(&world, &mut d);
         }
 
         // Render texture to screen with proper scaling

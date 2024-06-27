@@ -4,6 +4,7 @@ use aseprite::SpritesheetData;
 
 use crate::prelude::{CharacterData, Keyframe};
 
+// PERF: This can be done more efficiently
 pub fn parse_animation_name(filename: &str) -> (String, usize) {
     let start = filename.find('#').unwrap();
     let end = filename.find('.').unwrap();
@@ -22,6 +23,7 @@ pub fn parse_animation_name(filename: &str) -> (String, usize) {
     (action_name, index.parse().unwrap())
 }
 
+// PERF: This aswell probably
 pub fn update_animation_data(name: &str) {
     let data_name = format!("assets/data/{}_data.json", name);
     let anim_name = format!("assets/sprites/{}_anim.json", name);

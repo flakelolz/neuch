@@ -40,12 +40,19 @@ impl State for WalkForward {
     fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
         physics.velocity.x = 3000;
 
+        attack_transitions(context, input);
+
+        if input.backward {
+            context.next = Some(Box::new(WalkBackward));
+        }
+
         if !input.forward {
             context.next = Some(Box::new(Idle));
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _input: &Input, physics: &mut Physics) {
+        physics.velocity.x = 0;
         println!("WalkForward on_exit");
     }
 }
@@ -62,12 +69,19 @@ impl State for WalkBackward {
     fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
         physics.velocity.x = -3000;
 
+        attack_transitions(context, input);
+
+        if input.forward {
+            context.next = Some(Box::new(WalkForward));
+        }
+
         if !input.backward {
             context.next = Some(Box::new(Idle));
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _input: &Input, physics: &mut Physics) {
+        physics.velocity.x = 0;
         println!("WalkBackward on_exit");
     }
 }
@@ -83,7 +97,7 @@ impl State for LightPunch {
     }
 
     fn on_update(&mut self, context: &mut Context, _input: &Input, _physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed >= context.duration - 1 {
             context.next = Some(Box::new(Idle));
         }
     }

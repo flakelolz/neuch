@@ -1,6 +1,5 @@
 use prelude::{HEIGHT, WIDTH};
 
-mod animation;
 mod assets;
 mod data;
 mod debug;
@@ -11,13 +10,13 @@ mod physics;
 mod state_machine;
 mod utils;
 mod world;
+mod animations;
 
 mod prelude {
-    pub use crate::animation::*;
     pub use crate::assets::*;
     pub use crate::data::*;
     pub use crate::debug::*;
-    pub use crate::draw::*;
+    pub use crate::animations::*;
     pub use crate::inputs::*;
     pub use crate::physics::*;
     pub use crate::state_machine::*;

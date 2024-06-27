@@ -10,21 +10,34 @@ pub fn handle_transition(
     character: &Character,
     animator: &mut Animator,
 ) {
-    // state name to find the action. Needs both ActionData and ActionMap
-    // Advance the timeline of the animation until it reaches the state duration
-    // Then either loop if looping is true or change state if looping is false
-    // based on the current state's transition conditions
-    context.elapsed += 1;
+    // If there is a next state to transition to it
+    if let Some(mut next) = context.next.take() {
+        context.elapsed = 0;
+        processor.current.on_exit(context, input, physics);
+        next.on_enter(context, input, physics);
+        processor.current = next;
+        animator.reset();
+
+        // Set animnation data
+        let name = processor.current.name();
+        if let Some(action) = find_action(character, &name) {
+            context.duration = action.total;
+            animator.keyframes.clone_from(&action.timeline);
+        }
+        return;
+    }
 
     let name = processor.current.name();
     let action = find_action(character, &name);
 
     match action {
         Some(action) => {
-            context.duration = action.total;
-            animator.total = context.duration;
-            animator.current = context.elapsed;
-            animator.keyframes.clone_from(&action.timeline);
+            // NOTE: Only needed at the start of the game right now.
+            if animator.keyframes.is_empty() {
+                animator.keyframes.clone_from(&action.timeline);
+            }
+
+            context.elapsed += 1;
 
             if context.elapsed >= action.total && action.looping {
                 context.elapsed = 0;
@@ -33,14 +46,6 @@ pub fn handle_transition(
         None => {
             println!("Action not found");
         }
-    }
-
-    if let Some(mut next) = context.next.take() {
-        context.elapsed = 0;
-        processor.current.on_exit(context, input, physics);
-        next.on_enter(context, input, physics);
-        processor.current = next;
-        animator.reset();
     }
 }
 

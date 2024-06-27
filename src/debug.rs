@@ -7,7 +7,7 @@ pub fn show_inputs(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
         .into_iter()
         .for_each(|(_, (input, player))| {
             if player == &Player::One {
-                d.draw_text(&format!("{:#?}", input), 12, 12, 20, Color::WHITE);
+                d.draw_text(&format!("{:#?}", input), 12, 12, 10, Color::WHITE);
             }
         });
 }
