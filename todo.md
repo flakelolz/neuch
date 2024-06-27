@@ -11,5 +11,9 @@
 - [x] Pause and frame advance
 - [x] State transition utilities
 - [x] Read state from data file
-- [ ] Animation system
+- [x] Animation system
+- [ ] Incorporate every standing and crouching attack
+- [ ] Find a way to modify movement based on action data
+- [ ] Collision system
+- [ ] Buffer system
 - [ ] Change font
