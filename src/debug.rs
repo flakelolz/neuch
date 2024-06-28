@@ -20,7 +20,7 @@ pub fn show_position(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>)
             if player == &Player::One {
                 let (x, y) = world_to_screen_vec(physics.position);
                 d.draw_circle(x, y, 1., Color::WHITE);
-                d.draw_text(format!("{}", x).as_str(), x - 30, y - 140, 10, Color::WHITE);
+                d.draw_text(format!("{}", x).as_str(), x, y + 2, 10, Color::WHITE);
             }
         });
 }

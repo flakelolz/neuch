@@ -55,26 +55,26 @@ pub fn attack_transitions(context: &mut Context, input: &Input) -> bool {
         return true;
     }
 
-    // if input.lk {
-    //     context.next = Some(Box::new(standing::LightKick));
-    //     return true;
-    // }
-    //
-    // if input.mp {
-    //     context.next = Some(Box::new(standing::MediumPunch));
-    //     return true;
-    // }
-    //
-    // if input.mk {
-    //     context.next = Some(Box::new(standing::MediumKick));
-    //     return true;
-    // }
-    //
-    // if input.hp {
-    //     context.next = Some(Box::new(standing::HeavyPunch));
-    //     return true;
-    // }
-    //
+    if input.lk {
+        context.next = Some(Box::new(standing::LightKick));
+        return true;
+    }
+
+    if input.mp {
+        context.next = Some(Box::new(standing::MediumPunch));
+        return true;
+    }
+
+    if input.mk {
+        context.next = Some(Box::new(standing::MediumKick));
+        return true;
+    }
+
+    if input.hp {
+        context.next = Some(Box::new(standing::HeavyPunch));
+        return true;
+    }
+
     if input.hk {
         context.next = Some(Box::new(standing::HeavyKick));
         return true;

@@ -333,16 +333,16 @@
     "duration": 16
    },
    {
-    "filename": "Ken #St HeavyKick 0.aseprite",
+    "filename": "Ken #St MediumPunch 0.aseprite",
     "frame": { "x": 0, "y": 488, "w": 160, "h": 122 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
+    "duration": 16
    },
    {
-    "filename": "Ken #St HeavyKick 1.aseprite",
+    "filename": "Ken #St MediumPunch 1.aseprite",
     "frame": { "x": 160, "y": 488, "w": 160, "h": 122 },
     "rotated": false,
     "trimmed": true,
@@ -351,7 +351,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #St HeavyKick 2.aseprite",
+    "filename": "Ken #St MediumPunch 2.aseprite",
     "frame": { "x": 320, "y": 488, "w": 160, "h": 122 },
     "rotated": false,
     "trimmed": true,
@@ -360,16 +360,16 @@
     "duration": 32
    },
    {
-    "filename": "Ken #St HeavyKick 3.aseprite",
+    "filename": "Ken #St MediumPunch 3.aseprite",
     "frame": { "x": 480, "y": 488, "w": 160, "h": 122 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
+    "duration": 16
    },
    {
-    "filename": "Ken #St HeavyKick 4.aseprite",
+    "filename": "Ken #St MediumPunch 4.aseprite",
     "frame": { "x": 640, "y": 488, "w": 160, "h": 122 },
     "rotated": false,
     "trimmed": true,
@@ -378,16 +378,16 @@
     "duration": 32
    },
    {
-    "filename": "Ken #St HeavyKick 5.aseprite",
+    "filename": "Ken #St MediumPunch 5.aseprite",
     "frame": { "x": 800, "y": 488, "w": 160, "h": 122 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
+    "duration": 96
    },
    {
-    "filename": "Ken #St HeavyKick 6.aseprite",
+    "filename": "Ken #St MediumPunch 6.aseprite",
     "frame": { "x": 960, "y": 488, "w": 160, "h": 122 },
     "rotated": false,
     "trimmed": true,
@@ -396,8 +396,350 @@
     "duration": 48
    },
    {
-    "filename": "Ken #St HeavyKick 7.aseprite",
+    "filename": "Ken #St MediumPunch 7.aseprite",
     "frame": { "x": 1120, "y": 488, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #St HeavyPunch 0.aseprite",
+    "frame": { "x": 0, "y": 610, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #St HeavyPunch 1.aseprite",
+    "frame": { "x": 160, "y": 610, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St HeavyPunch 2.aseprite",
+    "frame": { "x": 320, "y": 610, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St HeavyPunch 3.aseprite",
+    "frame": { "x": 480, "y": 610, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St HeavyPunch 4.aseprite",
+    "frame": { "x": 640, "y": 610, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St HeavyPunch 5.aseprite",
+    "frame": { "x": 800, "y": 610, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #St HeavyPunch 6.aseprite",
+    "frame": { "x": 960, "y": 610, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #St HeavyPunch 7.aseprite",
+    "frame": { "x": 1120, "y": 610, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St HeavyPunch 8.aseprite",
+    "frame": { "x": 1280, "y": 610, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 80
+   },
+   {
+    "filename": "Ken #St HeavyPunch 9.aseprite",
+    "frame": { "x": 1440, "y": 610, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 80
+   },
+   {
+    "filename": "Ken #St HeavyPunch 10.aseprite",
+    "frame": { "x": 1600, "y": 610, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #St LightKick 0.aseprite",
+    "frame": { "x": 0, "y": 732, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St LightKick 1.aseprite",
+    "frame": { "x": 160, "y": 732, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St LightKick 2.aseprite",
+    "frame": { "x": 320, "y": 732, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #St LightKick 3.aseprite",
+    "frame": { "x": 480, "y": 732, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St LightKick 4.aseprite",
+    "frame": { "x": 640, "y": 732, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St LightKick 5.aseprite",
+    "frame": { "x": 800, "y": 732, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #St MediumKick 0.aseprite",
+    "frame": { "x": 0, "y": 854, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St MediumKick 1.aseprite",
+    "frame": { "x": 160, "y": 854, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St MediumKick 2.aseprite",
+    "frame": { "x": 320, "y": 854, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St MediumKick 3.aseprite",
+    "frame": { "x": 480, "y": 854, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #St MediumKick 4.aseprite",
+    "frame": { "x": 640, "y": 854, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #St MediumKick 5.aseprite",
+    "frame": { "x": 800, "y": 854, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St MediumKick 6.aseprite",
+    "frame": { "x": 960, "y": 854, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St MediumKick 7.aseprite",
+    "frame": { "x": 1120, "y": 854, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St MediumKick 8.aseprite",
+    "frame": { "x": 1280, "y": 854, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St MediumKick 9.aseprite",
+    "frame": { "x": 1440, "y": 854, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St MediumKick 10.aseprite",
+    "frame": { "x": 1600, "y": 854, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St MediumKick 11.aseprite",
+    "frame": { "x": 1760, "y": 854, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St MediumKick 12.aseprite",
+    "frame": { "x": 1920, "y": 854, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #St HeavyKick 0.aseprite",
+    "frame": { "x": 0, "y": 976, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St HeavyKick 1.aseprite",
+    "frame": { "x": 160, "y": 976, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St HeavyKick 2.aseprite",
+    "frame": { "x": 320, "y": 976, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St HeavyKick 3.aseprite",
+    "frame": { "x": 480, "y": 976, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St HeavyKick 4.aseprite",
+    "frame": { "x": 640, "y": 976, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St HeavyKick 5.aseprite",
+    "frame": { "x": 800, "y": 976, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St HeavyKick 6.aseprite",
+    "frame": { "x": 960, "y": 976, "w": 160, "h": 122 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St HeavyKick 7.aseprite",
+    "frame": { "x": 1120, "y": 976, "w": 160, "h": 122 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
@@ -406,7 +748,7 @@
    },
    {
     "filename": "Ken #St HeavyKick 8.aseprite",
-    "frame": { "x": 1280, "y": 488, "w": 160, "h": 122 },
+    "frame": { "x": 1280, "y": 976, "w": 160, "h": 122 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
@@ -415,7 +757,7 @@
    },
    {
     "filename": "Ken #St HeavyKick 9.aseprite",
-    "frame": { "x": 1440, "y": 488, "w": 160, "h": 122 },
+    "frame": { "x": 1440, "y": 976, "w": 160, "h": 122 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
@@ -424,7 +766,7 @@
    },
    {
     "filename": "Ken #St HeavyKick 10.aseprite",
-    "frame": { "x": 1600, "y": 488, "w": 160, "h": 122 },
+    "frame": { "x": 1600, "y": 976, "w": 160, "h": 122 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
@@ -433,7 +775,7 @@
    },
    {
     "filename": "Ken #St HeavyKick 11.aseprite",
-    "frame": { "x": 1760, "y": 488, "w": 160, "h": 122 },
+    "frame": { "x": 1760, "y": 976, "w": 160, "h": 122 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
@@ -442,7 +784,7 @@
    },
    {
     "filename": "Ken #St HeavyKick 12.aseprite",
-    "frame": { "x": 1920, "y": 488, "w": 160, "h": 122 },
+    "frame": { "x": 1920, "y": 976, "w": 160, "h": 122 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 121, "y": 68, "w": 160, "h": 122 },
@@ -455,14 +797,18 @@
   "version": "1.3.7-x64",
   "image": "Ken.png",
   "format": "RGBA8888",
-  "size": { "w": 2080, "h": 610 },
+  "size": { "w": 2080, "h": 1098 },
   "scale": "1",
   "frameTags": [
    { "name": "St Idle", "from": 0, "to": 9, "direction": "forward", "color": "#000000ff" },
    { "name": "St WalkForward", "from": 10, "to": 20, "direction": "forward", "color": "#000000ff" },
    { "name": "St WalkBackward", "from": 21, "to": 31, "direction": "forward", "color": "#000000ff" },
    { "name": "St LightPunch", "from": 32, "to": 36, "direction": "forward", "color": "#000000ff" },
-   { "name": "St HeavyKick", "from": 37, "to": 49, "direction": "forward", "color": "#000000ff" }
+   { "name": "St MediumPunch", "from": 37, "to": 44, "direction": "forward", "color": "#000000ff" },
+   { "name": "St HeavyPunch", "from": 45, "to": 55, "direction": "forward", "color": "#000000ff" },
+   { "name": "St LightKick", "from": 56, "to": 61, "direction": "forward", "color": "#000000ff" },
+   { "name": "St MediumKick", "from": 62, "to": 74, "direction": "forward", "color": "#000000ff" },
+   { "name": "St HeavyKick", "from": 75, "to": 87, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }

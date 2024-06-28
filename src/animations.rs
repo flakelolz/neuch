@@ -44,6 +44,8 @@ pub fn animation(d: &mut RaylibTextureMode<RaylibDrawHandle>, world: &World, ass
             if animator.tick >= animator.duration {
                 animator.tick = 0;
                 animator.index += 1;
+
+                // Wrap around for looping actions
                 if animator.index >= animator.keyframes.len() {
                     animator.index = 0;
                 }

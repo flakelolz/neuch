@@ -49,9 +49,9 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTex
                 animation(&mut d, &world, &assets);
 
                 show_frame_count(&world, &mut d);
-                show_inputs(&world, &mut d);
                 show_state(&world, &mut d);
                 show_position(&world, &mut d);
+                // show_inputs(&world, &mut d);
             }
 
             // Debug
