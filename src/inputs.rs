@@ -148,5 +148,11 @@ impl Input {
             || rl.is_gamepad_button_down(port, config.gamepad.mk);
         self.hk = rl.is_key_down(config.keyboard.hk)
             || rl.is_gamepad_button_down(port, config.gamepad.hk);
+
+        // Horizontal Neutral SOCD
+        if self.backward && self.forward {
+            self.backward = false;
+            self.forward = false;
+        }
     }
 }
