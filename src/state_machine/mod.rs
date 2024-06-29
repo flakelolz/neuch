@@ -1,10 +1,9 @@
 mod context;
 mod states;
 mod transitions;
-use crate::prelude::*;
-pub use context::*;
 
-use self::{states::*, transitions::handle_transition};
+pub use self::{context::*, states::*, transitions::*};
+use crate::prelude::*;
 
 pub fn update_state(world: &mut World) {
     for (_, (state, input, physics, character, animator)) in world.query_mut::<(

@@ -1,10 +1,11 @@
-use crate::{prelude::*, state_machine::transitions::attack_transitions};
+use crate::prelude::*;
 
 pub struct Idle;
 impl State for Idle {
     fn name(&self) -> String {
         "St Idle".to_owned()
     }
+
     fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
         println!("St Idle on_enter");
     }
@@ -16,12 +17,16 @@ impl State for Idle {
             return;
         }
 
+        if input.down {
+            context.next = Some(Box::new(crouching::Start));
+        }
+
         if input.forward {
-            context.next = Some(Box::new(WalkForward));
+            context.next = Some(Box::new(standing::WalkForward));
         }
 
         if input.backward {
-            context.next = Some(Box::new(WalkBackward));
+            context.next = Some(Box::new(standing::WalkBackward));
         }
     }
 
@@ -35,6 +40,7 @@ impl State for WalkForward {
     fn name(&self) -> String {
         "St WalkForward".to_owned()
     }
+
     fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
         println!("WalkForward on_enter");
     }
@@ -46,13 +52,18 @@ impl State for WalkForward {
             return;
         }
 
+        if input.down {
+            context.next = Some(Box::new(crouching::Start));
+            return;
+        }
+
         if input.backward {
-            context.next = Some(Box::new(WalkBackward));
+            context.next = Some(Box::new(standing::WalkBackward));
             return;
         }
 
         if !input.forward {
-            context.next = Some(Box::new(Idle));
+            context.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -67,6 +78,7 @@ impl State for WalkBackward {
     fn name(&self) -> String {
         "St WalkBackward".to_owned()
     }
+
     fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
         println!("WalkBackward on_enter");
     }
@@ -76,13 +88,18 @@ impl State for WalkBackward {
 
         attack_transitions(context, input);
 
+        if input.down {
+            context.next = Some(Box::new(crouching::Start));
+            return;
+        }
+
         if input.forward {
-            context.next = Some(Box::new(WalkForward));
+            context.next = Some(Box::new(standing::WalkForward));
             return;
         }
 
         if !input.backward {
-            context.next = Some(Box::new(Idle));
+            context.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -104,11 +121,15 @@ impl State for LightPunch {
 
     fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
         if context.elapsed >= context.duration - 1 {
+            if input.down && crouch_attack_transitions(context, input) {
+                return;
+            }
+
             if attack_transitions(context, input) {
                 return;
             }
 
-            context.next = Some(Box::new(Idle));
+            context.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -129,11 +150,15 @@ impl State for MediumPunch {
 
     fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
         if context.elapsed >= context.duration - 1 {
+            if input.down && crouch_attack_transitions(context, input) {
+                return;
+            }
+
             if attack_transitions(context, input) {
                 return;
             }
 
-            context.next = Some(Box::new(Idle));
+            context.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -154,11 +179,15 @@ impl State for HeavyPunch {
 
     fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
         if context.elapsed >= context.duration - 1 {
+            if input.down && crouch_attack_transitions(context, input) {
+                return;
+            }
+
             if attack_transitions(context, input) {
                 return;
             }
 
-            context.next = Some(Box::new(Idle));
+            context.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -179,11 +208,15 @@ impl State for LightKick {
 
     fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
         if context.elapsed >= context.duration - 1 {
+            if input.down && crouch_attack_transitions(context, input) {
+                return;
+            }
+
             if attack_transitions(context, input) {
                 return;
             }
 
-            context.next = Some(Box::new(Idle));
+            context.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -204,11 +237,15 @@ impl State for MediumKick {
 
     fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
         if context.elapsed >= context.duration - 1 {
+            if input.down && crouch_attack_transitions(context, input) {
+                return;
+            }
+
             if attack_transitions(context, input) {
                 return;
             }
 
-            context.next = Some(Box::new(Idle));
+            context.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -229,11 +266,15 @@ impl State for HeavyKick {
 
     fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
         if context.elapsed >= context.duration - 1 {
+            if input.down && crouch_attack_transitions(context, input) {
+                return;
+            }
+
             if attack_transitions(context, input) {
                 return;
             }
 
-            context.next = Some(Box::new(Idle));
+            context.next = Some(Box::new(standing::Idle));
         }
     }
 

@@ -20,7 +20,6 @@ impl Animator {
     }
 }
 
-// FIX: Animations are one frame behind
 pub fn animation(d: &mut RaylibTextureMode<RaylibDrawHandle>, world: &World, assets: &Assets) {
     world
         .query::<(&Physics, &Player, &mut Animator)>()

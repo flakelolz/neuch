@@ -12,7 +12,7 @@ pub struct Hitbox {
 pub struct HitboxGroup {
     pub frame: i32,
     pub duration: i32,
-    pub hitboxes: Vec<Hitbox>,
+    pub boxes: Vec<Hitbox>,
 }
 
 #[derive(Debug, Clone, Default, Deserialize, Serialize)]
@@ -54,6 +54,7 @@ impl CharacterData {
     }
 }
 
+#[allow(unused)]
 pub struct Character {
     pub name: String,
     pub data: CharacterData,

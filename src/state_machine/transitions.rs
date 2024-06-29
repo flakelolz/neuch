@@ -1,7 +1,5 @@
 use crate::prelude::*;
 
-use super::*;
-
 pub fn handle_transition(
     processor: &mut StateProcessor,
     context: &mut Context,
@@ -24,6 +22,7 @@ pub fn handle_transition(
             context.duration = action.total;
             animator.keyframes.clone_from(&action.timeline);
         }
+
         return;
     }
 
@@ -49,24 +48,10 @@ pub fn handle_transition(
     }
 }
 
+// The order of the conditions determines the priority of each attack when pressed simultaneously
 pub fn attack_transitions(context: &mut Context, input: &Input) -> bool {
-    if input.lp {
-        context.next = Some(Box::new(standing::LightPunch));
-        return true;
-    }
-
-    if input.lk {
-        context.next = Some(Box::new(standing::LightKick));
-        return true;
-    }
-
-    if input.mp {
-        context.next = Some(Box::new(standing::MediumPunch));
-        return true;
-    }
-
-    if input.mk {
-        context.next = Some(Box::new(standing::MediumKick));
+    if input.hk {
+        context.next = Some(Box::new(standing::HeavyKick));
         return true;
     }
 
@@ -75,8 +60,58 @@ pub fn attack_transitions(context: &mut Context, input: &Input) -> bool {
         return true;
     }
 
+    if input.mk {
+        context.next = Some(Box::new(standing::MediumKick));
+        return true;
+    }
+
+    if input.mp {
+        context.next = Some(Box::new(standing::MediumPunch));
+        return true;
+    }
+
+    if input.lk {
+        context.next = Some(Box::new(standing::LightKick));
+        return true;
+    }
+
+    if input.lp {
+        context.next = Some(Box::new(standing::LightPunch));
+        return true;
+    }
+
+    false
+}
+
+// The order of the conditions determines the priority of each attack when pressed simultaneously
+pub fn crouch_attack_transitions(context: &mut Context, input: &Input) -> bool {
     if input.hk {
-        context.next = Some(Box::new(standing::HeavyKick));
+        context.next = Some(Box::new(crouching::HeavyKick));
+        return true;
+    }
+
+    if input.hp {
+        context.next = Some(Box::new(crouching::HeavyPunch));
+        return true;
+    }
+
+    if input.mk {
+        context.next = Some(Box::new(crouching::MediumKick));
+        return true;
+    }
+
+    if input.mp {
+        context.next = Some(Box::new(crouching::MediumPunch));
+        return true;
+    }
+
+    if input.lk {
+        context.next = Some(Box::new(crouching::LightKick));
+        return true;
+    }
+
+    if input.lp {
+        context.next = Some(Box::new(crouching::LightPunch));
         return true;
     }
 

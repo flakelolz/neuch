@@ -4,7 +4,6 @@ mod animations;
 mod assets;
 mod data;
 mod debug;
-mod draw;
 mod game;
 mod inputs;
 mod physics;
