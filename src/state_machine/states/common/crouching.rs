@@ -117,8 +117,8 @@ impl State for LightPunch {
         println!("Cr LightPunch on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
-        handle_chainable(context, input);
+    fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
+        handle_modifiers(context, input, physics);
 
         if context.elapsed >= context.duration - 1 {
             if input.down {
@@ -224,8 +224,8 @@ impl State for LightKick {
         println!("Cr LightKick on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
-        handle_chainable(context, input);
+    fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
+        handle_modifiers(context, input, physics);
 
         if context.elapsed >= context.duration - 1 {
             if input.down {

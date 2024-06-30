@@ -29,9 +29,7 @@ impl State for Idle {
             context.next = Some(Box::new(standing::WalkBackward));
         }
 
-        if attack_transitions(context, input) {
-            return;
-        }
+        attack_transitions(context, input);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
@@ -277,7 +275,7 @@ impl State for HeavyKick {
     }
 
     fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
-        handle_modifiers(context, physics);
+        handle_modifiers(context, input, physics);
 
         if context.elapsed >= context.duration - 1 {
             if input.down && crouch_attack_transitions(context, input) {

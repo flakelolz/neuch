@@ -15,7 +15,7 @@ pub struct Instructions {
     pub instructions: Option<Modifiers>,
 }
 
-pub fn handle_modifiers(context: &mut Context, physics: &mut Physics) {
+pub fn handle_modifiers(context: &mut Context, input: &Input, physics: &mut Physics) {
     if let Some(instructions) = &context.modifier.instructions {
         if let Some(position) = &instructions.potisions {
             if let Some(position) = position.get(context.modifier.index) {
@@ -25,11 +25,7 @@ pub fn handle_modifiers(context: &mut Context, physics: &mut Physics) {
                 }
             }
         }
-    }
-}
 
-pub fn handle_chainable(context: &mut Context, input: &Input) {
-    if let Some(instructions) = &context.modifier.instructions {
         if let Some(chainable) = &instructions.chainable {
             if chainable.on_frame - 1 == context.elapsed {
                 if chainable.st_lk && !input.down && input.lk {
