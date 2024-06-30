@@ -16,6 +16,7 @@
 - [x] Allow attack to attack transition without an Idle frame in between
 - [x] Incorporate every standing and crouching attack
 - [x] Find a way to modify movement based on action data
+- [x] Chain attack modifier
 - [ ] Collision system
 - [ ] Buffer system
 - [ ] Change font
