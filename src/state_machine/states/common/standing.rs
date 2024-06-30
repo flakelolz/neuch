@@ -264,7 +264,9 @@ impl State for HeavyKick {
         println!("St HeavyKick on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
+        handle_modifiers(context, physics);
+
         if context.elapsed >= context.duration - 1 {
             if input.down && crouch_attack_transitions(context, input) {
                 return;

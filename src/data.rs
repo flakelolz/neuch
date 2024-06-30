@@ -22,8 +22,15 @@ pub struct Action {
     pub looping: bool,
     pub pushbox: Vec<HitboxGroup>,
     pub hurtbox: Vec<HitboxGroup>,
-    pub hitbox: Vec<HitboxGroup>,
+    pub hitbox: Option<Vec<HitboxGroup>>,
+    pub modifiers: Option<Vec<Modifiers>>,
     pub timeline: Vec<Keyframe>,
+}
+
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
+pub struct Modifiers {
+    pub on_frame: i32,
+    pub position: IVec2,
 }
 
 #[derive(Debug, Clone, Copy, Deserialize, Serialize, Default)]

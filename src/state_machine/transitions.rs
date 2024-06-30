@@ -10,17 +10,23 @@ pub fn handle_transition(
 ) {
     // If there is a next state to transition to it
     if let Some(mut next) = context.next.take() {
-        context.elapsed = 0;
+        // Setup the next state and reset variables
         processor.current.on_exit(context, input, physics);
+        context.elapsed = 0;
         next.on_enter(context, input, physics);
         processor.current = next;
         animator.reset();
 
-        // Set animnation data
         let name = processor.current.name();
         if let Some(action) = find_action(character, &name) {
             context.duration = action.total;
+            // Setup animnation data
             animator.keyframes.clone_from(&action.timeline);
+            // Setup action modifiers if there are any
+            if let Some(modifiers) = &action.modifiers {
+                context.modifier.index = 0;
+                context.modifier.instructions.clone_from(modifiers);
+            }
         }
 
         return;
@@ -43,7 +49,7 @@ pub fn handle_transition(
             }
         }
         None => {
-            println!("Action not found");
+            eprintln!("Action not found");
         }
     }
 }

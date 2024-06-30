@@ -34,13 +34,8 @@
           ]
         }
       ],
-      "hitbox": [
-        {
-          "frame": 0,
-          "duration": 0,
-          "boxes": []
-        }
-      ],
+      "hitbox": null,
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -146,13 +141,8 @@
           ]
         }
       ],
-      "hitbox": [
-        {
-          "frame": 0,
-          "duration": 0,
-          "boxes": []
-        }
-      ],
+      "hitbox": null,
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -265,13 +255,8 @@
           ]
         }
       ],
-      "hitbox": [
-        {
-          "frame": 0,
-          "duration": 0,
-          "boxes": []
-        }
-      ],
+      "hitbox": null,
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -398,6 +383,7 @@
           ]
         }
       ],
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -482,6 +468,7 @@
           ]
         }
       ],
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -587,6 +574,7 @@
           ]
         }
       ],
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -713,6 +701,7 @@
           ]
         }
       ],
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -804,6 +793,7 @@
           ]
         }
       ],
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -944,6 +934,36 @@
           ]
         }
       ],
+      "modifiers": [
+        {
+          "on_frame": 5,
+          "position": {
+            "x": 4000,
+            "y": 0
+          }
+        },
+        {
+          "on_frame": 6,
+          "position": {
+            "x": 5000,
+            "y": 0
+          }
+        },
+        {
+          "on_frame": 7,
+          "position": {
+            "x": 8000,
+            "y": 0
+          }
+        },
+        {
+          "on_frame": 9,
+          "position": {
+            "x": 10000,
+            "y": 0
+          }
+        }
+      ],
       "timeline": [
         {
           "x": 0,
@@ -1070,13 +1090,8 @@
           ]
         }
       ],
-      "hitbox": [
-        {
-          "frame": 0,
-          "duration": 0,
-          "boxes": []
-        }
-      ],
+      "hitbox": null,
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -1147,13 +1162,8 @@
           ]
         }
       ],
-      "hitbox": [
-        {
-          "frame": 0,
-          "duration": 0,
-          "boxes": []
-        }
-      ],
+      "hitbox": null,
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -1217,13 +1227,8 @@
           ]
         }
       ],
-      "hitbox": [
-        {
-          "frame": 0,
-          "duration": 0,
-          "boxes": []
-        }
-      ],
+      "hitbox": null,
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -1294,6 +1299,7 @@
           ]
         }
       ],
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -1385,6 +1391,7 @@
           ]
         }
       ],
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -1476,6 +1483,7 @@
           ]
         }
       ],
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -1595,6 +1603,7 @@
           ]
         }
       ],
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -1686,6 +1695,7 @@
           ]
         }
       ],
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
@@ -1798,6 +1808,7 @@
           ]
         }
       ],
+      "modifiers": null,
       "timeline": [
         {
           "x": 0,
