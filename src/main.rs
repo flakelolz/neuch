@@ -34,6 +34,13 @@ mod prelude {
 }
 
 fn main() {
+    let args = std::env::args().collect::<Vec<String>>();
+    println!("{:?}", args);
+
+    if args.len() > 1 && args[1] == "--update" {
+        utils::update_all_data();
+    }
+
     let (mut rl, thread) = raylib::init()
         .size(WIDTH * 3, HEIGHT * 3)
         .title("Neuch")
