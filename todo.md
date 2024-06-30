@@ -14,8 +14,8 @@
 - [x] Animation system
 - [ ] Fix sprite position
 - [x] Allow attack to attack transition without an Idle frame in between
-- [ ] Incorporate every standing and crouching attack
-- [ ] Find a way to modify movement based on action data
+- [x] Incorporate every standing and crouching attack
+- [x] Find a way to modify movement based on action data
 - [ ] Collision system
 - [ ] Buffer system
 - [ ] Change font
