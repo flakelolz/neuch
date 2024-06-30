@@ -23,14 +23,29 @@ pub struct Action {
     pub pushbox: Vec<HitboxGroup>,
     pub hurtbox: Vec<HitboxGroup>,
     pub hitbox: Option<Vec<HitboxGroup>>,
-    pub modifiers: Option<Vec<Modifiers>>,
+    pub modifiers: Option<Modifiers>,
     pub timeline: Vec<Keyframe>,
 }
 
-#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
+#[derive(Debug, Clone, Default, Deserialize, Serialize)]
 pub struct Modifiers {
+    pub chainable: Option<ChainModifier>,
+    pub potisions: Option<Vec<PositionModifier>>,
+}
+
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
+pub struct PositionModifier {
     pub on_frame: i32,
-    pub position: IVec2,
+    pub value: IVec2,
+}
+
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
+pub struct ChainModifier {
+    pub on_frame: i32,
+    pub st_lp: bool,
+    pub st_lk: bool,
+    pub cr_lp: bool,
+    pub cr_lk: bool,
 }
 
 #[derive(Debug, Clone, Copy, Deserialize, Serialize, Default)]

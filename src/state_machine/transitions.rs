@@ -25,7 +25,7 @@ pub fn handle_transition(
             // Setup action modifiers if there are any
             if let Some(modifiers) = &action.modifiers {
                 context.modifier.index = 0;
-                context.modifier.instructions.clone_from(modifiers);
+                context.modifier.instructions = Some(modifiers.clone());
             }
         }
 

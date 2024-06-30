@@ -934,36 +934,39 @@
           ]
         }
       ],
-      "modifiers": [
-        {
-          "on_frame": 5,
-          "position": {
-            "x": 4000,
-            "y": 0
+      "modifiers": {
+        "chainable": null,
+        "potisions": [
+          {
+            "on_frame": 5,
+            "value": {
+              "x": 4000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 6,
+            "value": {
+              "x": 5000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 7,
+            "value": {
+              "x": 8000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 9,
+            "value": {
+              "x": 10000,
+              "y": 0
+            }
           }
-        },
-        {
-          "on_frame": 6,
-          "position": {
-            "x": 5000,
-            "y": 0
-          }
-        },
-        {
-          "on_frame": 7,
-          "position": {
-            "x": 8000,
-            "y": 0
-          }
-        },
-        {
-          "on_frame": 9,
-          "position": {
-            "x": 10000,
-            "y": 0
-          }
-        }
-      ],
+        ]
+      },
       "timeline": [
         {
           "x": 0,
@@ -1299,7 +1302,16 @@
           ]
         }
       ],
-      "modifiers": null,
+      "modifiers": {
+        "chainable": {
+          "on_frame": 7,
+          "st_lp": true,
+          "st_lk": false,
+          "cr_lp": true,
+          "cr_lk": true
+        },
+        "potisions": null
+      },
       "timeline": [
         {
           "x": 0,
@@ -1603,7 +1615,16 @@
           ]
         }
       ],
-      "modifiers": null,
+      "modifiers": {
+        "chainable": {
+          "on_frame": 9,
+          "st_lp": true,
+          "st_lk": false,
+          "cr_lp": true,
+          "cr_lk": true
+        },
+        "potisions": null
+      },
       "timeline": [
         {
           "x": 0,

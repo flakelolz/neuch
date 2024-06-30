@@ -118,6 +118,8 @@ impl State for LightPunch {
     }
 
     fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
+        handle_chainable(context, input);
+
         if context.elapsed >= context.duration - 1 {
             if input.down {
                 if crouch_attack_transitions(context, input) {
@@ -223,6 +225,8 @@ impl State for LightKick {
     }
 
     fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
+        handle_chainable(context, input);
+
         if context.elapsed >= context.duration - 1 {
             if input.down {
                 if crouch_attack_transitions(context, input) {

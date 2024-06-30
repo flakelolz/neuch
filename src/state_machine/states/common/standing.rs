@@ -13,11 +13,11 @@ impl State for Idle {
     fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
         physics.velocity.x = 0;
 
-        if attack_transitions(context, input) {
-            return;
-        }
-
         if input.down {
+            if crouch_attack_transitions(context, input) {
+                return;
+            }
+
             context.next = Some(Box::new(crouching::Start));
         }
 
@@ -27,6 +27,10 @@ impl State for Idle {
 
         if input.backward {
             context.next = Some(Box::new(standing::WalkBackward));
+        }
+
+        if attack_transitions(context, input) {
+            return;
         }
     }
 
@@ -48,17 +52,20 @@ impl State for WalkForward {
     fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
         physics.velocity.x = 3000;
 
-        if attack_transitions(context, input) {
-            return;
-        }
-
         if input.down {
+            if crouch_attack_transitions(context, input) {
+                return;
+            }
+
             context.next = Some(Box::new(crouching::Start));
-            return;
         }
 
         if input.backward {
             context.next = Some(Box::new(standing::WalkBackward));
+            return;
+        }
+
+        if attack_transitions(context, input) {
             return;
         }
 
@@ -86,15 +93,20 @@ impl State for WalkBackward {
     fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
         physics.velocity.x = -3000;
 
-        attack_transitions(context, input);
-
         if input.down {
+            if crouch_attack_transitions(context, input) {
+                return;
+            }
+
             context.next = Some(Box::new(crouching::Start));
-            return;
         }
 
         if input.forward {
             context.next = Some(Box::new(standing::WalkForward));
+            return;
+        }
+
+        if attack_transitions(context, input) {
             return;
         }
 
