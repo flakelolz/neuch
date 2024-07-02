@@ -15,6 +15,7 @@ pub fn world() -> World {
     let _player1 = world.spawn((
         Player::One,
         Input::default(),
+        InputBuffer::default(),
         InputConfig::one(),
         Physics::one(),
         StateMachine::default(),
