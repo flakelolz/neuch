@@ -17,6 +17,6 @@
 - [x] Incorporate every standing and crouching attack
 - [x] Find a way to modify movement based on action data
 - [x] Chain attack modifier
-- [ ] Collision system
 - [ ] Buffer system
+- [ ] Collision system
 - [ ] Change font

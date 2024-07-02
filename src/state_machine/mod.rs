@@ -1,8 +1,9 @@
 mod context;
+mod processor;
 mod states;
 mod transitions;
 
-pub use self::{context::*, states::*, transitions::*};
+pub use self::{context::*, processor::*, states::*, transitions::*};
 use crate::prelude::*;
 
 pub fn update_state(world: &mut World) {
@@ -30,31 +31,4 @@ pub trait State: Send + Sync {
 pub struct StateMachine {
     pub processor: StateProcessor,
     pub context: Context,
-}
-
-pub struct StateProcessor {
-    pub current: Box<dyn State>,
-}
-
-impl Default for StateProcessor {
-    fn default() -> Self {
-        Self {
-            current: Box::new(standing::Idle),
-        }
-    }
-}
-
-impl StateProcessor {
-    fn update(
-        &mut self,
-        context: &mut Context,
-        input: &Input,
-        physics: &mut Physics,
-        character: &Character,
-        animator: &mut Animator,
-    ) {
-        self.current.on_update(context, input, physics);
-
-        handle_transition(self, context, input, physics, character, animator);
-    }
 }

@@ -5,7 +5,7 @@ mod assets;
 mod data;
 mod debug;
 mod game;
-mod inputs;
+mod input;
 mod physics;
 mod state_machine;
 mod utils;
@@ -16,7 +16,7 @@ mod prelude {
     pub use crate::assets::*;
     pub use crate::data::*;
     pub use crate::debug::*;
-    pub use crate::inputs::*;
+    pub use crate::input::*;
     pub use crate::physics::*;
     pub use crate::state_machine::*;
     pub use crate::utils::*;
