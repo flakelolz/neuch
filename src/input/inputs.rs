@@ -4,8 +4,8 @@ use crate::prelude::*;
 pub struct Input {
     pub up: bool,
     pub down: bool,
-    pub backward: bool,
     pub forward: bool,
+    pub backward: bool,
     pub lp: bool,
     pub mp: bool,
     pub hp: bool,

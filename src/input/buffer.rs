@@ -10,6 +10,8 @@ pub enum Motions {
     RDp,
     Hcf,
     Hcb,
+    ForwardDash,
+    BackwardDash,
 }
 
 impl Motions {
@@ -32,6 +34,12 @@ impl Motions {
             }
             Motions::Hcb => {
                 vec![vec![6, 3, 2, 1, 4], vec![6, 3, 1, 4], vec![6, 2, 4]]
+            }
+            Motions::ForwardDash => {
+                vec![vec![6, 5, 6]]
+            }
+            Motions::BackwardDash => {
+                vec![vec![4, 5, 4]]
             }
         }
     }
@@ -429,5 +437,53 @@ mod tests {
         buffer.update(&input);
 
         assert!(buffer.was_motion_executed(Motions::Hcf, 3));
+    }
+
+    #[test]
+    fn forward_dash() {
+        let mut buffer = InputBuffer::default();
+
+        let input = Input {
+            forward: true,
+            ..Default::default()
+        };
+        buffer.update(&input);
+
+        let input = Input {
+            ..Default::default()
+        };
+        buffer.update(&input);
+
+        let input = Input {
+            forward: true,
+            ..Default::default()
+        };
+        buffer.update(&input);
+
+        assert!(buffer.was_motion_executed(Motions::ForwardDash, 3));
+    }
+
+    #[test]
+    fn backward_dash() {
+        let mut buffer = InputBuffer::default();
+
+        let input = Input {
+            backward: true,
+            ..Default::default()
+        };
+        buffer.update(&input);
+
+        let input = Input {
+            ..Default::default()
+        };
+        buffer.update(&input);
+
+        let input = Input {
+            backward: true,
+            ..Default::default()
+        };
+        buffer.update(&input);
+
+        assert!(buffer.was_motion_executed(Motions::BackwardDash, 3));
     }
 }
