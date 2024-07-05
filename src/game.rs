@@ -24,10 +24,12 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTex
 
         if !paused || advance {
             // Logic
+            update_input_buffers(&mut world);
             frame_count(&mut world);
             update_physics(&mut world);
             update_state(&mut world);
         }
+        reset_position(&mut world, rl);
 
         // Calculate window
         let width = rl.get_screen_width();
@@ -51,6 +53,7 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTex
                 show_state(&world, &mut d);
                 show_position(&world, &mut d);
                 // show_inputs(&world, &mut d);
+                // show_context(&world, &mut d);
             }
 
             // Debug

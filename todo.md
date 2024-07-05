@@ -17,6 +17,18 @@
 - [x] Incorporate every standing and crouching attack
 - [x] Find a way to modify movement based on action data
 - [x] Chain attack modifier
-- [ ] Buffer system
+- [x] Buffer system
+- [x] Fix dash after forward walk
+- [ ] Fix attack input buffer for chain attacks
 - [ ] Collision system
 - [ ] Change font
+
+# Dash should fail
+- [x] *4* > *5* > *6* (walk back and forth repeatedly)
+- [x] *4...* (walk back) ->  *5* > *4*
+- [x] *1...* (crouching) ->  *4* > *5* > *4*;
+
+
+# Dash should work
+- [x] *4...* (walk back) ->  *5* > *4* > *5* > *4*
+- [x] *1...* (crouching) ->  *5* > *4* > *5* > *4*

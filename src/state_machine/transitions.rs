@@ -54,6 +54,44 @@ pub fn handle_transition(
     }
 }
 
+pub fn walk_transition(context: &mut Context, input: &Input) -> bool {
+    if input.forward {
+        context.next = Some(Box::new(standing::WalkForward));
+        return true;
+    } else if input.backward {
+        context.next = Some(Box::new(standing::WalkBackward));
+        return true;
+    }
+
+    false
+}
+
+pub fn dash_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
+    if buffer.was_motion_executed(Motions::DashForward, buffer.dash) && context.locked.dash_forward
+    {
+        context.next = Some(Box::new(standing::DashForward));
+        return true;
+    }
+    if buffer.was_motion_executed(Motions::DashBackward, buffer.dash)
+        && context.locked.dash_backward
+    {
+        context.next = Some(Box::new(standing::DashBackward));
+        return true;
+    }
+
+    if buffer.was_motion_executed(Motions::ForcedDashForward, buffer.forced_dash) {
+        context.next = Some(Box::new(standing::DashForward));
+        return true;
+    }
+
+    if buffer.was_motion_executed(Motions::ForcedDashBackward, buffer.forced_dash) {
+        context.next = Some(Box::new(standing::DashBackward));
+        return true;
+    }
+
+    false
+}
+
 // The order of the conditions determines the priority of each attack when pressed simultaneously
 pub fn attack_transitions(context: &mut Context, input: &Input) -> bool {
     if input.hk {
@@ -91,34 +129,36 @@ pub fn attack_transitions(context: &mut Context, input: &Input) -> bool {
 
 // The order of the conditions determines the priority of each attack when pressed simultaneously
 pub fn crouch_attack_transitions(context: &mut Context, input: &Input) -> bool {
-    if input.hk {
-        context.next = Some(Box::new(crouching::HeavyKick));
-        return true;
-    }
+    if input.down {
+        if input.hk {
+            context.next = Some(Box::new(crouching::HeavyKick));
+            return true;
+        }
 
-    if input.hp {
-        context.next = Some(Box::new(crouching::HeavyPunch));
-        return true;
-    }
+        if input.hp {
+            context.next = Some(Box::new(crouching::HeavyPunch));
+            return true;
+        }
 
-    if input.mk {
-        context.next = Some(Box::new(crouching::MediumKick));
-        return true;
-    }
+        if input.mk {
+            context.next = Some(Box::new(crouching::MediumKick));
+            return true;
+        }
 
-    if input.mp {
-        context.next = Some(Box::new(crouching::MediumPunch));
-        return true;
-    }
+        if input.mp {
+            context.next = Some(Box::new(crouching::MediumPunch));
+            return true;
+        }
 
-    if input.lk {
-        context.next = Some(Box::new(crouching::LightKick));
-        return true;
-    }
+        if input.lk {
+            context.next = Some(Box::new(crouching::LightKick));
+            return true;
+        }
 
-    if input.lp {
-        context.next = Some(Box::new(crouching::LightPunch));
-        return true;
+        if input.lp {
+            context.next = Some(Box::new(crouching::LightPunch));
+            return true;
+        }
     }
 
     false

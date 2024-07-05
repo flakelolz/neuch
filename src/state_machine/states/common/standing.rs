@@ -10,26 +10,28 @@ impl State for Idle {
         println!("St Idle on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         physics.velocity.x = 0;
 
-        if input.down {
-            if crouch_attack_transitions(context, input) {
-                return;
-            }
+        let input = &buffer.get_curret_input();
 
+        if dash_transitions(context, buffer) {
+            return;
+        }
+
+        if crouch_attack_transitions(context, input) {
+            return;
+        }
+
+        if attack_transitions(context, input) {
+            return;
+        }
+
+        if input.down {
             context.next = Some(Box::new(crouching::Start));
         }
 
-        if input.forward {
-            context.next = Some(Box::new(standing::WalkForward));
-        }
-
-        if input.backward {
-            context.next = Some(Box::new(standing::WalkBackward));
-        }
-
-        attack_transitions(context, input);
+        walk_transition(context, input);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
@@ -47,8 +49,10 @@ impl State for WalkForward {
         println!("WalkForward on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         physics.velocity.x = 3000;
+
+        let input = &buffer.get_curret_input();
 
         if input.down {
             if crouch_attack_transitions(context, input) {
@@ -88,8 +92,10 @@ impl State for WalkBackward {
         println!("WalkBackward on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         physics.velocity.x = -3000;
+
+        let input = &buffer.get_curret_input();
 
         if input.down {
             if crouch_attack_transitions(context, input) {
@@ -119,6 +125,82 @@ impl State for WalkBackward {
     }
 }
 
+pub struct DashForward;
+impl State for DashForward {
+    fn name(&self) -> String {
+        "St DashForward".to_owned()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+        println!("DashForward on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        let input = &buffer.get_curret_input();
+
+        handle_modifiers(context, input, physics);
+
+        if context.elapsed >= context.duration - 1 {
+            if input.down {
+                if crouch_attack_transitions(context, input) {
+                    return;
+                }
+
+                context.next = Some(Box::new(crouching::Start));
+            }
+
+            if attack_transitions(context, input) {
+                return;
+            }
+
+            context.next = Some(Box::new(standing::Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _input: &Input, physics: &mut Physics) {
+        physics.velocity.x = 0;
+        println!("DashForward on_exit");
+    }
+}
+
+pub struct DashBackward;
+impl State for DashBackward {
+    fn name(&self) -> String {
+        "St DashBackward".to_owned()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+        println!("DashBackward on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        let input = &buffer.get_curret_input();
+
+        handle_modifiers(context, input, physics);
+
+        if context.elapsed >= context.duration - 1 {
+            if input.down {
+                if crouch_attack_transitions(context, input) {
+                    return;
+                }
+
+                context.next = Some(Box::new(crouching::Start));
+            }
+
+            if attack_transitions(context, input) {
+                return;
+            }
+
+            context.next = Some(Box::new(standing::Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _input: &Input, physics: &mut Physics) {
+        physics.velocity.x = 0;
+        println!("DashBackward on_exit");
+    }
+}
+
 pub struct LightPunch;
 impl State for LightPunch {
     fn name(&self) -> String {
@@ -129,7 +211,9 @@ impl State for LightPunch {
         println!("St LightPunch on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
+        let input = &buffer.get_curret_input();
+
         if context.elapsed >= context.duration - 1 {
             if input.down && crouch_attack_transitions(context, input) {
                 return;
@@ -158,8 +242,14 @@ impl State for MediumPunch {
         println!("St MediumPunch on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
+        let input = &buffer.get_curret_input();
+
         if context.elapsed >= context.duration - 1 {
+            if dash_transitions(context, buffer) {
+                return;
+            }
+
             if input.down && crouch_attack_transitions(context, input) {
                 return;
             }
@@ -187,7 +277,9 @@ impl State for HeavyPunch {
         println!("St HeavyPunch on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
+        let input = &buffer.get_curret_input();
+
         if context.elapsed >= context.duration - 1 {
             if input.down && crouch_attack_transitions(context, input) {
                 return;
@@ -216,7 +308,9 @@ impl State for LightKick {
         println!("St LightKick on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
+        let input = &buffer.get_curret_input();
+
         if context.elapsed >= context.duration - 1 {
             if input.down && crouch_attack_transitions(context, input) {
                 return;
@@ -245,7 +339,9 @@ impl State for MediumKick {
         println!("MediumKick on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, input: &Input, _physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
+        let input = &buffer.get_curret_input();
+
         if context.elapsed >= context.duration - 1 {
             if input.down && crouch_attack_transitions(context, input) {
                 return;
@@ -274,7 +370,9 @@ impl State for HeavyKick {
         println!("St HeavyKick on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, input: &Input, physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        let input = &buffer.get_curret_input();
+
         handle_modifiers(context, input, physics);
 
         if context.elapsed >= context.duration - 1 {

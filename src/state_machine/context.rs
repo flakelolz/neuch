@@ -6,6 +6,7 @@ pub struct Context {
     pub elapsed: i32,
     pub duration: i32,
     pub modifier: Instructions,
+    pub locked: LockedActions,
 }
 
 // Naming is hard
@@ -44,6 +45,58 @@ pub fn handle_modifiers(context: &mut Context, input: &Input, physics: &mut Phys
                     context.next = Some(Box::new(crouching::LightPunch));
                 }
             }
+        }
+    }
+}
+
+#[derive(Debug, Clone, Copy)]
+pub struct LockedActions {
+    pub dash_forward: bool,
+    pub dash_backward: bool,
+}
+
+impl LockedActions {
+    pub fn check_valid(&mut self, buffer: &InputBuffer) {
+        self.dash_forward(buffer);
+        self.dash_backward(buffer);
+    }
+
+    fn dash_forward(&mut self, buffer: &InputBuffer) {
+        let time = 8;
+        if buffer.is_input_held(&Inputs::Forward, time)
+            && !buffer.is_input_held(&Inputs::DownForward, time)
+        {
+            self.dash_forward = false;
+        } else if buffer.is_input_held(&Inputs::Neutral, time)
+            || buffer.is_input_held(&Inputs::Backward, time)
+            || buffer.is_input_held(&Inputs::Down, time)
+            || buffer.is_input_held(&Inputs::Up, time)
+        {
+            self.dash_forward = true;
+        }
+    }
+
+    fn dash_backward(&mut self, buffer: &InputBuffer) {
+        let time = 8;
+        if buffer.is_input_held(&Inputs::Backward, time)
+            && !buffer.is_input_held(&Inputs::DownBackward, time)
+        {
+            self.dash_backward = false;
+        } else if buffer.is_input_held(&Inputs::Neutral, time)
+            || buffer.is_input_held(&Inputs::Forward, time)
+            || buffer.is_input_held(&Inputs::Down, time)
+            || buffer.is_input_held(&Inputs::Up, time)
+        {
+            self.dash_backward = true;
+        }
+    }
+}
+
+impl Default for LockedActions {
+    fn default() -> Self {
+        Self {
+            dash_forward: true,
+            dash_backward: true,
         }
     }
 }
