@@ -282,8 +282,14 @@ fn check_numpad_direction(input: &Input, direction: u8) -> bool {
 /// Checks if there is a direction that would invalidate the whole motion input
 pub fn check_invalid_motion(motions: Motions, buffer: &InputBuffer, duration: usize) -> bool {
     match motions {
-        Motions::DashForward => buffer.was_input_pressed_buffered(&Inputs::Backward, duration),
-        Motions::DashBackward => buffer.was_input_pressed_buffered(&Inputs::Forward, duration),
+        Motions::DashForward => {
+            buffer.was_input_pressed_buffered(&Inputs::Backward, duration)
+                || buffer.was_input_pressed_buffered(&Inputs::Down, duration)
+        }
+        Motions::DashBackward => {
+            buffer.was_input_pressed_buffered(&Inputs::Forward, duration)
+                || buffer.was_input_pressed_buffered(&Inputs::Down, duration)
+        }
         Motions::Dp => {
             buffer.was_input_pressed_buffered(&Inputs::Backward, duration)
                 || buffer.was_input_pressed_buffered(&Inputs::DownBackward, duration)

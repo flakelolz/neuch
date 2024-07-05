@@ -68,13 +68,16 @@ pub fn walk_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
 }
 
 pub fn dash_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if buffer.was_motion_executed(Motions::DashForward, buffer.dash) && context.locked.dash_forward
+    if buffer.was_motion_executed(Motions::DashForward, buffer.dash)
+        && context.locked.dash_forward
+        && !check_invalid_motion(Motions::DashForward, buffer, buffer.forced_dash)
     {
         context.next = Some(Box::new(standing::DashForward));
         return true;
     }
     if buffer.was_motion_executed(Motions::DashBackward, buffer.dash)
         && context.locked.dash_backward
+        && !check_invalid_motion(Motions::DashBackward, buffer, buffer.forced_dash)
     {
         context.next = Some(Box::new(standing::DashBackward));
         return true;

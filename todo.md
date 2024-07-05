@@ -19,7 +19,7 @@
 - [x] Chain attack modifier
 - [x] Buffer system
 - [x] Fix dash after forward walk
-- [ ] Fix attack input buffer for chain attacks
+- [x] Fix attack input buffer for chain attacks
 - [ ] Collision system
 - [ ] Change font
 
@@ -27,6 +27,7 @@
 - [x] *4* > *5* > *6* (walk back and forth repeatedly)
 - [x] *4...* (walk back) ->  *5* > *4*
 - [x] *1...* (crouching) ->  *4* > *5* > *4*;
+- [x] *5...* (standing) -> *6* > *5* > *2* > *5* > *6*
 
 
 # Dash should work
