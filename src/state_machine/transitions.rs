@@ -94,7 +94,8 @@ pub fn dash_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
 }
 
 // The order of the conditions determines the priority of each attack when pressed simultaneously
-pub fn attack_transitions(context: &mut Context, input: &Input) -> bool {
+pub fn attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
+    let input = &buffer.get_curret_input();
     if input.hk {
         context.next = Some(Box::new(standing::HeavyKick));
         return true;
@@ -129,7 +130,8 @@ pub fn attack_transitions(context: &mut Context, input: &Input) -> bool {
 }
 
 // The order of the conditions determines the priority of each attack when pressed simultaneously
-pub fn crouch_attack_transitions(context: &mut Context, input: &Input) -> bool {
+pub fn crouch_attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
+    let input = &buffer.get_curret_input();
     if input.down {
         if input.hk {
             context.next = Some(Box::new(crouching::HeavyKick));

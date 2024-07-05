@@ -19,11 +19,11 @@ impl State for Idle {
             return;
         }
 
-        if crouch_attack_transitions(context, input) {
+        if crouch_attack_transitions(context, buffer) {
             return;
         }
 
-        if attack_transitions(context, input) {
+        if attack_transitions(context, buffer) {
             return;
         }
 
@@ -55,7 +55,7 @@ impl State for WalkForward {
         let input = &buffer.get_curret_input();
 
         if input.down {
-            if crouch_attack_transitions(context, input) {
+            if crouch_attack_transitions(context, buffer) {
                 return;
             }
 
@@ -67,7 +67,7 @@ impl State for WalkForward {
             return;
         }
 
-        if attack_transitions(context, input) {
+        if attack_transitions(context, buffer) {
             return;
         }
 
@@ -98,7 +98,7 @@ impl State for WalkBackward {
         let input = &buffer.get_curret_input();
 
         if input.down {
-            if crouch_attack_transitions(context, input) {
+            if crouch_attack_transitions(context, buffer) {
                 return;
             }
 
@@ -110,7 +110,7 @@ impl State for WalkBackward {
             return;
         }
 
-        if attack_transitions(context, input) {
+        if attack_transitions(context, buffer) {
             return;
         }
 
@@ -142,14 +142,14 @@ impl State for DashForward {
 
         if context.elapsed >= context.duration - 1 {
             if input.down {
-                if crouch_attack_transitions(context, input) {
+                if crouch_attack_transitions(context, buffer) {
                     return;
                 }
 
                 context.next = Some(Box::new(crouching::Start));
             }
 
-            if attack_transitions(context, input) {
+            if attack_transitions(context, buffer) {
                 return;
             }
 
@@ -180,14 +180,14 @@ impl State for DashBackward {
 
         if context.elapsed >= context.duration - 1 {
             if input.down {
-                if crouch_attack_transitions(context, input) {
+                if crouch_attack_transitions(context, buffer) {
                     return;
                 }
 
                 context.next = Some(Box::new(crouching::Start));
             }
 
-            if attack_transitions(context, input) {
+            if attack_transitions(context, buffer) {
                 return;
             }
 
@@ -215,11 +215,11 @@ impl State for LightPunch {
         let input = &buffer.get_curret_input();
 
         if context.elapsed >= context.duration - 1 {
-            if input.down && crouch_attack_transitions(context, input) {
+            if input.down && crouch_attack_transitions(context, buffer) {
                 return;
             }
 
-            if attack_transitions(context, input) {
+            if attack_transitions(context, buffer) {
                 return;
             }
 
@@ -250,11 +250,11 @@ impl State for MediumPunch {
                 return;
             }
 
-            if input.down && crouch_attack_transitions(context, input) {
+            if input.down && crouch_attack_transitions(context, buffer) {
                 return;
             }
 
-            if attack_transitions(context, input) {
+            if attack_transitions(context, buffer) {
                 return;
             }
 
@@ -281,11 +281,11 @@ impl State for HeavyPunch {
         let input = &buffer.get_curret_input();
 
         if context.elapsed >= context.duration - 1 {
-            if input.down && crouch_attack_transitions(context, input) {
+            if input.down && crouch_attack_transitions(context, buffer) {
                 return;
             }
 
-            if attack_transitions(context, input) {
+            if attack_transitions(context, buffer) {
                 return;
             }
 
@@ -312,11 +312,11 @@ impl State for LightKick {
         let input = &buffer.get_curret_input();
 
         if context.elapsed >= context.duration - 1 {
-            if input.down && crouch_attack_transitions(context, input) {
+            if input.down && crouch_attack_transitions(context, buffer) {
                 return;
             }
 
-            if attack_transitions(context, input) {
+            if attack_transitions(context, buffer) {
                 return;
             }
 
@@ -343,11 +343,11 @@ impl State for MediumKick {
         let input = &buffer.get_curret_input();
 
         if context.elapsed >= context.duration - 1 {
-            if input.down && crouch_attack_transitions(context, input) {
+            if input.down && crouch_attack_transitions(context, buffer) {
                 return;
             }
 
-            if attack_transitions(context, input) {
+            if attack_transitions(context, buffer) {
                 return;
             }
 
@@ -376,11 +376,11 @@ impl State for HeavyKick {
         handle_modifiers(context, buffer, physics);
 
         if context.elapsed >= context.duration - 1 {
-            if input.down && crouch_attack_transitions(context, input) {
+            if input.down && crouch_attack_transitions(context, buffer) {
                 return;
             }
 
-            if attack_transitions(context, input) {
+            if attack_transitions(context, buffer) {
                 return;
             }
 
