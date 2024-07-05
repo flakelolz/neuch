@@ -37,7 +37,7 @@ pub fn show_state(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
 
             d.draw_text(&current.name(), x - 30, y - 130, 10, Color::WHITE);
             d.draw_text(
-                format!("{}", timeline + 1).as_str(),
+                format!("{}", timeline).as_str(),
                 x - 10,
                 y - 120,
                 10,

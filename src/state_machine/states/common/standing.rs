@@ -124,7 +124,7 @@ impl State for DashForward {
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
         // Base case
-        if context.elapsed >= context.duration - 1 {
+        if context.elapsed >= context.duration {
             // Transitions
             if attack_transitions(context, buffer) {
                 return;
@@ -159,7 +159,7 @@ impl State for DashBackward {
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
         // Base case
-        if context.elapsed >= context.duration - 1 {
+        if context.elapsed >= context.duration {
             // Transitions
             if attack_transitions(context, buffer) {
                 return;
@@ -194,7 +194,7 @@ impl State for LightPunch {
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
         // Base case
-        if context.elapsed >= context.duration - 1 {
+        if context.elapsed >= context.duration {
             // Transitions
             if attack_transitions(context, buffer) {
                 return;
@@ -232,7 +232,7 @@ impl State for MediumPunch {
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
         // Base case
-        if context.elapsed >= context.duration - 1 {
+        if context.elapsed >= context.duration {
             // Transitions
             if attack_transitions(context, buffer) {
                 return;
@@ -270,7 +270,7 @@ impl State for HeavyPunch {
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
         // Base case
-        if context.elapsed >= context.duration - 1 {
+        if context.elapsed >= context.duration {
             // Transitions
             if attack_transitions(context, buffer) {
                 return;
@@ -308,7 +308,7 @@ impl State for LightKick {
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
         // Base case
-        if context.elapsed >= context.duration - 1 {
+        if context.elapsed >= context.duration {
             // Transitions
             if attack_transitions(context, buffer) {
                 return;
@@ -346,7 +346,7 @@ impl State for MediumKick {
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
         // Base case
-        if context.elapsed >= context.duration - 1 {
+        if context.elapsed >= context.duration {
             // Transitions
             if attack_transitions(context, buffer) {
                 return;
@@ -384,7 +384,7 @@ impl State for HeavyKick {
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
         // Base case
-        if context.elapsed >= context.duration - 1 {
+        if context.elapsed >= context.duration {
             // Transitions
             if attack_transitions(context, buffer) {
                 return;

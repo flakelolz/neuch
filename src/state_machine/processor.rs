@@ -21,8 +21,7 @@ impl StateProcessor {
         character: &Character,
         animator: &mut Animator,
     ) {
-        self.current.on_update(context, buffer, physics);
-
         handle_transition(self, context, buffer, physics, character, animator);
+        self.current.on_update(context, buffer, physics);
     }
 }

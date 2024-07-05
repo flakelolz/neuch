@@ -649,7 +649,16 @@
           ]
         }
       ],
-      "modifiers": null,
+      "modifiers": {
+        "chainable": {
+          "on_frame": 7,
+          "st_lp": true,
+          "st_lk": true,
+          "cr_lp": true,
+          "cr_lk": true
+        },
+        "potisions": null
+      },
       "timeline": [
         {
           "x": 0,
@@ -840,7 +849,60 @@
           ]
         }
       ],
-      "modifiers": null,
+      "modifiers": {
+        "chainable": null,
+        "potisions": [
+          {
+            "on_frame": 2,
+            "value": {
+              "x": 7000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 5,
+            "value": {
+              "x": 3000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 8,
+            "value": {
+              "x": 4000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 12,
+            "value": {
+              "x": 4000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 14,
+            "value": {
+              "x": -5000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 22,
+            "value": {
+              "x": -2000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 27,
+            "value": {
+              "x": -11000,
+              "y": 0
+            }
+          }
+        ]
+      },
       "timeline": [
         {
           "x": 0,
@@ -1196,7 +1258,7 @@
     {
       "name": "St HeavyKick",
       "total": 35,
-      "looping": true,
+      "looping": false,
       "pushbox": [
         {
           "frame": 0,
@@ -1646,7 +1708,7 @@
         "chainable": {
           "on_frame": 7,
           "st_lp": true,
-          "st_lk": false,
+          "st_lk": true,
           "cr_lp": true,
           "cr_lk": true
         },
@@ -1957,9 +2019,9 @@
       ],
       "modifiers": {
         "chainable": {
-          "on_frame": 9,
+          "on_frame": 7,
           "st_lp": true,
-          "st_lk": false,
+          "st_lk": true,
           "cr_lp": true,
           "cr_lk": true
         },
@@ -2012,7 +2074,7 @@
     },
     {
       "name": "Cr MediumKick",
-      "total": 27,
+      "total": 28,
       "looping": false,
       "pushbox": [
         {
@@ -2056,7 +2118,53 @@
           ]
         }
       ],
-      "modifiers": null,
+      "modifiers": {
+        "chainable": null,
+        "potisions": [
+          {
+            "on_frame": 1,
+            "value": {
+              "x": 13000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 3,
+            "value": {
+              "x": 13000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 7,
+            "value": {
+              "x": 3000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 16,
+            "value": {
+              "x": -3000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 24,
+            "value": {
+              "x": -13000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 28,
+            "value": {
+              "x": -13000,
+              "y": 0
+            }
+          }
+        ]
+      },
       "timeline": [
         {
           "x": 0,
@@ -2120,12 +2228,19 @@
           "w": 176,
           "h": 144,
           "duration": 4
+        },
+        {
+          "x": 1584,
+          "y": 2592,
+          "w": 176,
+          "h": 144,
+          "duration": 1
         }
       ]
     },
     {
       "name": "Cr HeavyKick",
-      "total": 36,
+      "total": 37,
       "looping": false,
       "pushbox": [
         {
@@ -2169,7 +2284,81 @@
           ]
         }
       ],
-      "modifiers": null,
+      "modifiers": {
+        "chainable": null,
+        "potisions": [
+          {
+            "on_frame": 1,
+            "value": {
+              "x": 13000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 3,
+            "value": {
+              "x": 16000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 5,
+            "value": {
+              "x": 6000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 7,
+            "value": {
+              "x": 2000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 12,
+            "value": {
+              "x": 6000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 21,
+            "value": {
+              "x": -2000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 25,
+            "value": {
+              "x": -4000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 29,
+            "value": {
+              "x": -11000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 33,
+            "value": {
+              "x": -13000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 37,
+            "value": {
+              "x": -13000,
+              "y": 0
+            }
+          }
+        ]
+      },
       "timeline": [
         {
           "x": 0,
@@ -2247,6 +2436,13 @@
           "w": 176,
           "h": 144,
           "duration": 4
+        },
+        {
+          "x": 1936,
+          "y": 2736,
+          "w": 176,
+          "h": 144,
+          "duration": 1
         }
       ]
     }

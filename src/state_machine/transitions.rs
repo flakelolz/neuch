@@ -12,22 +12,28 @@ pub fn handle_transition(
     if let Some(mut next) = context.next.take() {
         // Setup the next state and reset variables
         processor.current.on_exit(context, buffer, physics);
-        context.elapsed = 0;
+        context.elapsed = 1;
         next.on_enter(context, buffer, physics);
         processor.current = next;
         animator.reset();
 
         let name = processor.current.name();
         if let Some(action) = find_action(character, &name) {
+            // Character info
             context.character = Some(character.info);
             // Setup action data
             context.duration = action.total;
             // Setup animnation data
             animator.keyframes.clone_from(&action.timeline);
             // Setup action modifiers if there are any
-            if let Some(modifiers) = &action.modifiers {
-                context.modifiers.index = 0;
-                context.modifiers.instructions = Some(modifiers.clone());
+            match &action.modifiers {
+                Some(modifiers) => {
+                    context.modifiers.index = 0;
+                    context.modifiers.instructions = Some(modifiers.clone());
+                }
+                None => {
+                    context.modifiers.instructions = None;
+                }
             }
         }
 
@@ -46,8 +52,8 @@ pub fn handle_transition(
 
             context.elapsed += 1;
 
-            if context.elapsed >= action.total && action.looping {
-                context.elapsed = 0;
+            if context.elapsed > action.total && action.looping {
+                context.elapsed = 1;
             }
         }
         None => {

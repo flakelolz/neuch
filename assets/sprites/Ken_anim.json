@@ -1341,6 +1341,15 @@
     "duration": 64
    },
    {
+    "filename": "Ken #Cr MediumKick 9.aseprite",
+    "frame": { "x": 1584, "y": 2592, "w": 176, "h": 144 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 112, "y": 48, "w": 176, "h": 144 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
     "filename": "Ken #Cr HeavyKick 0.aseprite",
     "frame": { "x": 0, "y": 2736, "w": 176, "h": 144 },
     "rotated": false,
@@ -1438,6 +1447,15 @@
     "spriteSourceSize": { "x": 112, "y": 48, "w": 176, "h": 144 },
     "sourceSize": { "w": 384, "h": 224 },
     "duration": 64
+   },
+   {
+    "filename": "Ken #Cr HeavyKick 11.aseprite",
+    "frame": { "x": 1936, "y": 2736, "w": 176, "h": 144 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 112, "y": 48, "w": 176, "h": 144 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
    }
  ],
  "meta": {
@@ -1466,8 +1484,8 @@
    { "name": "Cr MediumPunch", "from": 118, "to": 123, "direction": "forward", "color": "#000000ff" },
    { "name": "Cr HeavyPunch", "from": 124, "to": 133, "direction": "forward", "color": "#000000ff" },
    { "name": "Cr LightKick", "from": 134, "to": 139, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cr MediumKick", "from": 140, "to": 148, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cr HeavyKick", "from": 149, "to": 159, "direction": "forward", "color": "#000000ff" }
+   { "name": "Cr MediumKick", "from": 140, "to": 149, "direction": "forward", "color": "#000000ff" },
+   { "name": "Cr HeavyKick", "from": 150, "to": 161, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
