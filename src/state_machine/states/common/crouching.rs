@@ -87,7 +87,7 @@ impl State for End {
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
         let input = &buffer.get_curret_input();
 
-        attack_transitions(context, buffer);
+        standing_attack_transitions(context, buffer);
 
         if input.forward {
             context.next = Some(Box::new(standing::WalkForward));
@@ -138,7 +138,7 @@ impl State for LightPunch {
             }
 
             if !input.down {
-                if attack_transitions(context, buffer) {
+                if standing_attack_transitions(context, buffer) {
                     return;
                 }
 
@@ -175,7 +175,7 @@ impl State for MediumPunch {
             }
 
             if !input.down {
-                if attack_transitions(context, buffer) {
+                if standing_attack_transitions(context, buffer) {
                     return;
                 }
 
@@ -212,7 +212,7 @@ impl State for HeavyPunch {
             }
 
             if !input.down {
-                if attack_transitions(context, buffer) {
+                if standing_attack_transitions(context, buffer) {
                     return;
                 }
 
@@ -251,7 +251,7 @@ impl State for LightKick {
             }
 
             if !input.down {
-                if attack_transitions(context, buffer) {
+                if standing_attack_transitions(context, buffer) {
                     return;
                 }
 
@@ -288,7 +288,7 @@ impl State for MediumKick {
             }
 
             if !input.down {
-                if attack_transitions(context, buffer) {
+                if standing_attack_transitions(context, buffer) {
                     return;
                 }
 
@@ -325,7 +325,7 @@ impl State for HeavyKick {
             }
 
             if !input.down {
-                if attack_transitions(context, buffer) {
+                if standing_attack_transitions(context, buffer) {
                     return;
                 }
 

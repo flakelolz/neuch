@@ -61,6 +61,8 @@ pub struct Keyframe {
 pub struct CharacterData {
     pub name: String,
     pub health: i32,
+    pub forward_walk: i32,
+    pub backward_walk: i32,
     pub actions: Vec<Action>,
 }
 
@@ -73,19 +75,20 @@ impl CharacterData {
             },
             None => Default::default(),
         }
-        // match std::fs::read_to_string(path) {
-        //     Ok(contents) => match serde_json::from_str(&contents) {
-        //         Ok(content) => content,
-        //         Err(e) => panic!("{}", e),
-        //     },
-        //     Err(_) => Default::default(),
-        // }
     }
+}
+
+#[derive(Default, Clone, Copy)]
+pub struct CharacterInfo {
+    pub health: i32,
+    pub walk_forward: i32,
+    pub walk_backward: i32,
 }
 
 #[allow(unused)]
 pub struct Character {
     pub name: String,
+    pub info: CharacterInfo,
     pub data: CharacterData,
     pub action_map: HashMap<String, Action>,
 }
@@ -93,9 +96,15 @@ pub struct Character {
 impl Character {
     pub fn ken() -> Self {
         let data = CharacterData::load("data/Ken_data.json");
+        let info = CharacterInfo {
+            health: data.health,
+            walk_forward: data.forward_walk,
+            walk_backward: data.backward_walk,
+        };
         let action_map = generate_action_map(&data);
         Self {
             name: data.name.clone(),
+            info,
             data,
             action_map,
         }

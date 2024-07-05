@@ -219,6 +219,11 @@ impl InputBuffer {
         false
     }
 
+    /// Checks the current input
+    pub fn input(&self) -> &Input {
+        &self.buffer[self.index]
+    }
+
     /// Check if an input was performed within a certain duration on the past frames
     pub fn buffered(&self, input: &Inputs, duration: usize) -> bool {
         for i in 0..duration + 1 {

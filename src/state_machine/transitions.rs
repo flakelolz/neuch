@@ -19,13 +19,15 @@ pub fn handle_transition(
 
         let name = processor.current.name();
         if let Some(action) = find_action(character, &name) {
+            context.character = Some(character.info);
+            // Setup action data
             context.duration = action.total;
             // Setup animnation data
             animator.keyframes.clone_from(&action.timeline);
             // Setup action modifiers if there are any
             if let Some(modifiers) = &action.modifiers {
-                context.modifier.index = 0;
-                context.modifier.instructions = Some(modifiers.clone());
+                context.modifiers.index = 0;
+                context.modifiers.instructions = Some(modifiers.clone());
             }
         }
 
@@ -54,8 +56,20 @@ pub fn handle_transition(
     }
 }
 
+pub fn crouch_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
+    let input = &buffer.get_curret_input();
+
+    if input.down {
+        context.next = Some(Box::new(crouching::Start));
+        return true;
+    }
+
+    false
+}
+
 pub fn walk_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
     let input = &buffer.get_curret_input();
+
     if input.forward {
         context.next = Some(Box::new(standing::WalkForward));
         return true;
@@ -100,8 +114,20 @@ pub fn dash_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
     false
 }
 
-// The order of the conditions determines the priority of each attack when pressed simultaneously
 pub fn attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
+    // Check crouch first
+    if crouch_attack_transitions(context, buffer) {
+        return true;
+    }
+    // Then standing
+    if standing_attack_transitions(context, buffer) {
+        return true;
+    }
+    false
+}
+
+// The order of the conditions determines the priority of each attack when pressed simultaneously
+pub fn standing_attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
     if buffer.buffered(&Inputs::HeavyKick, buffer.attack) {
         context.next = Some(Box::new(standing::HeavyKick));
         return true;

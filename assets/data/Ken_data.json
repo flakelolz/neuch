@@ -1,6 +1,8 @@
 {
   "name": "Ken",
   "health": 1000,
+  "forward_walk": 3000,
+  "backward_walk": -3000,
   "actions": [
     {
       "name": "St Idle",

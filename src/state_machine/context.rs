@@ -2,10 +2,11 @@ use crate::prelude::*;
 
 #[derive(Default)]
 pub struct Context {
+    pub character: Option<CharacterInfo>,
     pub next: Option<Box<dyn State>>,
     pub elapsed: i32,
     pub duration: i32,
-    pub modifier: Instructions,
+    pub modifiers: Instructions,
     pub locked: LockedActions,
 }
 
@@ -17,12 +18,12 @@ pub struct Instructions {
 }
 
 pub fn handle_modifiers(context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-    if let Some(instructions) = &context.modifier.instructions {
+    if let Some(instructions) = &context.modifiers.instructions {
         if let Some(position) = &instructions.potisions {
-            if let Some(position) = position.get(context.modifier.index) {
+            if let Some(position) = position.get(context.modifiers.index) {
                 if position.on_frame == context.elapsed {
                     physics.position += position.value;
-                    context.modifier.index += 1;
+                    context.modifiers.index += 1;
                 }
             }
         }
