@@ -63,9 +63,7 @@ pub fn handle_transition(
 }
 
 pub fn crouch_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
-    let input = &buffer.get_curret_input();
-
-    if input.down {
+    if buffer.input().down {
         context.next = Some(Box::new(crouching::Start));
         return true;
     }
@@ -74,12 +72,10 @@ pub fn crouch_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
 }
 
 pub fn walk_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
-    let input = &buffer.get_curret_input();
-
-    if input.forward {
+    if buffer.input().forward {
         context.next = Some(Box::new(standing::WalkForward));
         return true;
-    } else if input.backward {
+    } else if buffer.input().backward {
         context.next = Some(Box::new(standing::WalkBackward));
         return true;
     }
@@ -169,8 +165,7 @@ pub fn standing_attack_transitions(context: &mut Context, buffer: &InputBuffer) 
 
 // The order of the conditions determines the priority of each attack when pressed simultaneously
 pub fn crouch_attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
-    let input = &buffer.get_curret_input();
-    if input.down {
+    if buffer.input().down {
         if buffer.buffered(&Inputs::HeavyKick, buffer.attack) {
             context.next = Some(Box::new(crouching::HeavyKick));
             return true;
