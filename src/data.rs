@@ -66,13 +66,20 @@ pub struct CharacterData {
 
 impl CharacterData {
     pub fn load(path: &str) -> Self {
-        match std::fs::read_to_string(path) {
-            Ok(contents) => match serde_json::from_str(&contents) {
+        match get_file(path) {
+            Some(contents) => match serde_json::from_slice(contents) {
                 Ok(content) => content,
                 Err(e) => panic!("{}", e),
             },
-            Err(_) => Default::default(),
+            None => Default::default(),
         }
+        // match std::fs::read_to_string(path) {
+        //     Ok(contents) => match serde_json::from_str(&contents) {
+        //         Ok(content) => content,
+        //         Err(e) => panic!("{}", e),
+        //     },
+        //     Err(_) => Default::default(),
+        // }
     }
 }
 
@@ -85,7 +92,7 @@ pub struct Character {
 
 impl Character {
     pub fn ken() -> Self {
-        let data = CharacterData::load("assets/data/ken_data.json");
+        let data = CharacterData::load("data/Ken_data.json");
         let action_map = generate_action_map(&data);
         Self {
             name: data.name.clone(),

@@ -1057,7 +1057,46 @@
           ]
         }
       ],
-      "modifiers": null,
+      "modifiers": {
+        "chainable": null,
+        "potisions": [
+          {
+            "on_frame": 1,
+            "value": {
+              "x": 6000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 3,
+            "value": {
+              "x": 2000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 6,
+            "value": {
+              "x": 6000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 8,
+            "value": {
+              "x": 14000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 9,
+            "value": {
+              "x": 18000,
+              "y": 0
+            }
+          }
+        ]
+      },
       "timeline": [
         {
           "x": 0,
@@ -1202,35 +1241,63 @@
         "chainable": null,
         "potisions": [
           {
-            "on_frame": 5,
+            "on_frame": 1,
             "value": {
-              "x": 4000,
+              "x": 6000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 3,
+            "value": {
+              "x": 2000,
               "y": 0
             }
           },
           {
             "on_frame": 6,
             "value": {
-              "x": 5000,
+              "x": 6000,
               "y": 0
             }
           },
           {
-            "on_frame": 7,
+            "on_frame": 8,
             "value": {
-              "x": 8000,
+              "x": 14000,
               "y": 0
             }
           },
           {
-            "on_frame": 9,
+            "on_frame": 10,
             "value": {
-              "x": 10000,
+              "x": 12000,
               "y": 0
             }
           },
           {
-            "on_frame": 15,
+            "on_frame": 12,
+            "value": {
+              "x": 4000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 22,
+            "value": {
+              "x": 1000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 25,
+            "value": {
+              "x": 7000,
+              "y": 0
+            }
+          },
+          {
+            "on_frame": 33,
             "value": {
               "x": 5000,
               "y": 0

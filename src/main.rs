@@ -1,3 +1,4 @@
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 use prelude::{HEIGHT, WIDTH};
 
 mod animations;
@@ -22,9 +23,12 @@ mod prelude {
     pub use crate::utils::*;
     pub use crate::world::*;
     pub use hecs::World;
+    pub use include_dir::{include_dir, Dir};
     pub use raylib::prelude::*;
     pub use serde::{Deserialize, Serialize};
     pub use std::collections::HashMap;
+
+    pub static ASSETS: Dir<'static> = include_dir!("$CARGO_MANIFEST_DIR/assets");
 
     pub const WIDTH: i32 = 384;
     pub const HEIGHT: i32 = 216;
