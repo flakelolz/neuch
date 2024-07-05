@@ -131,6 +131,7 @@ pub struct InputBuffer {
     pub buffer: [Input; BUFFER_SIZE],
     pub dash: usize,
     pub forced_dash: usize,
+    pub attack: usize,
 }
 
 impl Default for InputBuffer {
@@ -140,6 +141,7 @@ impl Default for InputBuffer {
             buffer: [Input::default(); BUFFER_SIZE],
             dash: 8,
             forced_dash: 13,
+            attack: 2,
         }
     }
 }
@@ -208,6 +210,17 @@ impl InputBuffer {
 
     /// Check if an input was performed within a certain duration on the past frames
     pub fn was_input_pressed_buffered(&self, input: &Inputs, duration: usize) -> bool {
+        for i in 0..duration + 1 {
+            if self.was_input_pressed_on_frame(input, self.buffer.len() + self.index - i) {
+                return true;
+            }
+        }
+
+        false
+    }
+
+    /// Check if an input was performed within a certain duration on the past frames
+    pub fn buffered(&self, input: &Inputs, duration: usize) -> bool {
         for i in 0..duration + 1 {
             if self.was_input_pressed_on_frame(input, self.buffer.len() + self.index - i) {
                 return true;

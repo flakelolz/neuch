@@ -95,33 +95,32 @@ pub fn dash_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
 
 // The order of the conditions determines the priority of each attack when pressed simultaneously
 pub fn attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
-    let input = &buffer.get_curret_input();
-    if input.hk {
+    if buffer.buffered(&Inputs::HeavyKick, buffer.attack) {
         context.next = Some(Box::new(standing::HeavyKick));
         return true;
     }
 
-    if input.hp {
+    if buffer.buffered(&Inputs::HeavyPunch, buffer.attack) {
         context.next = Some(Box::new(standing::HeavyPunch));
         return true;
     }
 
-    if input.mk {
+    if buffer.buffered(&Inputs::MediumKick, buffer.attack) {
         context.next = Some(Box::new(standing::MediumKick));
         return true;
     }
 
-    if input.mp {
+    if buffer.buffered(&Inputs::MediumPunch, buffer.attack) {
         context.next = Some(Box::new(standing::MediumPunch));
         return true;
     }
 
-    if input.lk {
+    if buffer.buffered(&Inputs::LightKick, buffer.attack) {
         context.next = Some(Box::new(standing::LightKick));
         return true;
     }
 
-    if input.lp {
+    if buffer.buffered(&Inputs::LightPunch, buffer.attack) {
         context.next = Some(Box::new(standing::LightPunch));
         return true;
     }
@@ -133,32 +132,32 @@ pub fn attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
 pub fn crouch_attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
     let input = &buffer.get_curret_input();
     if input.down {
-        if input.hk {
+        if buffer.buffered(&Inputs::HeavyKick, buffer.attack) {
             context.next = Some(Box::new(crouching::HeavyKick));
             return true;
         }
 
-        if input.hp {
+        if buffer.buffered(&Inputs::HeavyPunch, buffer.attack) {
             context.next = Some(Box::new(crouching::HeavyPunch));
             return true;
         }
 
-        if input.mk {
+        if buffer.buffered(&Inputs::MediumKick, buffer.attack) {
             context.next = Some(Box::new(crouching::MediumKick));
             return true;
         }
 
-        if input.mp {
+        if buffer.buffered(&Inputs::MediumPunch, buffer.attack) {
             context.next = Some(Box::new(crouching::MediumPunch));
             return true;
         }
 
-        if input.lk {
+        if buffer.buffered(&Inputs::LightKick, buffer.attack) {
             context.next = Some(Box::new(crouching::LightKick));
             return true;
         }
 
-        if input.lp {
+        if buffer.buffered(&Inputs::LightPunch, buffer.attack) {
             context.next = Some(Box::new(crouching::LightPunch));
             return true;
         }

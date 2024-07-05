@@ -11,11 +11,6 @@ impl State for Start {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
-        // if context.elapsed >= 5 {
-        //     context.motions.dash_forward = true;
-        //     context.motions.dash_backward = true;
-        // }
-
         let input = &buffer.get_curret_input();
 
         crouch_attack_transitions(context, buffer);
@@ -131,11 +126,10 @@ impl State for LightPunch {
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         let input = &buffer.get_curret_input();
 
-        // FIX: Refactor this to work with input buffer instead
         handle_modifiers(context, buffer, physics);
 
         if context.elapsed >= context.duration - 1 {
-            if buffer.is_input_pressed(&Inputs::Down) {
+            if input.down {
                 if crouch_attack_transitions(context, buffer) {
                     return;
                 }
@@ -143,7 +137,7 @@ impl State for LightPunch {
                 context.next = Some(Box::new(crouching::Idle));
             }
 
-            if !buffer.is_input_pressed(&Inputs::Down) {
+            if !input.down {
                 if attack_transitions(context, buffer) {
                     return;
                 }

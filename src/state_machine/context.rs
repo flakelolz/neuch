@@ -28,21 +28,33 @@ pub fn handle_modifiers(context: &mut Context, buffer: &InputBuffer, physics: &m
         }
 
         if let Some(chainable) = &instructions.chainable {
-            if chainable.on_frame - 1 == context.elapsed {
+            if chainable.on_frame - 1 <= context.elapsed {
                 let input = &buffer.get_curret_input();
-                if chainable.st_lk && !input.down && input.lk {
+                if chainable.st_lk
+                    && !input.down
+                    && buffer.buffered(&Inputs::LightKick, buffer.attack)
+                {
                     context.next = Some(Box::new(standing::LightKick));
                     return;
                 }
-                if chainable.cr_lk && input.down && input.lk {
+                if chainable.cr_lk
+                    && input.down
+                    && buffer.buffered(&Inputs::LightKick, buffer.attack)
+                {
                     context.next = Some(Box::new(crouching::LightKick));
                     return;
                 }
-                if chainable.st_lp && !input.down && input.lp {
+                if chainable.st_lp
+                    && !input.down
+                    && buffer.buffered(&Inputs::LightPunch, buffer.attack)
+                {
                     context.next = Some(Box::new(standing::LightPunch));
                     return;
                 }
-                if chainable.cr_lp && input.down && input.lp {
+                if chainable.cr_lp
+                    && input.down
+                    && buffer.buffered(&Inputs::LightPunch, buffer.attack)
+                {
                     context.next = Some(Box::new(crouching::LightPunch));
                 }
             }
