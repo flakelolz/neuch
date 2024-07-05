@@ -16,7 +16,6 @@ impl StateProcessor {
     pub fn update(
         &mut self,
         context: &mut Context,
-        input: &Input,
         buffer: &InputBuffer,
         physics: &mut Physics,
         character: &Character,
@@ -24,6 +23,6 @@ impl StateProcessor {
     ) {
         self.current.on_update(context, buffer, physics);
 
-        handle_transition(self, context, input, physics, character, animator);
+        handle_transition(self, context, buffer, physics, character, animator);
     }
 }

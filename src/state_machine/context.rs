@@ -16,7 +16,7 @@ pub struct Instructions {
     pub instructions: Option<Modifiers>,
 }
 
-pub fn handle_modifiers(context: &mut Context, input: &Input, physics: &mut Physics) {
+pub fn handle_modifiers(context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
     if let Some(instructions) = &context.modifier.instructions {
         if let Some(position) = &instructions.potisions {
             if let Some(position) = position.get(context.modifier.index) {
@@ -29,6 +29,7 @@ pub fn handle_modifiers(context: &mut Context, input: &Input, physics: &mut Phys
 
         if let Some(chainable) = &instructions.chainable {
             if chainable.on_frame - 1 == context.elapsed {
+                let input = &buffer.get_curret_input();
                 if chainable.st_lk && !input.down && input.lk {
                     context.next = Some(Box::new(standing::LightKick));
                     return;

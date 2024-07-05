@@ -3,7 +3,7 @@ use crate::prelude::*;
 pub fn handle_transition(
     processor: &mut StateProcessor,
     context: &mut Context,
-    input: &Input,
+    buffer: &InputBuffer,
     physics: &mut Physics,
     character: &Character,
     animator: &mut Animator,
@@ -11,9 +11,9 @@ pub fn handle_transition(
     // If there is a next state to transition to it
     if let Some(mut next) = context.next.take() {
         // Setup the next state and reset variables
-        processor.current.on_exit(context, input, physics);
+        processor.current.on_exit(context, buffer, physics);
         context.elapsed = 0;
-        next.on_enter(context, input, physics);
+        next.on_enter(context, buffer, physics);
         processor.current = next;
         animator.reset();
 
@@ -54,7 +54,8 @@ pub fn handle_transition(
     }
 }
 
-pub fn walk_transition(context: &mut Context, input: &Input) -> bool {
+pub fn walk_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
+    let input = &buffer.get_curret_input();
     if input.forward {
         context.next = Some(Box::new(standing::WalkForward));
         return true;

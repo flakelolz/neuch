@@ -6,7 +6,7 @@ impl State for Idle {
         "St Idle".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St Idle on_enter");
     }
 
@@ -31,10 +31,10 @@ impl State for Idle {
             context.next = Some(Box::new(crouching::Start));
         }
 
-        walk_transition(context, input);
+        walk_transition(context, buffer);
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St Idle on_exit");
     }
 }
@@ -45,7 +45,7 @@ impl State for WalkForward {
         "St WalkForward".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("WalkForward on_enter");
     }
 
@@ -76,7 +76,7 @@ impl State for WalkForward {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
         physics.velocity.x = 0;
         println!("WalkForward on_exit");
     }
@@ -88,7 +88,7 @@ impl State for WalkBackward {
         "St WalkBackward".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("WalkBackward on_enter");
     }
 
@@ -119,7 +119,7 @@ impl State for WalkBackward {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
         physics.velocity.x = 0;
         println!("WalkBackward on_exit");
     }
@@ -131,14 +131,14 @@ impl State for DashForward {
         "St DashForward".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("DashForward on_enter");
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         let input = &buffer.get_curret_input();
 
-        handle_modifiers(context, input, physics);
+        handle_modifiers(context, buffer, physics);
 
         if context.elapsed >= context.duration - 1 {
             if input.down {
@@ -157,7 +157,7 @@ impl State for DashForward {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
         physics.velocity.x = 0;
         println!("DashForward on_exit");
     }
@@ -169,14 +169,14 @@ impl State for DashBackward {
         "St DashBackward".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("DashBackward on_enter");
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         let input = &buffer.get_curret_input();
 
-        handle_modifiers(context, input, physics);
+        handle_modifiers(context, buffer, physics);
 
         if context.elapsed >= context.duration - 1 {
             if input.down {
@@ -195,7 +195,7 @@ impl State for DashBackward {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
         physics.velocity.x = 0;
         println!("DashBackward on_exit");
     }
@@ -207,7 +207,7 @@ impl State for LightPunch {
         "St LightPunch".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St LightPunch on_enter");
     }
 
@@ -227,7 +227,7 @@ impl State for LightPunch {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St LightPunch on_exit");
     }
 }
@@ -238,7 +238,7 @@ impl State for MediumPunch {
         "St MediumPunch".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St MediumPunch on_enter");
     }
 
@@ -262,7 +262,7 @@ impl State for MediumPunch {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St MediumPunch on_exit");
     }
 }
@@ -273,7 +273,7 @@ impl State for HeavyPunch {
         "St HeavyPunch".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St HeavyPunch on_enter");
     }
 
@@ -293,7 +293,7 @@ impl State for HeavyPunch {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St HeavyPunch on_exit");
     }
 }
@@ -304,7 +304,7 @@ impl State for LightKick {
         "St LightKick".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St LightKick on_enter");
     }
 
@@ -324,7 +324,7 @@ impl State for LightKick {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St LightKick on_exit");
     }
 }
@@ -335,7 +335,7 @@ impl State for MediumKick {
         "St MediumKick".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("MediumKick on_enter");
     }
 
@@ -355,7 +355,7 @@ impl State for MediumKick {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("MediumKick on_exit");
     }
 }
@@ -366,14 +366,14 @@ impl State for HeavyKick {
         "St HeavyKick".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St HeavyKick on_enter");
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         let input = &buffer.get_curret_input();
 
-        handle_modifiers(context, input, physics);
+        handle_modifiers(context, buffer, physics);
 
         if context.elapsed >= context.duration - 1 {
             if input.down && crouch_attack_transitions(context, input) {
@@ -388,7 +388,7 @@ impl State for HeavyKick {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St HeavyKick on_exit");
     }
 }

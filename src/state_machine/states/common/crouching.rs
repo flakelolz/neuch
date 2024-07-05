@@ -6,7 +6,7 @@ impl State for Start {
         "Cr Start".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr Start on_enter");
     }
 
@@ -39,7 +39,7 @@ impl State for Start {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr Start on_exit");
     }
 }
@@ -50,7 +50,7 @@ impl State for Idle {
         "Cr Idle".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr Idle on_enter");
     }
 
@@ -74,7 +74,7 @@ impl State for Idle {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr Idle on_exit");
     }
 }
@@ -85,7 +85,7 @@ impl State for End {
         "Cr End".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr End on_enter");
     }
 
@@ -113,7 +113,7 @@ impl State for End {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr End on_exit");
     }
 }
@@ -124,7 +124,7 @@ impl State for LightPunch {
         "Cr LightPunch".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr LightPunch on_enter");
     }
 
@@ -132,7 +132,7 @@ impl State for LightPunch {
         let input = &buffer.get_curret_input();
 
         // FIX: Refactor this to work with input buffer instead
-        handle_modifiers(context, input, physics);
+        handle_modifiers(context, buffer, physics);
 
         if context.elapsed >= context.duration - 1 {
             if buffer.is_input_pressed(&Inputs::Down) {
@@ -153,7 +153,7 @@ impl State for LightPunch {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr LightPunch on_exit");
     }
 }
@@ -164,7 +164,7 @@ impl State for MediumPunch {
         "Cr MediumPunch".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr MediumPunch on_enter");
     }
 
@@ -190,7 +190,7 @@ impl State for MediumPunch {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr MediumPunch on_exit");
     }
 }
@@ -201,7 +201,7 @@ impl State for HeavyPunch {
         "Cr HeavyPunch".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr HeavyPunch on_enter");
     }
 
@@ -227,7 +227,7 @@ impl State for HeavyPunch {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr HeavyPunch on_exit");
     }
 }
@@ -238,14 +238,14 @@ impl State for LightKick {
         "Cr LightKick".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr LightKick on_enter");
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         let input = &buffer.get_curret_input();
 
-        handle_modifiers(context, input, physics);
+        handle_modifiers(context, buffer, physics);
 
         if context.elapsed >= context.duration - 1 {
             if input.down {
@@ -266,7 +266,7 @@ impl State for LightKick {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr LightKick on_exit");
     }
 }
@@ -277,7 +277,7 @@ impl State for MediumKick {
         "Cr MediumKick".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr MediumKick on_enter");
     }
 
@@ -303,7 +303,7 @@ impl State for MediumKick {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr MediumKick on_exit");
     }
 }
@@ -314,7 +314,7 @@ impl State for HeavyKick {
         "Cr HeavyKick".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr HeavyKick on_enter");
     }
 
@@ -340,7 +340,7 @@ impl State for HeavyKick {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _input: &Input, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr HeavyKick on_exit");
     }
 }
