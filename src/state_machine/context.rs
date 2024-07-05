@@ -69,6 +69,7 @@ pub struct LockedActions {
     pub dash_backward: bool,
 }
 
+// FIX: This feels cursed
 impl LockedActions {
     pub fn check_valid(&mut self, buffer: &InputBuffer) {
         self.dash_forward(buffer);
@@ -77,14 +78,12 @@ impl LockedActions {
 
     fn dash_forward(&mut self, buffer: &InputBuffer) {
         let time = 8;
-        if buffer.is_input_held(&Inputs::Forward, time)
-            && !buffer.is_input_held(&Inputs::DownForward, time)
-        {
+        if buffer.held(&Inputs::Forward, time) && !buffer.held(&Inputs::DownForward, time) {
             self.dash_forward = false;
-        } else if buffer.is_input_held(&Inputs::Neutral, time)
-            || buffer.is_input_held(&Inputs::Backward, time)
-            || buffer.is_input_held(&Inputs::Down, time)
-            || buffer.is_input_held(&Inputs::Up, time)
+        } else if buffer.held(&Inputs::Neutral, time)
+            || buffer.held(&Inputs::Backward, time)
+            || buffer.held(&Inputs::Down, time)
+            || buffer.held(&Inputs::Up, time)
         {
             self.dash_forward = true;
         }
@@ -92,14 +91,12 @@ impl LockedActions {
 
     fn dash_backward(&mut self, buffer: &InputBuffer) {
         let time = 8;
-        if buffer.is_input_held(&Inputs::Backward, time)
-            && !buffer.is_input_held(&Inputs::DownBackward, time)
-        {
+        if buffer.held(&Inputs::Backward, time) && !buffer.held(&Inputs::DownBackward, time) {
             self.dash_backward = false;
-        } else if buffer.is_input_held(&Inputs::Neutral, time)
-            || buffer.is_input_held(&Inputs::Forward, time)
-            || buffer.is_input_held(&Inputs::Down, time)
-            || buffer.is_input_held(&Inputs::Up, time)
+        } else if buffer.held(&Inputs::Neutral, time)
+            || buffer.held(&Inputs::Forward, time)
+            || buffer.held(&Inputs::Down, time)
+            || buffer.held(&Inputs::Up, time)
         {
             self.dash_backward = true;
         }

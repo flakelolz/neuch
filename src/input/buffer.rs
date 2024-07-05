@@ -153,23 +153,23 @@ impl InputBuffer {
         self.buffer[self.index] = *input;
     }
 
-    pub fn get_curret_input(&self) -> Input {
+    fn get_curret_input(&self) -> Input {
         self.buffer[self.index]
     }
 
-    pub fn get_previous_input(&self) -> Input {
+    fn get_previous_input(&self) -> Input {
         self.buffer[(self.buffer.len() + self.index - 1) % self.buffer.len()]
     }
 
     /// Check if the input is currently pressed
-    pub fn is_input_pressed(&self, inputs: &Inputs) -> bool {
+    fn is_input_pressed(&self, inputs: &Inputs) -> bool {
         let current = self.get_curret_input();
 
         inputs.is_pressed(&current)
     }
 
     /// Check if the input was pressed on a specific frame
-    pub fn is_input_pressed_on_frame(&self, inputs: &Inputs, frame: usize) -> bool {
+    fn is_input_pressed_on_frame(&self, inputs: &Inputs, frame: usize) -> bool {
         let buffer_index = frame % self.buffer.len();
         let input_command = self.buffer[buffer_index];
 
@@ -177,7 +177,7 @@ impl InputBuffer {
     }
 
     /// Check if an input has been held for a certain amount of frames
-    pub fn is_input_held(&self, input: &Inputs, duration: usize) -> bool {
+    fn is_input_held(&self, input: &Inputs, duration: usize) -> bool {
         for i in 0..duration + 1 {
             if self.is_input_pressed_on_frame(input, self.buffer.len() + self.index - i) {
                 continue;
@@ -190,7 +190,7 @@ impl InputBuffer {
     }
 
     /// Checks if the input was initially pressed this frame
-    pub fn was_input_pressed(&self, inputs: &Inputs) -> bool {
+    fn was_input_pressed(&self, inputs: &Inputs) -> bool {
         let current = self.get_curret_input();
         let previous = self.get_previous_input();
 
@@ -198,7 +198,7 @@ impl InputBuffer {
     }
 
     /// Checks if the input was initially pressed on a specific frame
-    pub fn was_input_pressed_on_frame(&self, inputs: &Inputs, frame: usize) -> bool {
+    fn was_input_pressed_on_frame(&self, inputs: &Inputs, frame: usize) -> bool {
         let buffer_index = frame % self.buffer.len();
         let last_index = (self.buffer.len() + frame - 1) % self.buffer.len();
 
@@ -209,7 +209,7 @@ impl InputBuffer {
     }
 
     /// Check if an input was performed within a certain duration on the past frames
-    pub fn was_input_pressed_buffered(&self, input: &Inputs, duration: usize) -> bool {
+    fn was_input_pressed_buffered(&self, input: &Inputs, duration: usize) -> bool {
         for i in 0..duration + 1 {
             if self.was_input_pressed_on_frame(input, self.buffer.len() + self.index - i) {
                 return true;
@@ -224,15 +224,19 @@ impl InputBuffer {
         &self.buffer[self.index]
     }
 
+    /// Checks the previous input
+    pub fn previous(&self) -> &Input {
+        &self.buffer[(self.buffer.len() + self.index - 1) % self.buffer.len()]
+    }
+
     /// Check if an input was performed within a certain duration on the past frames
     pub fn buffered(&self, input: &Inputs, duration: usize) -> bool {
-        for i in 0..duration + 1 {
-            if self.was_input_pressed_on_frame(input, self.buffer.len() + self.index - i) {
-                return true;
-            }
-        }
+        self.was_input_pressed_buffered(input, duration)
+    }
 
-        false
+    /// Check if an input has been held for a certain amount of frames
+    pub fn held(&self, input: &Inputs, duration: usize) -> bool {
+        self.is_input_held(input, duration)
     }
 
     /// Check if a motion was performed within a time limit
@@ -304,5 +308,127 @@ pub fn check_invalid_motion(motions: Motions, buffer: &InputBuffer, duration: us
                 || buffer.was_input_pressed_buffered(&Inputs::DownForward, duration)
         }
         _ => false,
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn was_pressed() {
+        let mut buffer = InputBuffer::default();
+        let input = Input::default();
+
+        buffer.update(&input);
+
+        let input = Input {
+            down: true,
+            ..Default::default()
+        };
+
+        buffer.update(&input);
+
+        let current = buffer.get_curret_input();
+        let previous = buffer.get_previous_input();
+
+        let inputs = Inputs::Down;
+
+        assert!(inputs.was_initially_pressed(&current, &previous));
+    }
+
+    #[test]
+    fn was_input_pressed() {
+        let mut buffer = InputBuffer::default();
+
+        for _ in 0..1 {
+            let input = Input {
+                forward: true,
+                ..Default::default()
+            };
+
+            buffer.update(&input);
+        }
+
+        for _ in 1..2 {
+            let input = Input::default();
+            buffer.update(&input);
+        }
+
+        for _ in 2..3 {
+            let input = Input {
+                forward: true,
+                ..Default::default()
+            };
+
+            buffer.update(&input);
+        }
+
+        assert!(buffer.was_input_pressed(&Inputs::Forward));
+    }
+
+    #[test]
+    fn was_input_pressed_on_frame() {
+        let mut buffer = InputBuffer::default();
+        let input = Input {
+            up: true,
+            ..Default::default()
+        };
+
+        buffer.update(&input);
+
+        let input = Input {
+            down: true,
+            up: true,
+            ..Default::default()
+        };
+
+        buffer.update(&input);
+
+        assert!(buffer.was_input_pressed_on_frame(&Inputs::Down, 1));
+        assert!(!buffer.was_input_pressed_on_frame(&Inputs::Up, 1));
+    }
+
+    #[test]
+    fn was_input_pressed_buffered() {
+        let mut buffer = InputBuffer::default();
+
+        for _ in 0..3 {
+            let input = Input {
+                down: true,
+                ..Default::default()
+            };
+            buffer.update(&input);
+        }
+
+        {
+            let input = Input {
+                up: true,
+                ..Default::default()
+            };
+            buffer.update(&input);
+        }
+
+        for _ in 4..6 {
+            let input = Input::default();
+            buffer.update(&input);
+        }
+
+        assert!(buffer.was_input_pressed_buffered(&Inputs::Up, 2));
+        assert!(buffer.was_input_pressed_buffered(&Inputs::Down, 5));
+    }
+
+    #[test]
+    fn was_input_held() {
+        let mut buffer = InputBuffer::default();
+        for _ in 0..5 {
+            let input = Input {
+                down: true,
+                ..Default::default()
+            };
+            buffer.update(&input);
+        }
+
+        assert!(buffer.is_input_held(&Inputs::Down, 4));
     }
 }
