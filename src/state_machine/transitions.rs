@@ -80,12 +80,16 @@ pub fn dash_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
         return true;
     }
 
-    if buffer.was_motion_executed(Motions::ForcedDashForward, buffer.forced_dash) {
+    if buffer.was_motion_executed(Motions::ForcedDashForward, buffer.forced_dash)
+        && !check_invalid_motion(Motions::DashForward, buffer, buffer.forced_dash)
+    {
         context.next = Some(Box::new(standing::DashForward));
         return true;
     }
 
-    if buffer.was_motion_executed(Motions::ForcedDashBackward, buffer.forced_dash) {
+    if buffer.was_motion_executed(Motions::ForcedDashBackward, buffer.forced_dash)
+        && !check_invalid_motion(Motions::DashBackward, buffer, buffer.forced_dash)
+    {
         context.next = Some(Box::new(standing::DashBackward));
         return true;
     }

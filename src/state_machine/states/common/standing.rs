@@ -15,9 +15,6 @@ impl State for Idle {
 
         let input = &buffer.get_curret_input();
 
-        if dash_transitions(context, buffer) {
-            return;
-        }
 
         if crouch_attack_transitions(context, buffer) {
             return;
@@ -29,6 +26,11 @@ impl State for Idle {
 
         if input.down {
             context.next = Some(Box::new(crouching::Start));
+            return;
+        }
+
+        if dash_transitions(context, buffer) {
+            return;
         }
 
         walk_transition(context, buffer);
@@ -339,7 +341,9 @@ impl State for MediumKick {
         println!("MediumKick on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        handle_modifiers(context, buffer, physics);
+
         let input = &buffer.get_curret_input();
 
         if context.elapsed >= context.duration - 1 {
