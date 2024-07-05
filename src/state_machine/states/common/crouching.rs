@@ -11,26 +11,17 @@ impl State for Start {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
-        let input = &buffer.get_curret_input();
-
-        crouch_attack_transitions(context, buffer);
-
-        if context.elapsed >= context.duration - 1 && input.down {
-            context.next = Some(Box::new(Idle));
+        // Transitions
+        if attack_transitions(context, buffer) {
+            return;
         }
-
-        if !input.down {
-            if input.forward {
-                context.next = Some(Box::new(standing::WalkForward));
-                return;
-            }
-
-            if input.backward {
-                context.next = Some(Box::new(standing::WalkBackward));
-                return;
-            }
-
-            context.next = Some(Box::new(standing::Idle));
+        // Special case for releasing down on crouch start
+        if context.elapsed >= context.duration - 1 && buffer.input().down {
+            context.next = Some(Box::new(crouching::Idle));
+        }
+        // Base case
+        if !buffer.input().down {
+            context.next = Some(Box::new(crouching::End));
         }
     }
 
@@ -50,21 +41,12 @@ impl State for Idle {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
-        let input = &buffer.get_curret_input();
-
-        crouch_attack_transitions(context, buffer);
-
-        if input.forward && !input.down {
-            context.next = Some(Box::new(standing::WalkForward));
+        // Transitions
+        if attack_transitions(context, buffer) {
             return;
         }
-
-        if input.backward && !input.down {
-            context.next = Some(Box::new(standing::WalkBackward));
-            return;
-        }
-
-        if !input.down {
+        // Base case
+        if !buffer.input().down {
             context.next = Some(Box::new(crouching::End));
         }
     }
@@ -85,24 +67,17 @@ impl State for End {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
-        let input = &buffer.get_curret_input();
-
-        standing_attack_transitions(context, buffer);
-
-        if input.forward {
-            context.next = Some(Box::new(standing::WalkForward));
+        // Transitions
+        if attack_transitions(context, buffer) {
             return;
         }
-
-        if input.backward {
-            context.next = Some(Box::new(standing::WalkBackward));
+        if crouch_transition(context, buffer) {
             return;
         }
-
-        if input.down {
-            crouch_attack_transitions(context, buffer);
+        if walk_transition(context, buffer) {
+            return;
         }
-
+        // Base case & return to idle
         if context.elapsed >= context.duration - 1 {
             context.next = Some(Box::new(standing::Idle));
         }
@@ -124,25 +99,25 @@ impl State for LightPunch {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        let input = &buffer.get_curret_input();
-
+        // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
-
+        // Base case
         if context.elapsed >= context.duration - 1 {
-            if input.down {
-                if crouch_attack_transitions(context, buffer) {
+            if !buffer.input().down {
+                // Transitions
+                if attack_transitions(context, buffer) {
                     return;
                 }
-
+                if dash_transitions(context, buffer) {
+                    return;
+                }
+                if walk_transition(context, buffer) {
+                    return;
+                }
+                // Return to idle
+                context.next = Some(Box::new(crouching::End));
+            } else {
                 context.next = Some(Box::new(crouching::Idle));
-            }
-
-            if !input.down {
-                if standing_attack_transitions(context, buffer) {
-                    return;
-                }
-
-                context.next = Some(Box::new(standing::Idle));
             }
         }
     }
@@ -162,24 +137,26 @@ impl State for MediumPunch {
         println!("Cr MediumPunch on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
-        let input = &buffer.get_curret_input();
-
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        // Apply physics and handle modifiers
+        handle_modifiers(context, buffer, physics);
+        // Base case
         if context.elapsed >= context.duration - 1 {
-            if input.down {
-                if crouch_attack_transitions(context, buffer) {
+            if !buffer.input().down {
+                // Transitions
+                if attack_transitions(context, buffer) {
                     return;
                 }
-
+                if dash_transitions(context, buffer) {
+                    return;
+                }
+                if walk_transition(context, buffer) {
+                    return;
+                }
+                // Return to idle
+                context.next = Some(Box::new(crouching::End));
+            } else {
                 context.next = Some(Box::new(crouching::Idle));
-            }
-
-            if !input.down {
-                if standing_attack_transitions(context, buffer) {
-                    return;
-                }
-
-                context.next = Some(Box::new(standing::Idle));
             }
         }
     }
@@ -199,24 +176,26 @@ impl State for HeavyPunch {
         println!("Cr HeavyPunch on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
-        let input = &buffer.get_curret_input();
-
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        // Apply physics and handle modifiers
+        handle_modifiers(context, buffer, physics);
+        // Base case
         if context.elapsed >= context.duration - 1 {
-            if input.down {
-                if crouch_attack_transitions(context, buffer) {
+            if !buffer.input().down {
+                // Transitions
+                if attack_transitions(context, buffer) {
                     return;
                 }
-
+                if dash_transitions(context, buffer) {
+                    return;
+                }
+                if walk_transition(context, buffer) {
+                    return;
+                }
+                // Return to idle
+                context.next = Some(Box::new(crouching::End));
+            } else {
                 context.next = Some(Box::new(crouching::Idle));
-            }
-
-            if !input.down {
-                if standing_attack_transitions(context, buffer) {
-                    return;
-                }
-
-                context.next = Some(Box::new(standing::Idle));
             }
         }
     }
@@ -237,25 +216,25 @@ impl State for LightKick {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        let input = &buffer.get_curret_input();
-
+        // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
-
+        // Base case
         if context.elapsed >= context.duration - 1 {
-            if input.down {
-                if crouch_attack_transitions(context, buffer) {
+            if !buffer.input().down {
+                // Transitions
+                if attack_transitions(context, buffer) {
                     return;
                 }
-
+                if dash_transitions(context, buffer) {
+                    return;
+                }
+                if walk_transition(context, buffer) {
+                    return;
+                }
+                // Return to idle
+                context.next = Some(Box::new(crouching::End));
+            } else {
                 context.next = Some(Box::new(crouching::Idle));
-            }
-
-            if !input.down {
-                if standing_attack_transitions(context, buffer) {
-                    return;
-                }
-
-                context.next = Some(Box::new(standing::Idle));
             }
         }
     }
@@ -275,24 +254,26 @@ impl State for MediumKick {
         println!("Cr MediumKick on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
-        let input = &buffer.get_curret_input();
-
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        // Apply physics and handle modifiers
+        handle_modifiers(context, buffer, physics);
+        // Base case
         if context.elapsed >= context.duration - 1 {
-            if input.down {
-                if crouch_attack_transitions(context, buffer) {
+            if !buffer.input().down {
+                // Transitions
+                if attack_transitions(context, buffer) {
                     return;
                 }
-
+                if dash_transitions(context, buffer) {
+                    return;
+                }
+                if walk_transition(context, buffer) {
+                    return;
+                }
+                // Return to idle
+                context.next = Some(Box::new(crouching::End));
+            } else {
                 context.next = Some(Box::new(crouching::Idle));
-            }
-
-            if !input.down {
-                if standing_attack_transitions(context, buffer) {
-                    return;
-                }
-
-                context.next = Some(Box::new(standing::Idle));
             }
         }
     }
@@ -312,24 +293,26 @@ impl State for HeavyKick {
         println!("Cr HeavyKick on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
-        let input = &buffer.get_curret_input();
-
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        // Apply physics and handle modifiers
+        handle_modifiers(context, buffer, physics);
+        // Base case
         if context.elapsed >= context.duration - 1 {
-            if input.down {
-                if crouch_attack_transitions(context, buffer) {
+            if !buffer.input().down {
+                // Transitions
+                if attack_transitions(context, buffer) {
                     return;
                 }
-
+                if dash_transitions(context, buffer) {
+                    return;
+                }
+                if walk_transition(context, buffer) {
+                    return;
+                }
+                // Return to idle
+                context.next = Some(Box::new(crouching::End));
+            } else {
                 context.next = Some(Box::new(crouching::Idle));
-            }
-
-            if !input.down {
-                if standing_attack_transitions(context, buffer) {
-                    return;
-                }
-
-                context.next = Some(Box::new(standing::Idle));
             }
         }
     }
