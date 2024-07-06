@@ -132,6 +132,9 @@ impl State for DashForward {
             if crouch_transition(context, buffer) {
                 return;
             }
+            if dash_transitions(context, buffer) {
+                return;
+            }
             if walk_transition(context, buffer) {
                 return;
             }
@@ -165,6 +168,9 @@ impl State for DashBackward {
                 return;
             }
             if crouch_transition(context, buffer) {
+                return;
+            }
+            if dash_transitions(context, buffer) {
                 return;
             }
             if walk_transition(context, buffer) {
