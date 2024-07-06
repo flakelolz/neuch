@@ -3,6 +3,7 @@ mod tests {
     use super::super::*;
 
     // NOTE: Motion testing
+    // FIX: Learn Rust macros really well to make this cleaner
 
     #[test]
     fn was_motion_executed() {

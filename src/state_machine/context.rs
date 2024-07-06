@@ -4,8 +4,8 @@ use crate::prelude::*;
 pub struct Context {
     pub character: Option<CharacterInfo>,
     pub next: Option<Box<dyn State>>,
-    pub elapsed: i32,
-    pub duration: i32,
+    pub elapsed: u32,
+    pub duration: u32,
     pub modifiers: Instructions,
     pub locked: LockedActions,
 }

@@ -139,8 +139,8 @@ impl Default for InputBuffer {
         Self {
             index: BUFFER_SIZE - 1,
             buffer: [Input::default(); BUFFER_SIZE],
-            dash: 8,
-            forced_dash: 13,
+            dash: 12,
+            forced_dash: 12,
             attack: 2,
         }
     }

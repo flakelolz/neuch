@@ -39,8 +39,6 @@ mod prelude {
 
 fn main() {
     let args = std::env::args().collect::<Vec<String>>();
-    println!("{:?}", args);
-
     if args.len() > 1 && args[1] == "--update" {
         utils::update_all_data();
     }
@@ -55,5 +53,6 @@ fn main() {
     let mut target = rl
         .load_render_texture(&thread, WIDTH as u32, HEIGHT as u32)
         .unwrap();
+
     game::game(&mut rl, &thread, &mut target);
 }

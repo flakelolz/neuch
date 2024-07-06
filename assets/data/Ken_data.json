@@ -10,7 +10,7 @@
       "looping": true,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -24,7 +24,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -117,7 +117,7 @@
       "looping": true,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -131,7 +131,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -231,7 +231,7 @@
       "looping": true,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -245,7 +245,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -345,7 +345,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -359,7 +359,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -491,7 +491,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -505,7 +505,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -609,7 +609,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -623,7 +623,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -637,7 +637,7 @@
       ],
       "hitbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 0,
           "boxes": [
             {
@@ -703,7 +703,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -717,7 +717,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -731,7 +731,7 @@
       ],
       "hitbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 0,
           "boxes": [
             {
@@ -809,7 +809,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -823,7 +823,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -837,7 +837,7 @@
       ],
       "hitbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 0,
           "boxes": [
             {
@@ -989,7 +989,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1003,7 +1003,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1017,7 +1017,7 @@
       ],
       "hitbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 0,
           "boxes": [
             {
@@ -1081,7 +1081,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1095,7 +1095,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1109,7 +1109,7 @@
       ],
       "hitbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 0,
           "boxes": [
             {
@@ -1261,7 +1261,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1275,7 +1275,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1289,7 +1289,7 @@
       ],
       "hitbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 0,
           "boxes": [
             {
@@ -1469,7 +1469,7 @@
       "looping": true,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1483,7 +1483,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1541,7 +1541,7 @@
       "looping": true,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1555,7 +1555,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1606,7 +1606,7 @@
       "looping": true,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1620,7 +1620,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1664,7 +1664,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1678,7 +1678,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1692,7 +1692,7 @@
       ],
       "hitbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 0,
           "boxes": [
             {
@@ -1765,7 +1765,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1779,7 +1779,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1793,7 +1793,7 @@
       ],
       "hitbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 0,
           "boxes": [
             {
@@ -1857,7 +1857,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1871,7 +1871,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1885,7 +1885,7 @@
       ],
       "hitbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 0,
           "boxes": [
             {
@@ -1977,7 +1977,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -1991,7 +1991,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -2005,7 +2005,7 @@
       ],
       "hitbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 0,
           "boxes": [
             {
@@ -2078,7 +2078,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -2092,7 +2092,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -2106,7 +2106,7 @@
       ],
       "hitbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 0,
           "boxes": [
             {
@@ -2244,7 +2244,7 @@
       "looping": false,
       "pushbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -2258,7 +2258,7 @@
       ],
       "hurtbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 9,
           "boxes": [
             {
@@ -2272,7 +2272,7 @@
       ],
       "hitbox": [
         {
-          "frame": 0,
+          "on_frame": 0,
           "duration": 0,
           "boxes": [
             {

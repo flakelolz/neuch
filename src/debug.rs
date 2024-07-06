@@ -54,7 +54,7 @@ pub fn show_state(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
 }
 
 pub fn show_frame_count(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
-    world.query::<&i32>().into_iter().for_each(|(_, frame)| {
+    world.query::<&u32>().into_iter().for_each(|(_, frame)| {
         d.draw_text(&format!("{}", frame), 10, 10, 10, Color::WHITE);
     });
 }

@@ -10,15 +10,15 @@ pub struct Hitbox {
 
 #[derive(Debug, Clone, Default, Deserialize, Serialize)]
 pub struct HitboxGroup {
-    pub frame: i32,
-    pub duration: i32,
+    pub on_frame: u32,
+    pub duration: u32,
     pub boxes: Vec<Hitbox>,
 }
 
 #[derive(Debug, Clone, Default, Deserialize, Serialize)]
 pub struct Action {
     pub name: String,
-    pub total: i32,
+    pub total: u32,
     pub looping: bool,
     pub pushbox: Vec<HitboxGroup>,
     pub hurtbox: Vec<HitboxGroup>,
@@ -35,13 +35,13 @@ pub struct Modifiers {
 
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
 pub struct PositionModifier {
-    pub on_frame: i32,
+    pub on_frame: u32,
     pub value: IVec2,
 }
 
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
 pub struct ChainModifier {
-    pub on_frame: i32,
+    pub on_frame: u32,
     pub st_lp: bool,
     pub st_lk: bool,
     pub cr_lp: bool,
@@ -50,11 +50,11 @@ pub struct ChainModifier {
 
 #[derive(Debug, Clone, Copy, Deserialize, Serialize, Default)]
 pub struct Keyframe {
-    pub x: i32,
-    pub y: i32,
-    pub w: i32,
-    pub h: i32,
-    pub duration: i32,
+    pub x: u32,
+    pub y: u32,
+    pub w: u32,
+    pub h: u32,
+    pub duration: u32,
 }
 
 #[derive(Debug, Clone, Default, Deserialize, Serialize)]

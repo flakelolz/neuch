@@ -54,14 +54,14 @@ pub fn update_animation_data(name: &str) {
             }
 
             action.timeline.push(Keyframe {
-                x: frame.frame.x as i32,
-                y: frame.frame.y as i32,
-                w: frame.frame.w as i32,
-                h: frame.frame.h as i32,
-                duration: frame.duration as i32 / 16,
+                x: frame.frame.x,
+                y: frame.frame.y,
+                w: frame.frame.w,
+                h: frame.frame.h,
+                duration: frame.duration / 16,
             });
 
-            action_total += frame.duration as i32 / 16;
+            action_total += frame.duration / 16;
         }
 
         action.total = action_total;

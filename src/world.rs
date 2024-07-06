@@ -9,7 +9,7 @@ pub enum Player {
 pub fn world() -> World {
     let mut world = World::new();
 
-    world.spawn((0,)); // Frame count
+    world.spawn((0u32,)); // Frame count
 
     // Player 1 components
     let _player1 = world.spawn((
@@ -37,7 +37,7 @@ pub fn world() -> World {
 
 pub fn frame_count(world: &mut World) {
     world
-        .query_mut::<&mut i32>()
+        .query_mut::<&mut u32>()
         .into_iter()
         .for_each(|(_, frame)| {
             *frame += 1;

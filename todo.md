@@ -20,7 +20,9 @@
 - [x] Buffer system
 - [x] Fix dash after forward walk
 - [x] Fix attack input buffer for chain attacks
+- [ ] Implement jump states
 - [ ] Collision system
+- [ ] Make an editor for character data
 - [ ] Change font
 
 # Dash should fail

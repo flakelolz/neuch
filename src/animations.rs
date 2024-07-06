@@ -3,11 +3,11 @@ use crate::prelude::*;
 #[derive(Default)]
 pub struct Animator {
     /// Internal timer for each keyframe
-    tick: i32,
+    tick: u32,
     /// Keyframe array index
     index: usize,
     /// Current keyframe duration
-    duration: i32,
+    duration: u32,
     /// Collection of all the keyframes on an action
     pub keyframes: Vec<Keyframe>,
 }

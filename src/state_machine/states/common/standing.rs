@@ -132,6 +132,7 @@ impl State for DashForward {
             if crouch_transition(context, buffer) {
                 return;
             }
+            // FIX: Dash to dash seems to have a different buffer mechanism
             if dash_transitions(context, buffer) {
                 return;
             }
@@ -170,6 +171,7 @@ impl State for DashBackward {
             if crouch_transition(context, buffer) {
                 return;
             }
+            // FIX: Dash to dash seems to have a different buffer mechanism
             if dash_transitions(context, buffer) {
                 return;
             }
