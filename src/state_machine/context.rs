@@ -36,39 +36,5 @@ pub fn handle_modifiers(context: &mut Context, buffer: &InputBuffer, physics: &m
                 }
             }
         }
-
-        // FIX: On whiff or on impact properties are different
-
-        // if let Some(chainable) = &instructions.chainable {
-        //     if chainable.on_frame <= context.elapsed {
-        //         if chainable.st_lk
-        //             && !buffer.input().down
-        //             && buffer.buffered(&Inputs::LightKick, buffer.attack)
-        //         {
-        //             context.next = Some(Box::new(standing::LightKick));
-        //             return;
-        //         }
-        //         if chainable.cr_lk
-        //             && buffer.input().down
-        //             && buffer.buffered(&Inputs::LightKick, buffer.attack)
-        //         {
-        //             context.next = Some(Box::new(crouching::LightKick));
-        //             return;
-        //         }
-        // if chainable.st_lp
-        //     && !buffer.input().down
-        //     && buffer.buffered(&Inputs::LightPunch, buffer.attack)
-        // {
-        //     context.next = Some(Box::new(standing::LightPunch));
-        //     return;
-        // }
-        //         if chainable.cr_lp
-        //             && buffer.input().down
-        //             && buffer.buffered(&Inputs::LightPunch, buffer.attack)
-        //         {
-        //             context.next = Some(Box::new(crouching::LightPunch));
-        //         }
-        //     }
-        // }
     }
 }

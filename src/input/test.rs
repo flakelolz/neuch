@@ -28,7 +28,7 @@ mod tests {
         };
         buffer.update(&input);
 
-        assert!(buffer.was_motion_executed(Motions::Qcf, 3));
+        assert!(buffer.was_motion_executed(&Motions::Qcf, 3));
     }
 
     #[test]
@@ -67,7 +67,7 @@ mod tests {
         };
         buffer.update(&input);
 
-        assert!(buffer.was_motion_executed(Motions::Hcf, 5));
+        assert!(buffer.was_motion_executed(&Motions::Hcf, 5));
     }
 
     #[test]
@@ -100,7 +100,7 @@ mod tests {
         };
         buffer.update(&input);
 
-        assert!(buffer.was_motion_executed(Motions::Hcf, 4));
+        assert!(buffer.was_motion_executed(&Motions::Hcf, 4));
     }
 
     #[test]
@@ -125,7 +125,7 @@ mod tests {
         };
         buffer.update(&input);
 
-        assert!(buffer.was_motion_executed(Motions::Hcf, 3));
+        assert!(buffer.was_motion_executed(&Motions::Hcf, 3));
     }
 
     #[test]
@@ -158,7 +158,7 @@ mod tests {
         };
         buffer.update(&input);
 
-        assert!(!buffer.was_motion_executed(Motions::Hcf, 4));
+        assert!(!buffer.was_motion_executed(&Motions::Hcf, 4));
     }
 
     #[test]
@@ -182,7 +182,7 @@ mod tests {
         };
         buffer.update(&input);
 
-        assert!(buffer.was_motion_executed(Motions::DashForward, 3));
+        assert!(buffer.was_motion_executed(&Motions::DashForward, 3));
     }
 
     #[test]
@@ -206,6 +206,6 @@ mod tests {
         };
         buffer.update(&input);
 
-        assert!(buffer.was_motion_executed(Motions::DashBackward, 3));
+        assert!(buffer.was_motion_executed(&Motions::DashBackward, 3));
     }
 }

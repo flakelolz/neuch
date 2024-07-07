@@ -42,8 +42,10 @@ impl State for WalkForward {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        // Apply physics and handle modifiers
+        // Special case for walking
         physics.velocity.x = context.character.unwrap_or_default().walk_forward;
+        // Apply physics and handle modifiers
+        handle_modifiers(context, buffer, physics);
         // Transitions
         if attack_transitions(context, buffer) {
             return;
@@ -55,12 +57,12 @@ impl State for WalkForward {
             return;
         }
         // Special case for walking the opposite direction
-        if buffer.input().backward {
+        if backward(buffer) {
             context.next = Some(Box::new(standing::WalkBackward));
             return;
         }
         // Base case & return to idle
-        if !buffer.input().forward {
+        if !forward(buffer) {
             context.next = Some(Box::new(standing::Idle));
         }
     }
@@ -83,8 +85,10 @@ impl State for WalkBackward {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        // Special case for walking
+        physics.velocity.x = -context.character.unwrap_or_default().walk_backward;
         // Apply physics and handle modifiers
-        physics.velocity.x = context.character.unwrap_or_default().walk_backward;
+        handle_modifiers(context, buffer, physics);
         // Transitions
         if attack_transitions(context, buffer) {
             return;
@@ -93,12 +97,12 @@ impl State for WalkBackward {
             return;
         }
         // Special case for walking the opposite direction
-        if buffer.input().forward {
+        if forward(buffer) {
             context.next = Some(Box::new(standing::WalkForward));
             return;
         }
         // Base case & return to idle
-        if !buffer.input().backward {
+        if !backward(buffer) {
             context.next = Some(Box::new(standing::Idle));
         }
     }
@@ -132,7 +136,6 @@ impl State for DashForward {
             if crouch_transition(context, buffer) {
                 return;
             }
-            // FIX: Dash to dash seems to have a different buffer mechanism
             if dash_transitions(context, buffer) {
                 return;
             }
@@ -171,7 +174,6 @@ impl State for DashBackward {
             if crouch_transition(context, buffer) {
                 return;
             }
-            // FIX: Dash to dash seems to have a different buffer mechanism
             if dash_transitions(context, buffer) {
                 return;
             }

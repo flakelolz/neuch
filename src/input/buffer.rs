@@ -243,7 +243,7 @@ impl InputBuffer {
     }
 
     /// Check if a motion was performed within a time limit
-    pub fn was_motion_executed(&self, motions: Motions, mut time_limit: usize) -> bool {
+    pub fn was_motion_executed(&self, motions: &Motions, mut time_limit: usize) -> bool {
         if time_limit > (self.buffer.len() + self.index) {
             time_limit = self.buffer.len() + self.index;
         }
@@ -277,7 +277,7 @@ impl InputBuffer {
     fn can_dash(&mut self) {
         let duration = 8;
         if self.held(&Inputs::Forward, duration) && !self.held(&Inputs::DownForward, duration)
-            || check_invalid_motion(Motions::DashForward, self, self.dash)
+            || check_invalid_motion(&Motions::DashForward, self, self.dash)
         {
             self.can_dash_f = false;
         } else if self.held(&Inputs::Neutral, duration)
@@ -289,7 +289,7 @@ impl InputBuffer {
         }
 
         if self.held(&Inputs::Backward, duration) && !self.held(&Inputs::DownBackward, duration)
-            || check_invalid_motion(Motions::DashBackward, self, self.dash)
+            || check_invalid_motion(&Motions::DashBackward, self, self.dash)
         {
             self.can_dash_b = false;
         } else if self.held(&Inputs::Neutral, duration)
@@ -314,29 +314,6 @@ fn check_numpad_direction(input: &Input, direction: u8) -> bool {
         7 => input.up && input.backward,
         8 => input.up && !(input.backward || input.forward),
         9 => input.up && input.forward,
-        _ => false,
-    }
-}
-
-/// Checks if there is a direction that would invalidate the whole motion input
-pub fn check_invalid_motion(motions: Motions, buffer: &InputBuffer, duration: usize) -> bool {
-    match motions {
-        Motions::DashForward => {
-            buffer.was_input_pressed_buffered(&Inputs::Backward, duration)
-                || buffer.was_input_pressed_buffered(&Inputs::Down, duration)
-        }
-        Motions::DashBackward => {
-            buffer.was_input_pressed_buffered(&Inputs::Forward, duration)
-                || buffer.was_input_pressed_buffered(&Inputs::Down, duration)
-        }
-        Motions::Dp => {
-            buffer.was_input_pressed_buffered(&Inputs::Backward, duration)
-                || buffer.was_input_pressed_buffered(&Inputs::DownBackward, duration)
-        }
-        Motions::RDp => {
-            buffer.was_input_pressed_buffered(&Inputs::Forward, duration)
-                || buffer.was_input_pressed_buffered(&Inputs::DownForward, duration)
-        }
         _ => false,
     }
 }

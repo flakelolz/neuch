@@ -16,11 +16,11 @@ impl State for Start {
             return;
         }
         // Special case for releasing down on crouch start
-        if context.elapsed >= context.duration && buffer.input().down {
+        if context.elapsed >= context.duration && down(buffer) {
             context.next = Some(Box::new(crouching::Idle));
         }
         // Base case
-        if !buffer.input().down {
+        if !down(buffer) {
             context.next = Some(Box::new(crouching::End));
         }
     }
@@ -46,7 +46,7 @@ impl State for Idle {
             return;
         }
         // Base case
-        if !buffer.input().down {
+        if !down(buffer) {
             context.next = Some(Box::new(crouching::End));
         }
     }
@@ -107,7 +107,7 @@ impl State for LightPunch {
             if attack_transitions(context, buffer) {
                 return;
             }
-            if !buffer.input().down {
+            if !down(buffer) {
                 if dash_transitions(context, buffer) {
                     return;
                 }
@@ -146,7 +146,7 @@ impl State for MediumPunch {
             if attack_transitions(context, buffer) {
                 return;
             }
-            if !buffer.input().down {
+            if !down(buffer) {
                 if dash_transitions(context, buffer) {
                     return;
                 }
@@ -185,7 +185,7 @@ impl State for HeavyPunch {
             if attack_transitions(context, buffer) {
                 return;
             }
-            if !buffer.input().down {
+            if !down(buffer) {
                 if dash_transitions(context, buffer) {
                     return;
                 }
@@ -224,7 +224,7 @@ impl State for LightKick {
             if attack_transitions(context, buffer) {
                 return;
             }
-            if !buffer.input().down {
+            if !down(buffer) {
                 if dash_transitions(context, buffer) {
                     return;
                 }
@@ -263,7 +263,7 @@ impl State for MediumKick {
             if attack_transitions(context, buffer) {
                 return;
             }
-            if !buffer.input().down {
+            if !down(buffer) {
                 if dash_transitions(context, buffer) {
                     return;
                 }
@@ -302,7 +302,7 @@ impl State for HeavyKick {
             if attack_transitions(context, buffer) {
                 return;
             }
-            if !buffer.input().down {
+            if !down(buffer) {
                 if dash_transitions(context, buffer) {
                     return;
                 }

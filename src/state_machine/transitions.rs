@@ -63,8 +63,7 @@ pub fn handle_transition(
 }
 
 pub fn crouch_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if buffer.input().down {
-        context.next = Some(Box::new(crouching::Start));
+    if Crouching::Start.set(buffer, &mut context.next) {
         return true;
     }
 
@@ -72,11 +71,7 @@ pub fn crouch_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
 }
 
 pub fn walk_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if buffer.input().forward {
-        context.next = Some(Box::new(standing::WalkForward));
-        return true;
-    } else if buffer.input().backward {
-        context.next = Some(Box::new(standing::WalkBackward));
+    if Group::Walks.set(buffer, &mut context.next) {
         return true;
     }
 
@@ -84,118 +79,15 @@ pub fn walk_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
 }
 
 pub fn dash_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if buffer.was_motion_executed(Motions::DashForward, buffer.dash)
-        && buffer.can_dash_f
-        && !check_invalid_motion(Motions::DashForward, buffer, buffer.dash)
-    {
-        context.next = Some(Box::new(standing::DashForward));
+    if Group::Dashes.set(buffer, &mut context.next) {
         return true;
     }
-    if buffer.was_motion_executed(Motions::DashBackward, buffer.dash)
-        && buffer.can_dash_b
-        && !check_invalid_motion(Motions::DashBackward, buffer, buffer.dash)
-    {
-        context.next = Some(Box::new(standing::DashBackward));
-        return true;
-    }
-
-    if buffer.was_motion_executed(Motions::ForcedDashForward, buffer.dash)
-        && !check_invalid_motion(Motions::DashForward, buffer, buffer.dash)
-    {
-        context.next = Some(Box::new(standing::DashForward));
-        return true;
-    }
-
-    if buffer.was_motion_executed(Motions::ForcedDashBackward, buffer.dash)
-        && !check_invalid_motion(Motions::DashBackward, buffer, buffer.dash)
-    {
-        context.next = Some(Box::new(standing::DashBackward));
-        return true;
-    }
-
     false
 }
 
 pub fn attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
-    // Check crouch first
-    if crouch_attack_transitions(context, buffer) {
+    if Group::Normals.set(buffer, &mut context.next) {
         return true;
     }
-    // Then standing
-    if standing_attack_transitions(context, buffer) {
-        return true;
-    }
-    false
-}
-
-// The order of the conditions determines the priority of each attack when pressed simultaneously
-pub fn standing_attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if buffer.buffered(&Inputs::HeavyKick, buffer.attack) {
-        context.next = Some(Box::new(standing::HeavyKick));
-        return true;
-    }
-
-    if buffer.buffered(&Inputs::HeavyPunch, buffer.attack) {
-        context.next = Some(Box::new(standing::HeavyPunch));
-        return true;
-    }
-
-    if buffer.buffered(&Inputs::MediumKick, buffer.attack) {
-        context.next = Some(Box::new(standing::MediumKick));
-        return true;
-    }
-
-    if buffer.buffered(&Inputs::MediumPunch, buffer.attack) {
-        context.next = Some(Box::new(standing::MediumPunch));
-        return true;
-    }
-
-    if buffer.buffered(&Inputs::LightKick, buffer.attack) {
-        context.next = Some(Box::new(standing::LightKick));
-        return true;
-    }
-
-    if buffer.buffered(&Inputs::LightPunch, buffer.attack) {
-        context.next = Some(Box::new(standing::LightPunch));
-        return true;
-    }
-
-    false
-}
-
-// The order of the conditions determines the priority of each attack when pressed simultaneously
-pub fn crouch_attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if buffer.input().down {
-        if buffer.buffered(&Inputs::HeavyKick, buffer.attack) {
-            context.next = Some(Box::new(crouching::HeavyKick));
-            return true;
-        }
-
-        if buffer.buffered(&Inputs::HeavyPunch, buffer.attack) {
-            context.next = Some(Box::new(crouching::HeavyPunch));
-            return true;
-        }
-
-        if buffer.buffered(&Inputs::MediumKick, buffer.attack) {
-            context.next = Some(Box::new(crouching::MediumKick));
-            return true;
-        }
-
-        if buffer.buffered(&Inputs::MediumPunch, buffer.attack) {
-            context.next = Some(Box::new(crouching::MediumPunch));
-            return true;
-        }
-
-        if buffer.buffered(&Inputs::LightKick, buffer.attack) {
-            context.next = Some(Box::new(crouching::LightKick));
-            return true;
-        }
-
-        if buffer.buffered(&Inputs::LightPunch, buffer.attack) {
-            context.next = Some(Box::new(crouching::LightPunch));
-            return true;
-        }
-    }
-
     false
 }
