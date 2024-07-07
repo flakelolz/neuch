@@ -2,10 +2,12 @@ mod buffer;
 mod config;
 mod inputs;
 mod test;
+mod utils;
 
 pub use buffer::*;
 pub use config::*;
 pub use inputs::*;
+pub use utils::*;
 
 use crate::prelude::*;
 
@@ -24,6 +26,5 @@ pub fn update_input_buffers(world: &mut World) {
         .into_iter()
         .for_each(|(_, (input, buffer, machine))| {
             buffer.update(input);
-            machine.context.locked.check_valid(buffer);
         });
 }

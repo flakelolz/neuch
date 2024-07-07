@@ -29,7 +29,7 @@ pub struct Action {
 
 #[derive(Debug, Clone, Default, Deserialize, Serialize)]
 pub struct Modifiers {
-    pub chainable: Option<ChainModifier>,
+    pub cancellable: Option<Vec<CancelablleModifier>>,
     pub potisions: Option<Vec<PositionModifier>>,
 }
 
@@ -39,13 +39,10 @@ pub struct PositionModifier {
     pub value: IVec2,
 }
 
-#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
-pub struct ChainModifier {
+#[derive(Debug, Clone, Default, Deserialize, Serialize)]
+pub struct CancelablleModifier {
     pub on_frame: u32,
-    pub st_lp: bool,
-    pub st_lk: bool,
-    pub cr_lp: bool,
-    pub cr_lk: bool,
+    pub states: Vec<States>,
 }
 
 #[derive(Debug, Clone, Copy, Deserialize, Serialize, Default)]

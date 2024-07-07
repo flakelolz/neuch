@@ -130,8 +130,9 @@ pub struct InputBuffer {
     pub index: usize,
     pub buffer: [Input; BUFFER_SIZE],
     pub dash: usize,
-    pub forced_dash: usize,
     pub attack: usize,
+    pub can_dash_f: bool,
+    pub can_dash_b: bool,
 }
 
 impl Default for InputBuffer {
@@ -140,8 +141,9 @@ impl Default for InputBuffer {
             index: BUFFER_SIZE - 1,
             buffer: [Input::default(); BUFFER_SIZE],
             dash: 12,
-            forced_dash: 12,
             attack: 2,
+            can_dash_f: true,
+            can_dash_b: true,
         }
     }
 }
@@ -151,6 +153,7 @@ impl InputBuffer {
     pub fn update(&mut self, input: &Input) {
         self.index = (self.index + 1) % self.buffer.len();
         self.buffer[self.index] = *input;
+        self.can_dash();
     }
 
     fn get_curret_input(&self) -> Input {
@@ -269,6 +272,33 @@ impl InputBuffer {
         }
 
         false
+    }
+
+    fn can_dash(&mut self) {
+        let duration = 8;
+        if self.held(&Inputs::Forward, duration) && !self.held(&Inputs::DownForward, duration)
+            || check_invalid_motion(Motions::DashForward, self, self.dash)
+        {
+            self.can_dash_f = false;
+        } else if self.held(&Inputs::Neutral, duration)
+            || self.held(&Inputs::Backward, duration)
+            || self.held(&Inputs::Down, duration)
+            || self.held(&Inputs::Up, duration)
+        {
+            self.can_dash_f = true;
+        }
+
+        if self.held(&Inputs::Backward, duration) && !self.held(&Inputs::DownBackward, duration)
+            || check_invalid_motion(Motions::DashBackward, self, self.dash)
+        {
+            self.can_dash_b = false;
+        } else if self.held(&Inputs::Neutral, duration)
+            || self.held(&Inputs::Forward, duration)
+            || self.held(&Inputs::Down, duration)
+            || self.held(&Inputs::Up, duration)
+        {
+            self.can_dash_b = true;
+        }
     }
 }
 

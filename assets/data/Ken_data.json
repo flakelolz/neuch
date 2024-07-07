@@ -373,7 +373,24 @@
       ],
       "hitbox": null,
       "modifiers": {
-        "chainable": null,
+        "cancellable": [
+          {
+            "on_frame": 12,
+            "states": [
+              {
+                "Group": "Normals"
+              }
+            ]
+          },
+          {
+            "on_frame": 16,
+            "states": [
+              {
+                "Group": "All"
+              }
+            ]
+          }
+        ],
         "potisions": [
           {
             "on_frame": 2,
@@ -519,7 +536,7 @@
       ],
       "hitbox": null,
       "modifiers": {
-        "chainable": null,
+        "cancellable": null,
         "potisions": [
           {
             "on_frame": 2,
@@ -650,13 +667,22 @@
         }
       ],
       "modifiers": {
-        "chainable": {
-          "on_frame": 7,
-          "st_lp": true,
-          "st_lk": true,
-          "cr_lp": true,
-          "cr_lk": true
-        },
+        "cancellable": [
+          {
+            "on_frame": 8,
+            "states": [
+              {
+                "Standing": "LightPunch"
+              },
+              {
+                "Crouching": "LightPunch"
+              },
+              {
+                "Crouching": "LightKick"
+              }
+            ]
+          }
+        ],
         "potisions": null
       },
       "timeline": [
@@ -850,7 +876,7 @@
         }
       ],
       "modifiers": {
-        "chainable": null,
+        "cancellable": null,
         "potisions": [
           {
             "on_frame": 2,
@@ -1122,7 +1148,7 @@
         }
       ],
       "modifiers": {
-        "chainable": null,
+        "cancellable": null,
         "potisions": [
           {
             "on_frame": 1,
@@ -1302,7 +1328,7 @@
         }
       ],
       "modifiers": {
-        "chainable": null,
+        "cancellable": null,
         "potisions": [
           {
             "on_frame": 1,
@@ -1705,13 +1731,22 @@
         }
       ],
       "modifiers": {
-        "chainable": {
-          "on_frame": 7,
-          "st_lp": true,
-          "st_lk": true,
-          "cr_lp": true,
-          "cr_lk": true
-        },
+        "cancellable": [
+          {
+            "on_frame": 8,
+            "states": [
+              {
+                "Standing": "LightPunch"
+              },
+              {
+                "Crouching": "LightPunch"
+              },
+              {
+                "Crouching": "LightKick"
+              }
+            ]
+          }
+        ],
         "potisions": null
       },
       "timeline": [
@@ -2018,13 +2053,22 @@
         }
       ],
       "modifiers": {
-        "chainable": {
-          "on_frame": 7,
-          "st_lp": true,
-          "st_lk": true,
-          "cr_lp": true,
-          "cr_lk": true
-        },
+        "cancellable": [
+          {
+            "on_frame": 8,
+            "states": [
+              {
+                "Standing": "LightPunch"
+              },
+              {
+                "Crouching": "LightPunch"
+              },
+              {
+                "Crouching": "LightKick"
+              }
+            ]
+          }
+        ],
         "potisions": null
       },
       "timeline": [
@@ -2119,7 +2163,7 @@
         }
       ],
       "modifiers": {
-        "chainable": null,
+        "cancellable": null,
         "potisions": [
           {
             "on_frame": 1,
@@ -2285,7 +2329,7 @@
         }
       ],
       "modifiers": {
-        "chainable": null,
+        "cancellable": null,
         "potisions": [
           {
             "on_frame": 1,
