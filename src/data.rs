@@ -64,6 +64,7 @@ pub struct CharacterData {
     pub jump_deceleration: i32,
     pub jump_forward: i32,
     pub jump_backward: i32,
+    pub origin: Vec2,
     pub actions: Vec<Action>,
 }
 
@@ -79,7 +80,7 @@ impl CharacterData {
     }
 }
 
-#[derive(Default, Clone, Copy)]
+#[derive(Default, Debug, Clone, Copy)]
 pub struct CharacterInfo {
     pub health: i32,
     pub walk_forward: i32,
@@ -91,6 +92,7 @@ pub struct CharacterInfo {
 }
 
 #[allow(unused)]
+#[derive(Debug, Clone, Default)]
 pub struct Character {
     pub name: String,
     pub info: CharacterInfo,

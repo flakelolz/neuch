@@ -12,7 +12,7 @@
 - [x] State transition utilities
 - [x] Read state from data file
 - [x] Animation system
-- [ ] Fix sprite position
+- [x] Fix sprite position
 - [x] Allow attack to attack transition without an Idle frame in between
 - [x] Incorporate every standing and crouching attack
 - [x] Find a way to modify movement based on action data

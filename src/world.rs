@@ -12,6 +12,8 @@ pub fn world() -> World {
     world.spawn((0u32,)); // Frame count
 
     // Player 1 components
+    let character = Character::ken();
+    let origin = character.data.origin;
     let _player1 = world.spawn((
         Player::One,
         Input::default(),
@@ -19,8 +21,8 @@ pub fn world() -> World {
         InputConfig::one(),
         Physics::one(),
         StateMachine::default(),
-        Character::ken(),
-        Animator::default(),
+        character,
+        Animator::new(origin),
     ));
 
     // Player 2 components

@@ -1,6 +1,8 @@
 use crate::prelude::*;
 
 pub struct Animator {
+    /// Origin
+    origin: Vec2,
     /// Internal timer for each keyframe
     tick: u32,
     /// Keyframe array index
@@ -18,6 +20,12 @@ pub struct Animator {
 }
 
 impl Animator {
+    pub fn new(origin: Vec2) -> Self {
+        Self {
+            origin,
+            ..Default::default()
+        }
+    }
     pub fn reset(&mut self) {
         self.duration = 0;
         self.index = 0;
@@ -28,6 +36,7 @@ impl Animator {
 impl Default for Animator {
     fn default() -> Self {
         Self {
+            origin: Vec2 { x: 1., y: 1. },
             tick: 0,
             index: 0,
             duration: 0,
@@ -94,7 +103,7 @@ fn draw(
         height * animator.h_scale,
     );
     let dest_rec = rrect(screen_x, screen_y, width, height);
-    let origin = rvec2(width / 2., height);
+    let origin = rvec2(width * animator.origin.x, height * animator.origin.y);
     let rotation = 0.;
     let tint = Color::WHITE;
 

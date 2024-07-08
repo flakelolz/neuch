@@ -7,6 +7,10 @@
   "jump_deceleration": -540,
   "jump_forward": 4000,
   "jump_backward": -4000,
+  "origin": {
+    "x": 0.4,
+    "y": 0.87
+  },
   "actions": [
     {
       "name": "St Idle",

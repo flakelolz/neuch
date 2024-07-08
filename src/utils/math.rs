@@ -35,6 +35,12 @@ impl IVec2 {
     }
 }
 
+#[derive(Debug, Clone, Copy, PartialEq, PartialOrd, Default, Deserialize, Serialize)]
+pub struct Vec2 {
+    pub x: f32,
+    pub y: f32,
+}
+
 pub fn world_to_screen_num(coord: i32) -> i32 {
     coord / 1000
 }
