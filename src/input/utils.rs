@@ -7,6 +7,10 @@ pub fn neutral(buffer: &InputBuffer) -> bool {
         && !buffer.input().backward
 }
 
+pub fn up(buffer: &InputBuffer) -> bool {
+    buffer.input().up
+}
+
 pub fn down(buffer: &InputBuffer) -> bool {
     buffer.input().down
 }
@@ -17,6 +21,14 @@ pub fn backward(buffer: &InputBuffer) -> bool {
 
 pub fn forward(buffer: &InputBuffer) -> bool {
     buffer.input().forward
+}
+
+pub fn up_forward(buffer: &InputBuffer) -> bool {
+    up(buffer) && forward(buffer)
+}
+
+pub fn up_backward(buffer: &InputBuffer) -> bool {
+    up(buffer) && backward(buffer)
 }
 
 /// Checks if there is a direction that would invalidate the whole motion input

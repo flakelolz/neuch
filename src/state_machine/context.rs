@@ -3,10 +3,28 @@ use crate::prelude::*;
 #[derive(Default)]
 pub struct Context {
     pub character: Option<CharacterInfo>,
-    pub next: Option<Box<dyn State>>,
     pub elapsed: u32,
     pub duration: u32,
     pub modifiers: Instructions,
+    pub ctx: SubContext,
+}
+
+pub struct SubContext {
+    pub next: Option<Box<dyn State>>,
+    pub can_dash_f: bool,
+    pub can_dash_b: bool,
+    pub airborne: bool,
+}
+
+impl Default for SubContext {
+    fn default() -> Self {
+        Self {
+            next: None,
+            can_dash_f: true,
+            can_dash_b: true,
+            airborne: false,
+        }
+    }
 }
 
 // Naming is hard
@@ -31,7 +49,7 @@ pub fn handle_modifiers(context: &mut Context, buffer: &InputBuffer, physics: &m
             for action in cancels {
                 if context.elapsed >= action.on_frame {
                     for state in &action.states {
-                        state.set(buffer, &mut context.next);
+                        state.set(buffer, &mut context.ctx);
                     }
                 }
             }

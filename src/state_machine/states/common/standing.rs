@@ -14,6 +14,9 @@ impl State for Idle {
         // Apply physics and handle modifiers
         physics.velocity.x = 0;
         // Transitions
+        if jump_transitions(context, buffer) {
+            return;
+        }
         if attack_transitions(context, buffer) {
             return;
         }
@@ -47,6 +50,9 @@ impl State for WalkForward {
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
         // Transitions
+        if jump_transitions(context, buffer) {
+            return;
+        }
         if attack_transitions(context, buffer) {
             return;
         }
@@ -58,12 +64,12 @@ impl State for WalkForward {
         }
         // Special case for walking the opposite direction
         if backward(buffer) {
-            context.next = Some(Box::new(standing::WalkBackward));
+            context.ctx.next = Some(Box::new(standing::WalkBackward));
             return;
         }
         // Base case & return to idle
         if !forward(buffer) {
-            context.next = Some(Box::new(standing::Idle));
+            context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -90,6 +96,9 @@ impl State for WalkBackward {
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
         // Transitions
+        if jump_transitions(context, buffer) {
+            return;
+        }
         if attack_transitions(context, buffer) {
             return;
         }
@@ -98,12 +107,12 @@ impl State for WalkBackward {
         }
         // Special case for walking the opposite direction
         if forward(buffer) {
-            context.next = Some(Box::new(standing::WalkForward));
+            context.ctx.next = Some(Box::new(standing::WalkForward));
             return;
         }
         // Base case & return to idle
         if !backward(buffer) {
-            context.next = Some(Box::new(standing::Idle));
+            context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -143,7 +152,7 @@ impl State for DashForward {
                 return;
             }
             // Return to idle
-            context.next = Some(Box::new(standing::Idle));
+            context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -181,7 +190,7 @@ impl State for DashBackward {
                 return;
             }
             // Return to idle
-            context.next = Some(Box::new(standing::Idle));
+            context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -219,7 +228,7 @@ impl State for LightPunch {
                 return;
             }
             // Return to idle
-            context.next = Some(Box::new(standing::Idle));
+            context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -257,7 +266,7 @@ impl State for MediumPunch {
                 return;
             }
             // Return to idle
-            context.next = Some(Box::new(standing::Idle));
+            context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -295,7 +304,7 @@ impl State for HeavyPunch {
                 return;
             }
             // Return to idle
-            context.next = Some(Box::new(standing::Idle));
+            context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -333,7 +342,7 @@ impl State for LightKick {
                 return;
             }
             // Return to idle
-            context.next = Some(Box::new(standing::Idle));
+            context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -371,7 +380,7 @@ impl State for MediumKick {
                 return;
             }
             // Return to idle
-            context.next = Some(Box::new(standing::Idle));
+            context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -409,7 +418,7 @@ impl State for HeavyKick {
                 return;
             }
             // Return to idle
-            context.next = Some(Box::new(standing::Idle));
+            context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
 

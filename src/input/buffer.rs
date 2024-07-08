@@ -131,8 +131,6 @@ pub struct InputBuffer {
     pub buffer: [Input; BUFFER_SIZE],
     pub dash: usize,
     pub attack: usize,
-    pub can_dash_f: bool,
-    pub can_dash_b: bool,
 }
 
 impl Default for InputBuffer {
@@ -142,8 +140,6 @@ impl Default for InputBuffer {
             buffer: [Input::default(); BUFFER_SIZE],
             dash: 12,
             attack: 2,
-            can_dash_f: true,
-            can_dash_b: true,
         }
     }
 }
@@ -153,7 +149,6 @@ impl InputBuffer {
     pub fn update(&mut self, input: &Input) {
         self.index = (self.index + 1) % self.buffer.len();
         self.buffer[self.index] = *input;
-        self.can_dash();
     }
 
     fn get_curret_input(&self) -> Input {
@@ -274,30 +269,30 @@ impl InputBuffer {
         false
     }
 
-    fn can_dash(&mut self) {
+    pub fn validate_dash(&mut self, ctx: &mut SubContext) {
         let duration = 8;
         if self.held(&Inputs::Forward, duration) && !self.held(&Inputs::DownForward, duration)
             || check_invalid_motion(&Motions::DashForward, self, self.dash)
         {
-            self.can_dash_f = false;
+            ctx.can_dash_f = false;
         } else if self.held(&Inputs::Neutral, duration)
             || self.held(&Inputs::Backward, duration)
             || self.held(&Inputs::Down, duration)
             || self.held(&Inputs::Up, duration)
         {
-            self.can_dash_f = true;
+            ctx.can_dash_f = true;
         }
 
         if self.held(&Inputs::Backward, duration) && !self.held(&Inputs::DownBackward, duration)
             || check_invalid_motion(&Motions::DashBackward, self, self.dash)
         {
-            self.can_dash_b = false;
+            ctx.can_dash_b = false;
         } else if self.held(&Inputs::Neutral, duration)
             || self.held(&Inputs::Forward, duration)
             || self.held(&Inputs::Down, duration)
             || self.held(&Inputs::Up, duration)
         {
-            self.can_dash_b = true;
+            ctx.can_dash_b = true;
         }
     }
 }

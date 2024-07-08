@@ -9,7 +9,7 @@ pub fn handle_transition(
     animator: &mut Animator,
 ) {
     // If there is a next state to transition to it
-    if let Some(mut next) = context.next.take() {
+    if let Some(mut next) = context.ctx.next.take() {
         // Setup the next state and reset variables
         processor.current.on_exit(context, buffer, physics);
         context.elapsed = 1;
@@ -63,7 +63,7 @@ pub fn handle_transition(
 }
 
 pub fn crouch_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if Crouching::Start.set(buffer, &mut context.next) {
+    if Crouching::Start.set(buffer, &mut context.ctx) {
         return true;
     }
 
@@ -71,7 +71,7 @@ pub fn crouch_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
 }
 
 pub fn walk_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if Group::Walks.set(buffer, &mut context.next) {
+    if Group::Walks.set(buffer, &mut context.ctx) {
         return true;
     }
 
@@ -79,14 +79,35 @@ pub fn walk_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
 }
 
 pub fn dash_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if Group::Dashes.set(buffer, &mut context.next) {
+    if Group::Dashes.set(buffer, &mut context.ctx) {
         return true;
     }
     false
 }
 
 pub fn attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if Group::Normals.set(buffer, &mut context.next) {
+    if !context.ctx.airborne && Group::Normals.set(buffer, &mut context.ctx) {
+        return true;
+    }
+    false
+}
+
+pub fn jump_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
+    if up(buffer) {
+        context.ctx.next = Some(Box::new(jumping::Start));
+        return true;
+    }
+    false
+}
+
+pub fn handle_ground_collision(context: &mut Context, physics: &mut Physics) -> bool {
+    if physics.position.y <= 0 {
+        physics.position.y = 0;
+        physics.velocity.y = 0;
+        physics.velocity.x = 0;
+        physics.acceleration.y = 0;
+        context.ctx.airborne = false;
+        context.ctx.next = Some(Box::new(jumping::End));
         return true;
     }
     false

@@ -20,7 +20,8 @@
 - [x] Buffer system
 - [x] Fix dash after forward walk
 - [x] Fix attack input buffer for chain attacks
-- [ ] Implement jump states
+- [x] Implement jump states
+- [ ] Fix dash lockout API
 - [ ] Collision system
 - [ ] Make an editor for character data
 - [ ] Change font
@@ -35,3 +36,9 @@
 # Dash should work
 - [x] *4...* (walk back) ->  *5* > *4* > *5* > *4*
 - [x] *1...* (crouching) ->  *5* > *4* > *5* > *4*
+
+# Hitbox, Hurtbox and Pushbox
+
+All of them will have drastically different properties to keep track of, so I can't
+use the same *HitboxGroup* structure for all of them.
+

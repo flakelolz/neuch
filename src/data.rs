@@ -60,7 +60,10 @@ pub struct CharacterData {
     pub health: i32,
     pub forward_walk: i32,
     pub backward_walk: i32,
-    pub jump_velocity: u32,
+    pub jump_velocity: i32,
+    pub jump_deceleration: i32,
+    pub jump_forward: i32,
+    pub jump_backward: i32,
     pub actions: Vec<Action>,
 }
 
@@ -81,7 +84,10 @@ pub struct CharacterInfo {
     pub health: i32,
     pub walk_forward: i32,
     pub walk_backward: i32,
-    pub jump_velocity: u32,
+    pub jump_velocity: i32,
+    pub jump_deceleration: i32,
+    pub jump_forward: i32,
+    pub jump_backward: i32,
 }
 
 #[allow(unused)]
@@ -100,6 +106,9 @@ impl Character {
             walk_forward: data.forward_walk,
             walk_backward: data.backward_walk,
             jump_velocity: data.jump_velocity,
+            jump_deceleration: data.jump_deceleration,
+            jump_forward: data.jump_forward,
+            jump_backward: data.jump_backward,
         };
         let action_map = generate_action_map(&data);
         Self {

@@ -13,7 +13,7 @@ pub fn parse_animation_name(filename: &str) -> (String, usize) {
     let mut split = name.split_whitespace();
     let state = split.next().unwrap();
     let action = split.next().unwrap();
-    let index = split.next().unwrap();
+    let index = split.next().unwrap_or("0");
 
     let mut action_name = String::new();
     action_name.push_str(state);

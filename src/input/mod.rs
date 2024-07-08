@@ -22,9 +22,10 @@ pub fn update_inputs(world: &mut World, rl: &mut RaylibHandle) {
 
 pub fn update_input_buffers(world: &mut World) {
     world
-        .query_mut::<(&mut Input, &mut InputBuffer)>()
+        .query_mut::<(&mut Input, &mut InputBuffer, &mut StateMachine)>()
         .into_iter()
-        .for_each(|(_, (input, buffer))| {
+        .for_each(|(_, (input, buffer, machine))| {
             buffer.update(input);
+            buffer.validate_dash(&mut machine.context.ctx);
         });
 }

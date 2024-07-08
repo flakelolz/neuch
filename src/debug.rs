@@ -18,9 +18,16 @@ pub fn show_position(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>)
         .into_iter()
         .for_each(|(_, (physics, player))| {
             if player == &Player::One {
-                let (x, y) = world_to_screen_vec(physics.position);
-                d.draw_circle(x, y, 1., Color::WHITE);
-                d.draw_text(format!("{}", x).as_str(), x, y + 2, 10, Color::WHITE);
+                let (screen_x, screen_y) = pos_to_screen(physics.position);
+                let (pos_x, pos_y) = world_to_screen(physics.position);
+                d.draw_circle(screen_x, screen_y, 1., Color::WHITE);
+                d.draw_text(
+                    format!("{}:{}", pos_x, pos_y).as_str(),
+                    screen_x,
+                    screen_y + 2,
+                    10,
+                    Color::WHITE,
+                );
             }
         });
 }
@@ -30,23 +37,29 @@ pub fn show_state(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
         .query::<(&StateMachine, &Physics)>()
         .into_iter()
         .for_each(|(_, (state, physics))| {
-            let (x, y) = world_to_screen_vec(physics.position);
+            let (screen_x, screen_y) = pos_to_screen(physics.position);
             let current = state.processor.current.as_ref();
             let timeline = state.context.elapsed;
             let duration = state.context.duration;
 
-            d.draw_text(&current.name(), x - 30, y - 130, 10, Color::WHITE);
+            d.draw_text(
+                &current.name(),
+                screen_x - 30,
+                screen_y - 130,
+                10,
+                Color::WHITE,
+            );
             d.draw_text(
                 format!("{}", timeline).as_str(),
-                x - 10,
-                y - 120,
+                screen_x - 10,
+                screen_y - 120,
                 10,
                 Color::WHITE,
             );
             d.draw_text(
                 format!("{}", duration).as_str(),
-                x - 30,
-                y - 120,
+                screen_x - 30,
+                screen_y - 120,
                 10,
                 Color::WHITE,
             );
@@ -94,4 +107,29 @@ pub fn reset_position(world: &mut World, rl: &mut RaylibHandle) {
                 }
             });
     }
+}
+
+pub fn forced_move(world: &mut World, rl: &mut RaylibHandle) {
+    world
+        .query_mut::<(&mut Physics, &Player)>()
+        .into_iter()
+        .for_each(|(_, (physics, player))| {
+            if player == &Player::One {
+                if rl.is_key_down(KeyboardKey::KEY_LEFT) {
+                    physics.position.x -= 10000;
+                }
+
+                if rl.is_key_down(KeyboardKey::KEY_RIGHT) {
+                    physics.position.x += 10000;
+                }
+
+                if rl.is_key_down(KeyboardKey::KEY_UP) {
+                    physics.position.y -= 10000;
+                }
+
+                if rl.is_key_down(KeyboardKey::KEY_DOWN) {
+                    physics.position.y += 10000;
+                }
+            }
+        });
 }

@@ -17,11 +17,11 @@ impl State for Start {
         }
         // Special case for releasing down on crouch start
         if context.elapsed >= context.duration && down(buffer) {
-            context.next = Some(Box::new(crouching::Idle));
+            context.ctx.next = Some(Box::new(crouching::Idle));
         }
         // Base case
         if !down(buffer) {
-            context.next = Some(Box::new(crouching::End));
+            context.ctx.next = Some(Box::new(crouching::End));
         }
     }
 
@@ -47,7 +47,7 @@ impl State for Idle {
         }
         // Base case
         if !down(buffer) {
-            context.next = Some(Box::new(crouching::End));
+            context.ctx.next = Some(Box::new(crouching::End));
         }
     }
 
@@ -79,7 +79,7 @@ impl State for End {
         }
         // Base case & return to idle
         if context.elapsed >= context.duration {
-            context.next = Some(Box::new(standing::Idle));
+            context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
 
@@ -115,9 +115,9 @@ impl State for LightPunch {
                     return;
                 }
                 // Return to idle
-                context.next = Some(Box::new(crouching::End));
+                context.ctx.next = Some(Box::new(crouching::End));
             } else {
-                context.next = Some(Box::new(crouching::Idle));
+                context.ctx.next = Some(Box::new(crouching::Idle));
             }
         }
     }
@@ -154,9 +154,9 @@ impl State for MediumPunch {
                     return;
                 }
                 // Return to idle
-                context.next = Some(Box::new(crouching::End));
+                context.ctx.next = Some(Box::new(crouching::End));
             } else {
-                context.next = Some(Box::new(crouching::Idle));
+                context.ctx.next = Some(Box::new(crouching::Idle));
             }
         }
     }
@@ -193,9 +193,9 @@ impl State for HeavyPunch {
                     return;
                 }
                 // Return to idle
-                context.next = Some(Box::new(crouching::End));
+                context.ctx.next = Some(Box::new(crouching::End));
             } else {
-                context.next = Some(Box::new(crouching::Idle));
+                context.ctx.next = Some(Box::new(crouching::Idle));
             }
         }
     }
@@ -232,9 +232,9 @@ impl State for LightKick {
                     return;
                 }
                 // Return to idle
-                context.next = Some(Box::new(crouching::End));
+                context.ctx.next = Some(Box::new(crouching::End));
             } else {
-                context.next = Some(Box::new(crouching::Idle));
+                context.ctx.next = Some(Box::new(crouching::Idle));
             }
         }
     }
@@ -271,9 +271,9 @@ impl State for MediumKick {
                     return;
                 }
                 // Return to idle
-                context.next = Some(Box::new(crouching::End));
+                context.ctx.next = Some(Box::new(crouching::End));
             } else {
-                context.next = Some(Box::new(crouching::Idle));
+                context.ctx.next = Some(Box::new(crouching::Idle));
             }
         }
     }
@@ -310,9 +310,9 @@ impl State for HeavyKick {
                     return;
                 }
                 // Return to idle
-                context.next = Some(Box::new(crouching::End));
+                context.ctx.next = Some(Box::new(crouching::End));
             } else {
-                context.next = Some(Box::new(crouching::Idle));
+                context.ctx.next = Some(Box::new(crouching::Idle));
             }
         }
     }

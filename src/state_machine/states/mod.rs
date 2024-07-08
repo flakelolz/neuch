@@ -9,6 +9,7 @@ pub enum States {
     Group(Group),
     Standing(Standing),
     Crouching(Crouching),
+    Jumping(Jumping),
 }
 
 impl Default for States {
@@ -18,11 +19,12 @@ impl Default for States {
 }
 
 impl States {
-    pub fn set(&self, buffer: &InputBuffer, next: &mut Option<Box<dyn State>>) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext) -> bool {
         match self {
-            States::Group(states) => states.set(buffer, next),
-            States::Standing(states) => states.set(buffer, next),
-            States::Crouching(states) => states.set(buffer, next),
+            States::Group(states) => states.set(buffer, ctx),
+            States::Standing(states) => states.set(buffer, ctx),
+            States::Crouching(states) => states.set(buffer, ctx),
+            States::Jumping(states) => states.set(buffer, ctx),
         }
     }
 }
@@ -36,106 +38,125 @@ pub enum Group {
     Movement,
     Dashes,
     Walks,
+    Jumps,
 }
 
 impl Group {
-    pub fn set(&self, buffer: &InputBuffer, next: &mut Option<Box<dyn State>>) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext) -> bool {
         match self {
             Group::All => {
-                if Group::Normals.set(buffer, next) {
+                if Group::Normals.set(buffer, ctx) {
                     return true;
                 }
-                if Group::Movement.set(buffer, next) {
+                if Group::Movement.set(buffer, ctx) {
+                    return true;
+                }
+                if Group::Jumps.set(buffer, ctx) {
                     return true;
                 }
                 false
             }
 
             Group::Normals => {
-                if Group::CrNormals.set(buffer, next) {
+                if Group::CrNormals.set(buffer, ctx) {
                     return true;
                 }
-                if Group::StNormals.set(buffer, next) {
+                if Group::StNormals.set(buffer, ctx) {
                     return true;
                 }
                 false
             }
 
             Group::StNormals => {
-                if Standing::HeavyKick.set(buffer, next) {
+                if Standing::HeavyKick.set(buffer, ctx) {
                     return true;
                 }
-                if Standing::HeavyPunch.set(buffer, next) {
+                if Standing::HeavyPunch.set(buffer, ctx) {
                     return true;
                 }
-                if Standing::MediumKick.set(buffer, next) {
+                if Standing::MediumKick.set(buffer, ctx) {
                     return true;
                 }
-                if Standing::MediumPunch.set(buffer, next) {
+                if Standing::MediumPunch.set(buffer, ctx) {
                     return true;
                 }
-                if Standing::LightKick.set(buffer, next) {
+                if Standing::LightKick.set(buffer, ctx) {
                     return true;
                 }
-                if Standing::LightPunch.set(buffer, next) {
+                if Standing::LightPunch.set(buffer, ctx) {
                     return true;
                 }
                 false
             }
 
             Group::CrNormals => {
-                if Crouching::HeavyKick.set(buffer, next) {
+                if Crouching::HeavyKick.set(buffer, ctx) {
                     return true;
                 }
-                if Crouching::HeavyPunch.set(buffer, next) {
+                if Crouching::HeavyPunch.set(buffer, ctx) {
                     return true;
                 }
-                if Crouching::MediumKick.set(buffer, next) {
+                if Crouching::MediumKick.set(buffer, ctx) {
                     return true;
                 }
-                if Crouching::MediumPunch.set(buffer, next) {
+                if Crouching::MediumPunch.set(buffer, ctx) {
                     return true;
                 }
-                if Crouching::LightKick.set(buffer, next) {
+                if Crouching::LightKick.set(buffer, ctx) {
                     return true;
                 }
-                if Crouching::LightPunch.set(buffer, next) {
+                if Crouching::LightPunch.set(buffer, ctx) {
                     return true;
                 }
                 false
             }
 
             Group::Movement => {
-                if Standing::DashForward.set(buffer, next) {
+                if Standing::DashForward.set(buffer, ctx) {
                     return true;
                 }
-                if Standing::DashBackward.set(buffer, next) {
+                if Standing::DashBackward.set(buffer, ctx) {
                     return true;
                 }
-                if Standing::WalkForward.set(buffer, next) {
+                if Standing::WalkForward.set(buffer, ctx) {
                     return true;
                 }
-                if Standing::WalkBackward.set(buffer, next) {
+                if Standing::WalkBackward.set(buffer, ctx) {
                     return true;
                 }
                 false
             }
 
             Group::Dashes => {
-                if Standing::DashForward.set(buffer, next) {
+                if Standing::DashForward.set(buffer, ctx) {
                     return true;
                 }
-                if Standing::DashBackward.set(buffer, next) {
+                if Standing::DashBackward.set(buffer, ctx) {
                     return true;
                 }
                 false
             }
 
             Group::Walks => {
-                if Standing::WalkForward.set(buffer, next) {
+                if Standing::WalkForward.set(buffer, ctx) {
                     return true;
                 }
-                if Standing::WalkBackward.set(buffer, next) {
+                if Standing::WalkBackward.set(buffer, ctx) {
+                    return true;
+                }
+                false
+            }
+            Group::Jumps => {
+                if Jumping::Start.set(buffer, ctx) {
+                    return true;
+                }
+                if Jumping::Forward.set(buffer, ctx) {
+                    return true;
+                }
+                if Jumping::Backward.set(buffer, ctx) {
+                    return true;
+                }
+                if Jumping::Neutral.set(buffer, ctx) {
                     return true;
                 }
                 false
@@ -160,53 +181,53 @@ pub enum Standing {
 }
 
 impl Standing {
-    pub fn set(&self, buffer: &InputBuffer, next: &mut Option<Box<dyn State>>) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext) -> bool {
         match self {
             Standing::Idle => {
                 if neutral(buffer) {
-                    next.replace(Box::new(standing::Idle));
+                    ctx.next.replace(Box::new(standing::Idle));
                     return true;
                 }
                 false
             }
             Standing::LightPunch => {
                 if buffer.buffered(&Inputs::LightPunch, buffer.attack) && !down(buffer) {
-                    next.replace(Box::new(standing::LightPunch));
+                    ctx.next.replace(Box::new(standing::LightPunch));
                     return true;
                 }
                 false
             }
             Standing::MediumPunch => {
                 if buffer.buffered(&Inputs::MediumPunch, buffer.attack) && !down(buffer) {
-                    next.replace(Box::new(standing::MediumPunch));
+                    ctx.next.replace(Box::new(standing::MediumPunch));
                     return true;
                 }
                 false
             }
             Standing::HeavyPunch => {
                 if buffer.buffered(&Inputs::HeavyPunch, buffer.attack) && !down(buffer) {
-                    next.replace(Box::new(standing::HeavyPunch));
+                    ctx.next.replace(Box::new(standing::HeavyPunch));
                     return true;
                 }
                 false
             }
             Standing::LightKick => {
                 if buffer.buffered(&Inputs::LightKick, buffer.attack) && !down(buffer) {
-                    next.replace(Box::new(standing::LightKick));
+                    ctx.next.replace(Box::new(standing::LightKick));
                     return true;
                 }
                 false
             }
             Standing::MediumKick => {
                 if buffer.buffered(&Inputs::MediumKick, buffer.attack) && !down(buffer) {
-                    next.replace(Box::new(standing::MediumKick));
+                    ctx.next.replace(Box::new(standing::MediumKick));
                     return true;
                 }
                 false
             }
             Standing::HeavyKick => {
                 if buffer.buffered(&Inputs::HeavyKick, buffer.attack) && !down(buffer) {
-                    next.replace(Box::new(standing::HeavyKick));
+                    ctx.next.replace(Box::new(standing::HeavyKick));
                     return true;
                 }
                 false
@@ -215,13 +236,13 @@ impl Standing {
                 if buffer.was_motion_executed(&Motions::ForcedDashForward, buffer.dash)
                     && !check_invalid_motion(&Motions::DashForward, buffer, buffer.dash)
                 {
-                    next.replace(Box::new(standing::DashForward));
+                    ctx.next.replace(Box::new(standing::DashForward));
                     return true;
                 }
                 if buffer.was_motion_executed(&Motions::DashForward, buffer.dash)
-                    && buffer.can_dash_f
+                    && ctx.can_dash_f
                 {
-                    next.replace(Box::new(standing::DashForward));
+                    ctx.next.replace(Box::new(standing::DashForward));
                     return true;
                 }
                 false
@@ -230,27 +251,27 @@ impl Standing {
                 if buffer.was_motion_executed(&Motions::ForcedDashBackward, buffer.dash)
                     && !check_invalid_motion(&Motions::DashBackward, buffer, buffer.dash)
                 {
-                    next.replace(Box::new(standing::DashBackward));
+                    ctx.next.replace(Box::new(standing::DashBackward));
                     return true;
                 }
                 if buffer.was_motion_executed(&Motions::DashBackward, buffer.dash)
-                    && buffer.can_dash_b
+                    && ctx.can_dash_b
                 {
-                    next.replace(Box::new(standing::DashBackward));
+                    ctx.next.replace(Box::new(standing::DashBackward));
                     return true;
                 }
                 false
             }
             Standing::WalkForward => {
                 if forward(buffer) {
-                    next.replace(Box::new(standing::WalkForward));
+                    ctx.next.replace(Box::new(standing::WalkForward));
                     return true;
                 }
                 false
             }
             Standing::WalkBackward => {
                 if backward(buffer) {
-                    next.replace(Box::new(standing::WalkBackward));
+                    ctx.next.replace(Box::new(standing::WalkBackward));
                     return true;
                 }
                 false
@@ -273,71 +294,118 @@ pub enum Crouching {
 }
 
 impl Crouching {
-    pub fn set(&self, buffer: &InputBuffer, next: &mut Option<Box<dyn State>>) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext) -> bool {
         match self {
             Crouching::Start => {
                 if down(buffer) {
-                    next.replace(Box::new(crouching::Start));
+                    ctx.next.replace(Box::new(crouching::Start));
                     return true;
                 }
                 false
             }
             Crouching::Idle => {
                 if down(buffer) {
-                    next.replace(Box::new(crouching::Idle));
+                    ctx.next.replace(Box::new(crouching::Idle));
                     return true;
                 }
                 false
             }
             Crouching::End => {
                 if !down(buffer) {
-                    next.replace(Box::new(crouching::End));
+                    ctx.next.replace(Box::new(crouching::End));
                     return true;
                 }
                 false
             }
             Crouching::LightPunch => {
                 if buffer.buffered(&Inputs::LightPunch, buffer.attack) && down(buffer) {
-                    next.replace(Box::new(crouching::LightPunch));
+                    ctx.next.replace(Box::new(crouching::LightPunch));
                     return true;
                 }
                 false
             }
             Crouching::MediumPunch => {
                 if buffer.buffered(&Inputs::MediumPunch, buffer.attack) && down(buffer) {
-                    next.replace(Box::new(crouching::MediumPunch));
+                    ctx.next.replace(Box::new(crouching::MediumPunch));
                     return true;
                 }
                 false
             }
             Crouching::HeavyPunch => {
                 if buffer.buffered(&Inputs::HeavyPunch, buffer.attack) && down(buffer) {
-                    next.replace(Box::new(crouching::HeavyPunch));
+                    ctx.next.replace(Box::new(crouching::HeavyPunch));
                     return true;
                 }
                 false
             }
             Crouching::LightKick => {
                 if buffer.buffered(&Inputs::LightKick, buffer.attack) && down(buffer) {
-                    next.replace(Box::new(crouching::LightKick));
+                    ctx.next.replace(Box::new(crouching::LightKick));
                     return true;
                 }
                 false
             }
             Crouching::MediumKick => {
                 if buffer.buffered(&Inputs::MediumKick, buffer.attack) && down(buffer) {
-                    next.replace(Box::new(crouching::MediumKick));
+                    ctx.next.replace(Box::new(crouching::MediumKick));
                     return true;
                 }
                 false
             }
             Crouching::HeavyKick => {
                 if buffer.buffered(&Inputs::HeavyKick, buffer.attack) && down(buffer) {
-                    next.replace(Box::new(crouching::HeavyKick));
+                    ctx.next.replace(Box::new(crouching::HeavyKick));
                     return true;
                 }
                 false
             }
         }
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Deserialize, Serialize)]
+pub enum Jumping {
+    Start,
+    Neutral,
+    Forward,
+    Backward,
+    End,
+}
+
+impl Jumping {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext) -> bool {
+        match self {
+            Jumping::Start => {
+                if up(buffer) && !ctx.airborne {
+                    ctx.next.replace(Box::new(jumping::Start));
+                    return true;
+                }
+            }
+            Jumping::Neutral => {
+                if up(buffer) {
+                    ctx.next.replace(Box::new(jumping::Neutral));
+                    return true;
+                }
+            }
+            Jumping::Forward => {
+                if up_forward(buffer) {
+                    ctx.next.replace(Box::new(jumping::Forward));
+                    return true;
+                }
+            }
+            Jumping::Backward => {
+                if up_backward(buffer) {
+                    ctx.next.replace(Box::new(jumping::Backward));
+                    return true;
+                }
+            }
+            Jumping::End => {
+                if !up(buffer) && ctx.airborne {
+                    ctx.next.replace(Box::new(jumping::End));
+                    return true;
+                }
+            }
+        }
+        false
     }
 }
