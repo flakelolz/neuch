@@ -62,11 +62,6 @@ impl State for WalkForward {
         if dash_transitions(context, buffer) {
             return;
         }
-        // Special case for walking the opposite direction
-        if backward(buffer) {
-            context.ctx.next = Some(Box::new(standing::WalkBackward));
-            return;
-        }
         // Base case & return to idle
         if !forward(buffer) {
             context.ctx.next = Some(Box::new(standing::Idle));
@@ -103,11 +98,6 @@ impl State for WalkBackward {
             return;
         }
         if crouch_transition(context, buffer) {
-            return;
-        }
-        // Special case for walking the opposite direction
-        if forward(buffer) {
-            context.ctx.next = Some(Box::new(standing::WalkForward));
             return;
         }
         // Base case & return to idle
