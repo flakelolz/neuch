@@ -1,5 +1,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
-use prelude::{HEIGHT, WIDTH};
+use prelude::{HEIGHT, WIDTH, SCALE};
 
 mod animations;
 mod assets;
@@ -34,7 +34,9 @@ mod prelude {
     pub const HEIGHT: i32 = 216;
     pub const FWIDTH: f32 = WIDTH as f32;
     pub const FHEIGHT: f32 = HEIGHT as f32;
-    pub const GROUND: i32 = 180;
+    pub const SCALE: i32 = 3;
+    pub const GROUND_OFFSET: i32 = 180;
+    pub const SCREEN_CENTER: i32 = WIDTH / 2;
 }
 
 fn main() {
@@ -44,7 +46,7 @@ fn main() {
     }
 
     let (mut rl, thread) = raylib::init()
-        .size(WIDTH * 3, HEIGHT * 3)
+        .size(WIDTH * SCALE, HEIGHT * SCALE)
         .title("Neuch")
         .resizable()
         .build();

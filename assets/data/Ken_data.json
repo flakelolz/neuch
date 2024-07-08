@@ -3,6 +3,7 @@
   "health": 1000,
   "forward_walk": 3000,
   "backward_walk": 3000,
+  "jump_velocity": 10000,
   "actions": [
     {
       "name": "St Idle",
@@ -373,7 +374,7 @@
       ],
       "hitbox": null,
       "modifiers": {
-        "cancellable": [
+        "cancels": [
           {
             "on_frame": 12,
             "states": [
@@ -536,7 +537,7 @@
       ],
       "hitbox": null,
       "modifiers": {
-        "cancellable": null,
+        "cancels": null,
         "potisions": [
           {
             "on_frame": 2,
@@ -667,7 +668,7 @@
         }
       ],
       "modifiers": {
-        "cancellable": [
+        "cancels": [
           {
             "on_frame": 8,
             "states": [
@@ -876,7 +877,7 @@
         }
       ],
       "modifiers": {
-        "cancellable": null,
+        "cancels": null,
         "potisions": [
           {
             "on_frame": 2,
@@ -1148,7 +1149,7 @@
         }
       ],
       "modifiers": {
-        "cancellable": null,
+        "cancels": null,
         "potisions": [
           {
             "on_frame": 1,
@@ -1328,7 +1329,7 @@
         }
       ],
       "modifiers": {
-        "cancellable": null,
+        "cancels": null,
         "potisions": [
           {
             "on_frame": 1,
@@ -1731,7 +1732,7 @@
         }
       ],
       "modifiers": {
-        "cancellable": [
+        "cancels": [
           {
             "on_frame": 8,
             "states": [
@@ -2053,7 +2054,7 @@
         }
       ],
       "modifiers": {
-        "cancellable": [
+        "cancels": [
           {
             "on_frame": 8,
             "states": [
@@ -2163,7 +2164,7 @@
         }
       ],
       "modifiers": {
-        "cancellable": null,
+        "cancels": null,
         "potisions": [
           {
             "on_frame": 1,
@@ -2329,7 +2330,7 @@
         }
       ],
       "modifiers": {
-        "cancellable": null,
+        "cancels": null,
         "potisions": [
           {
             "on_frame": 1,
@@ -2487,6 +2488,220 @@
           "w": 176,
           "h": 144,
           "duration": 1
+        }
+      ]
+    },
+    {
+      "name": "Jmp Start",
+      "total": 5,
+      "looping": false,
+      "pushbox": [
+        {
+          "on_frame": 0,
+          "duration": 9,
+          "boxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hurtbox": [
+        {
+          "on_frame": 0,
+          "duration": 9,
+          "boxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hitbox": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 176,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 352,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 528,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 704,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 880,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 1056,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 1232,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 1408,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 1584,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "name": "Jmp Neutral",
+      "total": 40,
+      "looping": false,
+      "pushbox": [
+        {
+          "on_frame": 0,
+          "duration": 9,
+          "boxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hurtbox": [
+        {
+          "on_frame": 0,
+          "duration": 9,
+          "boxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "bottom": 0,
+              "right": 0
+            }
+          ]
+        }
+      ],
+      "hitbox": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 176,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 352,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 528,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 704,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 880,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 1056,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 1232,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 1408,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
+        },
+        {
+          "x": 1584,
+          "y": 0,
+          "w": 176,
+          "h": 144,
+          "duration": 4
         }
       ]
     }

@@ -1,6 +1,7 @@
+use std::ops::Neg;
+
 use crate::prelude::*;
 
-#[derive(Default)]
 pub struct Animator {
     /// Internal timer for each keyframe
     tick: u32,
@@ -8,6 +9,12 @@ pub struct Animator {
     index: usize,
     /// Current keyframe duration
     duration: u32,
+    /// Width scale of entity being drawn
+    w_scale: f32,
+    /// Height scale of entity being drawn
+    h_scale: f32,
+    /// Whether the animation should be flipped
+    flip: bool,
     /// Collection of all the keyframes on an action
     pub keyframes: Vec<Keyframe>,
 }
@@ -17,6 +24,20 @@ impl Animator {
         self.duration = 0;
         self.index = 0;
         self.tick = 0;
+    }
+}
+
+impl Default for Animator {
+    fn default() -> Self {
+        Self {
+            tick: 0,
+            index: 0,
+            duration: 0,
+            w_scale: 1.,
+            h_scale: 1.,
+            flip: false,
+            keyframes: vec![],
+        }
     }
 }
 
@@ -35,7 +56,7 @@ pub fn animation(d: &mut RaylibTextureMode<RaylibDrawHandle>, world: &World, ass
             if let Some(keyframe) = animator.keyframes.get(animator.index) {
                 animator.duration = keyframe.duration;
 
-                draw(d, physics, keyframe, texture);
+                draw(d, animator, physics, keyframe, texture);
 
                 animator.tick += 1;
             }
@@ -54,14 +75,28 @@ pub fn animation(d: &mut RaylibTextureMode<RaylibDrawHandle>, world: &World, ass
 
 fn draw(
     d: &mut RaylibTextureMode<RaylibDrawHandle>,
+    animator: &Animator,
     physics: &Physics,
     keyframe: &Keyframe,
     texture: &Texture2D,
 ) {
-    let (pos_x, pos_y) = world_to_screen_vec(physics.position);
-    let source_rec = rrect(keyframe.x, keyframe.y, keyframe.w, keyframe.h);
-    let dest_rec = rrect(pos_x, pos_y, source_rec.width, source_rec.height);
-    let origin = rvec2(dest_rec.width / 2., dest_rec.height);
+    let (screen_x, screen_y) = pos_to_screen(physics.position);
+    let (width, height) = (keyframe.w, keyframe.h);
+
+    let source_rec = rrect(
+        keyframe.x,
+        keyframe.y,
+        {
+            if animator.flip {
+                -width * animator.w_scale
+            } else {
+                width * animator.w_scale
+            }
+        },
+        height * animator.h_scale,
+    );
+    let dest_rec = rrect(screen_x, screen_y, width, height);
+    let origin = rvec2(width / 2., height);
     let rotation = 0.;
     let tint = Color::WHITE;
 

@@ -54,10 +54,10 @@ pub fn update_animation_data(name: &str) {
             }
 
             action.timeline.push(Keyframe {
-                x: frame.frame.x,
-                y: frame.frame.y,
-                w: frame.frame.w,
-                h: frame.frame.h,
+                x: frame.frame.x as f32,
+                y: frame.frame.y as f32,
+                w: frame.frame.w as f32,
+                h: frame.frame.h as f32,
                 duration: frame.duration / 16,
             });
 

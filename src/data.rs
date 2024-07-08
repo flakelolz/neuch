@@ -29,7 +29,7 @@ pub struct Action {
 
 #[derive(Debug, Clone, Default, Deserialize, Serialize)]
 pub struct Modifiers {
-    pub cancellable: Option<Vec<CancelablleModifier>>,
+    pub cancels: Option<Vec<CancelModifier>>,
     pub potisions: Option<Vec<PositionModifier>>,
 }
 
@@ -40,17 +40,17 @@ pub struct PositionModifier {
 }
 
 #[derive(Debug, Clone, Default, Deserialize, Serialize)]
-pub struct CancelablleModifier {
+pub struct CancelModifier {
     pub on_frame: u32,
     pub states: Vec<States>,
 }
 
 #[derive(Debug, Clone, Copy, Deserialize, Serialize, Default)]
 pub struct Keyframe {
-    pub x: u32,
-    pub y: u32,
-    pub w: u32,
-    pub h: u32,
+    pub x: f32,
+    pub y: f32,
+    pub w: f32,
+    pub h: f32,
     pub duration: u32,
 }
 
@@ -60,6 +60,7 @@ pub struct CharacterData {
     pub health: i32,
     pub forward_walk: i32,
     pub backward_walk: i32,
+    pub jump_velocity: u32,
     pub actions: Vec<Action>,
 }
 
@@ -80,6 +81,7 @@ pub struct CharacterInfo {
     pub health: i32,
     pub walk_forward: i32,
     pub walk_backward: i32,
+    pub jump_velocity: u32,
 }
 
 #[allow(unused)]
@@ -97,6 +99,7 @@ impl Character {
             health: data.health,
             walk_forward: data.forward_walk,
             walk_backward: data.backward_walk,
+            jump_velocity: data.jump_velocity,
         };
         let action_map = generate_action_map(&data);
         Self {
