@@ -32,6 +32,7 @@
 - [x] *4...* (walk back) ->  *5* > *4*
 - [x] *1...* (crouching) ->  *4* > *5* > *4*;
 - [x] *5...* (standing) -> *6* > *5* > *2* > *5* > *6*
+- [ ] *5...* (standing) -> *6* > *5* > *3* > *6*
 
 
 # Dash should work
@@ -39,6 +40,7 @@
 - [x] *1...* (crouching) ->  *5* > *4* > *5* > *4*
 - [ ] *5...* (standing) -> *3* > *5* > *6*
 - [ ] *5...* (standing) -> *1* > *5* > *4*
+- [ ] *5...* (standing) -> *6* > *3* > *5* > *6*
 
 # Hitbox, Hurtbox and Pushbox
 
