@@ -74,6 +74,9 @@ impl State for End {
         if crouch_transition(context, buffer) {
             return;
         }
+        if dash_transitions(context, buffer) {
+            return;
+        }
         if walk_transition(context, buffer) {
             return;
         }
