@@ -21,7 +21,8 @@
 - [x] Fix dash after forward walk
 - [x] Fix attack input buffer for chain attacks
 - [x] Implement jump states
-- [ ] Fix dash lockout API
+- [x] Fix dash lockout API
+- [ ] Add Player 2 (flipped)
 - [ ] Collision system
 - [ ] Make an editor for character data
 - [ ] Change font
@@ -36,6 +37,8 @@
 # Dash should work
 - [x] *4...* (walk back) ->  *5* > *4* > *5* > *4*
 - [x] *1...* (crouching) ->  *5* > *4* > *5* > *4*
+- [ ] *5...* (standing) -> *3* > *5* > *6*
+- [ ] *5...* (standing) -> *1* > *5* > *4*
 
 # Hitbox, Hurtbox and Pushbox
 
