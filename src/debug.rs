@@ -72,29 +72,29 @@ pub fn show_frame_count(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandl
     });
 }
 
-// pub fn show_context(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
-//     world
-//         .query::<(&StateMachine, &Player)>()
-//         .into_iter()
-//         .for_each(|(_, (machine, player))| {
-//             if player == &Player::One {
-//                 d.draw_text(
-//                     &format!("F: {}", machine.context.locked.dash_forward),
-//                     10,
-//                     20,
-//                     10,
-//                     Color::WHITE,
-//                 );
-//                 d.draw_text(
-//                     &format!("B: {}", machine.context.locked.dash_backward),
-//                     10,
-//                     30,
-//                     10,
-//                     Color::WHITE,
-//                 );
-//             }
-//         });
-// }
+pub fn show_context(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
+    world
+        .query::<(&StateMachine, &Player)>()
+        .into_iter()
+        .for_each(|(_, (machine, player))| {
+            if player == &Player::One {
+                d.draw_text(
+                    &format!("F: {}", machine.context.ctx.can_dash_f),
+                    10,
+                    20,
+                    10,
+                    Color::WHITE,
+                );
+                d.draw_text(
+                    &format!("B: {}", machine.context.ctx.can_dash_b),
+                    10,
+                    30,
+                    10,
+                    Color::WHITE,
+                );
+            }
+        });
+}
 
 pub fn reset_position(world: &mut World, rl: &mut RaylibHandle) {
     if rl.is_key_pressed(KeyboardKey::KEY_BACKSPACE) {

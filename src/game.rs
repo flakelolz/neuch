@@ -53,7 +53,7 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTex
                 show_state(&world, &mut d);
                 show_position(&world, &mut d);
                 // show_inputs(&world, &mut d);
-                // show_context(&world, &mut d);
+                show_context(&world, &mut d);
             }
 
             // Debug
