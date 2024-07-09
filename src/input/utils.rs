@@ -51,3 +51,99 @@ pub fn check_invalid_motion(motions: &Motions, buffer: &InputBuffer, duration: u
         _ => false,
     }
 }
+
+pub fn test_helper(buffer: &mut InputBuffer, inputs: Inputs) {
+    match inputs {
+        Inputs::Up => {
+            buffer.update(&Input {
+                up: true,
+                ..Default::default()
+            });
+        }
+        Inputs::Down => {
+            buffer.update(&Input {
+                down: true,
+                ..Default::default()
+            });
+        }
+        Inputs::Forward => {
+            buffer.update(&Input {
+                forward: true,
+                ..Default::default()
+            });
+        }
+        Inputs::Backward => {
+            buffer.update(&Input {
+                backward: true,
+                ..Default::default()
+            });
+        }
+        Inputs::UpForward => {
+            buffer.update(&Input {
+                up: true,
+                forward: true,
+                ..Default::default()
+            });
+        }
+        Inputs::UpBackward => {
+            buffer.update(&Input {
+                up: true,
+                backward: true,
+                ..Default::default()
+            });
+        }
+        Inputs::DownForward => {
+            buffer.update(&Input {
+                down: true,
+                forward: true,
+                ..Default::default()
+            });
+        }
+        Inputs::DownBackward => {
+            buffer.update(&Input {
+                down: true,
+                backward: true,
+                ..Default::default()
+            });
+        }
+        Inputs::Neutral => {
+            buffer.update(&Input::default());
+        }
+        Inputs::LightPunch => {
+            buffer.update(&Input {
+                lp: true,
+                ..Default::default()
+            });
+        }
+        Inputs::MediumPunch => {
+            buffer.update(&Input {
+                mp: true,
+                ..Default::default()
+            });
+        }
+        Inputs::HeavyPunch => {
+            buffer.update(&Input {
+                hp: true,
+                ..Default::default()
+            });
+        }
+        Inputs::LightKick => {
+            buffer.update(&Input {
+                lk: true,
+                ..Default::default()
+            });
+        }
+        Inputs::MediumKick => {
+            buffer.update(&Input {
+                mk: true,
+                ..Default::default()
+            });
+        }
+        Inputs::HeavyKick => {
+            buffer.update(&Input {
+                hk: true,
+                ..Default::default()
+            });
+        }
+    }
+}
