@@ -11,23 +11,21 @@ impl State for Start {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
+        // Set jump direction
+        handle_jump_flags(context, buffer);
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if forward(buffer) {
-                context.ctx.next = Some(Box::new(jumping::Forward));
-                return;
+            match context.ctx.flags.jump {
+                JumpFlags::None => context.ctx.next = Some(Box::new(jumping::Neutral)),
+                JumpFlags::Forward => context.ctx.next = Some(Box::new(jumping::Forward)),
+                JumpFlags::Backward => context.ctx.next = Some(Box::new(jumping::Backward)),
             }
-            if backward(buffer) {
-                context.ctx.next = Some(Box::new(jumping::Backward));
-                return;
-            }
-
-            context.ctx.next = Some(Box::new(jumping::Neutral));
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_exit(&mut self, context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        context.ctx.flags.jump = JumpFlags::None;
         println!("Jmp Start on_exit");
     }
 }

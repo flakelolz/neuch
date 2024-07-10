@@ -104,6 +104,15 @@ pub fn jump_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
     false
 }
 
+pub fn handle_jump_flags(context: &mut Context, buffer: &InputBuffer) {
+    if up_forward(buffer) {
+        context.ctx.flags.jump = JumpFlags::Forward;
+    }
+    if up_backward(buffer) {
+        context.ctx.flags.jump = JumpFlags::Backward;
+    }
+}
+
 pub fn handle_ground_collision(context: &mut Context, physics: &mut Physics) -> bool {
     if physics.position.y <= 0 {
         physics.position.y = 0;

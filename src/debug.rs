@@ -92,6 +92,13 @@ pub fn show_context(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) 
                     10,
                     Color::WHITE,
                 );
+                d.draw_text(
+                    &format!("Jump: {:#?}", machine.context.ctx.flags.jump),
+                    10,
+                    40,
+                    10,
+                    Color::WHITE,
+                );
             }
         });
 }

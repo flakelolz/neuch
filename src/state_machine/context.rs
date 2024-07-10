@@ -14,6 +14,7 @@ pub struct SubContext {
     pub can_dash_f: bool,
     pub can_dash_b: bool,
     pub airborne: bool,
+    pub flags: Flags,
 }
 
 impl Default for SubContext {
@@ -23,8 +24,24 @@ impl Default for SubContext {
             can_dash_f: true,
             can_dash_b: true,
             airborne: false,
+            flags: Flags {
+                jump: JumpFlags::None,
+            },
         }
     }
+}
+
+#[derive(Debug, Default)]
+pub struct Flags {
+    pub jump: JumpFlags,
+}
+
+#[derive(Debug, Default)]
+pub enum JumpFlags {
+    #[default]
+    None,
+    Forward,
+    Backward,
 }
 
 // Naming is hard
