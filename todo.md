@@ -41,7 +41,7 @@
 - [x] *5...* (standing) -> *3* > *5* > *6*
 - [x] *5...* (standing) -> *1* > *5* > *4*
 - [x] *5...* (standing) -> *4* > *6* > *5* > *6*
-- [ ] *5...* (standing) -> *6* > *3* > *5* > *6*
+- [x] *5...* (standing) -> *6* > *3* > *5* > *6*
 
 # Hitbox, Hurtbox and Pushbox
 
