@@ -138,7 +138,7 @@ impl Default for InputBuffer {
         Self {
             index: BUFFER_SIZE - 1,
             buffer: [Input::default(); BUFFER_SIZE],
-            dash: 12,
+            dash: 8,
             attack: 2,
         }
     }
@@ -151,52 +151,51 @@ impl InputBuffer {
         self.buffer[self.index] = *input;
     }
 
-    fn get_curret_input(&self) -> Input {
-        self.buffer[self.index]
+    /// Checks the current input
+    pub fn current(&self) -> &Input {
+        &self.buffer[self.index]
     }
 
-    fn get_previous_input(&self) -> Input {
-        self.buffer[(self.buffer.len() + self.index - 1) % self.buffer.len()]
+    /// Checks the previous input
+    pub fn previous(&self) -> &Input {
+        &self.buffer[(self.buffer.len() + self.index - 1) % self.buffer.len()]
     }
 
     /// Check if the input is currently pressed
-    fn is_input_pressed(&self, inputs: &Inputs) -> bool {
-        let current = self.get_curret_input();
-
-        inputs.is_pressed(&current)
+    pub fn pressed(&self, inputs: Inputs) -> bool {
+        let current = self.current();
+        inputs.is_pressed(current)
     }
 
     /// Check if the input was pressed on a specific frame
-    fn is_input_pressed_on_frame(&self, inputs: &Inputs, frame: usize) -> bool {
+    fn pressed_on_frame(&self, inputs: Inputs, frame: usize) -> bool {
         let buffer_index = frame % self.buffer.len();
         let input_command = self.buffer[buffer_index];
 
         inputs.is_pressed(&input_command)
     }
 
-    /// Check if an input has been held for a certain amount of frames
-    fn is_input_held(&self, input: &Inputs, duration: usize) -> bool {
+    /// Check if an input was performed within a certain duration on the past frames
+    fn pressed_buffered(&self, input: Inputs, duration: usize) -> bool {
         for i in 0..duration + 1 {
-            if self.is_input_pressed_on_frame(input, self.buffer.len() + self.index - i) {
-                continue;
-            } else {
-                return false;
+            if self.just_pressed_on_frame(input, self.buffer.len() + self.index - i) {
+                return true;
             }
         }
 
-        true
+        false
     }
 
     /// Checks if the input was initially pressed this frame
-    fn was_input_pressed(&self, inputs: &Inputs) -> bool {
-        let current = self.get_curret_input();
-        let previous = self.get_previous_input();
+    fn just_pressed(&self, inputs: Inputs) -> bool {
+        let current = self.current();
+        let previous = self.previous();
 
-        inputs.was_initially_pressed(&current, &previous)
+        inputs.was_initially_pressed(current, previous)
     }
 
     /// Checks if the input was initially pressed on a specific frame
-    fn was_input_pressed_on_frame(&self, inputs: &Inputs, frame: usize) -> bool {
+    fn just_pressed_on_frame(&self, inputs: Inputs, frame: usize) -> bool {
         let buffer_index = frame % self.buffer.len();
         let last_index = (self.buffer.len() + frame - 1) % self.buffer.len();
 
@@ -207,38 +206,25 @@ impl InputBuffer {
     }
 
     /// Check if an input was performed within a certain duration on the past frames
-    fn was_input_pressed_buffered(&self, input: &Inputs, duration: usize) -> bool {
-        for i in 0..duration + 1 {
-            if self.was_input_pressed_on_frame(input, self.buffer.len() + self.index - i) {
-                return true;
-            }
-        }
-
-        false
-    }
-
-    /// Checks the current input
-    pub fn input(&self) -> &Input {
-        &self.buffer[self.index]
-    }
-
-    /// Checks the previous input
-    pub fn previous(&self) -> &Input {
-        &self.buffer[(self.buffer.len() + self.index - 1) % self.buffer.len()]
-    }
-
-    /// Check if an input was performed within a certain duration on the past frames
-    pub fn buffered(&self, input: &Inputs, duration: usize) -> bool {
-        self.was_input_pressed_buffered(input, duration)
+    pub fn buffered(&self, input: Inputs, duration: usize) -> bool {
+        self.pressed_buffered(input, duration)
     }
 
     /// Check if an input has been held for a certain amount of frames
-    pub fn held(&self, input: &Inputs, duration: usize) -> bool {
-        self.is_input_held(input, duration)
+    pub fn held(&self, input: Inputs, duration: usize) -> bool {
+        for i in 0..duration + 1 {
+            if self.pressed_on_frame(input, self.buffer.len() + self.index - i) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+
+        true
     }
 
     /// Check if a motion was performed within a time limit
-    pub fn was_motion_executed(&self, motions: &Motions, mut time_limit: usize) -> bool {
+    pub fn was_motion_executed(&self, motions: Motions, mut time_limit: usize) -> bool {
         if time_limit > (self.buffer.len() + self.index) {
             time_limit = self.buffer.len() + self.index;
         }
@@ -254,9 +240,7 @@ impl InputBuffer {
                 let input_command = self.buffer[buffer_position];
                 let direction = motion[current_motion_index];
 
-                if check_numpad_direction(&input_command, direction)
-                    && !check_invalid_motion(motions, self, count)
-                {
+                if check_numpad_direction(&input_command, direction) {
                     current_motion_index += 1;
 
                     if current_motion_index >= motion.len() {
@@ -268,46 +252,19 @@ impl InputBuffer {
 
         false
     }
-
-    pub fn validate_dash(&mut self, ctx: &mut SubContext) {
-        let duration = 8;
-        if self.held(&Inputs::Forward, duration) && !self.held(&Inputs::DownForward, duration)
-            || check_invalid_motion(&Motions::DashForward, self, self.dash)
-        {
-            ctx.can_dash_f = false;
-        } else if self.held(&Inputs::Neutral, duration)
-            || self.held(&Inputs::Backward, duration)
-            || self.held(&Inputs::Down, duration)
-            || self.held(&Inputs::Up, duration)
-        {
-            ctx.can_dash_f = true;
-        }
-
-        if self.held(&Inputs::Backward, duration) && !self.held(&Inputs::DownBackward, duration)
-            || check_invalid_motion(&Motions::DashBackward, self, self.dash)
-        {
-            ctx.can_dash_b = false;
-        } else if self.held(&Inputs::Neutral, duration)
-            || self.held(&Inputs::Forward, duration)
-            || self.held(&Inputs::Down, duration)
-            || self.held(&Inputs::Up, duration)
-        {
-            ctx.can_dash_b = true;
-        }
-    }
 }
 
 /// Checks if a direction was pressed using numpad notation
 fn check_numpad_direction(input: &Input, direction: u8) -> bool {
     match direction {
         1 => input.down && input.backward,
-        2 => input.down && !(input.backward || input.forward),
+        2 => input.down && !input.backward && !input.forward,
         3 => input.down && input.forward,
-        4 => input.backward && !(input.up || input.down),
+        4 => input.backward && !input.up && !input.down,
         5 => !input.backward && !input.up && !input.down && !input.forward,
-        6 => input.forward && !(input.up || input.down),
+        6 => input.forward && !input.up && !input.down,
         7 => input.up && input.backward,
-        8 => input.up && !(input.backward || input.forward),
+        8 => input.up && !input.backward && !input.forward,
         9 => input.up && input.forward,
         _ => false,
     }
@@ -331,12 +288,12 @@ mod tests {
 
         buffer.update(&input);
 
-        let current = buffer.get_curret_input();
-        let previous = buffer.get_previous_input();
+        let current = buffer.current();
+        let previous = buffer.previous();
 
         let inputs = Inputs::Down;
 
-        assert!(inputs.was_initially_pressed(&current, &previous));
+        assert!(inputs.was_initially_pressed(current, previous));
     }
 
     #[test]
@@ -366,7 +323,7 @@ mod tests {
             buffer.update(&input);
         }
 
-        assert!(buffer.was_input_pressed(&Inputs::Forward));
+        assert!(buffer.just_pressed(Inputs::Forward));
     }
 
     #[test]
@@ -387,8 +344,8 @@ mod tests {
 
         buffer.update(&input);
 
-        assert!(buffer.was_input_pressed_on_frame(&Inputs::Down, 1));
-        assert!(!buffer.was_input_pressed_on_frame(&Inputs::Up, 1));
+        assert!(buffer.just_pressed_on_frame(Inputs::Down, 1));
+        assert!(!buffer.just_pressed_on_frame(Inputs::Up, 1));
     }
 
     #[test]
@@ -416,8 +373,8 @@ mod tests {
             buffer.update(&input);
         }
 
-        assert!(buffer.was_input_pressed_buffered(&Inputs::Up, 2));
-        assert!(buffer.was_input_pressed_buffered(&Inputs::Down, 5));
+        assert!(buffer.pressed_buffered(Inputs::Up, 2));
+        assert!(buffer.pressed_buffered(Inputs::Down, 5));
     }
 
     #[test]
@@ -431,6 +388,6 @@ mod tests {
             buffer.update(&input);
         }
 
-        assert!(buffer.is_input_held(&Inputs::Down, 4));
+        assert!(buffer.held(Inputs::Down, 4));
     }
 }

@@ -1,3 +1,3 @@
 pub mod crouching;
-pub mod standing;
 pub mod jumping;
+pub mod standing;

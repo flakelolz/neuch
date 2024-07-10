@@ -1,9 +1,9 @@
 mod buffer;
 mod config;
+mod dashes;
 mod inputs;
 mod test;
 mod utils;
-mod dashes;
 
 pub use buffer::*;
 pub use config::*;

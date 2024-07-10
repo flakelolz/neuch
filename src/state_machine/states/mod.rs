@@ -191,72 +191,56 @@ impl Standing {
                 false
             }
             Standing::LightPunch => {
-                if buffer.buffered(&Inputs::LightPunch, buffer.attack) && !down(buffer) {
+                if buffer.buffered(Inputs::LightPunch, buffer.attack) && !down(buffer) {
                     ctx.next.replace(Box::new(standing::LightPunch));
                     return true;
                 }
                 false
             }
             Standing::MediumPunch => {
-                if buffer.buffered(&Inputs::MediumPunch, buffer.attack) && !down(buffer) {
+                if buffer.buffered(Inputs::MediumPunch, buffer.attack) && !down(buffer) {
                     ctx.next.replace(Box::new(standing::MediumPunch));
                     return true;
                 }
                 false
             }
             Standing::HeavyPunch => {
-                if buffer.buffered(&Inputs::HeavyPunch, buffer.attack) && !down(buffer) {
+                if buffer.buffered(Inputs::HeavyPunch, buffer.attack) && !down(buffer) {
                     ctx.next.replace(Box::new(standing::HeavyPunch));
                     return true;
                 }
                 false
             }
             Standing::LightKick => {
-                if buffer.buffered(&Inputs::LightKick, buffer.attack) && !down(buffer) {
+                if buffer.buffered(Inputs::LightKick, buffer.attack) && !down(buffer) {
                     ctx.next.replace(Box::new(standing::LightKick));
                     return true;
                 }
                 false
             }
             Standing::MediumKick => {
-                if buffer.buffered(&Inputs::MediumKick, buffer.attack) && !down(buffer) {
+                if buffer.buffered(Inputs::MediumKick, buffer.attack) && !down(buffer) {
                     ctx.next.replace(Box::new(standing::MediumKick));
                     return true;
                 }
                 false
             }
             Standing::HeavyKick => {
-                if buffer.buffered(&Inputs::HeavyKick, buffer.attack) && !down(buffer) {
+                if buffer.buffered(Inputs::HeavyKick, buffer.attack) && !down(buffer) {
                     ctx.next.replace(Box::new(standing::HeavyKick));
                     return true;
                 }
                 false
             }
             Standing::DashForward => {
-                if buffer.was_motion_executed(&Motions::ForcedDashForward, buffer.dash)
-                    && !check_invalid_motion(&Motions::DashForward, buffer, buffer.dash)
-                {
-                    ctx.next.replace(Box::new(standing::DashForward));
-                    return true;
-                }
-                if buffer.was_motion_executed(&Motions::DashForward, buffer.dash)
-                    && ctx.can_dash_f
-                {
+                if buffer.was_dash_executed(Motions::DashForward, buffer.dash) && ctx.can_dash_f {
                     ctx.next.replace(Box::new(standing::DashForward));
                     return true;
                 }
                 false
             }
             Standing::DashBackward => {
-                if buffer.was_motion_executed(&Motions::ForcedDashBackward, buffer.dash)
-                    && !check_invalid_motion(&Motions::DashBackward, buffer, buffer.dash)
-                {
-                    ctx.next.replace(Box::new(standing::DashBackward));
-                    return true;
-                }
-                if buffer.was_motion_executed(&Motions::DashBackward, buffer.dash)
-                    && ctx.can_dash_b
-                {
+                if buffer.was_dash_executed(Motions::DashBackward, buffer.dash) && ctx.can_dash_b {
                     ctx.next.replace(Box::new(standing::DashBackward));
                     return true;
                 }
@@ -318,42 +302,42 @@ impl Crouching {
                 false
             }
             Crouching::LightPunch => {
-                if buffer.buffered(&Inputs::LightPunch, buffer.attack) && down(buffer) {
+                if buffer.buffered(Inputs::LightPunch, buffer.attack) && down(buffer) {
                     ctx.next.replace(Box::new(crouching::LightPunch));
                     return true;
                 }
                 false
             }
             Crouching::MediumPunch => {
-                if buffer.buffered(&Inputs::MediumPunch, buffer.attack) && down(buffer) {
+                if buffer.buffered(Inputs::MediumPunch, buffer.attack) && down(buffer) {
                     ctx.next.replace(Box::new(crouching::MediumPunch));
                     return true;
                 }
                 false
             }
             Crouching::HeavyPunch => {
-                if buffer.buffered(&Inputs::HeavyPunch, buffer.attack) && down(buffer) {
+                if buffer.buffered(Inputs::HeavyPunch, buffer.attack) && down(buffer) {
                     ctx.next.replace(Box::new(crouching::HeavyPunch));
                     return true;
                 }
                 false
             }
             Crouching::LightKick => {
-                if buffer.buffered(&Inputs::LightKick, buffer.attack) && down(buffer) {
+                if buffer.buffered(Inputs::LightKick, buffer.attack) && down(buffer) {
                     ctx.next.replace(Box::new(crouching::LightKick));
                     return true;
                 }
                 false
             }
             Crouching::MediumKick => {
-                if buffer.buffered(&Inputs::MediumKick, buffer.attack) && down(buffer) {
+                if buffer.buffered(Inputs::MediumKick, buffer.attack) && down(buffer) {
                     ctx.next.replace(Box::new(crouching::MediumKick));
                     return true;
                 }
                 false
             }
             Crouching::HeavyKick => {
-                if buffer.buffered(&Inputs::HeavyKick, buffer.attack) && down(buffer) {
+                if buffer.buffered(Inputs::HeavyKick, buffer.attack) && down(buffer) {
                     ctx.next.replace(Box::new(crouching::HeavyKick));
                     return true;
                 }
