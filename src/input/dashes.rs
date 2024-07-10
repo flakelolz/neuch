@@ -26,6 +26,11 @@ impl InputBuffer {
                         motion_index = 0;
                     }
 
+                    if motion_index == 2 && Inputs::DownForward.is_pressed_exclusive(&input_command)
+                    {
+                        motion_index = 0;
+                    }
+
                     if direction.is_pressed(&input_command) {
                         motion_index += 1;
                     }
@@ -49,6 +54,12 @@ impl InputBuffer {
 
                     if Inputs::Down.is_pressed_exclusive(&input_command)
                         || Inputs::Forward.is_pressed_exclusive(&input_command)
+                    {
+                        motion_index = 0;
+                    }
+
+                    if motion_index == 2
+                        && Inputs::DownBackward.is_pressed_exclusive(&input_command)
                     {
                         motion_index = 0;
                     }
@@ -347,22 +358,32 @@ mod tests {
     }
 
     #[test]
-    fn dash_with_4_5_1_4_should_fail() {
-        let mut buffer = InputBuffer::default();
-        test_helper(&mut buffer, Inputs::Backward);
-        test_helper(&mut buffer, Inputs::Neutral);
-        test_helper(&mut buffer, Inputs::DownBackward);
-        test_helper(&mut buffer, Inputs::Backward);
-        assert!(!buffer.was_dash_executed(Motions::DashBackward, buffer.dash));
-    }
-
-    #[test]
     fn dash_with_2_in_the_middle_should_fail() {
         let mut buffer = InputBuffer::default();
         test_helper(&mut buffer, Inputs::Backward);
         test_helper(&mut buffer, Inputs::Neutral);
         test_helper(&mut buffer, Inputs::Down);
         test_helper(&mut buffer, Inputs::Neutral);
+        test_helper(&mut buffer, Inputs::Backward);
+        assert!(!buffer.was_dash_executed(Motions::DashBackward, buffer.dash));
+    }
+
+    #[test]
+    fn dash_with_4_1_5_4_should_work() {
+        let mut buffer = InputBuffer::default();
+        test_helper(&mut buffer, Inputs::Backward);
+        test_helper(&mut buffer, Inputs::DownBackward);
+        test_helper(&mut buffer, Inputs::Neutral);
+        test_helper(&mut buffer, Inputs::Backward);
+        assert!(buffer.was_dash_executed(Motions::DashBackward, buffer.dash));
+    }
+
+    #[test]
+    fn dash_with_4_5_1_4_should_fail() {
+        let mut buffer = InputBuffer::default();
+        test_helper(&mut buffer, Inputs::Backward);
+        test_helper(&mut buffer, Inputs::Neutral);
+        test_helper(&mut buffer, Inputs::DownBackward);
         test_helper(&mut buffer, Inputs::Backward);
         assert!(!buffer.was_dash_executed(Motions::DashBackward, buffer.dash));
     }

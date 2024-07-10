@@ -31,19 +31,6 @@ pub fn up_backward(buffer: &InputBuffer) -> bool {
     up(buffer) && backward(buffer)
 }
 
-/// Checks if there is a direction that would invalidate the whole motion input
-pub fn check_invalid_motion(motions: Motions, buffer: &InputBuffer, duration: usize) -> bool {
-    match motions {
-        Motions::DashForward => {
-            buffer.buffered(Inputs::Backward, duration) || buffer.buffered(Inputs::Down, duration)
-        }
-        Motions::DashBackward => {
-            buffer.buffered(Inputs::Forward, duration) || buffer.buffered(Inputs::Down, duration)
-        }
-        _ => false,
-    }
-}
-
 pub fn test_helper(buffer: &mut InputBuffer, inputs: Inputs) {
     match inputs {
         Inputs::Up => {
