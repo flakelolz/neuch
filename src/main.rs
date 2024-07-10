@@ -43,6 +43,7 @@ fn main() {
     let args = std::env::args().collect::<Vec<String>>();
     if args.len() > 1 && args[1] == "--update" {
         utils::update_all_data();
+        std::process::exit(0);
     }
 
     let (mut rl, thread) = raylib::init()
