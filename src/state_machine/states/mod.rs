@@ -391,6 +391,7 @@ impl Jumping {
         match self {
             Jumping::Start => {
                 if up(buffer) && !ctx.airborne {
+                    handle_jump_flags(ctx, buffer);
                     ctx.next.replace(Box::new(jumping::Start));
                     return true;
                 }

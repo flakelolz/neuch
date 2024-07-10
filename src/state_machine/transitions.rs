@@ -98,19 +98,19 @@ pub fn attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
 
 pub fn jump_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
     if up(buffer) {
-        handle_jump_flags(context, buffer);
+        handle_jump_flags(&mut context.ctx, buffer);
         context.ctx.next = Some(Box::new(jumping::Start));
         return true;
     }
     false
 }
 
-pub fn handle_jump_flags(context: &mut Context, buffer: &InputBuffer) {
+pub fn handle_jump_flags(ctx: &mut SubContext, buffer: &InputBuffer) {
     if up_forward(buffer) {
-        context.ctx.flags.jump = JumpFlags::Forward;
+        ctx.flags.jump = JumpFlags::Forward;
     }
     if up_backward(buffer) {
-        context.ctx.flags.jump = JumpFlags::Backward;
+        ctx.flags.jump = JumpFlags::Backward;
     }
 }
 
