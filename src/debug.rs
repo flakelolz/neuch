@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 use crate::prelude::*;
 
-pub fn show_inputs(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
+pub fn show_inputs(world: &World, d: &mut impl RaylibDraw) {
     world
         .query::<(&Input, &Player)>()
         .into_iter()
@@ -12,7 +12,7 @@ pub fn show_inputs(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
         });
 }
 
-pub fn show_position(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
+pub fn show_position(world: &World, d: &mut impl RaylibDraw) {
     world
         .query::<(&Physics, &Player)>()
         .into_iter()
@@ -32,7 +32,7 @@ pub fn show_position(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>)
         });
 }
 
-pub fn show_state(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
+pub fn show_state(world: &World, d: &mut impl RaylibDraw) {
     world
         .query::<(&StateMachine, &Physics)>()
         .into_iter()
@@ -66,13 +66,18 @@ pub fn show_state(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
         });
 }
 
-pub fn show_frame_count(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
+pub fn show_frame_count(world: &World, d: &mut impl RaylibDraw) {
+    world.query::<&u32>().into_iter().for_each(|(_, frame)| {
+        d.draw_text(&format!("{}", frame), 10, 10, 10, Color::WHITE);
+    });
+}
+pub fn show_frame_count_gen(world: &World, d: &mut impl RaylibDraw) {
     world.query::<&u32>().into_iter().for_each(|(_, frame)| {
         d.draw_text(&format!("{}", frame), 10, 10, 10, Color::WHITE);
     });
 }
 
-pub fn show_context(world: &World, d: &mut RaylibTextureMode<RaylibDrawHandle>) {
+pub fn show_context(world: &World, d: &mut impl RaylibDraw) {
     world
         .query::<(&StateMachine, &Player)>()
         .into_iter()

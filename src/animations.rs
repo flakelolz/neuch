@@ -48,7 +48,7 @@ impl Default for Animator {
     }
 }
 
-pub fn animation(d: &mut RaylibTextureMode<RaylibDrawHandle>, world: &World, assets: &Assets) {
+pub fn animation(d: &mut impl RaylibDraw, world: &World, assets: &Assets) {
     world
         .query::<(&Physics, &Player, &mut Animator)>()
         .into_iter()
@@ -81,7 +81,7 @@ pub fn animation(d: &mut RaylibTextureMode<RaylibDrawHandle>, world: &World, ass
 }
 
 fn draw(
-    d: &mut RaylibTextureMode<RaylibDrawHandle>,
+    d: &mut impl RaylibDraw,
     animator: &Animator,
     physics: &Physics,
     keyframe: &Keyframe,
