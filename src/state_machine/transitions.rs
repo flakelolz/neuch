@@ -89,6 +89,10 @@ pub fn attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
     if !context.ctx.airborne && Group::Normals.set(buffer, &mut context.ctx) {
         return true;
     }
+    if context.ctx.airborne && Group::AirNormals.set(buffer, &mut context.ctx) {
+        return true;
+    }
+
     false
 }
 

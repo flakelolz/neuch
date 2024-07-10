@@ -35,6 +35,7 @@ pub enum Group {
     Normals,
     StNormals,
     CrNormals,
+    AirNormals,
     Movement,
     Dashes,
     Walks,
@@ -108,6 +109,29 @@ impl Group {
                 if Crouching::LightPunch.set(buffer, ctx) {
                     return true;
                 }
+                false
+            }
+
+            Group::AirNormals => {
+                if Jumping::HeavyKick.set(buffer, ctx) {
+                    return true;
+                }
+                if Jumping::HeavyPunch.set(buffer, ctx) {
+                    return true;
+                }
+                if Jumping::MediumKick.set(buffer, ctx) {
+                    return true;
+                }
+                if Jumping::MediumPunch.set(buffer, ctx) {
+                    return true;
+                }
+                if Jumping::LightKick.set(buffer, ctx) {
+                    return true;
+                }
+                if Jumping::LightPunch.set(buffer, ctx) {
+                    return true;
+                }
+
                 false
             }
 
@@ -354,6 +378,12 @@ pub enum Jumping {
     Forward,
     Backward,
     End,
+    LightPunch,
+    MediumPunch,
+    HeavyPunch,
+    LightKick,
+    MediumKick,
+    HeavyKick,
 }
 
 impl Jumping {
@@ -386,6 +416,42 @@ impl Jumping {
             Jumping::End => {
                 if !up(buffer) && ctx.airborne {
                     ctx.next.replace(Box::new(jumping::End));
+                    return true;
+                }
+            }
+            Jumping::LightPunch => {
+                if buffer.buffered(Inputs::LightPunch, buffer.attack) && ctx.airborne {
+                    ctx.next.replace(Box::new(jumping::LightPunch));
+                    return true;
+                }
+            }
+            Jumping::MediumPunch => {
+                if buffer.buffered(Inputs::MediumPunch, buffer.attack) && ctx.airborne {
+                    ctx.next.replace(Box::new(jumping::MediumPunch));
+                    return true;
+                }
+            }
+            Jumping::HeavyPunch => {
+                if buffer.buffered(Inputs::HeavyPunch, buffer.attack) && ctx.airborne {
+                    ctx.next.replace(Box::new(jumping::HeavyPunch));
+                    return true;
+                }
+            }
+            Jumping::LightKick => {
+                if buffer.buffered(Inputs::LightKick, buffer.attack) && ctx.airborne {
+                    ctx.next.replace(Box::new(jumping::LightKick));
+                    return true;
+                }
+            }
+            Jumping::MediumKick => {
+                if buffer.buffered(Inputs::MediumKick, buffer.attack) && ctx.airborne {
+                    ctx.next.replace(Box::new(jumping::MediumKick));
+                    return true;
+                }
+            }
+            Jumping::HeavyKick => {
+                if buffer.buffered(Inputs::HeavyKick, buffer.attack) && ctx.airborne {
+                    ctx.next.replace(Box::new(jumping::HeavyKick));
                     return true;
                 }
             }

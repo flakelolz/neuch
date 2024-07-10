@@ -16,34 +16,8 @@
       "name": "St Idle",
       "total": 40,
       "looping": true,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
       "hitbox": null,
       "modifiers": null,
       "timeline": [
@@ -123,34 +97,8 @@
       "name": "St WalkForward",
       "total": 44,
       "looping": true,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
       "hitbox": null,
       "modifiers": null,
       "timeline": [
@@ -237,34 +185,8 @@
       "name": "St WalkBackward",
       "total": 44,
       "looping": true,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
       "hitbox": null,
       "modifiers": null,
       "timeline": [
@@ -351,34 +273,8 @@
       "name": "St DashForward",
       "total": 19,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
       "hitbox": null,
       "modifiers": {
         "cancels": [
@@ -514,34 +410,8 @@
       "name": "St DashBackward",
       "total": 15,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
       "hitbox": null,
       "modifiers": {
         "cancels": null,
@@ -632,48 +502,9 @@
       "name": "St LightPunch",
       "total": 12,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hitbox": [
-        {
-          "on_frame": 0,
-          "duration": 0,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
       "modifiers": {
         "cancels": [
           {
@@ -735,48 +566,9 @@
       "name": "St MediumPunch",
       "total": 19,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hitbox": [
-        {
-          "on_frame": 0,
-          "duration": 0,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
       "modifiers": null,
       "timeline": [
         {
@@ -841,48 +633,9 @@
       "name": "St HeavyPunch",
       "total": 27,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hitbox": [
-        {
-          "on_frame": 0,
-          "duration": 0,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -1021,48 +774,9 @@
       "name": "St LightKick",
       "total": 15,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hitbox": [
-        {
-          "on_frame": 0,
-          "duration": 0,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
       "modifiers": null,
       "timeline": [
         {
@@ -1113,48 +827,9 @@
       "name": "St MediumKick",
       "total": 31,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hitbox": [
-        {
-          "on_frame": 0,
-          "duration": 0,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -1293,48 +968,9 @@
       "name": "St HeavyKick",
       "total": 35,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hitbox": [
-        {
-          "on_frame": 0,
-          "duration": 0,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -1501,34 +1137,8 @@
       "name": "Cr Start",
       "total": 9,
       "looping": true,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
       "hitbox": null,
       "modifiers": null,
       "timeline": [
@@ -1573,34 +1183,8 @@
       "name": "Cr Idle",
       "total": 32,
       "looping": true,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
       "hitbox": null,
       "modifiers": null,
       "timeline": [
@@ -1638,34 +1222,8 @@
       "name": "Cr End",
       "total": 9,
       "looping": true,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
       "hitbox": null,
       "modifiers": null,
       "timeline": [
@@ -1696,48 +1254,9 @@
       "name": "Cr LightPunch",
       "total": 12,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hitbox": [
-        {
-          "on_frame": 0,
-          "duration": 0,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
       "modifiers": {
         "cancels": [
           {
@@ -1806,48 +1325,9 @@
       "name": "Cr MediumPunch",
       "total": 16,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hitbox": [
-        {
-          "on_frame": 0,
-          "duration": 0,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
       "modifiers": null,
       "timeline": [
         {
@@ -1898,48 +1378,9 @@
       "name": "Cr HeavyPunch",
       "total": 31,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hitbox": [
-        {
-          "on_frame": 0,
-          "duration": 0,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
       "modifiers": null,
       "timeline": [
         {
@@ -2018,48 +1459,9 @@
       "name": "Cr LightKick",
       "total": 17,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hitbox": [
-        {
-          "on_frame": 0,
-          "duration": 0,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
       "modifiers": {
         "cancels": [
           {
@@ -2128,48 +1530,9 @@
       "name": "Cr MediumKick",
       "total": 28,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hitbox": [
-        {
-          "on_frame": 0,
-          "duration": 0,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -2294,48 +1657,9 @@
       "name": "Cr HeavyKick",
       "total": 37,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hitbox": [
-        {
-          "on_frame": 0,
-          "duration": 0,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -2502,34 +1826,8 @@
       "name": "Jmp Start",
       "total": 4,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
       "hitbox": null,
       "modifiers": null,
       "timeline": [
@@ -2546,34 +1844,8 @@
       "name": "Jmp Neutral",
       "total": 35,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
       "hitbox": null,
       "modifiers": null,
       "timeline": [
@@ -2688,34 +1960,8 @@
       "name": "Jmp Forward",
       "total": 35,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
       "hitbox": null,
       "modifiers": null,
       "timeline": [
@@ -2788,34 +2034,8 @@
       "name": "Jmp Backward",
       "total": 34,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
       "hitbox": null,
       "modifiers": null,
       "timeline": [
@@ -2888,34 +2108,8 @@
       "name": "Jmp End",
       "total": 14,
       "looping": false,
-      "pushbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
-      "hurtbox": [
-        {
-          "on_frame": 0,
-          "duration": 9,
-          "boxes": [
-            {
-              "top": 0,
-              "left": 0,
-              "bottom": 0,
-              "right": 0
-            }
-          ]
-        }
-      ],
+      "pushbox": [],
+      "hurtbox": [],
       "hitbox": null,
       "modifiers": {
         "cancels": [
@@ -2962,6 +2156,440 @@
           "w": 176.0,
           "h": 160.0,
           "duration": 5
+        }
+      ]
+    },
+    {
+      "name": "Jmp LightPunch",
+      "total": 38,
+      "looping": false,
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 4000.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 2
+        },
+        {
+          "x": 176.0,
+          "y": 4000.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 2
+        },
+        {
+          "x": 352.0,
+          "y": 4000.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 2
+        },
+        {
+          "x": 528.0,
+          "y": 4000.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        },
+        {
+          "x": 704.0,
+          "y": 4000.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        },
+        {
+          "x": 880.0,
+          "y": 4000.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        },
+        {
+          "x": 1056.0,
+          "y": 4000.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        },
+        {
+          "x": 1232.0,
+          "y": 4000.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        },
+        {
+          "x": 1408.0,
+          "y": 4000.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        },
+        {
+          "x": 1584.0,
+          "y": 4000.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        },
+        {
+          "x": 1760.0,
+          "y": 4000.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "name": "Jmp MediumPunch",
+      "total": 20,
+      "looping": false,
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 4160.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        },
+        {
+          "x": 176.0,
+          "y": 4160.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 2
+        },
+        {
+          "x": 352.0,
+          "y": 4160.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 1
+        },
+        {
+          "x": 528.0,
+          "y": 4160.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        },
+        {
+          "x": 704.0,
+          "y": 4160.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        },
+        {
+          "x": 880.0,
+          "y": 4160.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        },
+        {
+          "x": 1056.0,
+          "y": 4160.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "name": "Jmp HeavyPunch",
+      "total": 21,
+      "looping": false,
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 4320.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        },
+        {
+          "x": 176.0,
+          "y": 4320.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        },
+        {
+          "x": 352.0,
+          "y": 4320.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 1
+        },
+        {
+          "x": 528.0,
+          "y": 4320.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        },
+        {
+          "x": 704.0,
+          "y": 4320.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 2
+        },
+        {
+          "x": 880.0,
+          "y": 4320.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        },
+        {
+          "x": 1056.0,
+          "y": 4320.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "name": "Jmp LightKick",
+      "total": 20,
+      "looping": false,
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 4480.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 2
+        },
+        {
+          "x": 176.0,
+          "y": 4480.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 2
+        },
+        {
+          "x": 352.0,
+          "y": 4480.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 1
+        },
+        {
+          "x": 528.0,
+          "y": 4480.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        },
+        {
+          "x": 704.0,
+          "y": 4480.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        },
+        {
+          "x": 880.0,
+          "y": 4480.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        },
+        {
+          "x": 1056.0,
+          "y": 4480.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        },
+        {
+          "x": 1232.0,
+          "y": 4480.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        }
+      ]
+    },
+    {
+      "name": "Jmp MediumKick",
+      "total": 19,
+      "looping": false,
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 4640.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        },
+        {
+          "x": 176.0,
+          "y": 4640.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 2
+        },
+        {
+          "x": 352.0,
+          "y": 4640.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 1
+        },
+        {
+          "x": 528.0,
+          "y": 4640.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 2
+        },
+        {
+          "x": 704.0,
+          "y": 4640.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        },
+        {
+          "x": 880.0,
+          "y": 4640.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 2
+        },
+        {
+          "x": 1056.0,
+          "y": 4640.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        },
+        {
+          "x": 1232.0,
+          "y": 4640.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        }
+      ]
+    },
+    {
+      "name": "Jmp HeavyKick",
+      "total": 18,
+      "looping": false,
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 4800.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 2
+        },
+        {
+          "x": 176.0,
+          "y": 4800.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        },
+        {
+          "x": 352.0,
+          "y": 4800.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 1
+        },
+        {
+          "x": 528.0,
+          "y": 4800.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 1
+        },
+        {
+          "x": 704.0,
+          "y": 4800.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 2
+        },
+        {
+          "x": 880.0,
+          "y": 4800.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 2
+        },
+        {
+          "x": 1056.0,
+          "y": 4800.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        },
+        {
+          "x": 1232.0,
+          "y": 4800.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 3
+        }
+      ]
+    },
+    {
+      "name": "Jmp AttackEnd",
+      "total": 8,
+      "looping": true,
+      "pushbox": [],
+      "hurtbox": [],
+      "hitbox": [],
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 4960.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
+        },
+        {
+          "x": 176.0,
+          "y": 4960.0,
+          "w": 176.0,
+          "h": 160.0,
+          "duration": 4
         }
       ]
     }
