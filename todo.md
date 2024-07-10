@@ -28,18 +28,19 @@
 - [ ] Change font
 
 # Dash should fail
-- [ ] *4* > *5* > *6* (walk back and forth repeatedly)
-- [ ] *4...* (walking) ->  *5* > *4*
-- [ ] *1...* (crouching) ->  *4* > *5* > *4*;
-- [ ] *5...* (standing) -> *6* > *5* > *2* > *5* > *6*
+- [x] *4* > *5* > *6* (walk back and forth repeatedly)
+- [x] *4...* (walking) ->  *5* > *4*
+- [x] *1...* (crouching) ->  *4* > *5* > *4*;
+- [x] *5...* (standing) -> *6* > *5* > *2* > *5* > *6*
 - [ ] *5...* (standing) -> *6* > *5* > *3* > *6*
 
 
 # Dash should work
-- [ ] *4...* (walk back) ->  *5* > *4* > *5* > *4*
-- [ ] *1...* (crouching) ->  *5* > *4* > *5* > *4*
-- [ ] *5...* (standing) -> *3* > *5* > *6*
-- [ ] *5...* (standing) -> *1* > *5* > *4*
+- [x] *4...* (walk back) ->  *5* > *4* > *5* > *4*
+- [x] *1...* (crouching) ->  *5* > *4* > *5* > *4*
+- [x] *5...* (standing) -> *3* > *5* > *6*
+- [x] *5...* (standing) -> *1* > *5* > *4*
+- [x] *5...* (standing) -> *4* > *6* > *5* > *6*
 - [ ] *5...* (standing) -> *6* > *3* > *5* > *6*
 
 # Hitbox, Hurtbox and Pushbox
