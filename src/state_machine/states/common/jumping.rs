@@ -12,7 +12,9 @@ impl State for Start {
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
         // Set jump direction
-        handle_jump_flags(context, buffer);
+        if context.ctx.flags.jump == JumpFlags::None {
+            handle_jump_flags(context, buffer);
+        }
         // Base case
         if context.elapsed >= context.duration {
             // Transitions

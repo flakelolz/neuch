@@ -98,6 +98,7 @@ pub fn attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
 
 pub fn jump_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
     if up(buffer) {
+        handle_jump_flags(context, buffer);
         context.ctx.next = Some(Box::new(jumping::Start));
         return true;
     }

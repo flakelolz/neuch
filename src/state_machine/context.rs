@@ -36,7 +36,7 @@ pub struct Flags {
     pub jump: JumpFlags,
 }
 
-#[derive(Debug, Default)]
+#[derive(Debug, Default, PartialEq)]
 pub enum JumpFlags {
     #[default]
     None,
