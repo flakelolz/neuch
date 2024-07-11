@@ -1,12 +1,21 @@
 #![allow(unused)]
 use serde::{Deserialize, Serialize};
 
-use crate::prelude::{GROUND_OFFSET, SCREEN_CENTER};
+use crate::prelude::*;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Default, Deserialize, Serialize)]
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
 pub struct IVec2 {
     pub x: i32,
     pub y: i32,
+}
+
+impl IVec2 {
+    pub fn from_screen(x: i32, y: i32) -> Self {
+        Self {
+            x: screen_to_world_num(x),
+            y: screen_to_world_num(y),
+        }
+    }
 }
 
 impl std::ops::Add<IVec2> for IVec2 {
@@ -26,16 +35,24 @@ impl std::ops::AddAssign<IVec2> for IVec2 {
     }
 }
 
-impl IVec2 {
-    pub fn from_screen(x: i32, y: i32) -> Self {
+impl std::ops::Mul<i32> for IVec2 {
+    type Output = IVec2;
+    fn mul(self, rhs: i32) -> Self::Output {
         Self {
-            x: screen_to_world_num(x),
-            y: screen_to_world_num(y),
+            x: self.x * rhs,
+            y: self.y * rhs,
         }
     }
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, PartialOrd, Default, Deserialize, Serialize)]
+impl std::ops::MulAssign<i32> for IVec2 {
+    fn mul_assign(&mut self, rhs: i32) {
+        self.x *= rhs;
+        self.y *= rhs;
+    }
+}
+
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
 pub struct Vec2 {
     pub x: f32,
     pub y: f32,
@@ -61,5 +78,20 @@ pub fn pos_to_screen(coord: IVec2) -> (i32, i32) {
     (
         world_to_screen_num(coord.x),
         -world_to_screen_num(coord.y) + GROUND_OFFSET,
+    )
+}
+
+pub fn sprite_to_ui_layer_num(x: i32) -> i32 {
+    let x = x as f32;
+    ((x / WIDTH_3S as f32) * WIDTH as f32) as i32
+}
+
+/// Translate from the sprite (416x234) layer to base resolution (1280x720).
+pub fn sprite_to_native(x: i32, y: i32) -> (i32, i32) {
+    let old_x = x as f32;
+    let old_y = y as f32;
+    (
+        ((old_x / WIDTH_3S as f32) * WIDTH as f32) as i32,
+        ((old_y / HEIGHT_3S as f32) * HEIGHT as f32) as i32,
     )
 }

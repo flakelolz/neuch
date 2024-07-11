@@ -1,13 +1,23 @@
 use crate::prelude::*;
 
-pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTexture2D) {
-    // Setup
+pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs) {
+    // Render targets
+    let (mut target, mut ui_target) = create_render_targets(rl, thread, configs);
+    // Camera
+    let mut camera = Camera2D {
+        target: rvec2(0., 0.),
+        offset: rvec2(0., 0.),
+        rotation: 0.,
+        zoom: 1.,
+    };
+    // World Setup
     let mut world = world();
     let assets = Assets::new(rl, thread);
 
     // Debug pause
     let mut paused = false;
 
+    configs.display.set_720(rl, &mut camera);
     // Main game loop
     while !rl.window_should_close() {
         // Input
@@ -30,49 +40,38 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, target: &mut RenderTex
             update_state(&mut world);
         }
         reset_position(&mut world, rl);
-
-        // Calculate window
-        let width = rl.get_screen_width();
-        let height = rl.get_screen_height();
-        let scale = (width / WIDTH).min(height / HEIGHT) as f32;
+        change_resolution(rl, configs, &mut camera);
+        // forced_move(&mut world, rl);
 
         // Drawing
         let mut d = rl.begin_drawing(thread);
         d.clear_background(Color::BLACK);
 
         {
-            // Render to texture
-            let mut d = d.begin_texture_mode(thread, target);
+            // Render to sprite texture target
+            let mut d = d.begin_texture_mode(thread, &mut target);
 
             if !paused || advance {
-                d.clear_background(Color::BLACK);
-                // draw_player(&mut d, &world, &assets);
+                d.clear_background(Color::BLANK);
                 animation(&mut d, &world, &assets);
-
+            }
+        }
+        {
+            // Render to UI texture target
+            let mut d = d.begin_texture_mode(thread, &mut ui_target);
+            // Debug
+            if !paused || advance {
+                d.clear_background(Color::BLANK);
                 show_frame_count(&world, &mut d);
                 show_state(&world, &mut d);
                 show_position(&world, &mut d);
-                // show_inputs(&world, &mut d);
                 show_context(&world, &mut d);
+                show_inputs(&world, &mut d);
             }
-
-            // Debug
-            d.draw_fps(WIDTH - 30, 20);
+            d.draw_fps(WIDTH - 100, 10);
         }
 
-        // Render texture to screen with proper scaling
-        d.draw_texture_pro(
-            target.texture(),
-            rrect(0.0, 0.0, target.texture.width, -target.texture.height),
-            rrect(
-                (d.get_screen_width() as f32 - (FWIDTH * scale)) * 0.5,
-                (d.get_screen_height() as f32 - (FHEIGHT * scale)) * 0.5,
-                FWIDTH * scale,
-                FHEIGHT * scale,
-            ),
-            rvec2(0, 0),
-            0.0,
-            Color::WHITE,
-        );
+        let mut d = d.begin_mode2D(camera);
+        rendering(&mut target, &mut ui_target, &mut d, configs);
     }
 }
