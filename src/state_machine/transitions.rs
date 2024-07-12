@@ -52,6 +52,7 @@ pub fn handle_transition(
                 animator.keyframes.clone_from(&action.timeline);
             }
             context.elapsed += 1;
+            animator.flipped = physics.facing_left;
 
             if context.elapsed > action.total && action.looping {
                 context.elapsed = 1;
@@ -134,7 +135,6 @@ pub fn face_opponent(physics: &mut Physics) -> bool {
     if !physics.facing_opponent {
         physics.facing_left = !physics.facing_left;
         physics.facing_opponent = true;
-        println!("at -> {} left: {}", physics.position.x, physics.facing_left);
         return true;
     }
     false
