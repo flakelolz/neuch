@@ -10,6 +10,9 @@ pub struct IVec2 {
 }
 
 impl IVec2 {
+    pub fn zero() -> Self {
+        Self { x: 0, y: 0 }
+    }
     pub fn from_screen(x: i32, y: i32) -> Self {
         Self {
             x: screen_to_world_num(x),
@@ -49,6 +52,16 @@ impl std::ops::MulAssign<i32> for IVec2 {
     fn mul_assign(&mut self, rhs: i32) {
         self.x *= rhs;
         self.y *= rhs;
+    }
+}
+
+impl std::ops::Neg for IVec2 {
+    type Output = IVec2;
+    fn neg(self) -> Self::Output {
+        Self {
+            x: -self.x,
+            y: -self.y,
+        }
     }
 }
 

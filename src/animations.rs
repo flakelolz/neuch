@@ -15,9 +15,9 @@ pub struct Animator {
     /// Height scale of entity being drawn
     h_scale: f32,
     /// Whether the animation should be flipped
-    flip: bool,
+    pub flipped: bool,
     /// Z index
-    z_index: i32,
+    pub z_index: i32,
     /// Collection of all the keyframes on an action
     pub keyframes: Vec<Keyframe>,
 }
@@ -36,10 +36,11 @@ struct Draw {
 }
 
 impl Animator {
-    pub fn new(origin: Vec2, z_index: i32) -> Self {
+    pub fn new(origin: Vec2, z_index: i32, flipped: bool) -> Self {
         Self {
             origin,
             z_index,
+            flipped,
             ..Default::default()
         }
     }
@@ -59,7 +60,7 @@ impl Default for Animator {
             duration: 0,
             w_scale: 1.,
             h_scale: 1.,
-            flip: false,
+            flipped: false,
             z_index: 0,
             keyframes: vec![],
         }
@@ -69,18 +70,9 @@ impl Default for Animator {
 pub fn animation(d: &mut impl RaylibDraw, world: &World, assets: &Assets) {
     let mut buffer: Vec<Draw> = Vec::new();
     world
-        .query::<(&Physics, &Player, &mut Animator)>()
+        .query::<(&Physics, &mut Animator)>()
         .into_iter()
-        .for_each(|(_, (physics, player, animator))| {
-            match player {
-                Player::One => {
-                    animator.flip = false;
-                }
-                Player::Two => {
-                    animator.flip = true;
-                }
-            }
-
+        .for_each(|(_, (physics, animator))| {
             let keyframe = animator.keyframes[animator.index];
             animator.duration = keyframe.duration;
 
@@ -89,7 +81,7 @@ pub fn animation(d: &mut impl RaylibDraw, world: &World, assets: &Assets) {
                 y: keyframe.y,
                 w: keyframe.w,
                 h: keyframe.h,
-                flip: animator.flip,
+                flip: animator.flipped,
                 w_scale: animator.w_scale,
                 h_scale: animator.h_scale,
                 origin: animator.origin,

@@ -15,7 +15,16 @@ pub struct Input {
 }
 
 impl Input {
-    pub fn update(&mut self, rl: &mut RaylibHandle, config: &InputConfig, player: &Player) {
+    pub fn reset(&mut self) {
+        *self = Self::default();
+    }
+    pub fn update(
+        &mut self,
+        rl: &mut RaylibHandle,
+        config: &InputConfig,
+        player: &Player,
+        flipped: bool,
+    ) {
         let port = match player {
             Player::One => 0,
             Player::Two => 1,
@@ -25,10 +34,30 @@ impl Input {
             || rl.is_gamepad_button_down(port, config.gamepad.up);
         self.down = rl.is_key_down(config.keyboard.down)
             || rl.is_gamepad_button_down(port, config.gamepad.down);
-        self.backward = rl.is_key_down(config.keyboard.left)
-            || rl.is_gamepad_button_down(port, config.gamepad.left);
-        self.forward = rl.is_key_down(config.keyboard.right)
-            || rl.is_gamepad_button_down(port, config.gamepad.right);
+        // Foward
+        {
+            if rl.is_key_down(config.keyboard.right)
+                || rl.is_gamepad_button_down(port, config.gamepad.right)
+            {
+                if flipped {
+                    self.backward = true;
+                } else {
+                    self.forward = true;
+                }
+            }
+        }
+        // Backward
+        {
+            if rl.is_key_down(config.keyboard.left)
+                || rl.is_gamepad_button_down(port, config.gamepad.left)
+            {
+                if flipped {
+                    self.forward = true;
+                } else {
+                    self.backward = true;
+                }
+            }
+        }
         self.lp = rl.is_key_down(config.keyboard.lp)
             || rl.is_gamepad_button_down(port, config.gamepad.lp);
         self.mp = rl.is_key_down(config.keyboard.mp)

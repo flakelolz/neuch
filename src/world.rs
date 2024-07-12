@@ -22,7 +22,7 @@ pub fn world() -> World {
         Physics::one(),
         StateMachine::default(),
         character,
-        Animator::new(origin, 1),
+        Animator::new(origin, 1, false),
     ));
 
     // Player 2 components
@@ -36,7 +36,7 @@ pub fn world() -> World {
         Physics::two(),
         StateMachine::default(),
         character,
-        Animator::new(origin, 0),
+        Animator::new(origin, 0, true),
     ));
 
     world

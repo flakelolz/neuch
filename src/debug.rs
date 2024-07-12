@@ -19,11 +19,11 @@ pub fn show_position(world: &World, d: &mut impl RaylibDraw) {
         .query::<(&Physics, &Player)>()
         .into_iter()
         .for_each(|(_, (physics, player))| {
+            let (screen_x, screen_y) = pos_to_screen(physics.position);
+            let (screen_x, screen_y) = sprite_to_native(screen_x, screen_y);
+            let (pos_x, pos_y) = world_to_screen(physics.position);
+            d.draw_circle(screen_x, screen_y, 1., Color::WHITE);
             if player == &Player::One {
-                let (screen_x, screen_y) = pos_to_screen(physics.position);
-                let (screen_x, screen_y) = sprite_to_native(screen_x, screen_y);
-                let (pos_x, pos_y) = world_to_screen(physics.position);
-                d.draw_circle(screen_x, screen_y, 1., Color::WHITE);
                 d.draw_text(
                     format!("{}:{}", pos_x, pos_y).as_str(),
                     screen_x,
@@ -118,37 +118,10 @@ pub fn reset_position(world: &mut World, rl: &mut RaylibHandle) {
         world
             .query_mut::<(&mut Physics, &Player)>()
             .into_iter()
-            .for_each(|(_, (physics, player))| {
-                if player == &Player::One {
-                    *physics = Physics::one();
-                }
+            .for_each(|(_, (physics, _player))| {
+                *physics = Physics::one();
             });
     }
-}
-
-pub fn forced_move(world: &mut World, rl: &mut RaylibHandle) {
-    world
-        .query_mut::<(&mut Physics, &Player)>()
-        .into_iter()
-        .for_each(|(_, (physics, player))| {
-            if player == &Player::One {
-                if rl.is_key_down(KeyboardKey::KEY_LEFT) {
-                    physics.position.x -= 10000;
-                }
-
-                if rl.is_key_down(KeyboardKey::KEY_RIGHT) {
-                    physics.position.x += 10000;
-                }
-
-                if rl.is_key_down(KeyboardKey::KEY_UP) {
-                    physics.position.y -= 10000;
-                }
-
-                if rl.is_key_down(KeyboardKey::KEY_DOWN) {
-                    physics.position.y += 10000;
-                }
-            }
-        });
 }
 
 pub fn change_resolution(rl: &mut RaylibHandle, configs: &mut Configs, camera: &mut Camera2D) {

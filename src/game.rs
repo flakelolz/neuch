@@ -36,12 +36,11 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
             // Logic
             update_input_buffers(&mut world);
             frame_count(&mut world);
-            update_physics(&mut world);
+            physics_system(&mut world);
             update_state(&mut world);
         }
         reset_position(&mut world, rl);
         change_resolution(rl, configs, &mut camera);
-        // forced_move(&mut world, rl);
 
         // Drawing
         let mut d = rl.begin_drawing(thread);

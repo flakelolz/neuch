@@ -20,10 +20,12 @@ pub fn handle_transition(
         let name = processor.current.name();
         if let Some(action) = find_action(character, &name) {
             // Character info
+            // FIX: This only needs to be set once.
             context.character = Some(character.info);
             // Setup action data
             context.duration = action.total;
             // Setup animnation data
+            animator.flipped = physics.facing_left;
             animator.keyframes.clone_from(&action.timeline);
             // Setup action modifiers if there are any
             match &action.modifiers {
@@ -45,11 +47,10 @@ pub fn handle_transition(
 
     match action {
         Some(action) => {
-            // NOTE: Only needed at the start of the game right now.
+            // FIX: Only needed at the start of the game right now.
             if animator.keyframes.is_empty() {
                 animator.keyframes.clone_from(&action.timeline);
             }
-
             context.elapsed += 1;
 
             if context.elapsed > action.total && action.looping {
@@ -122,6 +123,18 @@ pub fn handle_ground_collision(context: &mut Context, physics: &mut Physics) -> 
         physics.acceleration.y = 0;
         context.ctx.airborne = false;
         context.ctx.next = Some(Box::new(jumping::End));
+        face_opponent(physics);
+        return true;
+    }
+    false
+}
+
+/// Conditionally flip the character to face the opponent if not already facing them.
+pub fn face_opponent(physics: &mut Physics) -> bool {
+    if !physics.facing_opponent {
+        physics.facing_left = !physics.facing_left;
+        physics.facing_opponent = true;
+        println!("at -> {} left: {}", physics.position.x, physics.facing_left);
         return true;
     }
     false

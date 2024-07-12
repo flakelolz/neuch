@@ -13,6 +13,7 @@ impl State for Idle {
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Apply physics and handle modifiers
         physics.velocity.x = 0;
+        face_opponent(physics);
         // Transitions
         if jump_transitions(context, buffer) {
             return;
@@ -26,7 +27,9 @@ impl State for Idle {
         if dash_transitions(context, buffer) {
             return;
         }
-        walk_transition(context, buffer);
+        if walk_transition(context, buffer) {
+            return;
+        }
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -46,9 +49,20 @@ impl State for WalkForward {
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Special case for walking
-        physics.velocity.x = context.character.unwrap_or_default().walk_forward;
+        physics.set_forward_velocity(context.character.unwrap_or_default().walk_forward);
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
+        // Smooth transition between walking directions when flipping character
+        if face_opponent(physics) {
+            if forward(buffer) {
+                context.ctx.next = Some(Box::new(standing::WalkBackward));
+                return;
+            }
+            if backward(buffer) {
+                context.ctx.next = Some(Box::new(standing::WalkForward));
+                return;
+            }
+        }
         // Transitions
         if jump_transitions(context, buffer) {
             return;
@@ -87,10 +101,21 @@ impl State for WalkBackward {
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Special case for walking
-        physics.velocity.x = -context.character.unwrap_or_default().walk_backward;
+        physics.set_forward_velocity(context.character.unwrap_or_default().walk_backward);
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
         // Transitions
+        // Smooth transition between walking directions when flipping character
+        if face_opponent(physics) {
+            if forward(buffer) {
+                context.ctx.next = Some(Box::new(standing::WalkBackward));
+                return;
+            }
+            if backward(buffer) {
+                context.ctx.next = Some(Box::new(standing::WalkForward));
+                return;
+            }
+        }
         if jump_transitions(context, buffer) {
             return;
         }
@@ -129,6 +154,7 @@ impl State for DashForward {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
+            face_opponent(physics);
             if attack_transitions(context, buffer) {
                 return;
             }
@@ -167,6 +193,7 @@ impl State for DashBackward {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
+            face_opponent(physics);
             if attack_transitions(context, buffer) {
                 return;
             }
@@ -205,6 +232,7 @@ impl State for LightPunch {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
+            face_opponent(physics);
             if attack_transitions(context, buffer) {
                 return;
             }
@@ -243,6 +271,7 @@ impl State for MediumPunch {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
+            face_opponent(physics);
             if attack_transitions(context, buffer) {
                 return;
             }
@@ -281,6 +310,7 @@ impl State for HeavyPunch {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
+            face_opponent(physics);
             if attack_transitions(context, buffer) {
                 return;
             }
@@ -319,6 +349,7 @@ impl State for LightKick {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
+            face_opponent(physics);
             if attack_transitions(context, buffer) {
                 return;
             }
@@ -357,6 +388,7 @@ impl State for MediumKick {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
+            face_opponent(physics);
             if attack_transitions(context, buffer) {
                 return;
             }
@@ -395,6 +427,7 @@ impl State for HeavyKick {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
+            face_opponent(physics);
             if attack_transitions(context, buffer) {
                 return;
             }

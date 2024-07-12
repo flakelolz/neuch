@@ -14,10 +14,12 @@ use crate::prelude::*;
 
 pub fn update_inputs(world: &mut World, rl: &mut RaylibHandle) {
     world
-        .query_mut::<(&mut Input, &InputConfig, &Player)>()
+        .query_mut::<(&mut Input, &InputConfig, &Player, &Physics)>()
         .into_iter()
-        .for_each(|(_, (input, config, player))| {
-            input.update(rl, config, player);
+        .for_each(|(_, (input, config, player, physics))| {
+            let flipped = physics.facing_left;
+            input.reset();
+            input.update(rl, config, player, flipped);
         });
 }
 

@@ -6,7 +6,7 @@ impl State for Start {
         "Jmp Start".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
         println!("Jmp Start on_enter");
     }
 
@@ -33,7 +33,6 @@ impl State for Start {
 }
 
 pub struct Neutral;
-
 impl State for Neutral {
     fn name(&self) -> String {
         "Jmp Neutral".to_owned()
@@ -60,7 +59,8 @@ impl State for Neutral {
         attack_transitions(context, buffer);
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
+        face_opponent(physics);
         println!("Jmp Neutral on_exit");
     }
 }
@@ -79,7 +79,7 @@ impl State for Forward {
             physics.position.y += 1;
             physics.velocity.y = context.character.unwrap_or_default().jump_velocity;
             physics.acceleration.y = context.character.unwrap_or_default().jump_deceleration;
-            physics.velocity.x = context.character.unwrap_or_default().jump_forward;
+            physics.set_forward_velocity(context.character.unwrap_or_default().jump_forward);
             context.ctx.airborne = true;
         }
     }
@@ -93,7 +93,7 @@ impl State for Forward {
         attack_transitions(context, buffer);
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
         println!("Jmp Forward on_exit");
     }
 }
@@ -112,7 +112,7 @@ impl State for Backward {
             physics.position.y += 1;
             physics.velocity.y = context.character.unwrap_or_default().jump_velocity;
             physics.acceleration.y = context.character.unwrap_or_default().jump_deceleration;
-            physics.velocity.x = context.character.unwrap_or_default().jump_backward;
+            physics.set_forward_velocity(context.character.unwrap_or_default().jump_backward);
             context.ctx.airborne = true;
         }
     }
@@ -126,7 +126,8 @@ impl State for Backward {
         attack_transitions(context, buffer);
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
+        face_opponent(physics);
         println!("Jmp Backward on_exit");
     }
 }
@@ -137,13 +138,14 @@ impl State for End {
         "Jmp End".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
         println!("Jmp End on_enter");
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
+        face_opponent(physics);
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
@@ -166,7 +168,8 @@ impl State for End {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
+        face_opponent(physics);
         println!("Jmp End on_exit");
     }
 }
