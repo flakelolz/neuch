@@ -22,16 +22,21 @@ pub fn world() -> World {
         Physics::one(),
         StateMachine::default(),
         character,
-        Animator::new(origin),
+        Animator::new(origin, 1),
     ));
 
     // Player 2 components
+    let character = Character::ken();
+    let origin = character.data.origin;
     let _player2 = world.spawn((
         Player::Two,
         Input::default(),
+        InputBuffer::default(),
         InputConfig::two(),
         Physics::two(),
-        // StateMachine::default(),
+        StateMachine::default(),
+        character,
+        Animator::new(origin, 0),
     ));
 
     world

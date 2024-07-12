@@ -37,38 +37,40 @@ pub fn show_position(world: &World, d: &mut impl RaylibDraw) {
 
 pub fn show_state(world: &World, d: &mut impl RaylibDraw) {
     world
-        .query::<(&StateMachine, &Physics)>()
+        .query::<(&StateMachine, &Physics, &Player)>()
         .into_iter()
-        .for_each(|(_, (state, physics))| {
-            let (screen_x, screen_y) = pos_to_screen(physics.position);
-            let (screen_x, screen_y) = sprite_to_native(screen_x, screen_y);
-            let current = state.processor.current.as_ref();
-            let timeline = state.context.elapsed;
-            let duration = state.context.duration;
-            let top = 200;
-            let offset = 10;
+        .for_each(|(_, (state, physics, player))| {
+            if player == &Player::One {
+                let (screen_x, screen_y) = pos_to_screen(physics.position);
+                let (screen_x, screen_y) = sprite_to_native(screen_x, screen_y);
+                let current = state.processor.current.as_ref();
+                let timeline = state.context.elapsed;
+                let duration = state.context.duration;
+                let top = 200;
+                let offset = 10;
 
-            d.draw_text(
-                &current.name(),
-                screen_x - 30,
-                screen_y - top,
-                TEXT_SIZE,
-                Color::WHITE,
-            );
-            d.draw_text(
-                format!("{}", duration).as_str(),
-                screen_x - 30,
-                screen_y - top + offset,
-                TEXT_SIZE,
-                Color::WHITE,
-            );
-            d.draw_text(
-                format!("{}", timeline).as_str(),
-                screen_x,
-                screen_y - top + offset,
-                TEXT_SIZE,
-                Color::WHITE,
-            );
+                d.draw_text(
+                    &current.name(),
+                    screen_x - 30,
+                    screen_y - top,
+                    TEXT_SIZE,
+                    Color::WHITE,
+                );
+                d.draw_text(
+                    format!("{}", duration).as_str(),
+                    screen_x - 30,
+                    screen_y - top + offset,
+                    TEXT_SIZE,
+                    Color::WHITE,
+                );
+                d.draw_text(
+                    format!("{}", timeline).as_str(),
+                    screen_x,
+                    screen_y - top + offset,
+                    TEXT_SIZE,
+                    Color::WHITE,
+                );
+            }
         });
 }
 

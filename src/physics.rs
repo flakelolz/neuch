@@ -10,7 +10,7 @@ pub struct Physics {
 impl Physics {
     pub fn one() -> Self {
         Self {
-            position: IVec2::from_screen(180, 0),
+            position: IVec2::from_screen(128, 0),
             velocity: IVec2 { x: 0, y: 0 },
             acceleration: IVec2 { x: 0, y: 0 },
         }
@@ -18,7 +18,7 @@ impl Physics {
 
     pub fn two() -> Self {
         Self {
-            position: IVec2 { x: 0, y: 0 },
+            position: IVec2::from_screen(256, 0),
             velocity: IVec2 { x: 0, y: 0 },
             acceleration: IVec2 { x: 0, y: 0 },
         }
