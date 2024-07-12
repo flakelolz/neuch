@@ -22,10 +22,9 @@
 - [x] Fix attack input buffer for chain attacks
 - [x] Implement jump states
 - [x] Fix dash lockout API
-- [ ] Fix screen size
-- [ ] Fix character size
-- [ ] Fix jump height
-- [ ] Add Player 2 (flipped)
+- [x] Fix screen size
+- [x] Fix character size
+- [x] Add Player 2 (flipped)
 - [ ] Collision system
 - [ ] Reaction system
 - [ ] Make an editor for character data
