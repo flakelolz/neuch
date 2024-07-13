@@ -118,8 +118,9 @@ pub fn reset_position(world: &mut World, rl: &mut RaylibHandle) {
         world
             .query_mut::<(&mut Physics, &Player)>()
             .into_iter()
-            .for_each(|(_, (physics, _player))| {
-                *physics = Physics::one();
+            .for_each(|(_, (physics, player))| match player {
+                Player::One => *physics = Physics::one(),
+                Player::Two => *physics = Physics::two(),
             });
     }
 }
