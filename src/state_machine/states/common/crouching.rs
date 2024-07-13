@@ -10,9 +10,9 @@ impl State for Start {
         println!("Cr Start on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Transitions
-        if attack_transitions(context, buffer) {
+        if attack_transitions(context, buffer, physics) {
             return;
         }
         // Special case for releasing down on crouch start
@@ -40,9 +40,10 @@ impl State for Idle {
         println!("Cr Idle on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Transitions
-        if attack_transitions(context, buffer) {
+        turn_transition(context, buffer, physics);
+        if attack_transitions(context, buffer, physics) {
             return;
         }
         // Base case
@@ -66,18 +67,18 @@ impl State for End {
         println!("Cr End on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Transitions
-        if attack_transitions(context, buffer) {
+        if attack_transitions(context, buffer, physics) {
             return;
         }
-        if crouch_transition(context, buffer) {
+        if crouch_transition(context, buffer, physics) {
             return;
         }
-        if dash_transitions(context, buffer) {
+        if dash_transitions(context, buffer, physics) {
             return;
         }
-        if walk_transition(context, buffer) {
+        if walk_transition(context, buffer, physics) {
             return;
         }
         // Base case & return to idle
@@ -107,14 +108,14 @@ impl State for LightPunch {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if attack_transitions(context, buffer) {
+            if attack_transitions(context, buffer, physics) {
                 return;
             }
             if !down(buffer) {
-                if dash_transitions(context, buffer) {
+                if dash_transitions(context, buffer, physics) {
                     return;
                 }
-                if walk_transition(context, buffer) {
+                if walk_transition(context, buffer, physics) {
                     return;
                 }
                 // Return to idle
@@ -146,14 +147,14 @@ impl State for MediumPunch {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if attack_transitions(context, buffer) {
+            if attack_transitions(context, buffer, physics) {
                 return;
             }
             if !down(buffer) {
-                if dash_transitions(context, buffer) {
+                if dash_transitions(context, buffer, physics) {
                     return;
                 }
-                if walk_transition(context, buffer) {
+                if walk_transition(context, buffer, physics) {
                     return;
                 }
                 // Return to idle
@@ -185,14 +186,14 @@ impl State for HeavyPunch {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if attack_transitions(context, buffer) {
+            if attack_transitions(context, buffer, physics) {
                 return;
             }
             if !down(buffer) {
-                if dash_transitions(context, buffer) {
+                if dash_transitions(context, buffer, physics) {
                     return;
                 }
-                if walk_transition(context, buffer) {
+                if walk_transition(context, buffer, physics) {
                     return;
                 }
                 // Return to idle
@@ -224,14 +225,14 @@ impl State for LightKick {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if attack_transitions(context, buffer) {
+            if attack_transitions(context, buffer, physics) {
                 return;
             }
             if !down(buffer) {
-                if dash_transitions(context, buffer) {
+                if dash_transitions(context, buffer, physics) {
                     return;
                 }
-                if walk_transition(context, buffer) {
+                if walk_transition(context, buffer, physics) {
                     return;
                 }
                 // Return to idle
@@ -263,14 +264,14 @@ impl State for MediumKick {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if attack_transitions(context, buffer) {
+            if attack_transitions(context, buffer, physics) {
                 return;
             }
             if !down(buffer) {
-                if dash_transitions(context, buffer) {
+                if dash_transitions(context, buffer, physics) {
                     return;
                 }
-                if walk_transition(context, buffer) {
+                if walk_transition(context, buffer, physics) {
                     return;
                 }
                 // Return to idle
@@ -302,14 +303,14 @@ impl State for HeavyKick {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if attack_transitions(context, buffer) {
+            if attack_transitions(context, buffer, physics) {
                 return;
             }
             if !down(buffer) {
-                if dash_transitions(context, buffer) {
+                if dash_transitions(context, buffer, physics) {
                     return;
                 }
-                if walk_transition(context, buffer) {
+                if walk_transition(context, buffer, physics) {
                     return;
                 }
                 // Return to idle
@@ -322,5 +323,45 @@ impl State for HeavyKick {
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Cr HeavyKick on_exit");
+    }
+}
+
+pub struct Turn;
+impl State for Turn {
+    fn name(&self) -> String {
+        "Cr Turn".to_owned()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Cr Turn on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        // Apply physics and handle modifiers
+        handle_modifiers(context, buffer, physics);
+        // Transitions
+        if context.elapsed >= context.duration {
+            if attack_transitions(context, buffer, physics) {
+                return;
+            }
+            if down(buffer) {
+                context.ctx.next = Some(Box::new(crouching::Idle));
+                return;
+            }
+            if dash_transitions(context, buffer, physics) {
+                return;
+            }
+            if walk_transition(context, buffer, physics) {
+                return;
+            }
+            // Return to idle
+            if !down(buffer) {
+                context.ctx.next = Some(Box::new(crouching::End));
+            }
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Cr Turn on_exit");
     }
 }

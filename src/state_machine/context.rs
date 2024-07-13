@@ -14,7 +14,6 @@ pub struct SubContext {
     pub can_dash_f: bool,
     pub can_dash_b: bool,
     pub airborne: bool,
-    pub flipped: bool,
     pub flags: Flags,
 }
 
@@ -25,7 +24,6 @@ impl Default for SubContext {
             can_dash_f: true,
             can_dash_b: true,
             airborne: false,
-            flipped: false,
             flags: Flags {
                 jump: JumpFlags::None,
             },
@@ -69,7 +67,7 @@ pub fn handle_modifiers(context: &mut Context, buffer: &InputBuffer, physics: &m
             for action in cancels {
                 if context.elapsed >= action.on_frame {
                     for state in &action.states {
-                        state.set(buffer, &mut context.ctx);
+                        state.set(buffer, &mut context.ctx, physics);
                     }
                 }
             }

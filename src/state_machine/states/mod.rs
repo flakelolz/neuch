@@ -19,12 +19,12 @@ impl Default for States {
 }
 
 impl States {
-    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
         match self {
-            States::Group(states) => states.set(buffer, ctx),
-            States::Standing(states) => states.set(buffer, ctx),
-            States::Crouching(states) => states.set(buffer, ctx),
-            States::Jumping(states) => states.set(buffer, ctx),
+            States::Group(states) => states.set(buffer, ctx, physics),
+            States::Standing(states) => states.set(buffer, ctx, physics),
+            States::Crouching(states) => states.set(buffer, ctx, physics),
+            States::Jumping(states) => states.set(buffer, ctx, physics),
         }
     }
 }
@@ -43,92 +43,92 @@ pub enum Group {
 }
 
 impl Group {
-    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
         match self {
             Group::All => {
-                if Group::Normals.set(buffer, ctx) {
+                if Group::Normals.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Group::Movement.set(buffer, ctx) {
+                if Group::Jumps.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Group::Jumps.set(buffer, ctx) {
+                if Group::Movement.set(buffer, ctx, physics) {
                     return true;
                 }
                 false
             }
 
             Group::Normals => {
-                if Group::CrNormals.set(buffer, ctx) {
+                if Group::CrNormals.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Group::StNormals.set(buffer, ctx) {
+                if Group::StNormals.set(buffer, ctx, physics) {
                     return true;
                 }
                 false
             }
 
             Group::StNormals => {
-                if Standing::HeavyKick.set(buffer, ctx) {
+                if Standing::HeavyKick.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Standing::HeavyPunch.set(buffer, ctx) {
+                if Standing::HeavyPunch.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Standing::MediumKick.set(buffer, ctx) {
+                if Standing::MediumKick.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Standing::MediumPunch.set(buffer, ctx) {
+                if Standing::MediumPunch.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Standing::LightKick.set(buffer, ctx) {
+                if Standing::LightKick.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Standing::LightPunch.set(buffer, ctx) {
+                if Standing::LightPunch.set(buffer, ctx, physics) {
                     return true;
                 }
                 false
             }
 
             Group::CrNormals => {
-                if Crouching::HeavyKick.set(buffer, ctx) {
+                if Crouching::HeavyKick.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Crouching::HeavyPunch.set(buffer, ctx) {
+                if Crouching::HeavyPunch.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Crouching::MediumKick.set(buffer, ctx) {
+                if Crouching::MediumKick.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Crouching::MediumPunch.set(buffer, ctx) {
+                if Crouching::MediumPunch.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Crouching::LightKick.set(buffer, ctx) {
+                if Crouching::LightKick.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Crouching::LightPunch.set(buffer, ctx) {
+                if Crouching::LightPunch.set(buffer, ctx, physics) {
                     return true;
                 }
                 false
             }
 
             Group::AirNormals => {
-                if Jumping::HeavyKick.set(buffer, ctx) {
+                if Jumping::HeavyKick.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Jumping::HeavyPunch.set(buffer, ctx) {
+                if Jumping::HeavyPunch.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Jumping::MediumKick.set(buffer, ctx) {
+                if Jumping::MediumKick.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Jumping::MediumPunch.set(buffer, ctx) {
+                if Jumping::MediumPunch.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Jumping::LightKick.set(buffer, ctx) {
+                if Jumping::LightKick.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Jumping::LightPunch.set(buffer, ctx) {
+                if Jumping::LightPunch.set(buffer, ctx, physics) {
                     return true;
                 }
 
@@ -136,51 +136,51 @@ impl Group {
             }
 
             Group::Movement => {
-                if Standing::DashForward.set(buffer, ctx) {
+                if Standing::DashForward.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Standing::DashBackward.set(buffer, ctx) {
+                if Standing::DashBackward.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Standing::WalkForward.set(buffer, ctx) {
+                if Standing::WalkForward.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Standing::WalkBackward.set(buffer, ctx) {
+                if Standing::WalkBackward.set(buffer, ctx, physics) {
                     return true;
                 }
                 false
             }
 
             Group::Dashes => {
-                if Standing::DashForward.set(buffer, ctx) {
+                if Standing::DashForward.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Standing::DashBackward.set(buffer, ctx) {
+                if Standing::DashBackward.set(buffer, ctx, physics) {
                     return true;
                 }
                 false
             }
 
             Group::Walks => {
-                if Standing::WalkForward.set(buffer, ctx) {
+                if Standing::WalkForward.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Standing::WalkBackward.set(buffer, ctx) {
+                if Standing::WalkBackward.set(buffer, ctx, physics) {
                     return true;
                 }
                 false
             }
             Group::Jumps => {
-                if Jumping::Start.set(buffer, ctx) {
+                if Jumping::Start.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Jumping::Forward.set(buffer, ctx) {
+                if Jumping::Forward.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Jumping::Backward.set(buffer, ctx) {
+                if Jumping::Backward.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Jumping::Neutral.set(buffer, ctx) {
+                if Jumping::Neutral.set(buffer, ctx, physics) {
                     return true;
                 }
                 false
@@ -205,7 +205,7 @@ pub enum Standing {
 }
 
 impl Standing {
-    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, _physics: &mut Physics) -> bool {
         match self {
             Standing::Idle => {
                 if neutral(buffer) {
@@ -302,7 +302,7 @@ pub enum Crouching {
 }
 
 impl Crouching {
-    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, _physics: &mut Physics) -> bool {
         match self {
             Crouching::Start => {
                 if down(buffer) {
@@ -387,7 +387,7 @@ pub enum Jumping {
 }
 
 impl Jumping {
-    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, _physics: &mut Physics) -> bool {
         match self {
             Jumping::Start => {
                 if up(buffer) && !ctx.airborne {

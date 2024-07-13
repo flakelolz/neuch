@@ -66,3 +66,14 @@ pub fn physics_system(world: &mut World) {
         physics.velocity += physics.acceleration;
     }
 }
+
+
+/// Conditionally flip the character to face the opponent if not already facing them.
+pub fn face_opponent(physics: &mut Physics) -> bool {
+    if !physics.facing_opponent {
+        physics.facing_left = !physics.facing_left;
+        physics.facing_opponent = true;
+        return true;
+    }
+    false
+}

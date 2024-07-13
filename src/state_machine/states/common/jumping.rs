@@ -6,7 +6,7 @@ impl State for Start {
         "Jmp Start".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Jmp Start on_enter");
     }
 
@@ -52,15 +52,14 @@ impl State for Neutral {
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Base case
-        if handle_ground_collision(context, physics) {
+        if handle_ground_collision(context, buffer, physics) {
             return;
         }
         // Transitions
-        attack_transitions(context, buffer);
+        attack_transitions(context, buffer, physics);
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
-        face_opponent(physics);
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Jmp Neutral on_exit");
     }
 }
@@ -86,14 +85,14 @@ impl State for Forward {
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Base case
-        if handle_ground_collision(context, physics) {
+        if handle_ground_collision(context, buffer, physics) {
             return;
         }
         // Transitions
-        attack_transitions(context, buffer);
+        attack_transitions(context, buffer, physics);
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Jmp Forward on_exit");
     }
 }
@@ -119,15 +118,14 @@ impl State for Backward {
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Base case
-        if handle_ground_collision(context, physics) {
+        if handle_ground_collision(context, buffer, physics) {
             return;
         }
         // Transitions
-        attack_transitions(context, buffer);
+        attack_transitions(context, buffer, physics);
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
-        face_opponent(physics);
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Jmp Backward on_exit");
     }
 }
@@ -138,27 +136,26 @@ impl State for End {
         "Jmp End".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Jmp End on_enter");
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
-        face_opponent(physics);
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if attack_transitions(context, buffer) {
+            if attack_transitions(context, buffer, physics) {
                 return;
             }
-            if jump_transitions(context, buffer) {
+            if jump_transitions(context, buffer, physics) {
                 return;
             }
-            if crouch_transition(context, buffer) {
+            if crouch_transition(context, buffer, physics) {
                 return;
             }
-            if walk_transition(context, buffer) {
+            if walk_transition(context, buffer, physics) {
                 return;
             }
             // return to idle
@@ -184,8 +181,8 @@ impl State for LightPunch {
         println!("Jmp LightPunch on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
-        if handle_ground_collision(context, physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if handle_ground_collision(context, buffer, physics) {
             return;
         }
         // Base case
@@ -210,8 +207,8 @@ impl State for MediumPunch {
         println!("Jmp MediumPunch on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
-        if handle_ground_collision(context, physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if handle_ground_collision(context, buffer, physics) {
             return;
         }
         // Base case
@@ -236,8 +233,8 @@ impl State for HeavyPunch {
         println!("Jmp HeavyPunch on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
-        if handle_ground_collision(context, physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if handle_ground_collision(context, buffer, physics) {
             return;
         }
         // Base case
@@ -262,8 +259,8 @@ impl State for LightKick {
         println!("Jmp LightKick on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
-        if handle_ground_collision(context, physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if handle_ground_collision(context, buffer, physics) {
             return;
         }
         // Base case
@@ -288,8 +285,8 @@ impl State for MediumKick {
         println!("Jmp MediumKick on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
-        if handle_ground_collision(context, physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if handle_ground_collision(context, buffer, physics) {
             return;
         }
         // Base case
@@ -314,8 +311,8 @@ impl State for HeavyKick {
         println!("Jmp HeavyKick on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
-        if handle_ground_collision(context, physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if handle_ground_collision(context, buffer, physics) {
             return;
         }
         // Base case
@@ -340,9 +337,9 @@ impl State for AttackEnd {
         println!("Jmp AttackEnd on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Base case
-        handle_ground_collision(context, physics);
+        handle_ground_collision(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {

@@ -8,6 +8,7 @@ pub fn handle_transition(
     character: &Character,
     animator: &mut Animator,
 ) {
+    animator.flipped = physics.facing_left;
     // If there is a next state to transition to it
     if let Some(mut next) = context.ctx.next.take() {
         // Setup the next state and reset variables
@@ -25,7 +26,6 @@ pub fn handle_transition(
             // Setup action data
             context.duration = action.total;
             // Setup animnation data
-            animator.flipped = physics.facing_left;
             animator.keyframes.clone_from(&action.timeline);
             // Setup action modifiers if there are any
             match &action.modifiers {
@@ -52,7 +52,6 @@ pub fn handle_transition(
                 animator.keyframes.clone_from(&action.timeline);
             }
             context.elapsed += 1;
-            animator.flipped = physics.facing_left;
 
             if context.elapsed > action.total && action.looping {
                 context.elapsed = 1;
@@ -64,41 +63,55 @@ pub fn handle_transition(
     }
 }
 
-pub fn crouch_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if Crouching::Start.set(buffer, &mut context.ctx) {
+pub fn crouch_transition(
+    context: &mut Context,
+    buffer: &InputBuffer,
+    physics: &mut Physics,
+) -> bool {
+    if Crouching::Start.set(buffer, &mut context.ctx, physics) {
+        return true;
+    }
+    false
+}
+
+pub fn walk_transition(context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) -> bool {
+    if Group::Walks.set(buffer, &mut context.ctx, physics) {
+        return true;
+    }
+    false
+}
+
+pub fn dash_transitions(
+    context: &mut Context,
+    buffer: &InputBuffer,
+    physics: &mut Physics,
+) -> bool {
+    if Group::Dashes.set(buffer, &mut context.ctx, physics) {
+        return true;
+    }
+    false
+}
+
+pub fn attack_transitions(
+    context: &mut Context,
+    buffer: &InputBuffer,
+    physics: &mut Physics,
+) -> bool {
+    if !context.ctx.airborne && Group::Normals.set(buffer, &mut context.ctx, physics) {
+        return true;
+    }
+    if context.ctx.airborne && Group::AirNormals.set(buffer, &mut context.ctx, physics) {
         return true;
     }
 
     false
 }
 
-pub fn walk_transition(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if Group::Walks.set(buffer, &mut context.ctx) {
-        return true;
-    }
-
-    false
-}
-
-pub fn dash_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if Group::Dashes.set(buffer, &mut context.ctx) {
-        return true;
-    }
-    false
-}
-
-pub fn attack_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
-    if !context.ctx.airborne && Group::Normals.set(buffer, &mut context.ctx) {
-        return true;
-    }
-    if context.ctx.airborne && Group::AirNormals.set(buffer, &mut context.ctx) {
-        return true;
-    }
-
-    false
-}
-
-pub fn jump_transitions(context: &mut Context, buffer: &InputBuffer) -> bool {
+pub fn jump_transitions(
+    context: &mut Context,
+    buffer: &InputBuffer,
+    _physics: &mut Physics,
+) -> bool {
     if up(buffer) {
         handle_jump_flags(&mut context.ctx, buffer);
         context.ctx.next = Some(Box::new(jumping::Start));
@@ -116,7 +129,11 @@ pub fn handle_jump_flags(ctx: &mut SubContext, buffer: &InputBuffer) {
     }
 }
 
-pub fn handle_ground_collision(context: &mut Context, physics: &mut Physics) -> bool {
+pub fn handle_ground_collision(
+    context: &mut Context,
+    buffer: &InputBuffer,
+    physics: &mut Physics,
+) -> bool {
     if physics.position.y <= 0 {
         physics.position.y = 0;
         physics.velocity.y = 0;
@@ -124,17 +141,33 @@ pub fn handle_ground_collision(context: &mut Context, physics: &mut Physics) -> 
         physics.acceleration.y = 0;
         context.ctx.airborne = false;
         context.ctx.next = Some(Box::new(jumping::End));
-        face_opponent(physics);
+        if turn_transition(context, buffer, physics) {
+            return true;
+        }
+
         return true;
     }
     false
 }
 
-/// Conditionally flip the character to face the opponent if not already facing them.
-pub fn face_opponent(physics: &mut Physics) -> bool {
-    if !physics.facing_opponent {
-        physics.facing_left = !physics.facing_left;
-        physics.facing_opponent = true;
+pub fn turn_transition(context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) -> bool {
+    if face_opponent(physics) {
+        if buffer.was_motion_executed(Motions::DashForward, buffer.dash) {
+            context.ctx.next = Some(Box::new(standing::DashBackward));
+            return true;
+        }
+        if buffer.was_motion_executed(Motions::DashBackward, buffer.dash) {
+            context.ctx.next = Some(Box::new(standing::DashForward));
+            return true;
+        }
+        if attack_transitions(context, buffer, physics) {
+            return true;
+        }
+        if down(buffer) {
+            context.ctx.next = Some(Box::new(crouching::Turn));
+            return true;
+        }
+        context.ctx.next = Some(Box::new(standing::Turn));
         return true;
     }
     false
