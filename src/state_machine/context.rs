@@ -67,7 +67,9 @@ pub fn handle_modifiers(context: &mut Context, buffer: &InputBuffer, physics: &m
             for action in cancels {
                 if context.elapsed >= action.after_frame {
                     for state in &action.states {
-                        state.set(buffer, &mut context.ctx, physics);
+                        if state.set(buffer, &mut context.ctx, physics) {
+                            turn_transition(&mut context.ctx, buffer, physics);
+                        }
                     }
                 }
             }

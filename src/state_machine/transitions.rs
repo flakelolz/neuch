@@ -103,7 +103,6 @@ pub fn attack_transitions(
     if context.ctx.airborne && Group::AirNormals.set(buffer, &mut context.ctx, physics) {
         return true;
     }
-
     false
 }
 
@@ -141,7 +140,7 @@ pub fn handle_ground_collision(
         physics.acceleration.y = 0;
         context.ctx.airborne = false;
         context.ctx.next = Some(Box::new(jumping::End));
-        if turn_transition(context, buffer, physics) {
+        if turn_transition(&mut context.ctx, buffer, physics) {
             return true;
         }
 
@@ -150,24 +149,30 @@ pub fn handle_ground_collision(
     false
 }
 
-pub fn turn_transition(context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) -> bool {
+pub fn turn_transition(ctx: &mut SubContext, buffer: &InputBuffer, physics: &mut Physics) -> bool {
     if face_opponent(physics) {
-        if buffer.was_motion_executed(Motions::DashForward, buffer.dash) {
-            context.ctx.next = Some(Box::new(standing::DashBackward));
+        // Attack transitions
+        if !ctx.airborne && Group::Normals.set(buffer, ctx, physics) {
             return true;
         }
-        if buffer.was_motion_executed(Motions::DashBackward, buffer.dash) {
-            context.ctx.next = Some(Box::new(standing::DashForward));
+        if ctx.airborne && Group::AirNormals.set(buffer, ctx, physics) {
             return true;
         }
-        if attack_transitions(context, buffer, physics) {
+        // Reverse stored dash direction
+        if buffer.was_motion_executed(Motions::DashForward, buffer.dash + 5) {
+            ctx.next = Some(Box::new(standing::DashBackward));
             return true;
         }
+        if buffer.was_motion_executed(Motions::DashBackward, buffer.dash + 5) {
+            ctx.next = Some(Box::new(standing::DashForward));
+            return true;
+        }
+        // Turn-around
         if down(buffer) {
-            context.ctx.next = Some(Box::new(crouching::Turn));
+            ctx.next = Some(Box::new(crouching::Turn));
             return true;
         }
-        context.ctx.next = Some(Box::new(standing::Turn));
+        ctx.next = Some(Box::new(standing::Turn));
         return true;
     }
     false

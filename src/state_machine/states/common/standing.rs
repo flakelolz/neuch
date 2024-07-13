@@ -14,7 +14,7 @@ impl State for Idle {
         // Apply physics and handle modifiers
         physics.velocity.x = 0;
         // Transitions
-        if turn_transition(context, buffer, physics) {
+        if turn_transition(&mut context.ctx, buffer, physics) {
             return;
         }
         if jump_transitions(context, buffer, physics) {
@@ -55,7 +55,7 @@ impl State for WalkForward {
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
         // Transitions
-        if turn_transition(context, buffer, physics) {
+        if turn_transition(&mut context.ctx, buffer, physics) {
             return;
         }
         if jump_transitions(context, buffer, physics) {
@@ -98,7 +98,7 @@ impl State for WalkBackward {
         physics.set_forward_velocity(context.character.unwrap_or_default().walk_backward);
         // Apply physics and handle modifiers
         handle_modifiers(context, buffer, physics);
-        if turn_transition(context, buffer, physics) {
+        if turn_transition(&mut context.ctx, buffer, physics) {
             return;
         }
         // Transitions
@@ -140,7 +140,8 @@ impl State for DashForward {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if turn_transition(context, buffer, physics) {
+            if turn_transition(&mut context.ctx, buffer, physics) {
+                println!("here");
                 return;
             }
             if attack_transitions(context, buffer, physics) {
@@ -181,7 +182,7 @@ impl State for DashBackward {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if turn_transition(context, buffer, physics) {
+            if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
             }
             if attack_transitions(context, buffer, physics) {
@@ -222,7 +223,7 @@ impl State for LightPunch {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if turn_transition(context, buffer, physics) {
+            if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
             }
             if attack_transitions(context, buffer, physics) {
@@ -263,7 +264,7 @@ impl State for MediumPunch {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if turn_transition(context, buffer, physics) {
+            if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
             }
             if attack_transitions(context, buffer, physics) {
@@ -304,7 +305,7 @@ impl State for HeavyPunch {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if turn_transition(context, buffer, physics) {
+            if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
             }
             if attack_transitions(context, buffer, physics) {
@@ -345,7 +346,7 @@ impl State for LightKick {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if turn_transition(context, buffer, physics) {
+            if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
             }
             if attack_transitions(context, buffer, physics) {
@@ -386,7 +387,7 @@ impl State for MediumKick {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if turn_transition(context, buffer, physics) {
+            if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
             }
             if attack_transitions(context, buffer, physics) {
@@ -427,7 +428,7 @@ impl State for HeavyKick {
         // Base case
         if context.elapsed >= context.duration {
             // Transitions
-            if turn_transition(context, buffer, physics) {
+            if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
             }
             if attack_transitions(context, buffer, physics) {

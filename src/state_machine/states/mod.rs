@@ -12,12 +12,6 @@ pub enum States {
     Jumping(Jumping),
 }
 
-impl Default for States {
-    fn default() -> Self {
-        Self::Standing(Standing::Idle)
-    }
-}
-
 impl States {
     pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
         match self {
@@ -57,7 +51,6 @@ impl Group {
                 }
                 false
             }
-
             Group::Normals => {
                 if Group::CrNormals.set(buffer, ctx, physics) {
                     return true;
@@ -111,7 +104,6 @@ impl Group {
                 }
                 false
             }
-
             Group::AirNormals => {
                 if Jumping::HeavyKick.set(buffer, ctx, physics) {
                     return true;
@@ -134,7 +126,6 @@ impl Group {
 
                 false
             }
-
             Group::Movement => {
                 if Standing::DashForward.set(buffer, ctx, physics) {
                     return true;
@@ -150,7 +141,6 @@ impl Group {
                 }
                 false
             }
-
             Group::Dashes => {
                 if Standing::DashForward.set(buffer, ctx, physics) {
                     return true;
@@ -160,7 +150,6 @@ impl Group {
                 }
                 false
             }
-
             Group::Walks => {
                 if Standing::WalkForward.set(buffer, ctx, physics) {
                     return true;
@@ -191,7 +180,6 @@ impl Group {
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Deserialize, Serialize)]
 pub enum Standing {
-    Idle,
     LightPunch,
     MediumPunch,
     HeavyPunch,
@@ -205,15 +193,8 @@ pub enum Standing {
 }
 
 impl Standing {
-    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, _physics: &mut Physics) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
         match self {
-            Standing::Idle => {
-                if neutral(buffer) {
-                    ctx.next.replace(Box::new(standing::Idle));
-                    return true;
-                }
-                false
-            }
             Standing::LightPunch => {
                 if buffer.buffered(Inputs::LightPunch, buffer.attack) && !down(buffer) {
                     ctx.next.replace(Box::new(standing::LightPunch));
@@ -291,7 +272,6 @@ impl Standing {
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Deserialize, Serialize, Hash)]
 pub enum Crouching {
     Start,
-    Idle,
     End,
     LightPunch,
     MediumPunch,
@@ -307,13 +287,6 @@ impl Crouching {
             Crouching::Start => {
                 if down(buffer) {
                     ctx.next.replace(Box::new(crouching::Start));
-                    return true;
-                }
-                false
-            }
-            Crouching::Idle => {
-                if down(buffer) {
-                    ctx.next.replace(Box::new(crouching::Idle));
                     return true;
                 }
                 false
