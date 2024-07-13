@@ -41,7 +41,7 @@ pub struct PositionModifier {
 
 #[derive(Debug, Clone, Default, Deserialize, Serialize)]
 pub struct CancelModifier {
-    pub on_frame: u32,
+    pub after_frame: u32,
     pub states: Vec<States>,
 }
 

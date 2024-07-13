@@ -65,7 +65,7 @@ pub fn handle_modifiers(context: &mut Context, buffer: &InputBuffer, physics: &m
 
         if let Some(cancels) = &instructions.cancels {
             for action in cancels {
-                if context.elapsed >= action.on_frame {
+                if context.elapsed >= action.after_frame {
                     for state in &action.states {
                         state.set(buffer, &mut context.ctx, physics);
                     }

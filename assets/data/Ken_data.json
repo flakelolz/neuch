@@ -279,7 +279,7 @@
       "modifiers": {
         "cancels": [
           {
-            "on_frame": 12,
+            "after_frame": 12,
             "states": [
               {
                 "Group": "Normals"
@@ -287,7 +287,7 @@
             ]
           },
           {
-            "on_frame": 16,
+            "after_frame": 16,
             "states": [
               {
                 "Group": "All"
@@ -508,7 +508,7 @@
       "modifiers": {
         "cancels": [
           {
-            "on_frame": 8,
+            "after_frame": 8,
             "states": [
               {
                 "Standing": "LightPunch"
@@ -1143,7 +1143,7 @@
       "modifiers": {
         "cancels": [
           {
-            "on_frame": 1,
+            "after_frame": 1,
             "states": [
               {
                 "Group": "All"
@@ -1304,7 +1304,7 @@
       "modifiers": {
         "cancels": [
           {
-            "on_frame": 8,
+            "after_frame": 8,
             "states": [
               {
                 "Standing": "LightPunch"
@@ -1509,7 +1509,7 @@
       "modifiers": {
         "cancels": [
           {
-            "on_frame": 8,
+            "after_frame": 8,
             "states": [
               {
                 "Standing": "LightPunch"
@@ -1876,7 +1876,7 @@
       "modifiers": {
         "cancels": [
           {
-            "on_frame": 1,
+            "after_frame": 1,
             "states": [
               {
                 "Group": "Normals"
@@ -2215,7 +2215,7 @@
       "modifiers": {
         "cancels": [
           {
-            "on_frame": 1,
+            "after_frame": 1,
             "states": [
               {
                 "Group": "Normals"
@@ -2226,7 +2226,7 @@
             ]
           },
           {
-            "on_frame": 2,
+            "after_frame": 2,
             "states": [
               {
                 "Group": "All"
