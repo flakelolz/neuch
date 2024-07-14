@@ -3,17 +3,6 @@ use crate::prelude::*;
 
 const TEXT_SIZE: i32 = 10;
 
-pub fn show_inputs(world: &World, d: &mut impl RaylibDraw) {
-    world
-        .query::<(&Input, &Player)>()
-        .into_iter()
-        .for_each(|(_, (input, player))| {
-            if player == &Player::One {
-                d.draw_text(&format!("{:#?}", input), 10, 100, 10, Color::WHITE);
-            }
-        });
-}
-
 pub fn show_position(world: &World, d: &mut impl RaylibDraw) {
     world
         .query::<(&Physics, &Player)>()
@@ -133,3 +122,86 @@ pub fn change_resolution(rl: &mut RaylibHandle, configs: &mut Configs, camera: &
         configs.display.set_720(rl, camera);
     }
 }
+
+#[rustfmt::skip]
+pub fn show_inputs(world: &World, d: &mut impl RaylibDraw) {
+    world
+        .query::<(&Input, &Physics, &Player)>()
+        .into_iter()
+        .for_each(|(_, (input, physics, player))| {
+            let dir_size = 20.;
+            let size = 10.;
+            let pos = 75;
+            let y = HEIGHT - 40;
+            let font = d.gui_get_font();
+
+            let left = {
+                if physics.facing_left {
+                    input.forward
+                } else {
+                    input.backward
+                }
+            };
+            let right = {
+                if physics.facing_left {
+                    input.backward
+                } else {
+                    input.forward
+                }
+            };
+
+            if player == &Player::One {
+                // Up
+                match input.up {
+                    true => d.draw_text_pro( &font, ">", rvec2(40, y - 4), rvec2(0., 0.), 270., dir_size, 0., Color::WHITE),
+                    false => d.draw_text_pro( &font, ">", rvec2(40, y - 4), rvec2(0., 0.), 270., dir_size, 0., Color::DARKGRAY),
+                }
+                // Down
+                match input.down {
+                    true => d.draw_text_pro( &font, ">", rvec2(58, y + 13), rvec2(0., 0.), 90., dir_size, 0., Color::WHITE),
+                    false => d.draw_text_pro( &font, ">", rvec2(58, y + 13), rvec2(0., 0.), 90., dir_size, 0., Color::DARKGRAY),
+                }
+                // Left
+                match left {
+                    true => d.draw_text_pro( &font, ">", rvec2(40, y + 14), rvec2(0., 0.), 180., dir_size, 0., Color::WHITE),
+                    false => d.draw_text_pro( &font, ">", rvec2(40, y + 14), rvec2(0., 0.), 180., dir_size, 0., Color::DARKGRAY),
+                }
+                // Right
+                match right {
+                    true => d.draw_text_pro( &font, ">", rvec2(58, y - 5), rvec2(0., 0.), 0., dir_size, 0., Color::WHITE),
+                    false => d.draw_text_pro( &font, ">", rvec2(58, y - 5), rvec2(0., 0.), 0., dir_size, 0., Color::DARKGRAY),
+                }
+                // LP
+                match input.lp {
+                    true => d.draw_text_pro( &font, "LP", rvec2(pos, y - 5), rvec2(0., 0.), 0., size, 0., Color::CYAN),
+                    false => d.draw_text_pro( &font, "LP", rvec2(pos, y - 5), rvec2(0., 0.), 0., size, 0., Color::DARKGRAY),
+                }
+                // MP
+                match input.mp {
+                    true => d.draw_text_pro( &font, "MP", rvec2(pos + 14, y - 5), rvec2(0., 0.), 0., size, 0., Color::YELLOW),
+                    false => d.draw_text_pro( &font, "MP", rvec2(pos + 14, y - 5), rvec2(0., 0.), 0., size, 0., Color::DARKGRAY),
+                }
+                // HP
+                match input.hp {
+                    true => d.draw_text_pro( &font, "HP", rvec2(pos + 30, y - 5), rvec2(0., 0.), 0., size, 0., Color::RED),
+                    false => d.draw_text_pro( &font, "HP", rvec2(pos + 30, y - 5), rvec2(0., 0.), 0., size, 0., Color::DARKGRAY),
+                }
+                // LK
+                match input.lk {
+                    true => d.draw_text_pro( &font, "LK", rvec2(pos, y + 5), rvec2(0., 0.), 0., size, 0., Color::CYAN),
+                    false => d.draw_text_pro( &font, "LK", rvec2(pos, y + 5), rvec2(0., 0.), 0., size, 0., Color::DARKGRAY),
+                }
+                // MK
+                match input.mk {
+                    true => d.draw_text_pro( &font, "MK", rvec2(pos + 14, y + 5), rvec2(0., 0.), 0., size, 0., Color::YELLOW),
+                    false => d.draw_text_pro( &font, "MK", rvec2(pos + 14, y + 5), rvec2(0., 0.), 0., size, 0., Color::DARKGRAY),
+                }
+                // HK
+                match input.hk {
+                    true => d.draw_text_pro( &font, "HK", rvec2(pos + 30, y + 5), rvec2(0., 0.), 0., size, 0., Color::RED),
+                    false => d.draw_text_pro( &font, "HK", rvec2(pos + 30, y + 5), rvec2(0., 0.), 0., size, 0., Color::DARKGRAY),
+                }
+            }
+        });
+}
+
