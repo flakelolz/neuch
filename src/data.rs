@@ -2,17 +2,62 @@ use crate::prelude::*;
 
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
 pub struct Hitbox {
-    pub top: i32,
-    pub left: i32,
-    pub bottom: i32,
-    pub right: i32,
+    pub start_frame: u32,
+    pub duration: u32,
+    pub hit_type: HitType,
+    pub properties: HitProperties,
+    pub proximity: Option<ProximityBox>,
+    pub value: Boxes,
 }
 
-#[derive(Debug, Clone, Default, Deserialize, Serialize)]
-pub struct HitboxGroup {
-    pub on_frame: u32,
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
+pub struct ProximityBox {
+    pub start_frame: u32,
     pub duration: u32,
-    pub boxes: Vec<Hitbox>,
+    pub proximity: Boxes,
+}
+
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Deserialize, Serialize)]
+pub enum HitType {
+    #[default]
+    Ground,
+    Air,
+    Throw,
+    Projectile,
+}
+
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
+pub struct HitProperties {
+    pub hitstop: u32,
+    pub hitstun: u32,
+    pub blockstun: u32,
+    pub knockback: IVec2,
+    pub air_knockback: IVec2,
+}
+
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
+pub struct Hurtbox {
+    pub start_frame: u32,
+    pub duration: u32,
+    pub invul_type: InvulType,
+    pub value: Boxes,
+}
+
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
+pub enum InvulType {
+    #[default]
+    None,
+    Ground,
+    Air,
+    Throw,
+    Projectile,
+}
+
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
+pub struct Pushbox {
+    pub start_frame: u32,
+    pub duration: u32,
+    pub pushbox: Boxes,
 }
 
 #[derive(Debug, Clone, Default, Deserialize, Serialize)]
@@ -20,9 +65,9 @@ pub struct Action {
     pub name: String,
     pub total: u32,
     pub looping: bool,
-    pub pushbox: Vec<HitboxGroup>,
-    pub hurtbox: Vec<HitboxGroup>,
-    pub hitbox: Option<Vec<HitboxGroup>>,
+    pub pushboxes: Option<Vec<Pushbox>>,
+    pub hurtboxes: Option<Vec<Hurtbox>>,
+    pub hitboxes: Option<Vec<Hitbox>>,
     pub modifiers: Option<Modifiers>,
     pub timeline: Vec<Keyframe>,
 }
@@ -31,6 +76,7 @@ pub struct Action {
 pub struct Modifiers {
     pub cancels: Option<Vec<CancelModifier>>,
     pub potisions: Option<Vec<PositionModifier>>,
+    // pub meter: Option<MeterModifier>,
 }
 
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
@@ -41,8 +87,18 @@ pub struct PositionModifier {
 
 #[derive(Debug, Clone, Default, Deserialize, Serialize)]
 pub struct CancelModifier {
+    // on: Vec<CollisionType>, // Whiff, Hit, Block, Parry
     pub after_frame: u32,
+    // pub until_frame: Option<u32>,
     pub states: Vec<States>,
+}
+
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
+pub struct Boxes {
+    pub top: i32,
+    pub left: i32,
+    pub bottom: i32,
+    pub right: i32,
 }
 
 #[derive(Debug, Clone, Copy, Deserialize, Serialize, Default)]
@@ -65,6 +121,7 @@ pub struct CharacterData {
     pub jump_forward: i32,
     pub jump_backward: i32,
     pub origin: Vec2,
+    pub pushbox: Boxes,
     pub actions: Vec<Action>,
 }
 

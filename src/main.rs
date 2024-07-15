@@ -5,6 +5,7 @@ use prelude::*;
 
 mod animations;
 mod assets;
+mod collision;
 mod config;
 mod data;
 mod debug;
@@ -19,6 +20,7 @@ mod world;
 mod prelude {
     pub use crate::animations::*;
     pub use crate::assets::*;
+    pub use crate::collision::*;
     pub use crate::config::*;
     pub use crate::data::*;
     pub use crate::debug::*;
@@ -28,7 +30,7 @@ mod prelude {
     pub use crate::state_machine::*;
     pub use crate::utils::*;
     pub use crate::world::*;
-    pub use hecs::World;
+    pub use hecs::{Entity, World};
     pub use include_dir::{include_dir, Dir};
     pub use raylib::prelude::*;
     pub use serde::{Deserialize, Serialize};

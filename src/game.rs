@@ -11,7 +11,7 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
         zoom: 1.,
     };
     // World Setup
-    let mut world = world();
+    let (mut world, mut collisions) = world();
     let assets = Assets::new(rl, thread);
 
     // Debug pause
@@ -37,8 +37,10 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
             update_input_buffers(&mut world);
             frame_count(&mut world);
             physics_system(&mut world);
+            collisions.update(&mut world);
             update_state(&mut world);
         }
+        // Debug
         reset_position(&mut world, rl);
         change_resolution(rl, configs, &mut camera);
 
@@ -66,11 +68,13 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
                 show_position(&world, &mut d);
                 show_context(&world, &mut d);
                 show_inputs(&world, &mut d);
+                show_hurtboxes(&world, &mut d);
+                show_hitboxes(&world, &mut d);
             }
             d.draw_fps(WIDTH - 100, 10);
         }
 
         let mut d = d.begin_mode2D(camera);
-        rendering(&mut target, &mut ui_target, &mut d, configs);
+        rendering(&mut target, &mut ui_target, &mut d);
     }
 }

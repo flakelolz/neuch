@@ -2,6 +2,7 @@
 use crate::prelude::*;
 
 const TEXT_SIZE: i32 = 10;
+const SCREEN_CENTER: i32 = WIDTH / 2;
 
 pub fn show_position(world: &World, d: &mut impl RaylibDraw) {
     world
@@ -9,7 +10,7 @@ pub fn show_position(world: &World, d: &mut impl RaylibDraw) {
         .into_iter()
         .for_each(|(_, (physics, player))| {
             let (screen_x, screen_y) = pos_to_screen(physics.position);
-            let (screen_x, screen_y) = sprite_to_native(screen_x, screen_y);
+            let (screen_x, screen_y) = sprite_to_ui(screen_x, screen_y);
             let (pos_x, pos_y) = world_to_screen(physics.position);
             d.draw_circle(screen_x, screen_y, 1., Color::WHITE);
             if player == &Player::One {
@@ -31,7 +32,7 @@ pub fn show_state(world: &World, d: &mut impl RaylibDraw) {
         .for_each(|(_, (state, physics, player))| {
             if player == &Player::One {
                 let (screen_x, screen_y) = pos_to_screen(physics.position);
-                let (screen_x, screen_y) = sprite_to_native(screen_x, screen_y);
+                let (screen_x, screen_y) = sprite_to_ui(screen_x, screen_y);
                 let current = state.processor.current.as_ref();
                 let timeline = state.context.elapsed;
                 let duration = state.context.duration;
@@ -123,11 +124,67 @@ pub fn change_resolution(rl: &mut RaylibHandle, configs: &mut Configs, camera: &
     }
 }
 
+pub fn show_hitboxes(world: &World, d: &mut impl RaylibDraw) {
+    for (_, (character, physics, state)) in world
+        .query::<(&Character, &Physics, &StateMachine)>()
+        .iter()
+    {
+        if let Some(action) = find_action(character, &state.processor.current.name()) {
+            if let Some(hitboxes) = &action.hitboxes {
+                let offset = physics.position;
+                for hitbox in hitboxes.iter() {
+                    let translated = if physics.facing_left {
+                        hitbox.value.translate_flipped(offset)
+                    } else {
+                        hitbox.value.translate(offset)
+                    };
+
+                    let left = world_to_sprite_to_ui_num(translated.left);
+                    let top = world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
+                    let width = world_to_sprite_to_ui_num(translated.right - translated.left);
+                    let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
+                    if hitbox.is_active(state.context.elapsed) {
+                        d.draw_rectangle_lines(left, top, width, height, Color::RED);
+                    }
+                }
+            }
+        }
+    }
+}
+
+pub fn show_hurtboxes(world: &World, d: &mut impl RaylibDraw) {
+    for (_, (character, physics, state)) in world
+        .query::<(&Character, &Physics, &StateMachine)>()
+        .iter()
+    {
+        if let Some(action) = find_action(character, &state.processor.current.name()) {
+            if let Some(hurtboxes) = &action.hurtboxes {
+                for hurtbox in hurtboxes.iter() {
+                    let offset = physics.position;
+                    let translated = if physics.facing_left {
+                        hurtbox.value.translate_flipped(offset)
+                    } else {
+                        hurtbox.value.translate(offset)
+                    };
+
+                    let left = world_to_sprite_to_ui_num(translated.left);
+                    let top = world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
+                    let width = world_to_sprite_to_ui_num(translated.right - translated.left);
+                    let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
+                    if hurtbox.is_active(state.context.elapsed) {
+                        d.draw_rectangle_lines(left, top, width, height, Color::BLUE);
+                    }
+                }
+            }
+        }
+    }
+}
+
 #[rustfmt::skip]
 pub fn show_inputs(world: &World, d: &mut impl RaylibDraw) {
     world
         .query::<(&Input, &Physics, &Player)>()
-        .into_iter()
+        .iter()
         .for_each(|(_, (input, physics, player))| {
             let dir_size = 20.;
             let size = 10.;
@@ -204,4 +261,3 @@ pub fn show_inputs(world: &World, d: &mut impl RaylibDraw) {
             }
         });
 }
-

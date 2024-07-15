@@ -6,7 +6,7 @@ pub enum Player {
     Two,
 }
 
-pub fn world() -> World {
+pub fn world() -> (World, Collisions) {
     let mut world = World::new();
 
     world.spawn((0u32,)); // Frame count
@@ -23,6 +23,7 @@ pub fn world() -> World {
         StateMachine::default(),
         character,
         Animator::new(origin, 1, false),
+        Reaction::default(),
     ));
 
     // Player 2 components
@@ -37,9 +38,14 @@ pub fn world() -> World {
         StateMachine::default(),
         character,
         Animator::new(origin, 0, true),
+        Reaction::default(),
     ));
 
-    world
+    let hit_events: Vec<HitEvent> = Vec::new();
+    let hit_events_id = world.spawn((hit_events,));
+    let collisions = Collisions::new(hit_events_id);
+
+    (world, collisions)
 }
 
 pub fn frame_count(world: &mut World) {
@@ -49,4 +55,11 @@ pub fn frame_count(world: &mut World) {
         .for_each(|(_, frame)| {
             *frame += 1;
         });
+}
+
+#[derive(Debug, Clone, Copy)]
+pub struct HitEvent {
+    pub attacker: Entity,
+    pub defender: Entity,
+    pub properties: HitProperties,
 }

@@ -12,7 +12,7 @@ pub struct Physics {
 impl Physics {
     pub fn one() -> Self {
         Self {
-            position: IVec2::from_screen(128, 0),
+            position: IVec2::from_screen(112, 0),
             velocity: IVec2::zero(),
             acceleration: IVec2::zero(),
             facing_left: false,
@@ -22,7 +22,7 @@ impl Physics {
 
     pub fn two() -> Self {
         Self {
-            position: IVec2::from_screen(256, 0),
+            position: IVec2::from_screen(304, 0),
             velocity: IVec2::zero(),
             acceleration: IVec2::zero(),
             facing_left: true,
@@ -66,7 +66,6 @@ pub fn physics_system(world: &mut World) {
         physics.velocity += physics.acceleration;
     }
 }
-
 
 /// Conditionally flip the character to face the opponent if not already facing them.
 pub fn face_opponent(physics: &mut Physics) -> bool {

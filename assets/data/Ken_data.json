@@ -22,9 +22,21 @@
       "name": "St Idle",
       "total": 40,
       "looping": true,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -103,9 +115,9 @@
       "name": "St WalkForward",
       "total": 44,
       "looping": true,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -191,9 +203,9 @@
       "name": "St WalkBackward",
       "total": 44,
       "looping": true,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -279,9 +291,9 @@
       "name": "St DashForward",
       "total": 19,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": {
         "cancels": [
           {
@@ -416,9 +428,9 @@
       "name": "St DashBackward",
       "total": 15,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -508,9 +520,9 @@
       "name": "St LightPunch",
       "total": 12,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": {
         "cancels": [
           {
@@ -572,9 +584,60 @@
       "name": "St MediumPunch",
       "total": 19,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 5,
+          "duration": 1,
+          "hit_type": "Ground",
+          "properties": {
+            "hitstop": 8,
+            "hitstun": 19,
+            "blockstun": 12,
+            "knockback": {
+              "x": 3000,
+              "y": 0
+            },
+            "air_knockback": {
+              "x": 5000,
+              "y": 8000
+            }
+          },
+          "proximity": null,
+          "value": {
+            "top": -15000,
+            "left": 30000,
+            "bottom": -30000,
+            "right": 75000
+          }
+        },
+        {
+          "start_frame": 12,
+          "duration": 1,
+          "hit_type": "Ground",
+          "properties": {
+            "hitstop": 0,
+            "hitstun": 0,
+            "blockstun": 0,
+            "knockback": {
+              "x": 0,
+              "y": 0
+            },
+            "air_knockback": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "proximity": null,
+          "value": {
+            "top": -15000,
+            "left": 50000,
+            "bottom": -30000,
+            "right": 75000
+          }
+        }
+      ],
       "modifiers": null,
       "timeline": [
         {
@@ -639,9 +702,9 @@
       "name": "St HeavyPunch",
       "total": 31,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": {
         "cancels": [
           {
@@ -796,9 +859,9 @@
       "name": "St LightKick",
       "total": 15,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -849,9 +912,9 @@
       "name": "St MediumKick",
       "total": 31,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -990,9 +1053,9 @@
       "name": "St HeavyKick",
       "total": 36,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -1166,9 +1229,9 @@
       "name": "St Turn",
       "total": 9,
       "looping": true,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": {
         "cancels": [
           {
@@ -1210,9 +1273,9 @@
       "name": "Cr Start",
       "total": 9,
       "looping": true,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -1256,9 +1319,9 @@
       "name": "Cr Idle",
       "total": 32,
       "looping": true,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -1295,9 +1358,9 @@
       "name": "Cr End",
       "total": 9,
       "looping": true,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -1327,9 +1390,9 @@
       "name": "Cr LightPunch",
       "total": 12,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": {
         "cancels": [
           {
@@ -1398,9 +1461,9 @@
       "name": "Cr MediumPunch",
       "total": 16,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -1451,9 +1514,9 @@
       "name": "Cr HeavyPunch",
       "total": 31,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -1532,9 +1595,9 @@
       "name": "Cr LightKick",
       "total": 17,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": {
         "cancels": [
           {
@@ -1603,9 +1666,9 @@
       "name": "Cr MediumKick",
       "total": 28,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -1730,9 +1793,9 @@
       "name": "Cr HeavyKick",
       "total": 37,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -1899,9 +1962,9 @@
       "name": "Cr Turn",
       "total": 11,
       "looping": true,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": {
         "cancels": [
           {
@@ -1956,9 +2019,9 @@
       "name": "Jmp Start",
       "total": 4,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -1974,9 +2037,9 @@
       "name": "Jmp Neutral",
       "total": 35,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -2090,9 +2153,9 @@
       "name": "Jmp Forward",
       "total": 35,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -2164,9 +2227,9 @@
       "name": "Jmp Backward",
       "total": 34,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -2238,9 +2301,9 @@
       "name": "Jmp End",
       "total": 14,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": {
         "cancels": [
           {
@@ -2293,9 +2356,9 @@
       "name": "Jmp LightPunch",
       "total": 38,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -2381,9 +2444,9 @@
       "name": "Jmp MediumPunch",
       "total": 20,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -2441,9 +2504,9 @@
       "name": "Jmp HeavyPunch",
       "total": 21,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -2501,9 +2564,9 @@
       "name": "Jmp LightKick",
       "total": 20,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -2568,9 +2631,9 @@
       "name": "Jmp MediumKick",
       "total": 19,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -2635,9 +2698,9 @@
       "name": "Jmp HeavyKick",
       "total": 18,
       "looping": false,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
@@ -2702,9 +2765,9 @@
       "name": "Jmp AttackEnd",
       "total": 8,
       "looping": true,
-      "pushbox": null,
-      "hurtbox": null,
-      "hitbox": null,
+      "pushboxes": null,
+      "hurtboxes": null,
+      "hitboxes": null,
       "modifiers": null,
       "timeline": [
         {
