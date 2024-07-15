@@ -22,7 +22,9 @@ pub fn handle_transition(
         if let Some(action) = find_action(character, &name) {
             // Character info
             // FIX: This only needs to be set once.
-            context.character = Some(character.info);
+            if context.character.is_none() {
+                context.character = Some(character.info);
+            }
             // Setup action data
             context.duration = action.total;
             // Setup animnation data

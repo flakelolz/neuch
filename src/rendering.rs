@@ -14,17 +14,7 @@ pub fn create_render_targets(
     (sprite_target, ui_target)
 }
 
-pub fn reset_render_targets(ui: &mut RenderTexture2D, configs: &Configs) {
-    ui.texture.width = WIDTH;
-    ui.texture.height = HEIGHT;
-}
-
-pub fn rendering(
-    sprite: &mut RenderTexture2D,
-    ui: &mut RenderTexture2D,
-    d: &mut impl RaylibDraw,
-    configs: &Configs,
-) {
+pub fn rendering(sprite: &mut RenderTexture2D, ui: &mut RenderTexture2D, d: &mut impl RaylibDraw) {
     d.draw_texture_pro(
         sprite.texture(),
         rrect(0.0, 0.0, sprite.texture.width, -sprite.texture.height),

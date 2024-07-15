@@ -193,7 +193,7 @@ pub enum Standing {
 }
 
 impl Standing {
-    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, _physics: &mut Physics) -> bool {
         match self {
             Standing::LightPunch => {
                 if buffer.buffered(Inputs::LightPunch, buffer.attack) && !down(buffer) {
