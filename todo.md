@@ -27,7 +27,7 @@
 - [x] Add Player 2 (flipped)
 - [x] Implement flipping logic
 - [x] Make stuff work correctly when flipped
-- [ ] Collision system
+- [x] Collision system
 - [ ] Reaction system
 - [ ] Make an editor for character data
 - [ ] Change font
@@ -47,9 +47,4 @@
 - [x] *5...* (standing) -> *1* > *5* > *4*
 - [x] *5...* (standing) -> *4* > *6* > *5* > *6*
 - [x] *5...* (standing) -> *6* > *3* > *5* > *6*
-
-# Hitbox, Hurtbox and Pushbox
-
-All of them will have drastically different properties to keep track of, so I can't
-use the same *HitboxGroup* structure for all of them.
 
