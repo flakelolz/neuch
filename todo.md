@@ -28,7 +28,9 @@
 - [x] Implement flipping logic
 - [x] Make stuff work correctly when flipped
 - [x] Collision system
-- [ ] Reaction system
+- [x] Reaction system
+- [ ] Implement blocking
+- [ ] Implement all hit reaction states
 - [ ] Make an editor for character data
 - [ ] Change font
 
