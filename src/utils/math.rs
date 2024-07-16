@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::prelude::*;
 
-#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize, PartialEq)]
 pub struct IVec2 {
     pub x: i32,
     pub y: i32,
@@ -62,6 +62,13 @@ impl std::ops::Neg for IVec2 {
             x: -self.x,
             y: -self.y,
         }
+    }
+}
+
+impl std::ops::SubAssign<IVec2> for IVec2 {
+    fn sub_assign(&mut self, rhs: IVec2) {
+        self.x -= rhs.x;
+        self.y -= rhs.y;
     }
 }
 

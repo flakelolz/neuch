@@ -1,33 +1,15 @@
 use crate::prelude::*;
 
-#[derive(Default, Clone, Copy)]
-pub struct Reaction {
-    pub has_hit: bool,
-    pub hitstop: u32,
-    pub hitstun: u32,
-    pub blockstun: u32,
-    pub knockback: IVec2,
-    pub air_knockback: IVec2,
-}
-
-#[derive(Clone)]
+#[derive(Clone, Default)]
 pub struct Collisions {
     pub hitboxes: Vec<(Entity, Hitbox)>,
     pub hurtboxes: Vec<(Entity, Hurtbox)>,
-    pub hit_event: Entity,
 }
 
 impl Collisions {
-    pub fn new(hit_event: Entity) -> Self {
-        Self {
-            hitboxes: Vec::new(),
-            hurtboxes: Vec::new(),
-            hit_event,
-        }
-    }
-    pub fn update(&mut self, world: &mut World) {
+    pub fn update(&mut self, world: &mut World, hit_events: &mut Vec<HitEvent>) {
         self.store(world);
-        self.check(world);
+        self.check(world, hit_events);
         self.clear();
     }
     pub fn store(&mut self, world: &mut World) {
@@ -45,7 +27,6 @@ impl Collisions {
                         }
                     }
                 }
-
                 if let Some(hurtboxes) = &action.hurtboxes {
                     for hurtbox in hurtboxes.iter() {
                         let hurtbox = hurtbox.translated(offset, physics.facing_left);
@@ -57,16 +38,28 @@ impl Collisions {
             }
         }
     }
-
-    fn check(&self, world: &mut World) {
+    fn check(&self, world: &mut World, hit_events: &mut Vec<HitEvent>) {
         for (attacker, hitbox) in self.hitboxes.iter() {
             for (defender, hurtbox) in self.hurtboxes.iter() {
                 if attacker != defender && boxes_overlap(&hitbox.value, &hurtbox.value) {
-                    let mut hit_event = world.get::<&mut Vec<HitEvent>>(self.hit_event).unwrap();
-                    hit_event.push(HitEvent {
+                    let has_hit = &mut world
+                        .get::<&mut StateMachine>(*attacker)
+                        .unwrap()
+                        .context
+                        .reaction
+                        .has_hit;
+
+                    if *has_hit {
+                        continue;
+                    }
+
+                    *has_hit = true;
+                    hit_events.push(HitEvent {
                         attacker: *attacker,
                         defender: *defender,
                         properties: HitProperties {
+                            hit_type: hitbox.properties.hit_type,
+                            reaction_type: hitbox.properties.reaction_type,
                             hitstop: hitbox.properties.hitstop,
                             hitstun: hitbox.properties.hitstun,
                             blockstun: hitbox.properties.blockstun,

@@ -12,6 +12,7 @@ mod debug;
 mod game;
 mod input;
 mod physics;
+mod reaction;
 mod rendering;
 mod state_machine;
 mod utils;
@@ -26,6 +27,7 @@ mod prelude {
     pub use crate::debug::*;
     pub use crate::input::*;
     pub use crate::physics::*;
+    pub use crate::reaction::*;
     pub use crate::rendering::*;
     pub use crate::state_machine::*;
     pub use crate::utils::*;

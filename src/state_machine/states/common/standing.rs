@@ -270,6 +270,9 @@ impl State for MediumPunch {
             if attack_transitions(context, buffer, physics) {
                 return;
             }
+            if jump_transitions(context, buffer, physics) {
+                return;
+            }
             if crouch_transition(context, buffer, physics) {
                 return;
             }

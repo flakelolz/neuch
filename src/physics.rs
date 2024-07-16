@@ -61,9 +61,32 @@ pub fn physics_system(world: &mut World) {
         }
     }
     // Update physics
-    for (_, physics) in world.query_mut::<&mut Physics>() {
-        physics.position += physics.velocity;
-        physics.velocity += physics.acceleration;
+    for (_, (physics, state)) in world.query_mut::<(&mut Physics, &StateMachine)>() {
+        let reaction = &state.context.reaction;
+        if reaction.hitstop == 0 {
+            if reaction.hitstun > 0 && reaction.knockback != IVec2::zero() {
+                if physics.facing_left {
+                    physics.velocity += reaction.knockback;
+                } else {
+                    physics.velocity -= reaction.knockback;
+                }
+            }
+
+            if reaction.hitstun > 0
+                && reaction.air_knockback != IVec2::zero()
+                && state.context.ctx.airborne
+            {
+                if physics.facing_left {
+                    physics.velocity -= reaction.air_knockback;
+                } else {
+                    physics.velocity += reaction.air_knockback;
+                }
+            }
+
+            physics.position += physics.velocity;
+            physics.velocity += physics.acceleration;
+            // println!("Vel: {:?}", physics.velocity);
+        }
     }
 }
 

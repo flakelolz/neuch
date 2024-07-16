@@ -11,7 +11,7 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
         zoom: 1.,
     };
     // World Setup
-    let (mut world, mut collisions) = world();
+    let (mut world, mut collisions, mut hit_events) = world();
     let assets = Assets::new(rl, thread);
 
     // Debug pause
@@ -37,7 +37,8 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
             update_input_buffers(&mut world);
             frame_count(&mut world);
             physics_system(&mut world);
-            collisions.update(&mut world);
+            collisions.update(&mut world, &mut hit_events);
+            reaction_system(&mut world, &mut hit_events);
             update_state(&mut world);
         }
         // Debug

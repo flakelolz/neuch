@@ -70,13 +70,14 @@ impl Default for Animator {
 pub fn animation(d: &mut impl RaylibDraw, world: &World, assets: &Assets) {
     let mut buffer: Vec<Draw> = Vec::new();
     world
-        .query::<(&Physics, &mut Animator)>()
+        .query::<(&Physics, &mut Animator, &StateMachine)>()
         .into_iter()
-        .for_each(|(_, (physics, animator))| {
+        .for_each(|(_, (physics, animator, state))| {
             let keyframe = animator.keyframes[animator.index];
             animator.duration = keyframe.duration;
+let reaction = &state.context.reaction;
 
-            let draw = Draw {
+            let mut draw = Draw {
                 x: keyframe.x,
                 y: keyframe.y,
                 w: keyframe.w,
@@ -89,18 +90,25 @@ pub fn animation(d: &mut impl RaylibDraw, world: &World, assets: &Assets) {
                 pos: physics.position,
             };
 
-            buffer.push(draw);
-            animator.tick += 1;
-
+            if reaction.hitstop == 0 {
+                animator.tick += 1;
+            }
             if animator.tick >= animator.duration {
                 animator.tick = 0;
                 animator.index += 1;
 
-                // Wrap around for looping actions
                 if animator.index >= animator.keyframes.len() {
                     animator.index = 0;
                 }
             }
+
+            if reaction.hitstop > 0 && (reaction.hitstun > 0 || reaction.blockstun > 0) {
+                let hitshake_dist: i32 = 2;
+                let hitshake = -(hitshake_dist / 2) + hitshake_dist * (reaction.hitstop as i32 % 2);
+                draw.x += hitshake as f32;
+            }
+
+            buffer.push(draw);
         });
 
     draw(d, buffer, &assets.ken);

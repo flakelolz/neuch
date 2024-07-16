@@ -20,7 +20,7 @@
   "actions": [
     {
       "name": "St Idle",
-      "total": 40,
+      "total": 34,
       "looping": true,
       "pushboxes": null,
       "hurtboxes": [
@@ -44,21 +44,21 @@
           "y": 0.0,
           "w": 384.0,
           "h": 224.0,
-          "duration": 4
+          "duration": 3
         },
         {
           "x": 384.0,
           "y": 0.0,
           "w": 384.0,
           "h": 224.0,
-          "duration": 4
+          "duration": 3
         },
         {
           "x": 768.0,
           "y": 0.0,
           "w": 384.0,
           "h": 224.0,
-          "duration": 4
+          "duration": 3
         },
         {
           "x": 1152.0,
@@ -93,21 +93,21 @@
           "y": 0.0,
           "w": 384.0,
           "h": 224.0,
-          "duration": 4
+          "duration": 3
         },
         {
           "x": 3072.0,
           "y": 0.0,
           "w": 384.0,
           "h": 224.0,
-          "duration": 4
+          "duration": 3
         },
         {
           "x": 3456.0,
           "y": 0.0,
           "w": 384.0,
           "h": 224.0,
-          "duration": 4
+          "duration": 3
         }
       ]
     },
@@ -116,7 +116,19 @@
       "total": 44,
       "looping": true,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": null,
       "timeline": [
@@ -204,7 +216,19 @@
       "total": 44,
       "looping": true,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": null,
       "timeline": [
@@ -292,7 +316,19 @@
       "total": 19,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": {
         "cancels": [
@@ -429,7 +465,19 @@
       "total": 15,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": {
         "cancels": null,
@@ -521,7 +569,19 @@
       "total": 12,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": {
         "cancels": [
@@ -585,23 +645,36 @@
       "total": 19,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": [
         {
-          "start_frame": 5,
-          "duration": 1,
-          "hit_type": "Ground",
+          "start_frame": 7,
+          "duration": 5,
           "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
             "hitstop": 8,
-            "hitstun": 19,
-            "blockstun": 12,
+            "hitstun": 15,
+            "blockstun": 17,
             "knockback": {
-              "x": 3000,
+              "x": 500,
               "y": 0
             },
             "air_knockback": {
-              "x": 5000,
-              "y": 8000
+              "x": 500,
+              "y": 800
             }
           },
           "proximity": null,
@@ -613,10 +686,11 @@
           }
         },
         {
-          "start_frame": 12,
+          "start_frame": 19,
           "duration": 1,
-          "hit_type": "Ground",
           "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
             "hitstop": 0,
             "hitstun": 0,
             "blockstun": 0,
@@ -632,9 +706,9 @@
           "proximity": null,
           "value": {
             "top": -15000,
-            "left": 50000,
+            "left": 20000,
             "bottom": -30000,
-            "right": 75000
+            "right": 40000
           }
         }
       ],
@@ -703,7 +777,19 @@
       "total": 31,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": {
         "cancels": [
@@ -860,7 +946,19 @@
       "total": 15,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": null,
       "timeline": [
@@ -913,7 +1011,19 @@
       "total": 31,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": {
         "cancels": null,
@@ -1054,7 +1164,19 @@
       "total": 36,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": {
         "cancels": null,
@@ -1230,7 +1352,19 @@
       "total": 9,
       "looping": true,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": {
         "cancels": [
@@ -1274,7 +1408,41 @@
       "total": 9,
       "looping": true,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 2,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        },
+        {
+          "start_frame": 2,
+          "duration": 2,
+          "invul_type": "None",
+          "value": {
+            "top": -10000,
+            "left": -30000,
+            "bottom": -91500,
+            "right": 25000
+          }
+        },
+        {
+          "start_frame": 4,
+          "duration": 5,
+          "invul_type": "None",
+          "value": {
+            "top": -4800,
+            "left": -30000,
+            "bottom": -78000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": null,
       "timeline": [
@@ -1320,7 +1488,19 @@
       "total": 32,
       "looping": true,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -4800,
+            "left": -30000,
+            "bottom": -78000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": null,
       "timeline": [
@@ -1359,7 +1539,19 @@
       "total": 9,
       "looping": true,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": null,
       "timeline": [
@@ -1391,7 +1583,19 @@
       "total": 12,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -4800,
+            "left": -30000,
+            "bottom": -78000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": {
         "cancels": [
@@ -1462,7 +1666,19 @@
       "total": 16,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -4800,
+            "left": -30000,
+            "bottom": -78000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": null,
       "timeline": [
@@ -1515,7 +1731,19 @@
       "total": 31,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -4800,
+            "left": -30000,
+            "bottom": -78000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": null,
       "timeline": [
@@ -1596,7 +1824,19 @@
       "total": 17,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -4800,
+            "left": -30000,
+            "bottom": -78000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": {
         "cancels": [
@@ -1667,7 +1907,19 @@
       "total": 28,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -4800,
+            "left": -30000,
+            "bottom": -78000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": {
         "cancels": null,
@@ -1794,7 +2046,19 @@
       "total": 37,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -4800,
+            "left": -30000,
+            "bottom": -78000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": {
         "cancels": null,
@@ -1963,7 +2227,19 @@
       "total": 11,
       "looping": true,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -4800,
+            "left": -30000,
+            "bottom": -78000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": {
         "cancels": [
@@ -2020,7 +2296,19 @@
       "total": 4,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -4800,
+            "left": -30000,
+            "bottom": -78000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": null,
       "timeline": [
@@ -2302,7 +2590,19 @@
       "total": 14,
       "looping": false,
       "pushboxes": null,
-      "hurtboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -4800,
+            "left": -30000,
+            "bottom": -78000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": {
         "cancels": [
@@ -2783,6 +3083,57 @@
           "w": 384.0,
           "h": 224.0,
           "duration": 4
+        }
+      ]
+    },
+    {
+      "name": "Rxn HitStandMid",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": -30000,
+            "left": -30000,
+            "bottom": -130000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 6944.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 6944.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 6944.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1152.0,
+          "y": 6944.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
         }
       ]
     }

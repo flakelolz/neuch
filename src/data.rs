@@ -4,7 +4,6 @@ use crate::prelude::*;
 pub struct Hitbox {
     pub start_frame: u32,
     pub duration: u32,
-    pub hit_type: HitType,
     pub properties: HitProperties,
     pub proximity: Option<ProximityBox>,
     pub value: Boxes,
@@ -28,11 +27,23 @@ pub enum HitType {
 
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
 pub struct HitProperties {
+    pub hit_type: HitType,
+    pub reaction_type: ReactionType,
     pub hitstop: u32,
     pub hitstun: u32,
     pub blockstun: u32,
     pub knockback: IVec2,
     pub air_knockback: IVec2,
+}
+
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Deserialize, Serialize)]
+pub enum ReactionType {
+    #[default]
+    StandWeak,
+    StandMid,
+    StandStrong,
+    StandOverhead,
+    CrouchWeak,
 }
 
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]

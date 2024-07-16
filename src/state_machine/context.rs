@@ -6,6 +6,7 @@ pub struct Context {
     pub elapsed: u32,
     pub duration: u32,
     pub modifiers: Instructions,
+    pub reaction: Reaction,
     pub ctx: SubContext,
 }
 
@@ -34,6 +35,8 @@ impl Default for SubContext {
 #[derive(Debug, Default)]
 pub struct Flags {
     pub jump: JumpFlags,
+    // pub block: BlockFlags, // None, High, Low
+    // pub parry: ParryFlags, // None, High, Low
 }
 
 #[derive(Debug, Default, PartialEq)]
