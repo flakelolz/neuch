@@ -65,22 +65,24 @@ pub fn physics_system(world: &mut World) {
     for (_, (physics, state)) in world.query_mut::<(&mut Physics, &mut StateMachine)>() {
         let reaction = &mut state.context.reaction;
         if reaction.hitstop == 0 {
+            // Move position based on current velocity
+            physics.position += physics.velocity;
+            physics.velocity += physics.acceleration;
+
+            // Apply knockback to the position
             if reaction.knockback.x != 0 {
                 if physics.facing_left {
-                    physics.velocity = reaction.knockback;
+                    physics.position += reaction.knockback;
                 } else {
-                    physics.velocity = -reaction.knockback;
+                    physics.position += -reaction.knockback;
                 }
 
-                // Grounded knockback
+                // Decelerate
                 reaction.knockback.x -= DECELERATION;
                 if reaction.knockback.x.abs() < THRESHOLD {
                     reaction.knockback.x = 0;
                 }
             }
-
-            physics.position += physics.velocity;
-            physics.velocity += physics.acceleration;
         }
     }
 }

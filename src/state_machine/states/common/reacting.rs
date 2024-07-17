@@ -21,8 +21,7 @@ impl State for HitStandMid {
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
-        physics.velocity.x = 0;
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Rxn HitStandMid on_exit");
     }
 }
