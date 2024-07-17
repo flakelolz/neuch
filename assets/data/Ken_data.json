@@ -666,15 +666,11 @@
             "hit_type": "Ground",
             "reaction_type": "StandMid",
             "hitstop": 8,
-            "hitstun": 15,
+            "hitstun": 12,
             "blockstun": 17,
             "knockback": {
-              "x": 500,
+              "x": 8000,
               "y": 0
-            },
-            "air_knockback": {
-              "x": 500,
-              "y": 800
             }
           },
           "proximity": null,
@@ -683,32 +679,6 @@
             "left": 30000,
             "bottom": -30000,
             "right": 75000
-          }
-        },
-        {
-          "start_frame": 19,
-          "duration": 1,
-          "properties": {
-            "hit_type": "Ground",
-            "reaction_type": "StandMid",
-            "hitstop": 0,
-            "hitstun": 0,
-            "blockstun": 0,
-            "knockback": {
-              "x": 0,
-              "y": 0
-            },
-            "air_knockback": {
-              "x": 0,
-              "y": 0
-            }
-          },
-          "proximity": null,
-          "value": {
-            "top": -15000,
-            "left": 20000,
-            "bottom": -30000,
-            "right": 40000
           }
         }
       ],

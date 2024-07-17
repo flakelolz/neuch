@@ -13,15 +13,13 @@ pub fn show_position(world: &World, d: &mut impl RaylibDraw) {
             let (screen_x, screen_y) = sprite_to_ui(screen_x, screen_y);
             let (pos_x, pos_y) = world_to_screen(physics.position);
             d.draw_circle(screen_x, screen_y, 1., Color::WHITE);
-            if player == &Player::One {
-                d.draw_text(
-                    format!("{}:{}", pos_x, pos_y).as_str(),
-                    screen_x,
-                    screen_y + 2,
-                    TEXT_SIZE,
-                    Color::WHITE,
-                );
-            }
+            d.draw_text(
+                format!("{}:{}", pos_x, pos_y).as_str(),
+                screen_x,
+                screen_y + 2,
+                TEXT_SIZE,
+                Color::WHITE,
+            );
         });
 }
 

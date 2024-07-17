@@ -64,7 +64,6 @@ impl Collisions {
                             hitstun: hitbox.properties.hitstun,
                             blockstun: hitbox.properties.blockstun,
                             knockback: hitbox.properties.knockback,
-                            air_knockback: hitbox.properties.air_knockback,
                         },
                     });
                     // println!(

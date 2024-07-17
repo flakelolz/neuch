@@ -16,10 +16,8 @@ pub fn handle_transition(
         context.elapsed = 1;
         next.on_enter(context, buffer, physics);
         processor.current = next;
-        if !context.reaction.reacting() {
-            animator.reset();
-            context.reaction.reset_all();
-        }
+        animator.reset();
+        context.reaction.has_hit = false;
 
         let name = processor.current.name();
         if let Some(action) = find_action(character, &name) {
@@ -31,12 +29,14 @@ pub fn handle_transition(
             // Setup action data
             context.duration = action.total;
             // Setup animnation data
-            if !context.reaction.reacting() {
-                animator.keyframes.clone_from(&action.timeline);
-            } else {
-                set_hit_state(animator, context, &action.timeline);
+            if context.reaction.hit() {
+                hit_animation(animator, context, &action.timeline);
+            } else if context.reaction.block() {
+                block_animation(animator, context, &action.timeline);
             }
-
+            else {
+                animator.keyframes.clone_from(&action.timeline);
+            }
             // Setup action modifiers if there are any
             match &action.modifiers {
                 Some(modifiers) => {

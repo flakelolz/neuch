@@ -75,7 +75,7 @@ pub fn animation(d: &mut impl RaylibDraw, world: &World, assets: &Assets) {
         .for_each(|(_, (physics, animator, state))| {
             let keyframe = animator.keyframes[animator.index];
             animator.duration = keyframe.duration;
-let reaction = &state.context.reaction;
+            let reaction = &state.context.reaction;
 
             let mut draw = Draw {
                 x: keyframe.x,

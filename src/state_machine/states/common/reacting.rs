@@ -11,14 +11,17 @@ impl State for HitStandMid {
         println!("Rxn HitStandMid on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         if context.elapsed >= context.duration {
+            if jump_transitions(context, buffer, physics) {
+                return;
+            }
             context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
 
-    fn on_exit(&mut self, context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
-        context.reaction.reset_def();
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
+        physics.velocity.x = 0;
         println!("Rxn HitStandMid on_exit");
     }
 }

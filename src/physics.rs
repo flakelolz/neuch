@@ -1,5 +1,6 @@
-use crate::prelude::*;
-
+use crate::{physics, prelude::*};
+const DECELERATION: i32 = 1000;
+const THRESHOLD: i32 = 1100;
 #[derive(Debug, Clone, Copy, Default)]
 pub struct Physics {
     pub position: IVec2,
@@ -61,31 +62,25 @@ pub fn physics_system(world: &mut World) {
         }
     }
     // Update physics
-    for (_, (physics, state)) in world.query_mut::<(&mut Physics, &StateMachine)>() {
-        let reaction = &state.context.reaction;
+    for (_, (physics, state)) in world.query_mut::<(&mut Physics, &mut StateMachine)>() {
+        let reaction = &mut state.context.reaction;
         if reaction.hitstop == 0 {
-            if reaction.hitstun > 0 && reaction.knockback != IVec2::zero() {
+            if reaction.knockback.x != 0 {
                 if physics.facing_left {
-                    physics.velocity += reaction.knockback;
+                    physics.velocity = reaction.knockback;
                 } else {
-                    physics.velocity -= reaction.knockback;
+                    physics.velocity = -reaction.knockback;
                 }
-            }
 
-            if reaction.hitstun > 0
-                && reaction.air_knockback != IVec2::zero()
-                && state.context.ctx.airborne
-            {
-                if physics.facing_left {
-                    physics.velocity -= reaction.air_knockback;
-                } else {
-                    physics.velocity += reaction.air_knockback;
+                // Grounded knockback
+                reaction.knockback.x -= DECELERATION;
+                if reaction.knockback.x.abs() < THRESHOLD {
+                    reaction.knockback.x = 0;
                 }
             }
 
             physics.position += physics.velocity;
             physics.velocity += physics.acceleration;
-            // println!("Vel: {:?}", physics.velocity);
         }
     }
 }

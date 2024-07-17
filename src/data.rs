@@ -33,7 +33,6 @@ pub struct HitProperties {
     pub hitstun: u32,
     pub blockstun: u32,
     pub knockback: IVec2,
-    pub air_knockback: IVec2,
 }
 
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Deserialize, Serialize)]
