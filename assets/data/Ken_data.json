@@ -666,8 +666,8 @@
             "hit_type": "Ground",
             "reaction_type": "StandMid",
             "hitstop": 8,
-            "hitstun": 12,
-            "blockstun": 17,
+            "hitstun": 17,
+            "blockstun": 12,
             "knockback": {
               "x": 8000,
               "y": 0

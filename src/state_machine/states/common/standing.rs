@@ -141,7 +141,6 @@ impl State for DashForward {
         if context.elapsed >= context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
-                println!("here");
                 return;
             }
             if attack_transitions(context, buffer, physics) {

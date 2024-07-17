@@ -23,16 +23,6 @@ impl Reaction {
         }
         false
     }
-
-    pub fn set_atk(&mut self, event: &HitEvent) {
-        self.hitstop = event.properties.hitstop;
-    }
-    pub fn set_def(&mut self, event: &HitEvent) {
-        self.hitstop = event.properties.hitstop;
-        self.hitstun = event.properties.hitstun;
-        self.blockstun = event.properties.blockstun;
-        self.knockback = event.properties.knockback;
-    }
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -43,7 +33,7 @@ pub struct HitEvent {
 }
 
 pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
-    for (id, state) in world.query_mut::<(&mut StateMachine)>() {
+    for (id, state) in world.query_mut::<&mut StateMachine>() {
         let reaction = &mut state.context.reaction;
         if reaction.hitstop > 0 {
             reaction.hitstop -= 1;
@@ -56,14 +46,13 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
         }
 
         for hit_event in hit_events.iter() {
-            reaction.hitstop = hit_event.properties.hitstop;
-
             if id == hit_event.attacker {
-                reaction.set_atk(hit_event);
+                reaction.hitstop = hit_event.properties.hitstop;
             }
 
             if id == hit_event.defender {
                 // If hit
+                reaction.hitstop = hit_event.properties.hitstop;
                 reaction.hitstun = hit_event.properties.hitstun;
                 reaction.knockback = hit_event.properties.knockback;
 

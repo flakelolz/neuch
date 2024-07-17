@@ -66,11 +66,6 @@ impl Collisions {
                             knockback: hitbox.properties.knockback,
                         },
                     });
-                    // println!(
-                    //     "Attacker: {:?} overlaps with Defender: {:?}",
-                    //     attacker, defender
-                    // );
-                    // println!("Hit Event: {:#?}", &hit_event);
                 }
             }
         }

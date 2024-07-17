@@ -51,7 +51,6 @@ pub fn handle_transition(
 
         return;
     }
-    // println!("elapsed: {}", context.elapsed);
 
     let name = processor.current.name();
     let action = find_action(character, &name);
