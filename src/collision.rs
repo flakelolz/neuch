@@ -106,7 +106,7 @@ impl Collisions {
                         attacker: *attacker,
                         defender: *defender,
                         properties: HitProperties::default(),
-                        distance: Some(distance),
+                        distance: Some(distance / 2),
                     })
                 }
             }

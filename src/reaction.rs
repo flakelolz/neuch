@@ -49,24 +49,13 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
         for hit_event in hit_events.iter() {
             if id == hit_event.attacker {
                 reaction.hitstop = hit_event.properties.hitstop;
-                physics.position.x = if physics.facing_left {
-                    physics.position.x + hit_event.distance.unwrap_or(0) / 2
-                } else {
-                    physics.position.x - hit_event.distance.unwrap_or(0) / 2
-                };
             }
 
             if id == hit_event.defender {
-                physics.position.x = if physics.facing_left {
-                    physics.position.x + hit_event.distance.unwrap_or(0) / 2
-                } else {
-                    physics.position.x - hit_event.distance.unwrap_or(0) / 2
-                };
                 // If hit
                 reaction.hitstop = hit_event.properties.hitstop;
                 reaction.hitstun = hit_event.properties.hitstun;
                 reaction.knockback = hit_event.properties.knockback;
-
 
                 match hit_event.properties.reaction_type {
                     ReactionType::StandMid => {
@@ -74,6 +63,15 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
                     }
                     _ => (),
                 }
+            }
+
+            // Handle push events
+            if let Some(push_distance) = hit_event.distance {
+                physics.position.x = if physics.facing_left {
+                    physics.position.x + push_distance
+                } else {
+                    physics.position.x - push_distance
+                };
             }
         }
     }
