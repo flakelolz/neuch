@@ -56,12 +56,16 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
         }
 
         for hit_event in hit_events.iter() {
+            reaction.hitstop = hit_event.properties.hitstop;
+
             if id == hit_event.attacker {
                 reaction.set_atk(hit_event);
             }
 
             if id == hit_event.defender {
-                reaction.set_def(hit_event);
+                // If hit
+                reaction.hitstun = hit_event.properties.hitstun;
+                reaction.knockback = hit_event.properties.knockback;
 
                 match hit_event.properties.reaction_type {
                     ReactionType::StandMid => {
