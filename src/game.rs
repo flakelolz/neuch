@@ -69,6 +69,7 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
                 show_position(&world, &mut d);
                 show_context(&world, &mut d);
                 show_inputs(&world, &mut d);
+                show_pushboxes(&world, &mut d);
                 show_hurtboxes(&world, &mut d);
                 show_hitboxes(&world, &mut d);
             }

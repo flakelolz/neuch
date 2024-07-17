@@ -178,6 +178,48 @@ pub fn show_hurtboxes(world: &World, d: &mut impl RaylibDraw) {
     }
 }
 
+pub fn show_pushboxes(world: &World, d: &mut impl RaylibDraw) {
+    for (_, (character, physics, state)) in world
+        .query::<(&Character, &Physics, &StateMachine)>()
+        .iter()
+    {
+        if let Some(action) = find_action(character, &state.processor.current.name()) {
+            let offset = physics.position;
+
+            if let Some(pushboxes) = &action.pushboxes {
+                for pushbox in pushboxes.iter() {
+                    let translated = if physics.facing_left {
+                        pushbox.value.translate_flipped(offset)
+                    } else {
+                        pushbox.value.translate(offset)
+                    };
+
+                    let left = world_to_sprite_to_ui_num(translated.left);
+                    let top = world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
+                    let width = world_to_sprite_to_ui_num(translated.right - translated.left);
+                    let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
+                    if pushbox.is_active(state.context.elapsed) {
+                        d.draw_rectangle_lines(left, top, width, height, Color::PURPLE);
+                    }
+                }
+            } else {
+                // Default pushbox
+                let translated = if physics.facing_left {
+                    character.info.pushbox.translate_flipped(offset)
+                } else {
+                    character.info.pushbox.translate(offset)
+                };
+
+                let left = world_to_sprite_to_ui_num(translated.left);
+                let top = world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
+                let width = world_to_sprite_to_ui_num(translated.right - translated.left);
+                let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
+                d.draw_rectangle_lines(left, top, width, height, Color::PURPLE);
+            }
+        }
+    }
+}
+
 #[rustfmt::skip]
 pub fn show_inputs(world: &World, d: &mut impl RaylibDraw) {
     world

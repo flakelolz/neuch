@@ -12,10 +12,10 @@
     "y": 0.835
   },
   "pushbox": {
-    "top": 0,
-    "left": 0,
-    "bottom": 0,
-    "right": 0
+    "top": -30000,
+    "left": -20000,
+    "bottom": -130000,
+    "right": 15000
   },
   "actions": [
     {

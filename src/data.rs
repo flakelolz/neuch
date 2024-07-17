@@ -67,7 +67,7 @@ pub enum InvulType {
 pub struct Pushbox {
     pub start_frame: u32,
     pub duration: u32,
-    pub pushbox: Boxes,
+    pub value: Boxes,
 }
 
 #[derive(Debug, Clone, Default, Deserialize, Serialize)]
@@ -156,6 +156,7 @@ pub struct CharacterInfo {
     pub jump_deceleration: i32,
     pub jump_forward: i32,
     pub jump_backward: i32,
+    pub pushbox: Boxes,
 }
 
 #[allow(unused)]
@@ -178,6 +179,7 @@ impl Character {
             jump_deceleration: data.jump_deceleration,
             jump_forward: data.jump_forward,
             jump_backward: data.jump_backward,
+            pushbox: data.pushbox,
         };
         let action_map = generate_action_map(&data);
         Self {

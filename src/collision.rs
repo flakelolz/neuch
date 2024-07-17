@@ -4,6 +4,7 @@ use crate::prelude::*;
 pub struct Collisions {
     pub hitboxes: Vec<(Entity, Hitbox)>,
     pub hurtboxes: Vec<(Entity, Hurtbox)>,
+    pub pushboxes: Vec<(Entity, Pushbox)>,
 }
 
 impl Collisions {
@@ -35,6 +36,28 @@ impl Collisions {
                         }
                     }
                 }
+                if let Some(pushboxes) = &action.pushboxes {
+                    for pushbox in pushboxes.iter() {
+                        let pushbox = pushbox.translated(offset, physics.facing_left);
+                        if pushbox.is_active(state.context.elapsed) {
+                            self.pushboxes.push((id, pushbox));
+                        }
+                    }
+                } else {
+                    let pushbox = if physics.facing_left {
+                        character.info.pushbox.translate_flipped(offset)
+                    } else {
+                        character.info.pushbox.translate(offset)
+                    };
+                    self.pushboxes.push((
+                        id,
+                        Pushbox {
+                            start_frame: 0,
+                            duration: 1,
+                            value: pushbox,
+                        },
+                    ));
+                }
             }
         }
     }
@@ -65,7 +88,26 @@ impl Collisions {
                             blockstun: hitbox.properties.blockstun,
                             knockback: hitbox.properties.knockback,
                         },
+                        distance: None,
                     });
+                }
+            }
+        }
+
+        for (attacker, a_pushbox) in self.pushboxes.iter() {
+            for (defender, b_pushbox) in self.pushboxes.iter() {
+                if attacker != defender && boxes_overlap(&a_pushbox.value, &b_pushbox.value) {
+                    let left = a_pushbox.value.left.max(b_pushbox.value.left);
+                    let right = a_pushbox.value.right.min(b_pushbox.value.right);
+                    let distance = right - left;
+                    // println!("left: {} right: {} distance: {}", left, right, distance);
+
+                    hit_events.push(HitEvent {
+                        attacker: *attacker,
+                        defender: *defender,
+                        properties: HitProperties::default(),
+                        distance: Some(distance),
+                    })
                 }
             }
         }
@@ -74,6 +116,7 @@ impl Collisions {
     fn clear(&mut self) {
         self.hitboxes.clear();
         self.hurtboxes.clear();
+        self.pushboxes.clear();
     }
 }
 
@@ -100,6 +143,22 @@ impl Hurtbox {
         (frame >= self.start_frame) && (frame < (self.start_frame + self.duration))
     }
 
+    pub fn translated(&self, offset: IVec2, flipped: bool) -> Self {
+        Self {
+            value: if flipped {
+                self.value.translate_flipped(offset)
+            } else {
+                self.value.translate(offset)
+            },
+            ..*self
+        }
+    }
+}
+
+impl Pushbox {
+    pub fn is_active(&self, frame: u32) -> bool {
+        (frame >= self.start_frame) && (frame < (self.start_frame + self.duration))
+    }
     pub fn translated(&self, offset: IVec2, flipped: bool) -> Self {
         Self {
             value: if flipped {
