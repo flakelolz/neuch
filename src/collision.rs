@@ -94,20 +94,32 @@ impl Collisions {
             }
         }
 
+        let mut distance;
         for (attacker, a_pushbox) in self.pushboxes.iter() {
             for (defender, b_pushbox) in self.pushboxes.iter() {
                 if attacker != defender && boxes_overlap(&a_pushbox.value, &b_pushbox.value) {
                     let left = a_pushbox.value.left.max(b_pushbox.value.left);
                     let right = a_pushbox.value.right.min(b_pushbox.value.right);
-                    let distance = right - left;
+                    distance = right - left;
                     // println!("left: {} right: {} distance: {}", left, right, distance);
-
-                    hit_events.push(HitEvent {
-                        attacker: *attacker,
-                        defender: *defender,
-                        properties: HitProperties::default(),
-                        distance: Some(distance / 2),
-                    })
+                    let half = distance / 2;
+                    let mut players = world
+                        .query_mut::<&mut Physics>()
+                        .into_iter()
+                        .collect::<Vec<_>>();
+                    let split = &mut players.split_at_mut(1);
+                    let (p1, p2) = split;
+                    if let Some((_, a_physics)) = p1.get_mut(0) {
+                        if let Some((_, b_physics)) = p2.get_mut(0) {
+                            if a_physics.position.x < b_physics.position.x {
+                                a_physics.position.x -= half;
+                                b_physics.position.x += half;
+                            } else {
+                                a_physics.position.x += half;
+                                b_physics.position.x -= half;
+                            }
+                        }
+                    }
                 }
             }
         }
