@@ -673,7 +673,6 @@
               "y": 0
             }
           },
-          "proximity": null,
           "value": {
             "top": 15000,
             "left": 30000,
@@ -682,7 +681,20 @@
           }
         }
       ],
-      "modifiers": null,
+      "modifiers": {
+        "cancels": null,
+        "potisions": null,
+        "proximity": {
+          "start_frame": 1,
+          "duration": 7,
+          "value": {
+            "top": 20000,
+            "left": 30000,
+            "bottom": -9000,
+            "right": 150000
+          }
+        }
+      },
       "timeline": [
         {
           "x": 0.0,
@@ -3170,6 +3182,94 @@
         {
           "x": 1152.0,
           "y": 6944.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn GrdStandMidPre",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -69000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 7168.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 7168.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 7168.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn GrdStandMidEnd",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -69000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 7392.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 7392.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 7392.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0

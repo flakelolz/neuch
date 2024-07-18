@@ -67,12 +67,13 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
                 d.clear_background(Color::BLANK);
                 show_frame_count(&world, &mut d);
                 show_state(&world, &mut d);
-                show_position(&world, &mut d);
                 show_context(&world, &mut d);
                 show_inputs(&world, &mut d);
+                show_proximity_boxes(&world, &mut d);
                 show_pushboxes(&world, &mut d);
                 show_hurtboxes(&world, &mut d);
                 show_hitboxes(&world, &mut d);
+                show_position(&world, &mut d);
             }
             d.draw_fps(WIDTH - 100, 10);
         }

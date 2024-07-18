@@ -1,4 +1,4 @@
-use crate::{physics, prelude::*};
+use crate::prelude::*;
 
 #[derive(Default, Debug, Clone, Copy)]
 pub struct Reaction {
@@ -30,11 +30,13 @@ pub struct HitEvent {
     pub attacker: Entity,
     pub defender: Entity,
     pub properties: HitProperties,
-    pub distance: Option<i32>,
+    pub proximity: Option<ProximityBox>,
 }
 
 pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
-    for (id, (state, physics)) in world.query_mut::<(&mut StateMachine, &mut Physics)>() {
+    for (id, (state, buffer, physics)) in
+        world.query_mut::<(&mut StateMachine, &mut InputBuffer, &mut Physics)>()
+    {
         let reaction = &mut state.context.reaction;
         if reaction.hitstop > 0 {
             reaction.hitstop -= 1;
@@ -47,21 +49,45 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
         }
 
         for hit_event in hit_events.iter() {
+            let next = &mut state.context.ctx.next;
             if id == hit_event.attacker {
+                if hit_event.proximity.is_some() {
+                    continue;
+                }
+
                 reaction.hitstop = hit_event.properties.hitstop;
             }
 
             if id == hit_event.defender {
-                // If hit
-                reaction.hitstop = hit_event.properties.hitstop;
-                reaction.hitstun = hit_event.properties.hitstun;
-                reaction.knockback = hit_event.properties.knockback;
-
-                match hit_event.properties.reaction_type {
-                    ReactionType::StandMid => {
-                        state.context.ctx.next = Some(Box::new(reacting::HitStandMid))
+                if !buffer.current().backward {
+                    if hit_event.proximity.is_some() {
+                        continue;
                     }
-                    _ => (),
+                    // If hit
+                    reaction.hitstop = hit_event.properties.hitstop;
+                    reaction.hitstun = hit_event.properties.hitstun;
+                    reaction.knockback = hit_event.properties.knockback;
+
+                    match hit_event.properties.reaction_type {
+                        ReactionType::StandMid => *next = Some(Box::new(reacting::HitStandMid)),
+                        _ => (),
+                    }
+
+                // Proximity block
+                } else if hit_event.proximity.is_some() {
+                    if !reaction.block() {
+                        reaction.blockstun = hit_event.properties.blockstun;
+                        state.context.ctx.next = Some(Box::new(reacting::GrdStandMidPre));
+                    }
+                // Guard
+                } else {
+                    reaction.hitstop = hit_event.properties.hitstop;
+                    reaction.blockstun = hit_event.properties.blockstun;
+                    reaction.knockback = hit_event.properties.knockback;
+                    match hit_event.properties.reaction_type {
+                        ReactionType::StandMid => *next = Some(Box::new(reacting::GrdStandMidEnd)),
+                        _ => (),
+                    }
                 }
             }
         }

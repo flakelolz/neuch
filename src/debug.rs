@@ -20,7 +20,6 @@ pub fn move_player(world: &mut World, rl: &mut RaylibHandle) {
             if rl.is_key_down(KeyboardKey::KEY_ZERO) {
                 physics.position.x += 1000;
             }
-
         }
     }
 }
@@ -164,6 +163,34 @@ pub fn show_hitboxes(world: &World, d: &mut impl RaylibDraw) {
                     let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
                     if hitbox.is_active(state.context.elapsed) {
                         d.draw_rectangle_lines(left, top, width, height, Color::RED);
+                    }
+                }
+            }
+        }
+    }
+}
+
+pub fn show_proximity_boxes(world: &World, d: &mut impl RaylibDraw) {
+    for (_, (character, physics, state)) in world
+        .query::<(&Character, &Physics, &StateMachine)>()
+        .iter()
+    {
+        if let Some(action) = find_action(character, &state.processor.current.name()) {
+            let offset = physics.position;
+            if let Some(modifiers) = &action.modifiers {
+                if let Some(proximity) = modifiers.proximity {
+                    let translated = if physics.facing_left {
+                        proximity.value.translate_flipped(offset)
+                    } else {
+                        proximity.value.translate(offset)
+                    };
+
+                    let left = world_to_sprite_to_ui_num(translated.left);
+                    let top = -world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
+                    let width = world_to_sprite_to_ui_num(translated.right - translated.left);
+                    let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
+                    if proximity.is_active(state.context.elapsed) {
+                        d.draw_rectangle_lines(left, top, width, height, Color::YELLOW);
                     }
                 }
             }

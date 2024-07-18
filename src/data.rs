@@ -5,7 +5,6 @@ pub struct Hitbox {
     pub start_frame: u32,
     pub duration: u32,
     pub properties: HitProperties,
-    pub proximity: Option<ProximityBox>,
     pub value: Boxes,
 }
 
@@ -13,7 +12,7 @@ pub struct Hitbox {
 pub struct ProximityBox {
     pub start_frame: u32,
     pub duration: u32,
-    pub proximity: Boxes,
+    pub value: Boxes,
 }
 
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Deserialize, Serialize)]
@@ -86,6 +85,7 @@ pub struct Action {
 pub struct Modifiers {
     pub cancels: Option<Vec<CancelModifier>>,
     pub potisions: Option<Vec<PositionModifier>>,
+    pub proximity: Option<ProximityBox>,
     // pub meter: Option<MeterModifier>,
 }
 

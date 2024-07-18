@@ -2,6 +2,7 @@ use crate::prelude::*;
 
 #[derive(Clone, Default)]
 pub struct Collisions {
+    pub proximity: Vec<(Entity, ProximityBox)>,
     pub hitboxes: Vec<(Entity, Hitbox)>,
     pub hurtboxes: Vec<(Entity, Hurtbox)>,
     pub pushboxes: Vec<(Entity, Pushbox)>,
@@ -20,6 +21,14 @@ impl Collisions {
             let offset = physics.position;
 
             if let Some(action) = find_action(character, &state.processor.current.name()) {
+                if let Some(modifiers) = &action.modifiers {
+                    if let Some(proximity) = modifiers.proximity {
+                        let proximity = proximity.translated(offset, physics.facing_left);
+                        if proximity.is_active(state.context.elapsed) {
+                            self.proximity.push((id, proximity));
+                        }
+                    }
+                }
                 if let Some(hitboxes) = &action.hitboxes {
                     for hitbox in hitboxes.iter() {
                         let hitbox = hitbox.translated(offset, physics.facing_left);
@@ -62,6 +71,22 @@ impl Collisions {
         }
     }
     fn check(&self, world: &mut World, hit_events: &mut Vec<HitEvent>) {
+        for (id, proximity) in self.proximity.iter() {
+            for (defender, hurtbox) in self.hurtboxes.iter() {
+                if boxes_overlap(&proximity.value, &hurtbox.value) {
+                    hit_events.push(HitEvent {
+                        attacker: *id,
+                        defender: *defender,
+                        proximity: Some(*proximity),
+                        properties: HitProperties {
+                            blockstun: proximity.duration,
+                            ..Default::default()
+                        },
+                    });
+                }
+            }
+        }
+
         for (attacker, hitbox) in self.hitboxes.iter() {
             for (defender, hurtbox) in self.hurtboxes.iter() {
                 if attacker != defender && boxes_overlap(&hitbox.value, &hurtbox.value) {
@@ -88,7 +113,7 @@ impl Collisions {
                             blockstun: hitbox.properties.blockstun,
                             knockback: hitbox.properties.knockback,
                         },
-                        distance: None,
+                        proximity: None,
                     });
                 }
             }
@@ -126,6 +151,7 @@ impl Collisions {
     }
 
     fn clear(&mut self) {
+        self.proximity.clear();
         self.hitboxes.clear();
         self.hurtboxes.clear();
         self.pushboxes.clear();
@@ -149,6 +175,24 @@ impl Hitbox {
         }
     }
 }
+
+impl ProximityBox {
+    pub fn is_active(&self, frame: u32) -> bool {
+        (frame >= self.start_frame) && (frame < (self.start_frame + self.duration))
+    }
+
+    pub fn translated(&self, offset: IVec2, flipped: bool) -> Self {
+        Self {
+            value: if flipped {
+                self.value.translate_flipped(offset)
+            } else {
+                self.value.translate(offset)
+            },
+            ..*self
+        }
+    }
+}
+
 impl Hurtbox {
     /// Check if a hitbox is active on a specified frame
     pub fn is_active(&self, frame: u32) -> bool {
@@ -200,23 +244,6 @@ impl Boxes {
             right: -self.left + offset.x,
             top: self.top + offset.y,
             bottom: self.bottom + offset.y,
-        }
-    }
-
-    pub fn translate_display(&self, offset: IVec2) -> Self {
-        Self {
-            left: self.left + offset.x,
-            right: self.right + offset.x,
-            top: self.top - offset.y,
-            bottom: self.bottom - offset.y,
-        }
-    }
-    pub fn translate_flipped_display(&self, offset: IVec2) -> Self {
-        Self {
-            left: -self.right + offset.x,
-            right: -self.left + offset.x,
-            top: self.top - offset.y,
-            bottom: self.bottom - offset.y,
         }
     }
 }
