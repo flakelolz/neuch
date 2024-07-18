@@ -139,6 +139,21 @@ pub fn common_crouching_attack_transitions(
     }
 }
 
+pub fn common_jumping_attack_transitions(
+    context: &mut Context,
+    buffer: &InputBuffer,
+    physics: &mut Physics,
+) {
+    if handle_ground_collision(context, buffer, physics) {
+        return;
+    }
+    // Base case
+    if context.elapsed >= context.duration {
+        // Transitions
+        context.ctx.next = Some(Box::new(jumping::AttackEnd));
+    }
+}
+
 pub fn crouch_transition(
     context: &mut Context,
     buffer: &InputBuffer,

@@ -182,14 +182,7 @@ impl State for LightPunch {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if handle_ground_collision(context, buffer, physics) {
-            return;
-        }
-        // Base case
-        if context.elapsed >= context.duration {
-            // Transitions
-            context.ctx.next = Some(Box::new(jumping::AttackEnd));
-        }
+        common_jumping_attack_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -208,14 +201,7 @@ impl State for MediumPunch {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if handle_ground_collision(context, buffer, physics) {
-            return;
-        }
-        // Base case
-        if context.elapsed >= context.duration {
-            // Transitions
-            context.ctx.next = Some(Box::new(jumping::AttackEnd));
-        }
+        common_jumping_attack_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -234,14 +220,7 @@ impl State for HeavyPunch {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if handle_ground_collision(context, buffer, physics) {
-            return;
-        }
-        // Base case
-        if context.elapsed >= context.duration {
-            // Transitions
-            context.ctx.next = Some(Box::new(jumping::AttackEnd));
-        }
+        common_jumping_attack_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -260,14 +239,7 @@ impl State for LightKick {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if handle_ground_collision(context, buffer, physics) {
-            return;
-        }
-        // Base case
-        if context.elapsed >= context.duration {
-            // Transitions
-            context.ctx.next = Some(Box::new(jumping::AttackEnd));
-        }
+        common_jumping_attack_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -286,14 +258,7 @@ impl State for MediumKick {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if handle_ground_collision(context, buffer, physics) {
-            return;
-        }
-        // Base case
-        if context.elapsed >= context.duration {
-            // Transitions
-            context.ctx.next = Some(Box::new(jumping::AttackEnd));
-        }
+        common_jumping_attack_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -312,14 +277,7 @@ impl State for HeavyKick {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if handle_ground_collision(context, buffer, physics) {
-            return;
-        }
-        // Base case
-        if context.elapsed >= context.duration {
-            // Transitions
-            context.ctx.next = Some(Box::new(jumping::AttackEnd));
-        }
+        common_jumping_attack_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
