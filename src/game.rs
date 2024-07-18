@@ -42,6 +42,7 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
             update_state(&mut world);
         }
         // Debug
+        move_player(&mut world, rl);
         reset_position(&mut world, rl);
         change_resolution(rl, configs, &mut camera);
 

@@ -66,13 +66,13 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
             }
 
             // Handle push events
-            if let Some(push_distance) = hit_event.distance {
-                physics.position.x = if physics.facing_left {
-                    physics.position.x + push_distance
-                } else {
-                    physics.position.x - push_distance
-                };
-            }
+            // if let Some(push_distance) = hit_event.distance {
+            //     physics.position.x = if physics.facing_left {
+            //         physics.position.x + push_distance
+            //     } else {
+            //         physics.position.x - push_distance
+            //     };
+            // }
         }
     }
 

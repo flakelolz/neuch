@@ -10,6 +10,9 @@ pub struct IVec2 {
 }
 
 impl IVec2 {
+    pub fn new(x: i32, y: i32) -> Self {
+        Self { x, y }
+    }
     pub fn zero() -> Self {
         Self { x: 0, y: 0 }
     }
@@ -17,6 +20,12 @@ impl IVec2 {
         Self {
             x: screen_to_world_num(x),
             y: screen_to_world_num(y),
+        }
+    }
+    pub fn rev_y(self) -> Self {
+        Self {
+            x: self.x,
+            y: -self.y,
         }
     }
 }
@@ -107,7 +116,7 @@ pub fn screen_to_world(coord: IVec2) -> (i32, i32) {
 pub fn pos_to_screen(coord: IVec2) -> (i32, i32) {
     (
         world_to_screen_num(coord.x),
-        -world_to_screen_num(coord.y) + GROUND_OFFSET,
+        world_to_screen_num(coord.y) + GROUND_OFFSET,
     )
 }
 

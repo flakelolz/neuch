@@ -12,10 +12,10 @@
     "y": 0.835
   },
   "pushbox": {
-    "top": -30000,
-    "left": -20000,
-    "bottom": -130000,
-    "right": 15000
+    "top": 8000,
+    "left": -27000,
+    "bottom": -69000,
+    "right": 23000
   },
   "actions": [
     {
@@ -29,9 +29,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -122,9 +122,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -222,9 +222,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -322,9 +322,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -471,9 +471,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -575,9 +575,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -651,9 +651,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -675,9 +675,9 @@
           },
           "proximity": null,
           "value": {
-            "top": -15000,
+            "top": 15000,
             "left": 30000,
-            "bottom": -30000,
+            "bottom": -1000,
             "right": 75000
           }
         }
@@ -753,9 +753,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -922,9 +922,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -987,9 +987,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -1140,9 +1140,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -1328,9 +1328,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -1384,9 +1384,9 @@
           "duration": 2,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         },
@@ -1464,9 +1464,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -4800,
+            "top": 35000,
             "left": -30000,
-            "bottom": -78000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -1515,9 +1515,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -1559,9 +1559,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -4800,
+            "top": 35000,
             "left": -30000,
-            "bottom": -78000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -1642,9 +1642,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -4800,
+            "top": 35000,
             "left": -30000,
-            "bottom": -78000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -1707,9 +1707,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -4800,
+            "top": 35000,
             "left": -30000,
-            "bottom": -78000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -1800,9 +1800,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -4800,
+            "top": 35000,
             "left": -30000,
-            "bottom": -78000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -1883,9 +1883,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -4800,
+            "top": 35000,
             "left": -30000,
-            "bottom": -78000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -2022,9 +2022,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -4800,
+            "top": 35000,
             "left": -30000,
-            "bottom": -78000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -2203,9 +2203,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -4800,
+            "top": 35000,
             "left": -30000,
-            "bottom": -78000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -2272,9 +2272,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -4800,
+            "top": 35000,
             "left": -30000,
-            "bottom": -78000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -2295,8 +2295,31 @@
       "name": "Jmp Neutral",
       "total": 35,
       "looping": false,
-      "pushboxes": null,
-      "hurtboxes": null,
+      "pushboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "value": {
+            "top": 35000,
+            "left": -20000,
+            "bottom": -30000,
+            "right": 20000
+          }
+        }
+      ],
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -30000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": null,
       "timeline": [
@@ -2411,8 +2434,31 @@
       "name": "Jmp Forward",
       "total": 35,
       "looping": false,
-      "pushboxes": null,
-      "hurtboxes": null,
+      "pushboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "value": {
+            "top": 20000,
+            "left": -20000,
+            "bottom": -20000,
+            "right": 20000
+          }
+        }
+      ],
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -30000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": null,
       "timeline": [
@@ -2485,8 +2531,31 @@
       "name": "Jmp Backward",
       "total": 34,
       "looping": false,
-      "pushboxes": null,
-      "hurtboxes": null,
+      "pushboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "value": {
+            "top": -30000,
+            "left": -25000,
+            "bottom": -80000,
+            "right": 18000
+          }
+        }
+      ],
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -69000,
+            "right": 25000
+          }
+        }
+      ],
       "hitboxes": null,
       "modifiers": null,
       "timeline": [
@@ -2566,9 +2635,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -4800,
+            "top": 35000,
             "left": -30000,
-            "bottom": -78000,
+            "bottom": -69000,
             "right": 25000
           }
         }
@@ -3067,9 +3136,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": -30000,
+            "top": 35000,
             "left": -30000,
-            "bottom": -130000,
+            "bottom": -69000,
             "right": 25000
           }
         }

@@ -1,15 +1,36 @@
 #![allow(dead_code)]
-use crate::prelude::*;
+use crate::{physics, prelude::*};
 
 const TEXT_SIZE: i32 = 10;
 const SCREEN_CENTER: i32 = WIDTH / 2;
 
+pub fn move_player(world: &mut World, rl: &mut RaylibHandle) {
+    for (id, (physics, player)) in world.query_mut::<(&mut Physics, &Player)>() {
+        if player == &Player::One {
+            if rl.is_key_down(KeyboardKey::KEY_EIGHT) {
+                physics.position.y -= 1000;
+            }
+            if rl.is_key_down(KeyboardKey::KEY_NINE) {
+                physics.position.y += 1000;
+            }
+
+            if rl.is_key_down(KeyboardKey::KEY_SEVEN) {
+                physics.position.x -= 1000;
+            }
+            if rl.is_key_down(KeyboardKey::KEY_ZERO) {
+                physics.position.x += 1000;
+            }
+
+        }
+    }
+}
+
 pub fn show_position(world: &World, d: &mut impl RaylibDraw) {
     world
-        .query::<(&Physics, &Player)>()
+        .query::<&Physics>()
         .into_iter()
-        .for_each(|(_, (physics, player))| {
-            let (screen_x, screen_y) = pos_to_screen(physics.position);
+        .for_each(|(_, physics)| {
+            let (screen_x, screen_y) = pos_to_screen(physics.position.rev_y());
             let (screen_x, screen_y) = sprite_to_ui(screen_x, screen_y);
             let (pos_x, pos_y) = world_to_screen(physics.position);
             d.draw_circle(screen_x, screen_y, 1., Color::WHITE);
@@ -29,7 +50,7 @@ pub fn show_state(world: &World, d: &mut impl RaylibDraw) {
         .into_iter()
         .for_each(|(_, (state, physics, player))| {
             if player == &Player::One {
-                let (screen_x, screen_y) = pos_to_screen(physics.position);
+                let (screen_x, screen_y) = pos_to_screen(physics.position.rev_y());
                 let (screen_x, screen_y) = sprite_to_ui(screen_x, screen_y);
                 let current = state.processor.current.as_ref();
                 let timeline = state.context.elapsed;
@@ -138,7 +159,7 @@ pub fn show_hitboxes(world: &World, d: &mut impl RaylibDraw) {
                     };
 
                     let left = world_to_sprite_to_ui_num(translated.left);
-                    let top = world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
+                    let top = -world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
                     let width = world_to_sprite_to_ui_num(translated.right - translated.left);
                     let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
                     if hitbox.is_active(state.context.elapsed) {
@@ -166,7 +187,7 @@ pub fn show_hurtboxes(world: &World, d: &mut impl RaylibDraw) {
                     };
 
                     let left = world_to_sprite_to_ui_num(translated.left);
-                    let top = world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
+                    let top = -world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
                     let width = world_to_sprite_to_ui_num(translated.right - translated.left);
                     let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
                     if hurtbox.is_active(state.context.elapsed) {
@@ -195,11 +216,11 @@ pub fn show_pushboxes(world: &World, d: &mut impl RaylibDraw) {
                     };
 
                     let left = world_to_sprite_to_ui_num(translated.left);
-                    let top = world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
+                    let top = -world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
                     let width = world_to_sprite_to_ui_num(translated.right - translated.left);
                     let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
                     if pushbox.is_active(state.context.elapsed) {
-                        d.draw_rectangle_lines(left, top, width, height, Color::PURPLE);
+                        d.draw_rectangle_lines(left, top, width, height, Color::MAGENTA);
                     }
                 }
             } else {
@@ -211,10 +232,10 @@ pub fn show_pushboxes(world: &World, d: &mut impl RaylibDraw) {
                 };
 
                 let left = world_to_sprite_to_ui_num(translated.left);
-                let top = world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
+                let top = -world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
                 let width = world_to_sprite_to_ui_num(translated.right - translated.left);
                 let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
-                d.draw_rectangle_lines(left, top, width, height, Color::PURPLE);
+                d.draw_rectangle_lines(left, top, width, height, Color::MAGENTA);
             }
         }
     }

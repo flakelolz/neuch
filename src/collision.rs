@@ -185,9 +185,26 @@ impl Boxes {
     pub fn translate_flipped(&self, offset: IVec2) -> Self {
         Self {
             left: -self.right + offset.x,
-            top: self.top + offset.y,
             right: -self.left + offset.x,
+            top: self.top + offset.y,
             bottom: self.bottom + offset.y,
+        }
+    }
+
+    pub fn translate_display(&self, offset: IVec2) -> Self {
+        Self {
+            left: self.left + offset.x,
+            right: self.right + offset.x,
+            top: self.top - offset.y,
+            bottom: self.bottom - offset.y,
+        }
+    }
+    pub fn translate_flipped_display(&self, offset: IVec2) -> Self {
+        Self {
+            left: -self.right + offset.x,
+            right: -self.left + offset.x,
+            top: self.top - offset.y,
+            bottom: self.bottom - offset.y,
         }
     }
 }

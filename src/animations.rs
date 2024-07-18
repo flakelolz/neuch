@@ -77,6 +77,8 @@ pub fn animation(d: &mut impl RaylibDraw, world: &World, assets: &Assets) {
             animator.duration = keyframe.duration;
             let reaction = &state.context.reaction;
 
+            let pos_x = physics.position.x;
+            let pos_y = -physics.position.y;
             let mut draw = Draw {
                 x: keyframe.x,
                 y: keyframe.y,
@@ -87,7 +89,7 @@ pub fn animation(d: &mut impl RaylibDraw, world: &World, assets: &Assets) {
                 h_scale: animator.h_scale,
                 origin: animator.origin,
                 z_index: animator.z_index,
-                pos: physics.position,
+                pos: IVec2::new(pos_x, pos_y),
             };
 
             if reaction.hitstop == 0 {
