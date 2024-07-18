@@ -29,7 +29,7 @@
 - [x] Make stuff work correctly when flipped
 - [x] Collision system
 - [x] Reaction system
-- [ ] Implement blocking
+- [x] Implement blocking
 - [ ] Implement all hit reaction states
 - [ ] Make an editor for character data
 - [ ] Change font
