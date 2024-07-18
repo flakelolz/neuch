@@ -33,8 +33,7 @@ pub fn handle_transition(
                 hit_animation(animator, context, &action.timeline);
             } else if context.reaction.block() {
                 block_animation(animator, context, &action.timeline);
-            }
-            else {
+            } else {
                 animator.keyframes.clone_from(&action.timeline);
             }
             // Setup action modifiers if there are any
@@ -72,6 +71,70 @@ pub fn handle_transition(
         }
         None => {
             eprintln!("Action not found");
+        }
+    }
+}
+
+pub fn common_standing_attack_transitions(
+    context: &mut Context,
+    buffer: &InputBuffer,
+    physics: &mut Physics,
+) {
+    // Apply physics and handle modifiers
+    handle_modifiers(context, buffer, physics);
+    // Base case
+    if context.elapsed >= context.duration {
+        // Transitions
+        if turn_transition(&mut context.ctx, buffer, physics) {
+            return;
+        }
+        if attack_transitions(context, buffer, physics) {
+            return;
+        }
+        if jump_transitions(context, buffer, physics) {
+            return;
+        }
+        if crouch_transition(context, buffer, physics) {
+            return;
+        }
+        if dash_transitions(context, buffer, physics) {
+            return;
+        }
+        if walk_transition(context, buffer, physics) {
+            return;
+        }
+        // Return to idle
+        context.ctx.next = Some(Box::new(standing::Idle));
+    }
+}
+
+pub fn common_crouching_attack_transitions(
+    context: &mut Context,
+    buffer: &InputBuffer,
+    physics: &mut Physics,
+) {
+    // Apply physics and handle modifiers
+    handle_modifiers(context, buffer, physics);
+    // Base case
+    if context.elapsed >= context.duration {
+        // Transitions
+        if jump_transitions(context, buffer, physics) {
+            return;
+        }
+        if attack_transitions(context, buffer, physics) {
+            return;
+        }
+        if !down(buffer) {
+            if dash_transitions(context, buffer, physics) {
+                return;
+            }
+            if walk_transition(context, buffer, physics) {
+                return;
+            }
+            // Return to idle
+            context.ctx.next = Some(Box::new(crouching::End));
+        } else {
+            context.ctx.next = Some(Box::new(crouching::Idle));
         }
     }
 }

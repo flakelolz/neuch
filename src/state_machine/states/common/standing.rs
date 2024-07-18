@@ -29,9 +29,7 @@ impl State for Idle {
         if dash_transitions(context, buffer, physics) {
             return;
         }
-        if walk_transition(context, buffer, physics) {
-            return;
-        }
+        walk_transition(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -217,32 +215,10 @@ impl State for LightPunch {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        // Apply physics and handle modifiers
-        handle_modifiers(context, buffer, physics);
-        // Base case
-        if context.elapsed >= context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_attack_transitions(context, buffer, physics);
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St LightPunch on_exit");
     }
 }
@@ -258,32 +234,7 @@ impl State for MediumPunch {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        // Apply physics and handle modifiers
-        handle_modifiers(context, buffer, physics);
-        // Base case
-        if context.elapsed >= context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_attack_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -302,29 +253,7 @@ impl State for HeavyPunch {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        // Apply physics and handle modifiers
-        handle_modifiers(context, buffer, physics);
-        // Base case
-        if context.elapsed >= context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_attack_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -343,29 +272,7 @@ impl State for LightKick {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        // Apply physics and handle modifiers
-        handle_modifiers(context, buffer, physics);
-        // Base case
-        if context.elapsed >= context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_attack_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -384,29 +291,7 @@ impl State for MediumKick {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        // Apply physics and handle modifiers
-        handle_modifiers(context, buffer, physics);
-        // Base case
-        if context.elapsed >= context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_attack_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -425,32 +310,10 @@ impl State for HeavyKick {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        // Apply physics and handle modifiers
-        handle_modifiers(context, buffer, physics);
-        // Base case
-        if context.elapsed >= context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_attack_transitions(context, buffer, physics);
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("St HeavyKick on_exit");
     }
 }
