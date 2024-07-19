@@ -16,6 +16,7 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
 
     // Debug pause
     let mut paused = false;
+    let mut debug = Debug::default();
 
     configs.display.set_720(rl, &mut camera);
     // Main game loop
@@ -44,7 +45,19 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
         // Debug
         move_player(&mut world, rl);
         reset_position(&mut world, rl);
-        change_resolution(rl, configs, &mut camera);
+        debug.toggle(rl);
+
+        // Calculate window
+        let width = rl.get_screen_width();
+        let height = rl.get_screen_height();
+        let scale = (width / WIDTH).min(height / HEIGHT) as f32;
+
+        // Mouse scale
+        rl.set_mouse_scale(1.0 / scale, 1.0 / scale);
+        rl.set_mouse_offset(rvec2(
+            -(rl.get_screen_width() as f32 - (FWIDTH * scale)) * 0.5,
+            -(rl.get_screen_height() as f32 - (FHEIGHT * scale)) * 0.5,
+        ));
 
         // Drawing
         let mut d = rl.begin_drawing(thread);
@@ -65,15 +78,16 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
             // Debug
             if !paused || advance {
                 d.clear_background(Color::BLANK);
-                show_frame_count(&world, &mut d);
-                show_state(&world, &mut d);
-                show_context(&world, &mut d);
-                show_inputs(&world, &mut d);
-                show_proximity_boxes(&world, &mut d);
-                show_pushboxes(&world, &mut d);
-                show_hurtboxes(&world, &mut d);
-                show_hitboxes(&world, &mut d);
-                show_position(&world, &mut d);
+                show_frame_count(&world, &mut d, &debug);
+                show_state(&world, &mut d, &debug);
+                show_context(&world, &mut d, &debug);
+                show_inputs(&world, &mut d, &debug);
+                show_proximity_boxes(&world, &mut d, &debug);
+                show_pushboxes(&world, &mut d, &debug);
+                show_hurtboxes(&world, &mut d, &debug);
+                show_hitboxes(&world, &mut d, &debug);
+                show_position(&world, &mut d, &debug);
+                show_editor(&mut world, &mut d, &debug);
             }
             d.draw_fps(WIDTH - 100, 10);
         }
