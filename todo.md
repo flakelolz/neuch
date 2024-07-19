@@ -32,7 +32,7 @@
 - [x] Implement blocking
 - [ ] Implement all hit reaction states
 - [ ] Make an editor for character data
-- [ ] Change font
+- [x] Change font
 
 # Dash should fail
 - [x] *4* > *5* > *6* (walk back and forth repeatedly)
