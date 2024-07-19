@@ -413,7 +413,8 @@
               "y": 0
             }
           }
-        ]
+        ],
+        "proximity": null
       },
       "timeline": [
         {
@@ -517,7 +518,8 @@
               "y": 0
             }
           }
-        ]
+        ],
+        "proximity": null
       },
       "timeline": [
         {
@@ -600,7 +602,8 @@
             ]
           }
         ],
-        "potisions": null
+        "potisions": null,
+        "proximity": null
       },
       "timeline": [
         {
@@ -668,10 +671,7 @@
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
-            "knockback": {
-              "x": 8000,
-              "y": 0
-            }
+            "knockback": 8000
           },
           "value": {
             "top": 15000,
@@ -834,7 +834,8 @@
               "y": 0
             }
           }
-        ]
+        ],
+        "proximity": null
       },
       "timeline": [
         {
@@ -1045,7 +1046,8 @@
               "y": 0
             }
           }
-        ]
+        ],
+        "proximity": null
       },
       "timeline": [
         {
@@ -1226,7 +1228,8 @@
               "y": 0
             }
           }
-        ]
+        ],
+        "proximity": null
       },
       "timeline": [
         {
@@ -1359,7 +1362,8 @@
             ]
           }
         ],
-        "potisions": null
+        "potisions": null,
+        "proximity": null
       },
       "timeline": [
         {
@@ -1596,7 +1600,8 @@
             ]
           }
         ],
-        "potisions": null
+        "potisions": null,
+        "proximity": null
       },
       "timeline": [
         {
@@ -1837,7 +1842,8 @@
             ]
           }
         ],
-        "potisions": null
+        "potisions": null,
+        "proximity": null
       },
       "timeline": [
         {
@@ -1948,7 +1954,8 @@
               "y": 0
             }
           }
-        ]
+        ],
+        "proximity": null
       },
       "timeline": [
         {
@@ -2115,7 +2122,8 @@
               "y": 0
             }
           }
-        ]
+        ],
+        "proximity": null
       },
       "timeline": [
         {
@@ -2240,7 +2248,8 @@
             ]
           }
         ],
-        "potisions": null
+        "potisions": null,
+        "proximity": null
       },
       "timeline": [
         {
@@ -2677,7 +2686,8 @@
             ]
           }
         ],
-        "potisions": null
+        "potisions": null,
+        "proximity": null
       },
       "timeline": [
         {

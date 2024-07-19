@@ -70,17 +70,17 @@ pub fn physics_system(world: &mut World) {
             physics.velocity += physics.acceleration;
 
             // Apply knockback to the position
-            if reaction.knockback.x != 0 {
+            if reaction.knockback != 0 {
                 if physics.facing_left {
-                    physics.position += reaction.knockback;
+                    physics.position.x += reaction.knockback;
                 } else {
-                    physics.position += -reaction.knockback;
+                    physics.position.x += -reaction.knockback;
                 }
 
                 // Decelerate
-                reaction.knockback.x -= DECELERATION;
-                if reaction.knockback.x.abs() < THRESHOLD {
-                    reaction.knockback.x = 0;
+                reaction.knockback -= DECELERATION;
+                if reaction.knockback.abs() < THRESHOLD {
+                    reaction.knockback = 0;
                 }
             }
         }

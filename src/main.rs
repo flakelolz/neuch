@@ -9,6 +9,7 @@ mod collision;
 mod config;
 mod data;
 mod debug;
+mod editor;
 mod game;
 mod input;
 mod physics;
@@ -25,6 +26,7 @@ mod prelude {
     pub use crate::config::*;
     pub use crate::data::*;
     pub use crate::debug::*;
+    pub use crate::editor::*;
     pub use crate::input::*;
     pub use crate::physics::*;
     pub use crate::reaction::*;

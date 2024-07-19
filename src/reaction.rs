@@ -6,7 +6,7 @@ pub struct Reaction {
     pub hitstop: u32,
     pub hitstun: u32,
     pub blockstun: u32,
-    pub knockback: IVec2,
+    pub knockback: i32,
 }
 
 impl Reaction {

@@ -11,7 +11,6 @@ impl State for HitStandMid {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        println!("elapsed: {} duration: {} hitstop: {}", context.elapsed, context.duration, context.reaction.hitstop);
         if context.elapsed >= context.duration {
             if jump_transitions(context, buffer, physics) {
                 return;

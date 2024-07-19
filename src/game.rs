@@ -17,6 +17,7 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
     // Debug pause
     let mut paused = false;
     let mut debug = Debug::default();
+    let mut editor = Editor::new();
 
     configs.display.set_720(rl, &mut camera);
     // Main game loop
@@ -87,8 +88,8 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
                 show_hurtboxes(&world, &mut d, &debug);
                 show_hitboxes(&world, &mut d, &debug);
                 show_position(&world, &mut d, &debug);
-                show_editor(&mut world, &mut d, &debug);
             }
+            editor.show_editor(&mut world, &mut d, &debug);
             d.draw_fps(WIDTH - 100, 10);
         }
 
