@@ -229,7 +229,7 @@ pub fn show_context(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
         return;
     }
     let font = d.gui_get_font();
-    let y = 30.;
+    let y = 12.;
     world
         .query::<(&StateMachine, &Player)>()
         .into_iter()
@@ -238,7 +238,7 @@ pub fn show_context(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
                 d.draw_text_ex(
                     &font,
                     &format!("F: {}", machine.context.ctx.can_dash_f),
-                    rvec2(10., y),
+                    rvec2(5., y),
                     TEXT_SIZE,
                     0.,
                     Color::WHITE,
@@ -246,7 +246,7 @@ pub fn show_context(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
                 d.draw_text_ex(
                     &font,
                     &format!("B: {}", machine.context.ctx.can_dash_b),
-                    rvec2(10., y + TEXT_SIZE),
+                    rvec2(5., y + TEXT_SIZE),
                     TEXT_SIZE,
                     0.,
                     Color::WHITE,
@@ -254,7 +254,7 @@ pub fn show_context(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
                 d.draw_text_ex(
                     &font,
                     &format!("Jump: {:#?}", machine.context.ctx.flags.jump),
-                    rvec2(10., y + TEXT_SIZE * 2.),
+                    rvec2(5., y + TEXT_SIZE * 2.),
                     TEXT_SIZE,
                     0.,
                     Color::WHITE,
