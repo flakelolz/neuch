@@ -1555,20 +1555,20 @@
           "duration": 2,
           "invul_type": "None",
           "value": {
-            "top": -10000,
+            "top": 15000,
             "left": -30000,
-            "bottom": -91500,
+            "bottom": -69500,
             "right": 25000
           }
         },
         {
           "start_frame": 4,
-          "duration": 5,
+          "duration": 6,
           "invul_type": "None",
           "value": {
-            "top": -4800,
+            "top": -800,
             "left": -30000,
-            "bottom": -78000,
+            "bottom": -70000,
             "right": 25000
           }
         }
@@ -1624,9 +1624,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": 35000,
+            "top": 0,
             "left": -30000,
-            "bottom": -69000,
+            "bottom": -70000,
             "right": 25000
           }
         }
@@ -1672,10 +1672,10 @@
       "hurtboxes": [
         {
           "start_frame": 0,
-          "duration": 100,
+          "duration": 4,
           "invul_type": "None",
           "value": {
-            "top": 35000,
+            "top": 0,
             "left": -30000,
             "bottom": -69000,
             "right": 25000

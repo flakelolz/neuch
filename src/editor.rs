@@ -12,7 +12,6 @@ pub struct Editor {
     state: State,
     name: String,
     looping: bool,
-    old_looping: bool,
     property: Property,
     hitbox: Hitbox,
     old_hitbox: Hitbox,
@@ -37,7 +36,6 @@ impl Editor {
             state: State::StMediumPunch,
             name: String::new(),
             looping: false,
-            old_looping: false,
             property: Property::Hitbox,
             hitbox: Hitbox::default(),
             old_hitbox: Hitbox::default(),
@@ -74,12 +72,14 @@ impl Editor {
         );
         if d.gui_label_button(rrect(50, 12, 1, 8), Some(c"<-")) {
             if let Some(previous) = self.state.previous() {
+                self.index = 0;
                 self.loaded = false;
                 self.state = previous;
             }
         }
         if d.gui_label_button(rrect(self.width - 10, 12, 1, 8), Some(c"->")) {
             if let Some(next) = self.state.next() {
+                self.index = 0;
                 self.loaded = false;
                 self.state = next;
             }
@@ -148,13 +148,15 @@ impl Editor {
                         Property::Values => {
                             if !self.loaded {
                                 self.looping = action.looping;
-                                self.old_looping = action.looping;
                                 self.loaded = true;
                             }
                             let y = 36;
                             let z = 12;
                             d.gui_label(rrect(x, y + z, 60, 8), Some(c"Looping"));
-                            d.gui_check_box(rrect(x2, y + z, 8, 8), None, &mut self.looping);
+                            d.gui_check_box(rrect(x2, y + z, 8, 8), None, &mut action.looping);
+                            if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
+                                action.looping = self.looping;
+                            }
                         }
                         // NOTE: HITBOX
                         Property::Hitbox => {
@@ -804,14 +806,6 @@ impl Editor {
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
                                 self.proximity.value.right = self.old_proximity.value.right;
                                 proximity.value.right = self.old_proximity.value.right;
-                            }
-
-                            if d.gui_button(
-                                rrect(self.width - 50, self.height - 10, 40, 10),
-                                Some(c"Add"),
-                            ) {
-                                *proximity = self.proximity;
-                                self.loaded = false;
                             }
                         }
                     }
