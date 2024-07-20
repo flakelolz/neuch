@@ -584,7 +584,26 @@
           }
         }
       ],
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 6,
+          "duration": 2,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 4,
+            "hitstun": 10,
+            "blockstun": 8,
+            "knockback": 7000
+          },
+          "value": {
+            "top": 19000,
+            "left": 30000,
+            "bottom": 5000,
+            "right": 75000
+          }
+        }
+      ],
       "modifiers": {
         "cancels": [
           {
@@ -603,7 +622,16 @@
           }
         ],
         "potisions": null,
-        "proximity": null
+        "proximity": {
+          "start_frame": 1,
+          "duration": 7,
+          "value": {
+            "top": 20000,
+            "left": 30000,
+            "bottom": -9000,
+            "right": 150000
+          }
+        }
       },
       "timeline": [
         {
@@ -668,7 +696,7 @@
           "properties": {
             "hit_type": "Ground",
             "reaction_type": "StandMid",
-            "hitstop": 8,
+            "hitstop": 6,
             "hitstun": 17,
             "blockstun": 12,
             "knockback": 8000
@@ -772,7 +800,26 @@
           }
         }
       ],
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 12,
+          "duration": 1,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 8,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": 24000,
+            "left": 30000,
+            "bottom": 7000,
+            "right": 75000
+          }
+        }
+      ],
       "modifiers": {
         "cancels": [
           {
@@ -835,7 +882,16 @@
             }
           }
         ],
-        "proximity": null
+        "proximity": {
+          "start_frame": 1,
+          "duration": 7,
+          "value": {
+            "top": 20000,
+            "left": 30000,
+            "bottom": -9000,
+            "right": 150000
+          }
+        }
       },
       "timeline": [
         {
@@ -942,8 +998,40 @@
           }
         }
       ],
-      "hitboxes": null,
-      "modifiers": null,
+      "hitboxes": [
+        {
+          "start_frame": 5,
+          "duration": 4,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 4,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 7000
+          },
+          "value": {
+            "top": -28000,
+            "left": 30000,
+            "bottom": -56000,
+            "right": 75000
+          }
+        }
+      ],
+      "modifiers": {
+        "cancels": null,
+        "potisions": null,
+        "proximity": {
+          "start_frame": 1,
+          "duration": 7,
+          "value": {
+            "top": 20000,
+            "left": 30000,
+            "bottom": -9000,
+            "right": 150000
+          }
+        }
+      },
       "timeline": [
         {
           "x": 0.0,
@@ -1007,7 +1095,26 @@
           }
         }
       ],
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 9,
+          "duration": 4,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 6,
+            "hitstun": 23,
+            "blockstun": 19,
+            "knockback": 9000
+          },
+          "value": {
+            "top": 15000,
+            "left": 30000,
+            "bottom": -1000,
+            "right": 75000
+          }
+        }
+      ],
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -1047,7 +1154,16 @@
             }
           }
         ],
-        "proximity": null
+        "proximity": {
+          "start_frame": 1,
+          "duration": 7,
+          "value": {
+            "top": 20000,
+            "left": 30000,
+            "bottom": -9000,
+            "right": 150000
+          }
+        }
       },
       "timeline": [
         {
@@ -1161,7 +1277,26 @@
           }
         }
       ],
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 12,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 8,
+            "hitstun": 28,
+            "blockstun": 22,
+            "knockback": 10000
+          },
+          "value": {
+            "top": -4000,
+            "left": 30000,
+            "bottom": -24000,
+            "right": 86000
+          }
+        }
+      ],
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -1229,7 +1364,16 @@
             }
           }
         ],
-        "proximity": null
+        "proximity": {
+          "start_frame": 1,
+          "duration": 7,
+          "value": {
+            "top": 20000,
+            "left": 30000,
+            "bottom": -9000,
+            "right": 150000
+          }
+        }
       },
       "timeline": [
         {
@@ -1582,7 +1726,26 @@
           }
         }
       ],
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 5,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 4,
+            "hitstun": 12,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": -16000,
+            "left": 19000,
+            "bottom": -28000,
+            "right": 65000
+          }
+        }
+      ],
       "modifiers": {
         "cancels": [
           {
@@ -1601,7 +1764,16 @@
           }
         ],
         "potisions": null,
-        "proximity": null
+        "proximity": {
+          "start_frame": 1,
+          "duration": 7,
+          "value": {
+            "top": 20000,
+            "left": 30000,
+            "bottom": -9000,
+            "right": 150000
+          }
+        }
       },
       "timeline": [
         {
@@ -1666,8 +1838,40 @@
           }
         }
       ],
-      "hitboxes": null,
-      "modifiers": null,
+      "hitboxes": [
+        {
+          "start_frame": 6,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 2,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": -14000,
+            "left": 25000,
+            "bottom": -27000,
+            "right": 70000
+          }
+        }
+      ],
+      "modifiers": {
+        "cancels": null,
+        "potisions": null,
+        "proximity": {
+          "start_frame": 1,
+          "duration": 7,
+          "value": {
+            "top": 20000,
+            "left": 30000,
+            "bottom": -9000,
+            "right": 150000
+          }
+        }
+      },
       "timeline": [
         {
           "x": 0.0,
@@ -1731,8 +1935,40 @@
           }
         }
       ],
-      "hitboxes": null,
-      "modifiers": null,
+      "hitboxes": [
+        {
+          "start_frame": 7,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 8,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": 15000,
+            "left": 30000,
+            "bottom": -1000,
+            "right": 75000
+          }
+        }
+      ],
+      "modifiers": {
+        "cancels": null,
+        "potisions": null,
+        "proximity": {
+          "start_frame": 1,
+          "duration": 7,
+          "value": {
+            "top": 20000,
+            "left": 30000,
+            "bottom": -9000,
+            "right": 150000
+          }
+        }
+      },
       "timeline": [
         {
           "x": 0.0,
@@ -1824,7 +2060,26 @@
           }
         }
       ],
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 7,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 8,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": 15000,
+            "left": 30000,
+            "bottom": -1000,
+            "right": 75000
+          }
+        }
+      ],
       "modifiers": {
         "cancels": [
           {
@@ -1843,7 +2098,16 @@
           }
         ],
         "potisions": null,
-        "proximity": null
+        "proximity": {
+          "start_frame": 1,
+          "duration": 7,
+          "value": {
+            "top": 20000,
+            "left": 30000,
+            "bottom": -9000,
+            "right": 150000
+          }
+        }
       },
       "timeline": [
         {
@@ -1908,7 +2172,26 @@
           }
         }
       ],
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 7,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 8,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": 15000,
+            "left": 30000,
+            "bottom": -1000,
+            "right": 75000
+          }
+        }
+      ],
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -1955,7 +2238,16 @@
             }
           }
         ],
-        "proximity": null
+        "proximity": {
+          "start_frame": 1,
+          "duration": 7,
+          "value": {
+            "top": 20000,
+            "left": 30000,
+            "bottom": -9000,
+            "right": 150000
+          }
+        }
       },
       "timeline": [
         {
@@ -2048,7 +2340,26 @@
           }
         }
       ],
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 7,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 8,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": 15000,
+            "left": 30000,
+            "bottom": -1000,
+            "right": 75000
+          }
+        }
+      ],
       "modifiers": {
         "cancels": null,
         "potisions": [
@@ -2123,7 +2434,16 @@
             }
           }
         ],
-        "proximity": null
+        "proximity": {
+          "start_frame": 1,
+          "duration": 7,
+          "value": {
+            "top": 20000,
+            "left": 30000,
+            "bottom": -9000,
+            "right": 150000
+          }
+        }
       },
       "timeline": [
         {
@@ -2719,7 +3039,26 @@
       "looping": false,
       "pushboxes": null,
       "hurtboxes": null,
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 7,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 8,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": 15000,
+            "left": 30000,
+            "bottom": -1000,
+            "right": 75000
+          }
+        }
+      ],
       "modifiers": null,
       "timeline": [
         {
@@ -2807,7 +3146,26 @@
       "looping": false,
       "pushboxes": null,
       "hurtboxes": null,
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 7,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 8,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": 15000,
+            "left": 30000,
+            "bottom": -1000,
+            "right": 75000
+          }
+        }
+      ],
       "modifiers": null,
       "timeline": [
         {
@@ -2867,7 +3225,26 @@
       "looping": false,
       "pushboxes": null,
       "hurtboxes": null,
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 7,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 8,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": 15000,
+            "left": 30000,
+            "bottom": -1000,
+            "right": 75000
+          }
+        }
+      ],
       "modifiers": null,
       "timeline": [
         {
@@ -2927,7 +3304,26 @@
       "looping": false,
       "pushboxes": null,
       "hurtboxes": null,
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 7,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 8,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": 15000,
+            "left": 30000,
+            "bottom": -1000,
+            "right": 75000
+          }
+        }
+      ],
       "modifiers": null,
       "timeline": [
         {
@@ -2994,7 +3390,26 @@
       "looping": false,
       "pushboxes": null,
       "hurtboxes": null,
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 7,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 8,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": 15000,
+            "left": 30000,
+            "bottom": -1000,
+            "right": 75000
+          }
+        }
+      ],
       "modifiers": null,
       "timeline": [
         {
@@ -3061,7 +3476,26 @@
       "looping": false,
       "pushboxes": null,
       "hurtboxes": null,
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 7,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "reaction_type": "StandMid",
+            "hitstop": 8,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": 15000,
+            "left": 30000,
+            "bottom": -1000,
+            "right": 75000
+          }
+        }
+      ],
       "modifiers": null,
       "timeline": [
         {
