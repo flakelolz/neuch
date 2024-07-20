@@ -154,16 +154,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y, 30, 8), None, startup, 1, 100, false);
                             if d.gui_label_button(rrect(x2 + 34, y, 10, 8), Some(c"-")) {
                                 self.hitbox.start_frame -= 1;
-                                action.hitboxes.as_mut().unwrap()[0].start_frame =
+                                action.hitboxes.as_mut().unwrap()[self.index].start_frame =
                                     self.hitbox.start_frame;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y, 10, 8), Some(c"+")) {
                                 self.hitbox.start_frame += 1;
-                                action.hitboxes.as_mut().unwrap()[0].start_frame =
+                                action.hitboxes.as_mut().unwrap()[self.index].start_frame =
                                     self.hitbox.start_frame;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y, 40, 8), Some(c"reset")) {
-                                action.hitboxes.as_mut().unwrap()[0].start_frame =
+                                action.hitboxes.as_mut().unwrap()[self.index].start_frame =
                                     self.old_hitbox.start_frame;
                                 self.hitbox.start_frame = self.old_hitbox.start_frame;
                             }
@@ -173,16 +173,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, dur, 1, 100, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hitbox.duration -= 1;
-                                action.hitboxes.as_mut().unwrap()[0].duration =
+                                action.hitboxes.as_mut().unwrap()[self.index].duration =
                                     self.hitbox.duration;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hitbox.duration += 1;
-                                action.hitboxes.as_mut().unwrap()[0].duration =
+                                action.hitboxes.as_mut().unwrap()[self.index].duration =
                                     self.hitbox.duration;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hitboxes.as_mut().unwrap()[0].duration =
+                                action.hitboxes.as_mut().unwrap()[self.index].duration =
                                     self.old_hitbox.duration;
                                 self.hitbox.duration = self.old_hitbox.duration;
                             }
@@ -193,16 +193,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, hitstop, 1, 100, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hitbox.properties.hitstop -= 1;
-                                action.hitboxes.as_mut().unwrap()[0].duration =
+                                action.hitboxes.as_mut().unwrap()[self.index].properties.hitstop =
                                     self.hitbox.properties.hitstop;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hitbox.properties.hitstop += 1;
-                                action.hitboxes.as_mut().unwrap()[0].properties.hitstop =
+                                action.hitboxes.as_mut().unwrap()[self.index].properties.hitstop =
                                     self.hitbox.properties.hitstop;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hitboxes.as_mut().unwrap()[0].properties.hitstop =
+                                action.hitboxes.as_mut().unwrap()[self.index].properties.hitstop =
                                     self.old_hitbox.properties.hitstop;
                                 self.hitbox.properties.hitstop = self.old_hitbox.properties.hitstop;
                             }
@@ -213,16 +213,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, hitstun, 1, 100, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hitbox.properties.hitstun -= 1;
-                                action.hitboxes.as_mut().unwrap()[0].properties.hitstun =
+                                action.hitboxes.as_mut().unwrap()[self.index].properties.hitstun =
                                     self.hitbox.properties.hitstun;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hitbox.properties.hitstun += 1;
-                                action.hitboxes.as_mut().unwrap()[0].properties.hitstun =
+                                action.hitboxes.as_mut().unwrap()[self.index].properties.hitstun =
                                     self.hitbox.properties.hitstun;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hitboxes.as_mut().unwrap()[0].properties.hitstun =
+                                action.hitboxes.as_mut().unwrap()[self.index].properties.hitstun =
                                     self.old_hitbox.properties.hitstun;
                                 self.hitbox.properties.hitstun = self.old_hitbox.properties.hitstun;
                             }
@@ -233,16 +233,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, blckstn, 1, 100, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hitbox.properties.blockstun -= 1;
-                                action.hitboxes.as_mut().unwrap()[0].properties.blockstun =
+                                action.hitboxes.as_mut().unwrap()[self.index].properties.blockstun =
                                     self.hitbox.properties.blockstun;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hitbox.properties.blockstun += 1;
-                                action.hitboxes.as_mut().unwrap()[0].properties.blockstun =
+                                action.hitboxes.as_mut().unwrap()[self.index].properties.blockstun =
                                     self.hitbox.properties.blockstun;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hitboxes.as_mut().unwrap()[0].properties.blockstun =
+                                action.hitboxes.as_mut().unwrap()[self.index].properties.blockstun =
                                     self.old_hitbox.properties.blockstun;
                                 self.hitbox.properties.blockstun =
                                     self.old_hitbox.properties.blockstun;
@@ -254,16 +254,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, kb, 1, 99900, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hitbox.properties.knockback -= 100;
-                                action.hitboxes.as_mut().unwrap()[0].properties.knockback =
+                                action.hitboxes.as_mut().unwrap()[self.index].properties.knockback =
                                     self.hitbox.properties.knockback;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hitbox.properties.knockback += 100;
-                                action.hitboxes.as_mut().unwrap()[0].properties.knockback =
+                                action.hitboxes.as_mut().unwrap()[self.index].properties.knockback =
                                     self.hitbox.properties.knockback;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hitboxes.as_mut().unwrap()[0].properties.knockback =
+                                action.hitboxes.as_mut().unwrap()[self.index].properties.knockback =
                                     self.old_hitbox.properties.knockback;
                                 self.hitbox.properties.knockback =
                                     self.old_hitbox.properties.knockback;
@@ -276,16 +276,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, top, 1, 1000, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hitbox.value.top -= 1000;
-                                action.hitboxes.as_mut().unwrap()[0].value.top =
+                                action.hitboxes.as_mut().unwrap()[self.index].value.top =
                                     self.hitbox.value.top;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hitbox.value.top += 1000;
-                                action.hitboxes.as_mut().unwrap()[0].value.top =
+                                action.hitboxes.as_mut().unwrap()[self.index].value.top =
                                     self.hitbox.value.top;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hitboxes.as_mut().unwrap()[0].value.top =
+                                action.hitboxes.as_mut().unwrap()[self.index].value.top =
                                     self.old_hitbox.value.top;
                                 self.hitbox.value.top = self.old_hitbox.value.top;
                             }
@@ -297,16 +297,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, bottom, 1, 1000, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hitbox.value.bottom -= 1000;
-                                action.hitboxes.as_mut().unwrap()[0].value.bottom =
+                                action.hitboxes.as_mut().unwrap()[self.index].value.bottom =
                                     self.hitbox.value.bottom;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hitbox.value.bottom += 1000;
-                                action.hitboxes.as_mut().unwrap()[0].value.bottom =
+                                action.hitboxes.as_mut().unwrap()[self.index].value.bottom =
                                     self.hitbox.value.bottom;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hitboxes.as_mut().unwrap()[0].value.bottom =
+                                action.hitboxes.as_mut().unwrap()[self.index].value.bottom =
                                     self.old_hitbox.value.bottom;
                                 self.hitbox.value.bottom = self.old_hitbox.value.bottom;
                             }
@@ -318,16 +318,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, left, 1, 1000, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hitbox.value.left -= 1000;
-                                action.hitboxes.as_mut().unwrap()[0].value.left =
+                                action.hitboxes.as_mut().unwrap()[self.index].value.left =
                                     self.hitbox.value.left;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hitbox.value.left += 1000;
-                                action.hitboxes.as_mut().unwrap()[0].value.left =
+                                action.hitboxes.as_mut().unwrap()[self.index].value.left =
                                     self.hitbox.value.left;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hitboxes.as_mut().unwrap()[0].value.left =
+                                action.hitboxes.as_mut().unwrap()[self.index].value.left =
                                     self.old_hitbox.value.left;
                                 self.hitbox.value.left = self.old_hitbox.value.left;
                             }
@@ -339,16 +339,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, right, 1, 1000, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hitbox.value.right -= 1000;
-                                action.hitboxes.as_mut().unwrap()[0].value.right =
+                                action.hitboxes.as_mut().unwrap()[self.index].value.right =
                                     self.hitbox.value.right;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hitbox.value.right += 1000;
-                                action.hitboxes.as_mut().unwrap()[0].value.right =
+                                action.hitboxes.as_mut().unwrap()[self.index].value.right =
                                     self.hitbox.value.right;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hitboxes.as_mut().unwrap()[0].value.right =
+                                action.hitboxes.as_mut().unwrap()[self.index].value.right =
                                     self.old_hitbox.value.right;
                                 self.hitbox.value.right = self.old_hitbox.value.right;
                             }
@@ -372,16 +372,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y, 30, 8), None, startup, 1, 100, false);
                             if d.gui_label_button(rrect(x2 + 34, y, 10, 8), Some(c"-")) {
                                 self.hurtbox.start_frame -= 1;
-                                action.hurtboxes.as_mut().unwrap()[0].start_frame =
+                                action.hurtboxes.as_mut().unwrap()[self.index].start_frame =
                                     self.hurtbox.start_frame;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y, 10, 8), Some(c"+")) {
                                 self.hurtbox.start_frame += 1;
-                                action.hurtboxes.as_mut().unwrap()[0].start_frame =
+                                action.hurtboxes.as_mut().unwrap()[self.index].start_frame =
                                     self.hurtbox.start_frame;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y, 40, 8), Some(c"reset")) {
-                                action.hurtboxes.as_mut().unwrap()[0].start_frame =
+                                action.hurtboxes.as_mut().unwrap()[self.index].start_frame =
                                     self.old_hitbox.start_frame;
                                 self.hurtbox.start_frame = self.old_hitbox.start_frame;
                             }
@@ -391,16 +391,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, dur, 1, 100, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hurtbox.duration -= 1;
-                                action.hurtboxes.as_mut().unwrap()[0].duration =
+                                action.hurtboxes.as_mut().unwrap()[self.index].duration =
                                     self.hurtbox.duration;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hurtbox.duration += 1;
-                                action.hurtboxes.as_mut().unwrap()[0].duration =
+                                action.hurtboxes.as_mut().unwrap()[self.index].duration =
                                     self.hurtbox.duration;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hurtboxes.as_mut().unwrap()[0].duration =
+                                action.hurtboxes.as_mut().unwrap()[self.index].duration =
                                     self.old_hitbox.duration;
                                 self.hurtbox.duration = self.old_hitbox.duration;
                             }
@@ -412,16 +412,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, top, 1, 1000, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hurtbox.value.top -= 1000;
-                                action.hurtboxes.as_mut().unwrap()[0].value.top =
+                                action.hurtboxes.as_mut().unwrap()[self.index].value.top =
                                     self.hurtbox.value.top;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hurtbox.value.top += 1000;
-                                action.hurtboxes.as_mut().unwrap()[0].value.top =
+                                action.hurtboxes.as_mut().unwrap()[self.index].value.top =
                                     self.hurtbox.value.top;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hurtboxes.as_mut().unwrap()[0].value.top =
+                                action.hurtboxes.as_mut().unwrap()[self.index].value.top =
                                     self.old_hitbox.value.top;
                                 self.hurtbox.value.top = self.old_hitbox.value.top;
                             }
@@ -433,16 +433,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, bottom, 1, 1000, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hurtbox.value.bottom -= 1000;
-                                action.hurtboxes.as_mut().unwrap()[0].value.bottom =
+                                action.hurtboxes.as_mut().unwrap()[self.index].value.bottom =
                                     self.hurtbox.value.bottom;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hurtbox.value.bottom += 1000;
-                                action.hurtboxes.as_mut().unwrap()[0].value.bottom =
+                                action.hurtboxes.as_mut().unwrap()[self.index].value.bottom =
                                     self.hurtbox.value.bottom;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hurtboxes.as_mut().unwrap()[0].value.bottom =
+                                action.hurtboxes.as_mut().unwrap()[self.index].value.bottom =
                                     self.old_hitbox.value.bottom;
                                 self.hurtbox.value.bottom = self.old_hitbox.value.bottom;
                             }
@@ -454,16 +454,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, left, 1, 1000, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hurtbox.value.left -= 1000;
-                                action.hurtboxes.as_mut().unwrap()[0].value.left =
+                                action.hurtboxes.as_mut().unwrap()[self.index].value.left =
                                     self.hurtbox.value.left;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hurtbox.value.left += 1000;
-                                action.hurtboxes.as_mut().unwrap()[0].value.left =
+                                action.hurtboxes.as_mut().unwrap()[self.index].value.left =
                                     self.hurtbox.value.left;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hurtboxes.as_mut().unwrap()[0].value.left =
+                                action.hurtboxes.as_mut().unwrap()[self.index].value.left =
                                     self.old_hitbox.value.left;
                                 self.hurtbox.value.left = self.old_hitbox.value.left;
                             }
@@ -475,16 +475,16 @@ impl Editor {
                             d.gui_value_box(rrect(x2, y + z, 30, 8), None, right, 1, 1000, false);
                             if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                 self.hurtbox.value.right -= 1000;
-                                action.hurtboxes.as_mut().unwrap()[0].value.right =
+                                action.hurtboxes.as_mut().unwrap()[self.index].value.right =
                                     self.hurtbox.value.right;
                             }
                             if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                 self.hurtbox.value.right += 1000;
-                                action.hurtboxes.as_mut().unwrap()[0].value.right =
+                                action.hurtboxes.as_mut().unwrap()[self.index].value.right =
                                     self.hurtbox.value.right;
                             }
                             if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset")) {
-                                action.hurtboxes.as_mut().unwrap()[0].value.right =
+                                action.hurtboxes.as_mut().unwrap()[self.index].value.right =
                                     self.old_hitbox.value.right;
                                 self.hurtbox.value.right = self.old_hitbox.value.right;
                             }
@@ -504,16 +504,16 @@ impl Editor {
                                 d.gui_value_box(rrect(x2, y, 30, 8), None, startup, 1, 100, false);
                                 if d.gui_label_button(rrect(x2 + 34, y, 10, 8), Some(c"-")) {
                                     self.pushbox.start_frame -= 1;
-                                    action.hurtboxes.as_mut().unwrap()[0].start_frame =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].start_frame =
                                         self.pushbox.start_frame;
                                 }
                                 if d.gui_label_button(rrect(x2 + 46, y, 10, 8), Some(c"+")) {
                                     self.pushbox.start_frame += 1;
-                                    action.hurtboxes.as_mut().unwrap()[0].start_frame =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].start_frame =
                                         self.pushbox.start_frame;
                                 }
                                 if d.gui_label_button(rrect(x2 + 60, y, 40, 8), Some(c"reset")) {
-                                    action.hurtboxes.as_mut().unwrap()[0].start_frame =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].start_frame =
                                         self.old_hitbox.start_frame;
                                     self.pushbox.start_frame = self.old_hitbox.start_frame;
                                 }
@@ -523,17 +523,17 @@ impl Editor {
                                 d.gui_value_box(rrect(x2, y + z, 30, 8), None, dur, 1, 100, false);
                                 if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                     self.pushbox.duration -= 1;
-                                    action.hurtboxes.as_mut().unwrap()[0].duration =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].duration =
                                         self.pushbox.duration;
                                 }
                                 if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                     self.pushbox.duration += 1;
-                                    action.hurtboxes.as_mut().unwrap()[0].duration =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].duration =
                                         self.pushbox.duration;
                                 }
                                 if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset"))
                                 {
-                                    action.hurtboxes.as_mut().unwrap()[0].duration =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].duration =
                                         self.old_hitbox.duration;
                                     self.pushbox.duration = self.old_hitbox.duration;
                                 }
@@ -545,17 +545,17 @@ impl Editor {
                                 d.gui_value_box(rrect(x2, y + z, 30, 8), None, top, 1, 1000, false);
                                 if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                     self.pushbox.value.top -= 1000;
-                                    action.hurtboxes.as_mut().unwrap()[0].value.top =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].value.top =
                                         self.pushbox.value.top;
                                 }
                                 if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                     self.pushbox.value.top += 1000;
-                                    action.hurtboxes.as_mut().unwrap()[0].value.top =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].value.top =
                                         self.pushbox.value.top;
                                 }
                                 if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset"))
                                 {
-                                    action.hurtboxes.as_mut().unwrap()[0].value.top =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].value.top =
                                         self.old_hitbox.value.top;
                                     self.pushbox.value.top = self.old_hitbox.value.top;
                                 }
@@ -567,17 +567,17 @@ impl Editor {
                                 d.gui_value_box(rrect(x2, y + z, 30, 8), None, btm, 1, 1000, false);
                                 if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                     self.pushbox.value.bottom -= 1000;
-                                    action.hurtboxes.as_mut().unwrap()[0].value.bottom =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].value.bottom =
                                         self.pushbox.value.bottom;
                                 }
                                 if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                     self.pushbox.value.bottom += 1000;
-                                    action.hurtboxes.as_mut().unwrap()[0].value.bottom =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].value.bottom =
                                         self.pushbox.value.bottom;
                                 }
                                 if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset"))
                                 {
-                                    action.hurtboxes.as_mut().unwrap()[0].value.bottom =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].value.bottom =
                                         self.old_hitbox.value.bottom;
                                     self.pushbox.value.bottom = self.old_hitbox.value.bottom;
                                 }
@@ -589,17 +589,17 @@ impl Editor {
                                 d.gui_value_box(rrect(x2, y + z, 30, 8), None, lft, 1, 1000, false);
                                 if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                     self.pushbox.value.left -= 1000;
-                                    action.hurtboxes.as_mut().unwrap()[0].value.left =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].value.left =
                                         self.pushbox.value.left;
                                 }
                                 if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                     self.pushbox.value.left += 1000;
-                                    action.hurtboxes.as_mut().unwrap()[0].value.left =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].value.left =
                                         self.pushbox.value.left;
                                 }
                                 if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset"))
                                 {
-                                    action.hurtboxes.as_mut().unwrap()[0].value.left =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].value.left =
                                         self.old_hitbox.value.left;
                                     self.pushbox.value.left = self.old_hitbox.value.left;
                                 }
@@ -611,17 +611,17 @@ impl Editor {
                                 d.gui_value_box(rrect(x2, y + z, 30, 8), None, rgt, 1, 1000, false);
                                 if d.gui_label_button(rrect(x2 + 34, y + z, 10, 8), Some(c"-")) {
                                     self.pushbox.value.right -= 1000;
-                                    action.hurtboxes.as_mut().unwrap()[0].value.right =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].value.right =
                                         self.pushbox.value.right;
                                 }
                                 if d.gui_label_button(rrect(x2 + 46, y + z, 10, 8), Some(c"+")) {
                                     self.pushbox.value.right += 1000;
-                                    action.hurtboxes.as_mut().unwrap()[0].value.right =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].value.right =
                                         self.pushbox.value.right;
                                 }
                                 if d.gui_label_button(rrect(x2 + 60, y + z, 40, 8), Some(c"reset"))
                                 {
-                                    action.hurtboxes.as_mut().unwrap()[0].value.right =
+                                    action.hurtboxes.as_mut().unwrap()[self.index].value.right =
                                         self.old_hitbox.value.right;
                                     self.pushbox.value.right = self.old_hitbox.value.right;
                                 }
@@ -723,9 +723,11 @@ impl State {
 
 #[derive(Sequence)]
 enum Property {
+    // Values
     Hitbox,
     Hurtbox,
     Pushbox,
+    // Proximity,
 }
 
 impl Property {
