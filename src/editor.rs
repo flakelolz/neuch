@@ -138,11 +138,11 @@ impl Editor {
         }
 
         for (_, (character, player)) in world.query_mut::<(&mut Character, &Player)>() {
-            if player == &Player::One {
-                self.name.clone_from(&character.name);
-                let map = &mut character.action_map;
-                let action = map.get_mut(&self.state.name());
-                if let Some(action) = action {
+            self.name.clone_from(&character.name);
+            let map = &mut character.action_map;
+            let action = map.get_mut(&self.state.name());
+            if let Some(action) = action {
+                if player == &Player::One {
                     match self.property {
                         // NOTE: VALUES
                         Property::Values => {
@@ -808,6 +808,21 @@ impl Editor {
                                 proximity.value.right = self.old_proximity.value.right;
                             }
                         }
+                    }
+                }
+                if player == &Player::Two {
+                    action.looping = self.looping;
+                    if let Some(hitboxes) = &mut action.hitboxes {
+                        hitboxes[self.index] = self.hitbox;
+                    }
+                    if let Some(hurboxes) = &mut action.hurtboxes {
+                        hurboxes[self.index] = self.hurtbox;
+                    }
+                    if let Some(pushboxes) = &mut action.pushboxes {
+                        pushboxes[self.index] = self.pushbox;
+                    }
+                    if let Some(modifiers) = &mut action.modifiers {
+                        modifiers.proximity = Some(self.proximity);
                     }
                 }
             }
