@@ -389,10 +389,19 @@ impl Editor {
                             }
 
                             if d.gui_button(
-                                rrect(self.width - 50, self.height - 10, 40, 10),
+                                rrect(self.width - 80, self.height - 10, 30, 10),
                                 Some(c"Add"),
                             ) {
                                 action.hitboxes.as_mut().unwrap().push(self.hitbox);
+                                self.hitboxes_length = action.hitboxes.as_ref().unwrap().len();
+                                self.index = self.hitboxes_length - 1;
+                                self.loaded = false;
+                            }
+                            if d.gui_button(
+                                rrect(self.width - 47, self.height - 10, 45, 10),
+                                Some(c"Remove"),
+                            ) && self.hitboxes_length > 1 {
+                                action.hitboxes.as_mut().unwrap().pop();
                                 self.hitboxes_length = action.hitboxes.as_ref().unwrap().len();
                                 self.index = self.hitboxes_length - 1;
                                 self.loaded = false;
@@ -535,10 +544,19 @@ impl Editor {
                             }
 
                             if d.gui_button(
-                                rrect(self.width - 50, self.height - 10, 40, 10),
+                                rrect(self.width - 80, self.height - 10, 30, 10),
                                 Some(c"Add"),
                             ) {
                                 action.hurtboxes.as_mut().unwrap().push(self.hurtbox);
+                                self.hurtboxes_length = action.hurtboxes.as_ref().unwrap().len();
+                                self.index = self.hurtboxes_length - 1;
+                                self.loaded = false;
+                            }
+                            if d.gui_button(
+                                rrect(self.width - 47, self.height - 10, 45, 10),
+                                Some(c"Remove"),
+                            ) && self.hurtboxes_length > 1 {
+                                action.hurtboxes.as_mut().unwrap().pop();
                                 self.hurtboxes_length = action.hurtboxes.as_ref().unwrap().len();
                                 self.index = self.hurtboxes_length - 1;
                                 self.loaded = false;
@@ -812,7 +830,7 @@ impl Editor {
                 }
             }
         }
-        if d.gui_button(rrect(x + 70, self.height - 10, 30, 10), Some(c"2P")) {
+        if d.gui_button(rrect(x + 65, self.height - 10, 20, 10), Some(c"2P")) {
             let mut players = world
                 .query_mut::<&mut Character>()
                 .into_iter()
