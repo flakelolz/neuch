@@ -68,8 +68,8 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
                     reaction.hitstun = hit_event.properties.hitstun;
                     reaction.knockback = hit_event.properties.knockback;
 
-                    match hit_event.properties.reaction_type {
-                        ReactionType::StandMid => *next = Some(Box::new(reacting::HitStandMid)),
+                    match hit_event.properties.strength {
+                        Strength::Mid => *next = Some(Box::new(reacting::HitStandMid)),
                         _ => (),
                     }
 
@@ -77,15 +77,25 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
                 } else if hit_event.proximity.is_some() {
                     if !reaction.block() {
                         reaction.blockstun = hit_event.properties.blockstun;
-                        state.context.ctx.next = Some(Box::new(reacting::GrdStandMidPre));
+                        if buffer.current().down {
+                            state.context.ctx.next = Some(Box::new(reacting::GrdCrouchPre));
+                        } else {
+                            state.context.ctx.next = Some(Box::new(reacting::GrdStandPre));
+                        }
                     }
                 // Guard
                 } else {
                     reaction.hitstop = hit_event.properties.hitstop;
                     reaction.blockstun = hit_event.properties.blockstun;
                     reaction.knockback = hit_event.properties.knockback;
-                    match hit_event.properties.reaction_type {
-                        ReactionType::StandMid => *next = Some(Box::new(reacting::GrdStandMidEnd)),
+                    match hit_event.properties.strength {
+                        Strength::Mid => {
+                            if buffer.current().down {
+                                *next = Some(Box::new(reacting::GrdCrouchEnd))
+                            } else {
+                                *next = Some(Box::new(reacting::GrdStandEnd))
+                            }
+                        }
                         _ => (),
                     }
                 }
@@ -122,7 +132,7 @@ pub fn hit_animation(animator: &mut Animator, context: &mut Context, timeline: &
     }
 }
 
-pub fn block_animation(animator: &mut Animator, context: &mut Context, timeline: &[Keyframe]) {
+pub fn guard_animation(animator: &mut Animator, context: &mut Context, timeline: &[Keyframe]) {
     context.duration = context.reaction.blockstun;
     let length = timeline.len();
     let avg = context.reaction.blockstun / length as u32;

@@ -107,7 +107,7 @@ impl Collisions {
                         defender: *defender,
                         properties: HitProperties {
                             hit_type: hitbox.properties.hit_type,
-                            reaction_type: hitbox.properties.reaction_type,
+                            strength: hitbox.properties.strength,
                             hitstop: hitbox.properties.hitstop,
                             hitstun: hitbox.properties.hitstun,
                             blockstun: hitbox.properties.blockstun,

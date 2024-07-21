@@ -590,7 +590,7 @@
           "duration": 2,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 4,
             "hitstun": 10,
             "blockstun": 8,
@@ -695,7 +695,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 6,
             "hitstun": 17,
             "blockstun": 12,
@@ -714,7 +714,7 @@
         "potisions": null,
         "proximity": {
           "start_frame": 1,
-          "duration": 7,
+          "duration": 9,
           "value": {
             "top": 20000,
             "left": 30000,
@@ -806,7 +806,7 @@
           "duration": 1,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
@@ -1004,7 +1004,7 @@
           "duration": 4,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 4,
             "hitstun": 17,
             "blockstun": 12,
@@ -1101,7 +1101,7 @@
           "duration": 4,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 6,
             "hitstun": 23,
             "blockstun": 19,
@@ -1283,7 +1283,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 8,
             "hitstun": 28,
             "blockstun": 22,
@@ -1366,7 +1366,7 @@
         ],
         "proximity": {
           "start_frame": 1,
-          "duration": 7,
+          "duration": 12,
           "value": {
             "top": 20000,
             "left": 30000,
@@ -1719,9 +1719,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": 35000,
+            "top": 0,
             "left": -30000,
-            "bottom": -69000,
+            "bottom": -70000,
             "right": 25000
           }
         }
@@ -1732,7 +1732,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 4,
             "hitstun": 12,
             "blockstun": 12,
@@ -1831,9 +1831,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": 35000,
+            "top": 0,
             "left": -30000,
-            "bottom": -69000,
+            "bottom": -70000,
             "right": 25000
           }
         }
@@ -1844,7 +1844,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 2,
             "hitstun": 17,
             "blockstun": 12,
@@ -1928,9 +1928,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": 35000,
+            "top": 0,
             "left": -30000,
-            "bottom": -69000,
+            "bottom": -70000,
             "right": 25000
           }
         }
@@ -1941,7 +1941,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
@@ -2053,9 +2053,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": 35000,
+            "top": 0,
             "left": -30000,
-            "bottom": -69000,
+            "bottom": -70000,
             "right": 25000
           }
         }
@@ -2066,7 +2066,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
@@ -2165,9 +2165,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": 35000,
+            "top": 0,
             "left": -30000,
-            "bottom": -69000,
+            "bottom": -70000,
             "right": 25000
           }
         }
@@ -2178,7 +2178,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
@@ -2333,9 +2333,9 @@
           "duration": 100,
           "invul_type": "None",
           "value": {
-            "top": 35000,
+            "top": 0,
             "left": -30000,
-            "bottom": -69000,
+            "bottom": -70000,
             "right": 25000
           }
         }
@@ -2346,7 +2346,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
@@ -3045,7 +3045,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
@@ -3152,7 +3152,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
@@ -3231,7 +3231,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
@@ -3310,7 +3310,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
@@ -3396,7 +3396,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
@@ -3482,7 +3482,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "reaction_type": "StandMid",
+            "strength": "Mid",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
@@ -3633,7 +3633,7 @@
       ]
     },
     {
-      "name": "Rxn GrdStandMidPre",
+      "name": "Rxn GrdStandPre",
       "total": 0,
       "looping": false,
       "pushboxes": null,
@@ -3677,7 +3677,7 @@
       ]
     },
     {
-      "name": "Rxn GrdStandMidEnd",
+      "name": "Rxn GrdStandEnd",
       "total": 0,
       "looping": false,
       "pushboxes": null,
@@ -3714,6 +3714,87 @@
         {
           "x": 768.0,
           "y": 7392.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn GrdCrouchPre",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -69000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 7616.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 7616.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 7616.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn GrdCrouchEnd",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -69000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 7840.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 7840.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0

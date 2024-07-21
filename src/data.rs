@@ -27,7 +27,7 @@ pub enum HitType {
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
 pub struct HitProperties {
     pub hit_type: HitType,
-    pub reaction_type: ReactionType,
+    pub strength: Strength,
     pub hitstop: u32,
     pub hitstun: u32,
     pub blockstun: u32,
@@ -35,13 +35,11 @@ pub struct HitProperties {
 }
 
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Deserialize, Serialize)]
-pub enum ReactionType {
+pub enum Strength {
     #[default]
-    StandWeak,
-    StandMid,
-    StandStrong,
-    StandOverhead,
-    CrouchWeak,
+    Weak,
+    Mid,
+    Strong,
 }
 
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
