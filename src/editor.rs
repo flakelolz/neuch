@@ -53,7 +53,7 @@ impl Editor {
     pub fn show_editor(
         &mut self,
         world: &mut World,
-        d: &mut RaylibTextureMode<RaylibDrawHandle>,
+        d: &mut RaylibMode2D<RaylibDrawHandle>,
         debug: &Debug,
     ) {
         if !debug.editor {
@@ -163,8 +163,8 @@ impl Editor {
                             if action.hitboxes.is_none() {
                                 return;
                             }
+                            let hitboxes = action.hitboxes.as_mut().unwrap();
                             if !self.loaded {
-                                let hitboxes = action.hitboxes.as_ref().unwrap();
                                 self.hitbox = hitboxes[self.index];
                                 self.old_hitbox = self.hitbox;
                                 self.hitboxes_length = hitboxes.len();
@@ -173,7 +173,7 @@ impl Editor {
                             let y = 36;
                             let z = 12;
                             d.gui_label(rrect(x, y, 60, 8), Some(c"Startup"));
-                            let startup = &mut (self.hitbox.start_frame as i32);
+                            let startup = &mut (hitboxes[self.index].start_frame as i32);
                             d.gui_value_box(rrect(x2, y, 30, 8), None, startup, 1, 100, false);
                             if d.gui_label_button(rrect(x2 + 34, y, 10, 8), Some(c"-")) {
                                 self.hitbox.start_frame -= 1;
@@ -810,20 +810,18 @@ impl Editor {
                         }
                     }
                 }
-                if player == &Player::Two {
-                    action.looping = self.looping;
-                    if let Some(hitboxes) = &mut action.hitboxes {
-                        hitboxes[self.index] = self.hitbox;
-                    }
-                    if let Some(hurboxes) = &mut action.hurtboxes {
-                        hurboxes[self.index] = self.hurtbox;
-                    }
-                    if let Some(pushboxes) = &mut action.pushboxes {
-                        pushboxes[self.index] = self.pushbox;
-                    }
-                    if let Some(modifiers) = &mut action.modifiers {
-                        modifiers.proximity = Some(self.proximity);
-                    }
+            }
+        }
+        if d.gui_button(rrect(x + 70, self.height - 10, 30, 10), Some(c"2P")) {
+            let mut players = world
+                .query_mut::<&mut Character>()
+                .into_iter()
+                .collect::<Vec<_>>();
+            let split = &mut players.split_at_mut(1);
+            let (p1, p2) = split;
+            if let Some((_, a_character)) = p1.get_mut(0) {
+                if let Some((_, b_character)) = p2.get_mut(0) {
+                    b_character.action_map.clone_from(&a_character.action_map);
                 }
             }
         }

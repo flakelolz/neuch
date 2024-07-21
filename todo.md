@@ -33,6 +33,8 @@
 - [ ] Implement all hit reaction states
 - [ ] Make an editor for character data
 - [x] Change font
+- [x] Make editor work while paused
+- [x] Be able to see changes instantly while paused
 
 # Dash should fail
 - [x] *4* > *5* > *6* (walk back and forth repeatedly)

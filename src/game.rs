@@ -83,17 +83,17 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
                 show_state(&world, &mut d, &debug);
                 show_context(&world, &mut d, &debug);
                 show_inputs(&world, &mut d, &debug);
-                show_proximity_boxes(&world, &mut d, &debug);
-                show_pushboxes(&world, &mut d, &debug);
-                show_hurtboxes(&world, &mut d, &debug);
-                show_hitboxes(&world, &mut d, &debug);
-                show_position(&world, &mut d, &debug);
             }
-            editor.show_editor(&mut world, &mut d, &debug);
-            d.draw_fps(WIDTH - 100, 10);
         }
 
         let mut d = d.begin_mode2D(camera);
         rendering(&mut target, &mut ui_target, &mut d);
+        d.draw_fps(WIDTH - 100, 10);
+        show_proximity_boxes(&world, &mut d, &debug);
+        show_pushboxes(&world, &mut d, &debug);
+        show_hurtboxes(&world, &mut d, &debug);
+        show_hitboxes(&world, &mut d, &debug);
+        show_position(&world, &mut d, &debug);
+        editor.show_editor(&mut world, &mut d, &debug);
     }
 }
