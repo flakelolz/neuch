@@ -2610,7 +2610,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdStandPre 0.aseprite",
+    "filename": "Ken #Rxn CrouchWeak 0.aseprite",
     "frame": { "x": 0, "y": 8288, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2619,7 +2619,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdStandPre 1.aseprite",
+    "filename": "Ken #Rxn CrouchWeak 1.aseprite",
     "frame": { "x": 384, "y": 8288, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2628,7 +2628,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdStandPre 2.aseprite",
+    "filename": "Ken #Rxn CrouchWeak 2.aseprite",
     "frame": { "x": 768, "y": 8288, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2637,7 +2637,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdStandEnd 0.aseprite",
+    "filename": "Ken #Rxn CrouchMid 0.aseprite",
     "frame": { "x": 0, "y": 8512, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2646,7 +2646,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdStandEnd 1.aseprite",
+    "filename": "Ken #Rxn CrouchMid 1.aseprite",
     "frame": { "x": 384, "y": 8512, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2655,7 +2655,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdStandEnd 2.aseprite",
+    "filename": "Ken #Rxn CrouchMid 2.aseprite",
     "frame": { "x": 768, "y": 8512, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2664,7 +2664,16 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdCrouchPre 0.aseprite",
+    "filename": "Ken #Rxn CrouchMid 3.aseprite",
+    "frame": { "x": 1152, "y": 8512, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn CrouchStrong 0.aseprite",
     "frame": { "x": 0, "y": 8736, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2673,7 +2682,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdCrouchPre 1.aseprite",
+    "filename": "Ken #Rxn CrouchStrong 1.aseprite",
     "frame": { "x": 384, "y": 8736, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2682,7 +2691,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdCrouchPre 2.aseprite",
+    "filename": "Ken #Rxn CrouchStrong 2.aseprite",
     "frame": { "x": 768, "y": 8736, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2691,7 +2700,34 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdCrouchEnd 0.aseprite",
+    "filename": "Ken #Rxn CrouchStrong 3.aseprite",
+    "frame": { "x": 1152, "y": 8736, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn CrouchStrong 4.aseprite",
+    "frame": { "x": 1536, "y": 8736, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn CrouchStrong 5.aseprite",
+    "frame": { "x": 1920, "y": 8736, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn GrdStandPre 0.aseprite",
     "frame": { "x": 0, "y": 8960, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2700,8 +2736,89 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdCrouchEnd 1.aseprite",
+    "filename": "Ken #Rxn GrdStandPre 1.aseprite",
     "frame": { "x": 384, "y": 8960, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn GrdStandPre 2.aseprite",
+    "frame": { "x": 768, "y": 8960, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn GrdStandEnd 0.aseprite",
+    "frame": { "x": 0, "y": 9184, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn GrdStandEnd 1.aseprite",
+    "frame": { "x": 384, "y": 9184, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn GrdStandEnd 2.aseprite",
+    "frame": { "x": 768, "y": 9184, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn GrdCrouchPre 0.aseprite",
+    "frame": { "x": 0, "y": 9408, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn GrdCrouchPre 1.aseprite",
+    "frame": { "x": 384, "y": 9408, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn GrdCrouchPre 2.aseprite",
+    "frame": { "x": 768, "y": 9408, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn GrdCrouchEnd 0.aseprite",
+    "frame": { "x": 0, "y": 9632, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn GrdCrouchEnd 1.aseprite",
+    "frame": { "x": 384, "y": 9632, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2714,7 +2831,7 @@
   "version": "1.3.7-x64",
   "image": "Ken.png",
   "format": "RGBA8888",
-  "size": { "w": 4992, "h": 9184 },
+  "size": { "w": 4992, "h": 9856 },
   "scale": "1",
   "frameTags": [
    { "name": "St Idle", "from": 0, "to": 9, "direction": "forward", "color": "#000000ff" },
@@ -2757,10 +2874,13 @@
    { "name": "Rxn LowerWeak", "from": 273, "to": 276, "direction": "forward", "color": "#000000ff" },
    { "name": "Rxn LowerMid", "from": 282, "to": 285, "direction": "forward", "color": "#000000ff" },
    { "name": "Rxn LowerStrong", "from": 286, "to": 294, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn GrdStandPre", "from": 296, "to": 298, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn GrdStandEnd", "from": 299, "to": 301, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn GrdCrouchPre", "from": 302, "to": 304, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn GrdCrouchEnd", "from": 305, "to": 306, "direction": "forward", "color": "#000000ff" }
+   { "name": "Rxn CrouchWeak", "from": 299, "to": 301, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn CrouchMid", "from": 302, "to": 305, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn CrouchStrong", "from": 306, "to": 311, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn GrdStandPre", "from": 312, "to": 314, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn GrdStandEnd", "from": 315, "to": 317, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn GrdCrouchPre", "from": 318, "to": 320, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn GrdCrouchEnd", "from": 321, "to": 322, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },

@@ -76,7 +76,7 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
                         }
                         Strength::Strong => {
                             if buffer.current().down {
-                                // *next = Some(Box::new(reacting::CrouchStrong)),
+                                *next = Some(Box::new(reacting::CrouchStrong));
                             } else {
                                 match hit_event.height {
                                     Height::Upper => *next = Some(Box::new(reacting::UpperStrong)),
@@ -86,7 +86,7 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
                         }
                         Strength::Mid => {
                             if buffer.current().down {
-                                // *next = Some(Box::new(reacting::CrouchMid)),
+                                *next = Some(Box::new(reacting::CrouchMid));
                             } else {
                                 match hit_event.height {
                                     Height::Upper => *next = Some(Box::new(reacting::UpperMid)),
@@ -96,7 +96,7 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
                         }
                         Strength::Weak => {
                             if buffer.current().down {
-                                // *next = Some(Box::new(reacting::CrouchWeak)),
+                                *next = Some(Box::new(reacting::CrouchWeak));
                             } else {
                                 match hit_event.height {
                                     Height::Upper => *next = Some(Box::new(reacting::UpperWeak)),

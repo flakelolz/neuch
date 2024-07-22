@@ -634,9 +634,9 @@
             "hit_type": "Ground",
             "strength": "Weak",
             "hitstop": 4,
-            "hitstun": 10,
+            "hitstun": 6,
             "blockstun": 8,
-            "knockback": 7000
+            "knockback": 8000
           },
           "value": {
             "top": 19000,
@@ -1330,7 +1330,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "strength": "Mid",
+            "strength": "Strong",
             "hitstop": 8,
             "hitstun": 26,
             "blockstun": 21,
@@ -2119,14 +2119,14 @@
       ],
       "hitboxes": [
         {
-          "start_frame": 7,
-          "duration": 5,
+          "start_frame": 6,
+          "duration": 3,
           "properties": {
             "hit_type": "Ground",
             "strength": "Weak",
-            "hitstop": 8,
-            "hitstun": 17,
-            "blockstun": 12,
+            "hitstop": 6,
+            "hitstun": 8,
+            "blockstun": 7,
             "knockback": 8000
           },
           "value": {
@@ -2240,7 +2240,7 @@
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
-            "knockback": 8000
+            "knockback": 9500
           },
           "value": {
             "top": -56000,
@@ -4026,7 +4026,7 @@
       ]
     },
     {
-      "name": "Rxn GrdStandPre",
+      "name": "Rxn CrouchWeak",
       "total": 0,
       "looping": false,
       "pushboxes": null,
@@ -4064,6 +4064,169 @@
         {
           "x": 768.0,
           "y": 8288.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn CrouchMid",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -69000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 8512.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 8512.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 8512.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1152.0,
+          "y": 8512.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn CrouchStrong",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -69000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 8736.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 8736.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 8736.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1152.0,
+          "y": 8736.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1536.0,
+          "y": 8736.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1920.0,
+          "y": 8736.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn GrdStandPre",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -69000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 8960.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 8960.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 8960.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -4094,21 +4257,21 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 8512.0,
+          "y": 9184.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 8512.0,
+          "y": 9184.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 768.0,
-          "y": 8512.0,
+          "y": 9184.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -4139,21 +4302,21 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 8736.0,
+          "y": 9408.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 8736.0,
+          "y": 9408.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 768.0,
-          "y": 8736.0,
+          "y": 9408.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -4184,14 +4347,14 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 8960.0,
+          "y": 9632.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 8960.0,
+          "y": 9632.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
