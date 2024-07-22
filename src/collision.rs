@@ -78,6 +78,7 @@ impl Collisions {
                         attacker: *id,
                         defender: *defender,
                         proximity: Some(*proximity),
+                        height: hurtbox.height,
                         properties: HitProperties {
                             blockstun: proximity.duration,
                             ..Default::default()
@@ -105,6 +106,7 @@ impl Collisions {
                     hit_events.push(HitEvent {
                         attacker: *attacker,
                         defender: *defender,
+                        height: hurtbox.height,
                         properties: HitProperties {
                             hit_type: hitbox.properties.hit_type,
                             strength: hitbox.properties.strength,

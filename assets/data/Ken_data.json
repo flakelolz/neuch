@@ -27,12 +27,49 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -120,6 +157,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -220,6 +258,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -320,6 +359,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -470,6 +510,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -575,6 +616,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -590,7 +632,7 @@
           "duration": 2,
           "properties": {
             "hit_type": "Ground",
-            "strength": "Mid",
+            "strength": "Weak",
             "hitstop": 4,
             "hitstun": 10,
             "blockstun": 8,
@@ -680,6 +722,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -692,7 +735,7 @@
       "hitboxes": [
         {
           "start_frame": 7,
-          "duration": 5,
+          "duration": 6,
           "properties": {
             "hit_type": "Ground",
             "strength": "Mid",
@@ -791,6 +834,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -806,7 +850,7 @@
           "duration": 1,
           "properties": {
             "hit_type": "Ground",
-            "strength": "Mid",
+            "strength": "Strong",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
@@ -989,6 +1033,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -1086,6 +1131,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -1268,6 +1314,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -1285,8 +1332,8 @@
             "hit_type": "Ground",
             "strength": "Mid",
             "hitstop": 8,
-            "hitstun": 28,
-            "blockstun": 22,
+            "hitstun": 26,
+            "blockstun": 21,
             "knockback": 10000
           },
           "value": {
@@ -1485,6 +1532,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -1542,6 +1590,7 @@
         {
           "start_frame": 0,
           "duration": 2,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -1553,6 +1602,7 @@
         {
           "start_frame": 2,
           "duration": 2,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 15000,
@@ -1564,6 +1614,7 @@
         {
           "start_frame": 4,
           "duration": 6,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": -800,
@@ -1622,6 +1673,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 0,
@@ -1673,6 +1725,7 @@
         {
           "start_frame": 0,
           "duration": 4,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 0,
@@ -1717,6 +1770,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 0,
@@ -1732,7 +1786,7 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "strength": "Mid",
+            "strength": "Weak",
             "hitstop": 4,
             "hitstun": 12,
             "blockstun": 12,
@@ -1829,6 +1883,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 0,
@@ -1926,6 +1981,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 0,
@@ -1941,16 +1997,16 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "strength": "Mid",
+            "strength": "Strong",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
             "knockback": 8000
           },
           "value": {
-            "top": 15000,
+            "top": 2000,
             "left": 30000,
-            "bottom": -1000,
+            "bottom": -52000,
             "right": 75000
           }
         }
@@ -2051,6 +2107,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 0,
@@ -2066,17 +2123,17 @@
           "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "strength": "Mid",
+            "strength": "Weak",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
             "knockback": 8000
           },
           "value": {
-            "top": 15000,
-            "left": 30000,
-            "bottom": -1000,
-            "right": 75000
+            "top": -54000,
+            "left": 26000,
+            "bottom": -69000,
+            "right": 69000
           }
         }
       ],
@@ -2163,6 +2220,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 0,
@@ -2185,10 +2243,28 @@
             "knockback": 8000
           },
           "value": {
-            "top": 15000,
-            "left": 30000,
-            "bottom": -1000,
-            "right": 75000
+            "top": -56000,
+            "left": 41000,
+            "bottom": -70000,
+            "right": 80000
+          }
+        },
+        {
+          "start_frame": 7,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "strength": "Mid",
+            "hitstop": 8,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": -58000,
+            "left": 82000,
+            "bottom": -70000,
+            "right": 93000
           }
         }
       ],
@@ -2331,6 +2407,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 0,
@@ -2541,6 +2618,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -2611,6 +2689,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -2652,6 +2731,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -2791,6 +2871,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -2888,6 +2969,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -2974,6 +3056,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -3582,7 +3665,7 @@
       ]
     },
     {
-      "name": "Rxn HitStandMid",
+      "name": "Rxn UpperWeak",
       "total": 0,
       "looping": false,
       "pushboxes": null,
@@ -3590,6 +3673,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -3633,7 +3717,7 @@
       ]
     },
     {
-      "name": "Rxn GrdStandPre",
+      "name": "Rxn UpperMid",
       "total": 0,
       "looping": false,
       "pushboxes": null,
@@ -3641,6 +3725,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -3670,6 +3755,315 @@
         {
           "x": 768.0,
           "y": 7168.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1152.0,
+          "y": 7168.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn UpperStrong",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -69000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 7392.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 7392.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 7392.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1152.0,
+          "y": 7392.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1536.0,
+          "y": 7392.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1920.0,
+          "y": 7392.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn LowerWeak",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -69000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 7616.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 7616.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 7616.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1152.0,
+          "y": 7616.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn LowerMid",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -69000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 7840.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 7840.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 7840.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1152.0,
+          "y": 7840.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn LowerStrong",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -69000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 8064.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 8064.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 8064.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1152.0,
+          "y": 8064.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1536.0,
+          "y": 8064.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1920.0,
+          "y": 8064.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 2304.0,
+          "y": 8064.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 2688.0,
+          "y": 8064.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 3072.0,
+          "y": 8064.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn GrdStandPre",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 35000,
+            "left": -30000,
+            "bottom": -69000,
+            "right": 25000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 8288.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 8288.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 8288.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -3685,6 +4079,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -3699,21 +4094,21 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 7392.0,
+          "y": 8512.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 7392.0,
+          "y": 8512.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 768.0,
-          "y": 7392.0,
+          "y": 8512.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -3729,6 +4124,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -3743,21 +4139,21 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 7616.0,
+          "y": 8736.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 7616.0,
+          "y": 8736.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 768.0,
-          "y": 7616.0,
+          "y": 8736.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -3773,6 +4169,7 @@
         {
           "start_frame": 0,
           "duration": 100,
+          "height": "Upper",
           "invul_type": "None",
           "value": {
             "top": 35000,
@@ -3787,14 +4184,14 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 7840.0,
+          "y": 8960.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 7840.0,
+          "y": 8960.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0

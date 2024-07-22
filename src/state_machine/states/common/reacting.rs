@@ -1,13 +1,13 @@
 use crate::prelude::*;
 
-pub struct HitStandMid;
-impl State for HitStandMid {
+pub struct UpperWeak;
+impl State for UpperWeak {
     fn name(&self) -> String {
-        "Rxn HitStandMid".to_owned()
+        "Rxn UpperWeak".to_owned()
     }
 
     fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
-        println!("Rxn HitStandMid on_enter");
+        println!("Rxn UpperWeak on_enter");
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
@@ -20,10 +20,129 @@ impl State for HitStandMid {
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
-        println!("Rxn HitStandMid on_exit");
+        println!("Rxn UpperWeak on_exit");
     }
 }
 
+pub struct UpperMid;
+impl State for UpperMid {
+    fn name(&self) -> String {
+        "Rxn UpperMid".to_owned()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn UpperMid on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if context.elapsed >= context.duration {
+            if jump_transitions(context, buffer, physics) {
+                return;
+            }
+            context.ctx.next = Some(Box::new(standing::Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn UpperMid on_exit");
+    }
+}
+
+pub struct UpperStrong;
+impl State for UpperStrong {
+    fn name(&self) -> String {
+        "Rxn UpperStrong".to_owned()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn UpperStrong on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if context.elapsed >= context.duration {
+            if jump_transitions(context, buffer, physics) {
+                return;
+            }
+            context.ctx.next = Some(Box::new(standing::Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn UpperStrong on_exit");
+    }
+}
+
+pub struct LowerWeak;
+impl State for LowerWeak {
+    fn name(&self) -> String {
+        "Rxn LowerWeak".to_owned()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn LowerWeak on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if context.elapsed >= context.duration {
+            if jump_transitions(context, buffer, physics) {
+                return;
+            }
+            context.ctx.next = Some(Box::new(standing::Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn LowerWeak on_exit");
+    }
+}
+
+pub struct LowerMid;
+impl State for LowerMid {
+    fn name(&self) -> String {
+        "Rxn LowerMid".to_owned()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn LowerMid on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if context.elapsed >= context.duration {
+            if jump_transitions(context, buffer, physics) {
+                return;
+            }
+            context.ctx.next = Some(Box::new(standing::Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn LowerMid on_exit");
+    }
+}
+
+pub struct LowerStrong;
+impl State for LowerStrong {
+    fn name(&self) -> String {
+        "Rxn LowerStrong".to_owned()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn LowerStrong on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if context.elapsed >= context.duration {
+            if jump_transitions(context, buffer, physics) {
+                return;
+            }
+            context.ctx.next = Some(Box::new(standing::Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn LowerStrong on_exit");
+    }
+}
 pub struct GrdStandPre;
 impl State for GrdStandPre {
     fn name(&self) -> String {

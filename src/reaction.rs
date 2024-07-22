@@ -29,14 +29,13 @@ impl Reaction {
 pub struct HitEvent {
     pub attacker: Entity,
     pub defender: Entity,
+    pub height: Height,
     pub properties: HitProperties,
     pub proximity: Option<ProximityBox>,
 }
 
 pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
-    for (id, (state, buffer, physics)) in
-        world.query_mut::<(&mut StateMachine, &mut InputBuffer, &mut Physics)>()
-    {
+    for (id, (state, buffer)) in world.query_mut::<(&mut StateMachine, &mut InputBuffer)>() {
         let reaction = &mut state.context.reaction;
         if reaction.hitstop > 0 {
             reaction.hitstop -= 1;
@@ -69,8 +68,42 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
                     reaction.knockback = hit_event.properties.knockback;
 
                     match hit_event.properties.strength {
-                        Strength::Mid => *next = Some(Box::new(reacting::HitStandMid)),
-                        _ => (),
+                        Strength::Spin => {
+                            todo!();
+                        }
+                        Strength::Rising => {
+                            todo!();
+                        }
+                        Strength::Strong => {
+                            if buffer.current().down {
+                                // *next = Some(Box::new(reacting::CrouchStrong)),
+                            } else {
+                                match hit_event.height {
+                                    Height::Upper => *next = Some(Box::new(reacting::UpperStrong)),
+                                    Height::Lower => *next = Some(Box::new(reacting::LowerStrong)),
+                                }
+                            }
+                        }
+                        Strength::Mid => {
+                            if buffer.current().down {
+                                // *next = Some(Box::new(reacting::CrouchMid)),
+                            } else {
+                                match hit_event.height {
+                                    Height::Upper => *next = Some(Box::new(reacting::UpperMid)),
+                                    Height::Lower => *next = Some(Box::new(reacting::LowerMid)),
+                                }
+                            }
+                        }
+                        Strength::Weak => {
+                            if buffer.current().down {
+                                // *next = Some(Box::new(reacting::CrouchWeak)),
+                            } else {
+                                match hit_event.height {
+                                    Height::Upper => *next = Some(Box::new(reacting::UpperWeak)),
+                                    Height::Lower => *next = Some(Box::new(reacting::LowerWeak)),
+                                }
+                            }
+                        }
                     }
 
                 // Proximity block
@@ -88,15 +121,10 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
                     reaction.hitstop = hit_event.properties.hitstop;
                     reaction.blockstun = hit_event.properties.blockstun;
                     reaction.knockback = hit_event.properties.knockback;
-                    match hit_event.properties.strength {
-                        Strength::Mid => {
-                            if buffer.current().down {
-                                *next = Some(Box::new(reacting::GrdCrouchEnd))
-                            } else {
-                                *next = Some(Box::new(reacting::GrdStandEnd))
-                            }
-                        }
-                        _ => (),
+                    if buffer.current().down {
+                        *next = Some(Box::new(reacting::GrdCrouchEnd))
+                    } else {
+                        *next = Some(Box::new(reacting::GrdStandEnd))
                     }
                 }
             }

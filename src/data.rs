@@ -1,3 +1,5 @@
+use enum_iterator::Sequence;
+
 use crate::prelude::*;
 
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
@@ -15,7 +17,7 @@ pub struct ProximityBox {
     pub value: Boxes,
 }
 
-#[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Deserialize, Serialize)]
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Deserialize, Serialize, Sequence)]
 pub enum HitType {
     #[default]
     Ground,
@@ -34,23 +36,34 @@ pub struct HitProperties {
     pub knockback: i32,
 }
 
-#[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Deserialize, Serialize)]
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Deserialize, Serialize, Sequence)]
 pub enum Strength {
     #[default]
     Weak,
     Mid,
     Strong,
+    Spin,
+    Rising,
+    // Knockdown,
+    // Launch,
 }
 
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
 pub struct Hurtbox {
     pub start_frame: u32,
     pub duration: u32,
+    pub height: Height,
     pub invul_type: InvulType,
     pub value: Boxes,
 }
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Deserialize, Serialize, Sequence)]
+pub enum Height {
+    #[default]
+    Upper,
+    Lower,
+}
 
-#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize, Sequence)]
 pub enum InvulType {
     #[default]
     None,

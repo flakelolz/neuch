@@ -32,7 +32,7 @@ pub fn handle_transition(
             if context.reaction.hit() {
                 hit_animation(animator, context, &action.timeline);
             } else if context.reaction.block() {
-                block_animation(animator, context, &action.timeline);
+                guard_animation(animator, context, &action.timeline);
             } else {
                 animator.keyframes.clone_from(&action.timeline);
             }
