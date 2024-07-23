@@ -2,7 +2,7 @@ use crate::prelude::*;
 
 pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs) {
     // Render targets
-    let (mut target, mut ui_target) = create_render_targets(rl, thread, configs);
+    let (mut target, mut ui_target) = create_render_targets(rl, thread);
     // Camera
     let mut camera = Camera2D {
         target: rvec2(0., 0.),

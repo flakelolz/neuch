@@ -1,6 +1,7 @@
-use crate::{physics, prelude::*};
+use crate::prelude::*;
 const DECELERATION: i32 = 1000;
 const THRESHOLD: i32 = 1100;
+
 #[derive(Debug, Clone, Copy, Default)]
 pub struct Physics {
     pub position: IVec2,

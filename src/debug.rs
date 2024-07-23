@@ -27,7 +27,7 @@ impl Default for Debug {
             hitboxes: true,
             hurtboxes: true,
             pushboxes: true,
-            proximity: true,
+            proximity: false,
             editor: false,
             all: true,
         }

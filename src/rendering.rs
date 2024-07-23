@@ -2,7 +2,6 @@ use crate::prelude::*;
 pub fn create_render_targets(
     rl: &mut RaylibHandle,
     thread: &RaylibThread,
-    configs: &Configs,
 ) -> (RenderTexture2D, RenderTexture2D) {
     let sprite_target = rl
         .load_render_texture(thread, WIDTH_3S as u32, HEIGHT_3S as u32)
