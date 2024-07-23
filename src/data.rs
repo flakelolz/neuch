@@ -42,8 +42,8 @@ pub enum Strength {
     Weak,
     Mid,
     Strong,
-    Spin,
     Rising,
+    Spin,
     // Knockdown,
     // Launch,
 }

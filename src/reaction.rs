@@ -72,7 +72,14 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
                             todo!();
                         }
                         Strength::Rising => {
-                            todo!();
+                            if buffer.current().down {
+                                *next = Some(Box::new(reacting::CrouchStrong));
+                            } else {
+                                match hit_event.height {
+                                    Height::Upper => *next = Some(Box::new(reacting::UpperRising)),
+                                    Height::Lower => *next = Some(Box::new(reacting::LowerRising)),
+                                }
+                            }
                         }
                         Strength::Strong => {
                             if buffer.current().down {

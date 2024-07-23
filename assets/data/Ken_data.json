@@ -160,10 +160,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -261,10 +297,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -362,10 +434,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -513,10 +621,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -619,10 +763,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -633,7 +813,7 @@
           "properties": {
             "hit_type": "Ground",
             "strength": "Weak",
-            "hitstop": 4,
+            "hitstop": 6,
             "hitstun": 6,
             "blockstun": 8,
             "knockback": 8000
@@ -725,10 +905,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -837,17 +1053,53 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
       "hitboxes": [
         {
-          "start_frame": 12,
-          "duration": 1,
+          "start_frame": 11,
+          "duration": 2,
           "properties": {
             "hit_type": "Ground",
             "strength": "Strong",
@@ -1036,10 +1288,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -1049,9 +1337,9 @@
           "duration": 4,
           "properties": {
             "hit_type": "Ground",
-            "strength": "Mid",
-            "hitstop": 4,
-            "hitstun": 17,
+            "strength": "Weak",
+            "hitstop": 6,
+            "hitstun": 14,
             "blockstun": 12,
             "knockback": 7000
           },
@@ -1134,10 +1422,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -1147,7 +1471,7 @@
           "duration": 4,
           "properties": {
             "hit_type": "Ground",
-            "strength": "Mid",
+            "strength": "Strong",
             "hitstop": 6,
             "hitstun": 23,
             "blockstun": 19,
@@ -1317,10 +1641,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -1535,10 +1895,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -1787,7 +2183,7 @@
           "properties": {
             "hit_type": "Ground",
             "strength": "Weak",
-            "hitstop": 4,
+            "hitstop": 6,
             "hitstun": 12,
             "blockstun": 12,
             "knockback": 8000
@@ -1994,11 +2390,11 @@
       "hitboxes": [
         {
           "start_frame": 7,
-          "duration": 5,
+          "duration": 1,
           "properties": {
             "hit_type": "Ground",
-            "strength": "Strong",
-            "hitstop": 8,
+            "strength": "Rising",
+            "hitstop": 10,
             "hitstun": 17,
             "blockstun": 12,
             "knockback": 8000
@@ -3676,10 +4072,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -3728,10 +4160,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -3780,10 +4248,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -3828,6 +4332,115 @@
         {
           "x": 1920.0,
           "y": 7392.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn UpperRising",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
+            "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 7616.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 7616.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 7616.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1152.0,
+          "y": 7616.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1536.0,
+          "y": 7616.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1920.0,
+          "y": 7616.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 2304.0,
+          "y": 7616.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -3846,10 +4459,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -3858,28 +4507,28 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 7616.0,
+          "y": 7840.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 7616.0,
+          "y": 7840.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 768.0,
-          "y": 7616.0,
+          "y": 7840.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 1152.0,
-          "y": 7616.0,
+          "y": 7840.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -3898,10 +4547,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -3910,28 +4595,28 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 7840.0,
+          "y": 8064.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 7840.0,
+          "y": 8064.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 768.0,
-          "y": 7840.0,
+          "y": 8064.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 1152.0,
-          "y": 7840.0,
+          "y": 8064.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -3950,10 +4635,46 @@
           "height": "Upper",
           "invul_type": "None",
           "value": {
-            "top": 35000,
-            "left": -30000,
-            "bottom": -69000,
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
             "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
           }
         }
       ],
@@ -3962,63 +4683,179 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 8064.0,
+          "y": 8288.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 8064.0,
+          "y": 8288.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 768.0,
-          "y": 8064.0,
+          "y": 8288.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 1152.0,
-          "y": 8064.0,
+          "y": 8288.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 1536.0,
-          "y": 8064.0,
+          "y": 8288.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 1920.0,
-          "y": 8064.0,
+          "y": 8288.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 2304.0,
-          "y": 8064.0,
+          "y": 8288.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 2688.0,
-          "y": 8064.0,
+          "y": 8288.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 3072.0,
-          "y": 8064.0,
+          "y": 8288.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "name": "Rxn LowerRising",
+      "total": 0,
+      "looping": false,
+      "pushboxes": null,
+      "hurtboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 38000,
+            "left": -7000,
+            "bottom": 18000,
+            "right": 18000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Upper",
+          "invul_type": "None",
+          "value": {
+            "top": 29000,
+            "left": -29000,
+            "bottom": 9000,
+            "right": 30000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": 10000,
+            "left": -27000,
+            "bottom": -26000,
+            "right": 25000
+          }
+        },
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "height": "Lower",
+          "invul_type": "None",
+          "value": {
+            "top": -26000,
+            "left": -31000,
+            "bottom": -69000,
+            "right": 30000
+          }
+        }
+      ],
+      "hitboxes": null,
+      "modifiers": null,
+      "timeline": [
+        {
+          "x": 0.0,
+          "y": 8512.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 384.0,
+          "y": 8512.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 768.0,
+          "y": 8512.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1152.0,
+          "y": 8512.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1536.0,
+          "y": 8512.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 1920.0,
+          "y": 8512.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 2304.0,
+          "y": 8512.0,
+          "w": 384.0,
+          "h": 224.0,
+          "duration": 0
+        },
+        {
+          "x": 2688.0,
+          "y": 8512.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -4049,21 +4886,21 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 8288.0,
+          "y": 8736.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 8288.0,
+          "y": 8736.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 768.0,
-          "y": 8288.0,
+          "y": 8736.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -4094,28 +4931,28 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 8512.0,
+          "y": 8960.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 8512.0,
+          "y": 8960.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 768.0,
-          "y": 8512.0,
+          "y": 8960.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 1152.0,
-          "y": 8512.0,
+          "y": 8960.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -4146,42 +4983,42 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 8736.0,
+          "y": 9184.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 8736.0,
+          "y": 9184.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 768.0,
-          "y": 8736.0,
+          "y": 9184.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 1152.0,
-          "y": 8736.0,
+          "y": 9184.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 1536.0,
-          "y": 8736.0,
+          "y": 9184.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 1920.0,
-          "y": 8736.0,
+          "y": 9184.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -4212,21 +5049,21 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 8960.0,
+          "y": 9408.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 8960.0,
+          "y": 9408.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 768.0,
-          "y": 8960.0,
+          "y": 9408.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -4257,21 +5094,21 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 9184.0,
+          "y": 9632.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 9184.0,
+          "y": 9632.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 768.0,
-          "y": 9184.0,
+          "y": 9632.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -4302,21 +5139,21 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 9408.0,
+          "y": 9856.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 9408.0,
+          "y": 9856.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 768.0,
-          "y": 9408.0,
+          "y": 9856.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
@@ -4347,14 +5184,14 @@
       "timeline": [
         {
           "x": 0.0,
-          "y": 9632.0,
+          "y": 10080.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0
         },
         {
           "x": 384.0,
-          "y": 9632.0,
+          "y": 10080.0,
           "w": 384.0,
           "h": 224.0,
           "duration": 0

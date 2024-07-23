@@ -123,6 +123,47 @@ impl State for UpperStrong {
     }
 }
 
+pub struct UpperRising;
+impl State for UpperRising {
+    fn name(&self) -> String {
+        "Rxn UpperRising".to_owned()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn UpperRising on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if context.elapsed >= context.duration {
+            // Transitions
+            if turn_transition(&mut context.ctx, buffer, physics) {
+                return;
+            }
+            if attack_transitions(context, buffer, physics) {
+                return;
+            }
+            if jump_transitions(context, buffer, physics) {
+                return;
+            }
+            if crouch_transition(context, buffer, physics) {
+                return;
+            }
+            if dash_transitions(context, buffer, physics) {
+                return;
+            }
+            if walk_transition(context, buffer, physics) {
+                return;
+            }
+            // Return to idle
+            context.ctx.next = Some(Box::new(standing::Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn UpperRising on_exit");
+    }
+}
+
 pub struct LowerWeak;
 impl State for LowerWeak {
     fn name(&self) -> String {
@@ -243,6 +284,48 @@ impl State for LowerStrong {
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Rxn LowerStrong on_exit");
+    }
+}
+
+
+pub struct LowerRising;
+impl State for LowerRising {
+    fn name(&self) -> String {
+        "Rxn LowerRising".to_owned()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn LowerRising on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if context.elapsed >= context.duration {
+            // Transitions
+            if turn_transition(&mut context.ctx, buffer, physics) {
+                return;
+            }
+            if attack_transitions(context, buffer, physics) {
+                return;
+            }
+            if jump_transitions(context, buffer, physics) {
+                return;
+            }
+            if crouch_transition(context, buffer, physics) {
+                return;
+            }
+            if dash_transitions(context, buffer, physics) {
+                return;
+            }
+            if walk_transition(context, buffer, physics) {
+                return;
+            }
+            // Return to idle
+            context.ctx.next = Some(Box::new(standing::Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn LowerRising on_exit");
     }
 }
 
