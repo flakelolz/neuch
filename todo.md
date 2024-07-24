@@ -31,7 +31,7 @@
 - [x] Reaction system
 - [x] Implement blocking
 - [ ] Implement all hit reaction states
-- [ ] Make an editor for character data
+- [x] Make an editor for character data
 - [x] Change font
 - [x] Make editor work while paused
 - [x] Be able to see changes instantly while paused
