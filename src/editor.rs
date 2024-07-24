@@ -998,7 +998,8 @@ impl std::fmt::Display for Strength {
             Strength::Weak => write!(f, "Weak"),
             Strength::Mid => write!(f, "Mid"),
             Strength::Strong => write!(f, "Strong"),
-            Strength::Spin => write!(f, "Spin"),
+            Strength::FrontSpin => write!(f, "FrontSpin"),
+            Strength::BackSpin => write!(f, "BackSpin"),
             Strength::Rising => write!(f, "Rising"),
         }
     }

@@ -68,8 +68,19 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
                     reaction.knockback = hit_event.properties.knockback;
 
                     match hit_event.properties.strength {
-                        Strength::Spin => {
-                            todo!();
+                        Strength::BackSpin => {
+                            if buffer.current().down {
+                                *next = Some(Box::new(reacting::CrouchStrong));
+                            } else {
+                                *next = Some(Box::new(reacting::BackSpin));
+                            }
+                        }
+                        Strength::FrontSpin => {
+                            if buffer.current().down {
+                                *next = Some(Box::new(reacting::CrouchStrong));
+                            } else {
+                                *next = Some(Box::new(reacting::FrontSpin));
+                            }
                         }
                         Strength::Rising => {
                             if buffer.current().down {

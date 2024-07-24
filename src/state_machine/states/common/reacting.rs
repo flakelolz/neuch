@@ -164,6 +164,88 @@ impl State for UpperRising {
     }
 }
 
+pub struct FrontSpin;
+impl State for FrontSpin {
+    fn name(&self) -> String {
+        "Rxn FrontSpin".to_owned()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn FrontSpin on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if context.elapsed >= context.duration {
+            // Transitions
+            if turn_transition(&mut context.ctx, buffer, physics) {
+                return;
+            }
+            if attack_transitions(context, buffer, physics) {
+                return;
+            }
+            if jump_transitions(context, buffer, physics) {
+                return;
+            }
+            if crouch_transition(context, buffer, physics) {
+                return;
+            }
+            if dash_transitions(context, buffer, physics) {
+                return;
+            }
+            if walk_transition(context, buffer, physics) {
+                return;
+            }
+            // Return to idle
+            context.ctx.next = Some(Box::new(standing::Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn FrontSpin on_exit");
+    }
+}
+
+pub struct BackSpin;
+impl State for BackSpin {
+    fn name(&self) -> String {
+        "Rxn BackSpin".to_owned()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn BackSpin on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if context.elapsed >= context.duration {
+            // Transitions
+            if turn_transition(&mut context.ctx, buffer, physics) {
+                return;
+            }
+            if attack_transitions(context, buffer, physics) {
+                return;
+            }
+            if jump_transitions(context, buffer, physics) {
+                return;
+            }
+            if crouch_transition(context, buffer, physics) {
+                return;
+            }
+            if dash_transitions(context, buffer, physics) {
+                return;
+            }
+            if walk_transition(context, buffer, physics) {
+                return;
+            }
+            // Return to idle
+            context.ctx.next = Some(Box::new(standing::Idle));
+        }
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Rxn BackSpin on_exit");
+    }
+}
+
 pub struct LowerWeak;
 impl State for LowerWeak {
     fn name(&self) -> String {
