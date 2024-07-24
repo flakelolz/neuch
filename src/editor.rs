@@ -681,6 +681,20 @@ impl Editor {
                                         self.old_pushbox.value.right;
                                     self.pushbox.value.right = self.old_pushbox.value.right;
                                 }
+                            } else if d.gui_button(
+                                rrect(self.width - 80, self.height - 10, 30, 10),
+                                Some(c"Add"),
+                            ) {
+                                action.pushboxes = Some(vec![Pushbox {
+                                    start_frame: 0,
+                                    duration: 100,
+                                    value: Boxes {
+                                        top: 35000,
+                                        left: -20000,
+                                        bottom: -30000,
+                                        right: 20000,
+                                    }
+                                }]);
                             }
                         }
                         // NOTE: PROXIMITY
