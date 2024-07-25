@@ -129,7 +129,7 @@ impl Collisions {
                     let right = a_pushbox.value.right.min(b_pushbox.value.right);
                     distance = right - left;
                     // println!("left: {} right: {} distance: {}", left, right, distance);
-                    let half = distance / 2;
+                    let third = distance / 3;
                     let mut players = world
                         .query_mut::<&mut Physics>()
                         .into_iter()
@@ -139,11 +139,11 @@ impl Collisions {
                     if let Some((_, a_physics)) = p1.get_mut(0) {
                         if let Some((_, b_physics)) = p2.get_mut(0) {
                             if a_physics.position.x < b_physics.position.x {
-                                a_physics.position.x -= half;
-                                b_physics.position.x += half;
+                                a_physics.position.x -= third;
+                                b_physics.position.x += third;
                             } else {
-                                a_physics.position.x += half;
-                                b_physics.position.x -= half;
+                                a_physics.position.x += third;
+                                b_physics.position.x -= third;
                             }
                         }
                     }
