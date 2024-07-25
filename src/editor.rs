@@ -693,8 +693,10 @@ impl Editor {
                                         left: -20000,
                                         bottom: -30000,
                                         right: 20000,
-                                    }
+                                    },
                                 }]);
+                                self.index = 0;
+                                self.loaded = false;
                             }
                         }
                         // NOTE: PROXIMITY
@@ -871,6 +873,8 @@ impl Editor {
                     Property::Pushbox => {
                         if let Some(pushboxes) = &mut action.pushboxes {
                             pushboxes[self.index] = self.pushbox;
+                        } else {
+                            action.pushboxes = Some(vec![self.pushbox]);
                         }
                     }
                     Property::Proximity => {
@@ -1005,14 +1009,15 @@ impl std::fmt::Display for Strength {
     }
 }
 
-impl std::fmt::Display for InvulType {
+impl std::fmt::Display for Invulnerability {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            InvulType::None => write!(f, "None"),
-            InvulType::Ground => write!(f, "Ground"),
-            InvulType::Air => write!(f, "Air"),
-            InvulType::Throw => write!(f, "Throw"),
-            InvulType::Projectile => write!(f, "Projectile"),
+            Invulnerability::None => write!(f, "None"),
+            Invulnerability::Ground => write!(f, "Ground"),
+            Invulnerability::Air => write!(f, "Air"),
+            Invulnerability::Throw => write!(f, "Throw"),
+            Invulnerability::Projectile => write!(f, "Projectile"),
+            Invulnerability::All => write!(f, "All"),
         }
     }
 }

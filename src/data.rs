@@ -54,7 +54,7 @@ pub struct Hurtbox {
     pub start_frame: u32,
     pub duration: u32,
     pub height: Height,
-    pub invul_type: InvulType,
+    pub invul: Invulnerability,
     pub value: Boxes,
 }
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Deserialize, Serialize, Sequence)]
@@ -65,13 +65,14 @@ pub enum Height {
 }
 
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize, Sequence)]
-pub enum InvulType {
+pub enum Invulnerability {
     #[default]
     None,
     Ground,
     Air,
     Throw,
     Projectile,
+    All,
 }
 
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]

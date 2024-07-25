@@ -1725,7 +1725,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
+    "duration": 32
    },
    {
     "filename": "Ken #Jmp Forward 5.aseprite",

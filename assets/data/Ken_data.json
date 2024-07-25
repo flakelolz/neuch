@@ -13,9 +13,9 @@
   },
   "pushbox": {
     "top": 8000,
-    "left": -27000,
+    "left": -23000,
     "bottom": -69000,
-    "right": 23000
+    "right": 26000
   },
   "actions": [
     {
@@ -28,7 +28,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -40,7 +40,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -52,7 +52,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -64,7 +64,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -158,7 +158,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -170,7 +170,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -182,7 +182,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -194,7 +194,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -295,7 +295,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -307,7 +307,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -319,7 +319,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -331,7 +331,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -432,7 +432,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -444,7 +444,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -456,7 +456,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -468,7 +468,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -619,7 +619,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -631,7 +631,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -643,7 +643,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -655,7 +655,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -761,7 +761,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -773,7 +773,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -785,7 +785,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -797,7 +797,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -903,7 +903,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -915,7 +915,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -927,7 +927,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -939,7 +939,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -1051,7 +1051,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -1063,7 +1063,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -1075,7 +1075,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -1087,7 +1087,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -1286,7 +1286,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -1298,7 +1298,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -1310,7 +1310,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -1322,7 +1322,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -1420,7 +1420,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -1432,7 +1432,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -1444,7 +1444,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -1456,7 +1456,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -1639,7 +1639,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -1651,7 +1651,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -1663,7 +1663,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -1675,7 +1675,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -1886,14 +1886,14 @@
     {
       "name": "St Turn",
       "total": 9,
-      "looping": true,
+      "looping": false,
       "pushboxes": null,
       "hurtboxes": [
         {
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -1905,7 +1905,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -1917,7 +1917,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -1929,7 +1929,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -1980,14 +1980,14 @@
     {
       "name": "Cr Start",
       "total": 9,
-      "looping": true,
+      "looping": false,
       "pushboxes": null,
       "hurtboxes": [
         {
           "start_frame": 0,
           "duration": 2,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
@@ -1999,7 +1999,7 @@
           "start_frame": 2,
           "duration": 2,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 15000,
             "left": -30000,
@@ -2011,7 +2011,7 @@
           "start_frame": 4,
           "duration": 6,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -800,
             "left": -30000,
@@ -2070,7 +2070,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 0,
             "left": -30000,
@@ -2115,14 +2115,14 @@
     {
       "name": "Cr End",
       "total": 9,
-      "looping": true,
+      "looping": false,
       "pushboxes": null,
       "hurtboxes": [
         {
           "start_frame": 0,
           "duration": 4,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 0,
             "left": -30000,
@@ -2167,7 +2167,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 0,
             "left": -30000,
@@ -2280,7 +2280,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 0,
             "left": -30000,
@@ -2378,7 +2378,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 0,
             "left": -30000,
@@ -2504,7 +2504,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 0,
             "left": -30000,
@@ -2617,7 +2617,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 0,
             "left": -30000,
@@ -2804,7 +2804,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 0,
             "left": -30000,
@@ -3008,14 +3008,14 @@
     {
       "name": "Cr Turn",
       "total": 11,
-      "looping": true,
+      "looping": false,
       "pushboxes": null,
       "hurtboxes": [
         {
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
@@ -3086,7 +3086,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
@@ -3128,7 +3128,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
@@ -3249,7 +3249,7 @@
     },
     {
       "name": "Jmp Forward",
-      "total": 35,
+      "total": 34,
       "looping": false,
       "pushboxes": [
         {
@@ -3268,7 +3268,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
@@ -3313,7 +3313,7 @@
           "y": 4928.0,
           "w": 384.0,
           "h": 224.0,
-          "duration": 3
+          "duration": 2
         },
         {
           "x": 1920.0,
@@ -3366,7 +3366,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
@@ -3453,7 +3453,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
@@ -3516,7 +3516,18 @@
       "name": "Jmp LightPunch",
       "total": 38,
       "looping": false,
-      "pushboxes": null,
+      "pushboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "value": {
+            "top": 20000,
+            "left": -26000,
+            "bottom": -22000,
+            "right": 25000
+          }
+        }
+      ],
       "hurtboxes": null,
       "hitboxes": [
         {
@@ -3623,7 +3634,18 @@
       "name": "Jmp MediumPunch",
       "total": 20,
       "looping": false,
-      "pushboxes": null,
+      "pushboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "value": {
+            "top": 20000,
+            "left": -26000,
+            "bottom": -22000,
+            "right": 25000
+          }
+        }
+      ],
       "hurtboxes": null,
       "hitboxes": [
         {
@@ -3702,7 +3724,18 @@
       "name": "Jmp HeavyPunch",
       "total": 21,
       "looping": false,
-      "pushboxes": null,
+      "pushboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "value": {
+            "top": 20000,
+            "left": -26000,
+            "bottom": -22000,
+            "right": 25000
+          }
+        }
+      ],
       "hurtboxes": null,
       "hitboxes": [
         {
@@ -3781,7 +3814,18 @@
       "name": "Jmp LightKick",
       "total": 20,
       "looping": false,
-      "pushboxes": null,
+      "pushboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "value": {
+            "top": 20000,
+            "left": -26000,
+            "bottom": -22000,
+            "right": 25000
+          }
+        }
+      ],
       "hurtboxes": null,
       "hitboxes": [
         {
@@ -3867,7 +3911,18 @@
       "name": "Jmp MediumKick",
       "total": 19,
       "looping": false,
-      "pushboxes": null,
+      "pushboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "value": {
+            "top": 20000,
+            "left": -26000,
+            "bottom": -22000,
+            "right": 25000
+          }
+        }
+      ],
       "hurtboxes": null,
       "hitboxes": [
         {
@@ -3882,10 +3937,28 @@
             "knockback": 8000
           },
           "value": {
-            "top": 15000,
-            "left": 30000,
-            "bottom": -1000,
-            "right": 75000
+            "top": 0,
+            "left": 15000,
+            "bottom": -13000,
+            "right": 66000
+          }
+        },
+        {
+          "start_frame": 7,
+          "duration": 5,
+          "properties": {
+            "hit_type": "Ground",
+            "strength": "Mid",
+            "hitstop": 8,
+            "hitstun": 17,
+            "blockstun": 12,
+            "knockback": 8000
+          },
+          "value": {
+            "top": -13000,
+            "left": -25000,
+            "bottom": -26000,
+            "right": 15000
           }
         }
       ],
@@ -3953,7 +4026,18 @@
       "name": "Jmp HeavyKick",
       "total": 18,
       "looping": false,
-      "pushboxes": null,
+      "pushboxes": [
+        {
+          "start_frame": 0,
+          "duration": 100,
+          "value": {
+            "top": 20000,
+            "left": -26000,
+            "bottom": -22000,
+            "right": 25000
+          }
+        }
+      ],
       "hurtboxes": null,
       "hitboxes": [
         {
@@ -4070,7 +4154,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -4082,7 +4166,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -4094,7 +4178,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -4106,7 +4190,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -4158,7 +4242,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -4170,7 +4254,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -4182,7 +4266,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -4194,7 +4278,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -4246,7 +4330,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -4258,7 +4342,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -4270,7 +4354,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -4282,7 +4366,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -4348,7 +4432,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -4360,7 +4444,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -4372,7 +4456,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -4384,7 +4468,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -4457,7 +4541,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -4469,7 +4553,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -4481,7 +4565,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -4493,7 +4577,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -4566,7 +4650,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -4578,7 +4662,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -4590,7 +4674,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -4602,7 +4686,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -4682,7 +4766,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -4694,7 +4778,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -4706,7 +4790,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -4718,7 +4802,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -4770,7 +4854,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -4782,7 +4866,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -4794,7 +4878,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -4806,7 +4890,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -4858,7 +4942,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -4870,7 +4954,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -4882,7 +4966,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -4894,7 +4978,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -4981,7 +5065,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 38000,
             "left": -7000,
@@ -4993,7 +5077,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 29000,
             "left": -29000,
@@ -5005,7 +5089,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 10000,
             "left": -27000,
@@ -5017,7 +5101,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Lower",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": -26000,
             "left": -31000,
@@ -5097,7 +5181,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
@@ -5142,7 +5226,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
@@ -5194,7 +5278,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
@@ -5260,7 +5344,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
@@ -5305,7 +5389,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
@@ -5350,7 +5434,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
@@ -5395,7 +5479,7 @@
           "start_frame": 0,
           "duration": 100,
           "height": "Upper",
-          "invul_type": "None",
+          "invul": "None",
           "value": {
             "top": 35000,
             "left": -30000,
