@@ -34,7 +34,7 @@ impl Input {
             || rl.is_gamepad_button_down(port, config.gamepad.up);
         self.down = rl.is_key_down(config.keyboard.down)
             || rl.is_gamepad_button_down(port, config.gamepad.down);
-        // Foward
+        // Forward
         {
             if rl.is_key_down(config.keyboard.right)
                 || rl.is_gamepad_button_down(port, config.gamepad.right)

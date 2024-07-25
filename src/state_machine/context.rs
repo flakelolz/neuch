@@ -35,8 +35,6 @@ impl Default for SubContext {
 #[derive(Debug, Default)]
 pub struct Flags {
     pub jump: JumpFlags,
-    // pub block: BlockFlags, // None, High, Low
-    // pub parry: ParryFlags, // None, High, Low
 }
 
 #[derive(Debug, Default, PartialEq)]

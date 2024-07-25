@@ -20,12 +20,14 @@ impl InputBuffer {
                     let input_command = self.buffer[buffer_position];
                     let direction = motion[motion_index];
 
+                    // Invalidate if there's a down or backward input
                     if Inputs::Down.is_pressed_exclusive(&input_command)
                         || Inputs::Backward.is_pressed_exclusive(&input_command)
                     {
                         motion_index = 0;
                     }
 
+                    // Invalidate if there's a down forward input before the last forward
                     if motion_index == 2 && Inputs::DownForward.is_pressed_exclusive(&input_command)
                     {
                         motion_index = 0;
@@ -52,12 +54,14 @@ impl InputBuffer {
                     let input_command = self.buffer[buffer_position];
                     let direction = motion[motion_index];
 
+                    // Invalidate if there's a down or forward input
                     if Inputs::Down.is_pressed_exclusive(&input_command)
                         || Inputs::Forward.is_pressed_exclusive(&input_command)
                     {
                         motion_index = 0;
                     }
 
+                    // Invalidate if there's a down back input before the last forward
                     if motion_index == 2
                         && Inputs::DownBackward.is_pressed_exclusive(&input_command)
                     {

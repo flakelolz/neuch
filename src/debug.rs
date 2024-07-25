@@ -164,46 +164,44 @@ pub fn show_state(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
     }
     let font = d.gui_get_font();
     world
-        .query::<(&StateMachine, &Physics, &Player)>()
+        .query::<(&StateMachine, &Physics)>()
         .into_iter()
-        .for_each(|(_, (state, physics, player))| {
-            if player == &Player::One {
-                let (screen_x, screen_y) = pos_to_screen(physics.position.rev_y());
-                let (screen_x, screen_y) = sprite_to_ui(screen_x, screen_y);
-                let current = state.processor.current.as_ref();
-                let elapsed = state.context.elapsed;
-                let duration = state.context.duration;
-                let top = 200;
-                let offset = 10;
+        .for_each(|(_, (state, physics))| {
+            let (screen_x, screen_y) = pos_to_screen(physics.position.rev_y());
+            let (screen_x, screen_y) = sprite_to_ui(screen_x, screen_y);
+            let current = state.processor.current.as_ref();
+            let elapsed = state.context.elapsed;
+            let duration = state.context.duration;
+            let top = 200;
+            let offset = 10;
 
-                // State name
-                d.draw_text_ex(
-                    &font,
-                    &current.name(),
-                    rvec2(screen_x - 30, screen_y - top),
-                    TEXT_SIZE,
-                    0.,
-                    Color::WHITE,
-                );
-                // Total state duration
-                d.draw_text_ex(
-                    &font,
-                    &format!("{}", duration),
-                    rvec2(screen_x - 30, screen_y - top + offset),
-                    TEXT_SIZE,
-                    0.,
-                    Color::WHITE,
-                );
-                // Frames elapsed
-                d.draw_text_ex(
-                    &font,
-                    &format!("{}", elapsed),
-                    rvec2(screen_x - 10, screen_y - top + offset),
-                    TEXT_SIZE,
-                    0.,
-                    Color::WHITE,
-                );
-            }
+            // State name
+            d.draw_text_ex(
+                &font,
+                &current.name(),
+                rvec2(screen_x - 30, screen_y - top),
+                TEXT_SIZE,
+                0.,
+                Color::WHITE,
+            );
+            // Total state duration
+            d.draw_text_ex(
+                &font,
+                &format!("{}", duration),
+                rvec2(screen_x - 30, screen_y - top + offset),
+                TEXT_SIZE,
+                0.,
+                Color::WHITE,
+            );
+            // Frames elapsed
+            d.draw_text_ex(
+                &font,
+                &format!("{}", elapsed),
+                rvec2(screen_x - 10, screen_y - top + offset),
+                TEXT_SIZE,
+                0.,
+                Color::WHITE,
+            );
         });
 }
 
@@ -231,9 +229,9 @@ pub fn show_context(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
     let font = d.gui_get_font();
     let y = 12.;
     world
-        .query::<(&StateMachine, &Player)>()
+        .query::<(&StateMachine, &Physics, &Player)>()
         .into_iter()
-        .for_each(|(_, (machine, player))| {
+        .for_each(|(_, (machine, physics, player))| {
             if player == &Player::One {
                 d.draw_text_ex(
                     &font,
@@ -255,6 +253,22 @@ pub fn show_context(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
                     &font,
                     &format!("Jump: {:#?}", machine.context.ctx.flags.jump),
                     rvec2(5., y + TEXT_SIZE * 2.),
+                    TEXT_SIZE,
+                    0.,
+                    Color::WHITE,
+                );
+                d.draw_text_ex(
+                    &font,
+                    &format!("Facing opponent: {:#?}", physics.facing_opponent),
+                    rvec2(5., y + TEXT_SIZE * 3.),
+                    TEXT_SIZE,
+                    0.,
+                    Color::WHITE,
+                );
+                d.draw_text_ex(
+                    &font,
+                    &format!("Facing left: {:#?}", physics.facing_left),
+                    rvec2(5., y + TEXT_SIZE * 4.),
                     TEXT_SIZE,
                     0.,
                     Color::WHITE,
@@ -428,9 +442,9 @@ pub fn show_inputs(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
         return;
     }
     world
-        .query::<(&Input, &Physics, &Player)>()
+        .query::<(&Input, &InputBuffer, &Physics, &Player)>()
         .iter()
-        .for_each(|(_, (input, physics, player))| {
+        .for_each(|(_, (input, buffer, physics, player))| {
             let dir_size = 20.;
             let size = 10.;
             let pos = 70;
@@ -453,6 +467,9 @@ pub fn show_inputs(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
             };
 
             if player == &Player::One {
+                // println!("input:  {} {}", input.backward, input.forward);
+                // println!("inpt2:  {} {}", input.left, input.right);
+                // println!("buffer: {} {}", buffer.current().backward, buffer.current().forward);
                 let gray = Color::new(169, 169, 169, 150);
                 // Up
                 match input.up {
