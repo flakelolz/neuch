@@ -37,11 +37,11 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
         if !paused || advance {
             // Logic
             update_input_buffers(&mut world);
-            frame_count(&mut world);
             physics_system(&mut world);
+            update_state(&mut world);
             collisions.update(&mut world, &mut hit_events);
             reaction_system(&mut world, &mut hit_events);
-            update_state(&mut world);
+            frame_count(&mut world);
         }
         // Debug
         move_player(&mut world, rl);

@@ -1,9 +1,8 @@
 mod context;
-mod processor;
 mod states;
 mod transitions;
 
-pub use self::{context::*, processor::*, states::*, transitions::*};
+pub use self::{context::*, states::*, transitions::*};
 use crate::prelude::*;
 
 pub fn update_state(world: &mut World) {
@@ -14,9 +13,33 @@ pub fn update_state(world: &mut World) {
         &Character,
         &mut Animator,
     )>() {
-        state
-            .processor
-            .update(&mut state.context, buffer, physics, character, animator);
+        let processor = &mut state.processor;
+        let context = &mut state.context;
+
+        match find_action(character, &processor.current.name()) {
+            Some(action) => {
+                // FIX: Only needed at the start of the game right now.
+                if animator.keyframes.is_empty() {
+                    animator.keyframes.clone_from(&action.timeline);
+                }
+
+                if context.reaction.hitstop == 0 {
+                    context.elapsed += 1;
+                }
+
+                if context.elapsed > action.total && action.looping {
+                    context.elapsed = 1;
+                }
+            }
+            None => {
+                eprintln!("Action not found");
+            }
+        }
+
+        processor.current.on_update(context, buffer, physics);
+
+        handle_transition(processor, context, buffer, physics, character, animator);
+        handle_modifiers(context, buffer, physics);
     }
 }
 
@@ -31,4 +54,16 @@ pub trait State: Send + Sync {
 pub struct StateMachine {
     pub processor: StateProcessor,
     pub context: Context,
+}
+
+pub struct StateProcessor {
+    pub current: Box<dyn State>,
+}
+
+impl Default for StateProcessor {
+    fn default() -> Self {
+        Self {
+            current: Box::new(standing::Idle),
+        }
+    }
 }

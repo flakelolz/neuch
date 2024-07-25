@@ -16,7 +16,7 @@ impl State for Start {
             handle_jump_flags(&mut context.ctx, buffer);
         }
         // Base case
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             match context.ctx.flags.jump {
                 JumpFlags::None => context.ctx.next = Some(Box::new(jumping::Neutral)),
@@ -41,9 +41,6 @@ impl State for Neutral {
     fn on_enter(&mut self, context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
         println!("Jmp Neutral on_enter");
         if physics.position.y <= 0 {
-            // FIX: Both on_enter and on_update are being run on the same frame it seems to it
-            // immediately finds the position.y at 0.
-            physics.position.y += 1;
             physics.velocity.y = context.character.unwrap_or_default().jump_velocity;
             physics.acceleration.y = context.character.unwrap_or_default().jump_deceleration;
             context.ctx.airborne = true;
@@ -73,9 +70,6 @@ impl State for Forward {
     fn on_enter(&mut self, context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
         println!("Jmp Forward on_enter");
         if physics.position.y <= 0 {
-            // FIX: Both on_enter and on_update are being run on the same frame it seems to it
-            // immediately finds the position.y at 0.
-            physics.position.y += 1;
             physics.velocity.y = context.character.unwrap_or_default().jump_velocity;
             physics.acceleration.y = context.character.unwrap_or_default().jump_deceleration;
             physics.set_forward_velocity(context.character.unwrap_or_default().jump_forward);
@@ -106,9 +100,6 @@ impl State for Backward {
     fn on_enter(&mut self, context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
         println!("Jmp Backward on_enter");
         if physics.position.y <= 0 {
-            // FIX: Both on_enter and on_update are being run on the same frame it seems to it
-            // immediately finds the position.y at 0.
-            physics.position.y += 1;
             physics.velocity.y = context.character.unwrap_or_default().jump_velocity;
             physics.acceleration.y = context.character.unwrap_or_default().jump_deceleration;
             physics.set_forward_velocity(context.character.unwrap_or_default().jump_backward);
@@ -141,10 +132,8 @@ impl State for End {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        // Apply physics and handle modifiers
-        handle_modifiers(context, buffer, physics);
         // Base case
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if attack_transitions(context, buffer, physics) {
                 return;
@@ -159,14 +148,11 @@ impl State for End {
                 return;
             }
             // return to idle
-            if context.elapsed >= context.duration {
-                context.ctx.next = Some(Box::new(standing::Idle));
-            }
+            context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
-        face_opponent(physics);
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Jmp End on_exit");
     }
 }

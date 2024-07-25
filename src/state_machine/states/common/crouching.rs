@@ -16,7 +16,7 @@ impl State for Start {
             return;
         }
         // Special case for releasing down on crouch start
-        if context.elapsed >= context.duration && down(buffer) {
+        if context.elapsed > context.duration && down(buffer) {
             context.ctx.next = Some(Box::new(crouching::Idle));
         }
         // Base case
@@ -82,7 +82,7 @@ impl State for End {
             return;
         }
         // Base case & return to idle
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
@@ -217,10 +217,8 @@ impl State for Turn {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        // Apply physics and handle modifiers
-        handle_modifiers(context, buffer, physics);
         // Transitions
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             if attack_transitions(context, buffer, physics) {
                 return;
             }

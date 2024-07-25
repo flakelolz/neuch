@@ -11,7 +11,7 @@ impl State for UpperWeak {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -52,7 +52,7 @@ impl State for UpperMid {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -93,7 +93,7 @@ impl State for UpperStrong {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -134,7 +134,7 @@ impl State for UpperRising {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -175,7 +175,7 @@ impl State for FrontSpin {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -216,7 +216,7 @@ impl State for BackSpin {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -257,7 +257,7 @@ impl State for LowerWeak {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -298,7 +298,7 @@ impl State for LowerMid {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -339,7 +339,7 @@ impl State for LowerStrong {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -381,7 +381,7 @@ impl State for LowerRising {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -422,7 +422,7 @@ impl State for CrouchWeak {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -465,7 +465,7 @@ impl State for CrouchMid {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -507,7 +507,7 @@ impl State for CrouchStrong {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -549,7 +549,7 @@ impl State for GrdStandPre {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -590,7 +590,7 @@ impl State for GrdStandEnd {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -631,7 +631,7 @@ impl State for GrdCrouchPre {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -673,7 +673,7 @@ impl State for GrdCrouchEnd {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;

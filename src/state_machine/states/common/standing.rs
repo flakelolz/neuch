@@ -43,15 +43,15 @@ impl State for WalkForward {
         "St WalkForward".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_enter(&mut self, context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
         println!("WalkForward on_enter");
+        // FIX: Find a way to move on the first frame
+        physics.set_forward_velocity(context.character.unwrap_or_default().walk_forward);
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Special case for walking
         physics.set_forward_velocity(context.character.unwrap_or_default().walk_forward);
-        // Apply physics and handle modifiers
-        handle_modifiers(context, buffer, physics);
         // Transitions
         if turn_transition(&mut context.ctx, buffer, physics) {
             return;
@@ -87,19 +87,19 @@ impl State for WalkBackward {
         "St WalkBackward".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_enter(&mut self, context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
         println!("WalkBackward on_enter");
+        // FIX: Find a way to move on the first frame
+        physics.set_forward_velocity(context.character.unwrap_or_default().walk_backward);
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Special case for walking
         physics.set_forward_velocity(context.character.unwrap_or_default().walk_backward);
-        // Apply physics and handle modifiers
-        handle_modifiers(context, buffer, physics);
+        // Transitions
         if turn_transition(&mut context.ctx, buffer, physics) {
             return;
         }
-        // Transitions
         if jump_transitions(context, buffer, physics) {
             return;
         }
@@ -133,10 +133,8 @@ impl State for DashForward {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        // Apply physics and handle modifiers
-        handle_modifiers(context, buffer, physics);
         // Base case
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -174,10 +172,8 @@ impl State for DashBackward {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        // Apply physics and handle modifiers
-        handle_modifiers(context, buffer, physics);
         // Base case
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
                 return;
@@ -329,10 +325,8 @@ impl State for Turn {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        // Apply physics and handle modifiers
-        handle_modifiers(context, buffer, physics);
         // Transitions
-        if context.elapsed >= context.duration {
+        if context.elapsed > context.duration {
             if attack_transitions(context, buffer, physics) {
                 return;
             }
