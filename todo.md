@@ -30,25 +30,35 @@
 - [x] Collision system
 - [x] Reaction system
 - [x] Implement blocking
-- [ ] Implement all hit reaction states
+- [x] Implement all hit reaction states
 - [x] Make an editor for character data
 - [x] Change font
 - [x] Make editor work while paused
 - [x] Be able to see changes instantly while paused
+- [x] Fix Push logic
+- [x] Fix ordering of systems that might be adding a frame of input delay
+- [x] Fix flip logic and buffer system when flipping
+- [ ] Fix not stun when hit on the first frame of the Turn animation
+- [ ] Camera and walls
+- [ ] Background
+- [ ] Proximity normals
+- [ ] Specials
+- [ ] Special cancels
+- [ ] Add left and right inputs along with back and forward and make sure it doesn't break dashes
 
-# Dash should fail
+## Dash should fail
+
 - [x] *4* > *5* > *6* (walk back and forth repeatedly)
 - [x] *4...* (walking) ->  *5* > *4*
 - [x] *1...* (crouching) ->  *4* > *5* > *4*;
 - [x] *5...* (standing) -> *6* > *5* > *2* > *5* > *6*
 - [x] *5...* (standing) -> *6* > *5* > *3* > *6*
 
+## Dash should work
 
-# Dash should work
 - [x] *4...* (walk back) ->  *5* > *4* > *5* > *4*
 - [x] *1...* (crouching) ->  *5* > *4* > *5* > *4*
 - [x] *5...* (standing) -> *3* > *5* > *6*
 - [x] *5...* (standing) -> *1* > *5* > *4*
 - [x] *5...* (standing) -> *4* > *6* > *5* > *6*
 - [x] *5...* (standing) -> *6* > *3* > *5* > *6*
-
