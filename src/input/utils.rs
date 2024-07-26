@@ -3,8 +3,8 @@ use crate::prelude::*;
 pub fn neutral(buffer: &InputBuffer) -> bool {
     !buffer.current().up
         && !buffer.current().down
-        && !buffer.current().forward
-        && !buffer.current().backward
+        && !buffer.current().right
+        && !buffer.current().left
 }
 
 pub fn up(buffer: &InputBuffer) -> bool {
@@ -15,20 +15,28 @@ pub fn down(buffer: &InputBuffer) -> bool {
     buffer.current().down
 }
 
-pub fn backward(buffer: &InputBuffer) -> bool {
-    buffer.current().backward
+pub fn backward(buffer: &InputBuffer, flipped: &bool) -> bool {
+    if *flipped {
+        buffer.current().right
+    } else {
+        buffer.current().left
+    }
 }
 
-pub fn forward(buffer: &InputBuffer) -> bool {
-    buffer.current().forward
+pub fn forward(buffer: &InputBuffer, flipped: &bool) -> bool {
+    if *flipped {
+        buffer.current().left
+    } else {
+        buffer.current().right
+    }
 }
 
-pub fn up_forward(buffer: &InputBuffer) -> bool {
-    up(buffer) && forward(buffer)
+pub fn up_forward(buffer: &InputBuffer, flipped: &bool) -> bool {
+    up(buffer) && forward(buffer, flipped)
 }
 
-pub fn up_backward(buffer: &InputBuffer) -> bool {
-    up(buffer) && backward(buffer)
+pub fn up_backward(buffer: &InputBuffer, flipped: &bool) -> bool {
+    up(buffer) && backward(buffer, flipped)
 }
 
 pub fn test_helper(buffer: &mut InputBuffer, inputs: Inputs) {
@@ -47,41 +55,41 @@ pub fn test_helper(buffer: &mut InputBuffer, inputs: Inputs) {
         }
         Inputs::Forward => {
             buffer.update(&Input {
-                forward: true,
+                right: true,
                 ..Default::default()
             });
         }
         Inputs::Backward => {
             buffer.update(&Input {
-                backward: true,
+                left: true,
                 ..Default::default()
             });
         }
         Inputs::UpForward => {
             buffer.update(&Input {
                 up: true,
-                forward: true,
+                right: true,
                 ..Default::default()
             });
         }
         Inputs::UpBackward => {
             buffer.update(&Input {
                 up: true,
-                backward: true,
+                left: true,
                 ..Default::default()
             });
         }
         Inputs::DownForward => {
             buffer.update(&Input {
                 down: true,
-                forward: true,
+                right: true,
                 ..Default::default()
             });
         }
         Inputs::DownBackward => {
             buffer.update(&Input {
                 down: true,
-                backward: true,
+                left: true,
                 ..Default::default()
             });
         }
@@ -127,7 +135,7 @@ pub fn test_helper(buffer: &mut InputBuffer, inputs: Inputs) {
     }
 }
 
-pub fn dash_helper(buffer: &mut InputBuffer, inputs: Inputs, ctx: &mut SubContext) {
+pub fn dash_helper(buffer: &mut InputBuffer, inputs: Inputs, ctx: &mut SubContext, flipped: &bool) {
     test_helper(buffer, inputs);
-    buffer.validate_dash(ctx);
+    buffer.validate_dash(ctx, flipped);
 }

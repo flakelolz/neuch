@@ -369,7 +369,6 @@ impl State for LowerStrong {
     }
 }
 
-
 pub struct LowerRising;
 impl State for LowerRising {
     fn name(&self) -> String {
@@ -452,7 +451,6 @@ impl State for CrouchWeak {
         println!("Rxn CrouchWeak on_exit");
     }
 }
-
 
 pub struct CrouchMid;
 impl State for CrouchMid {

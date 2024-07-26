@@ -10,10 +10,10 @@ impl State for Start {
         println!("Jmp Start on_enter");
     }
 
-    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Set jump direction
         if context.ctx.flags.jump == JumpFlags::None {
-            handle_jump_flags(&mut context.ctx, buffer);
+            handle_jump_flags(&mut context.ctx, buffer, physics);
         }
         // Base case
         if context.elapsed > context.duration {

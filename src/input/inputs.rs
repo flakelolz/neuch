@@ -4,8 +4,8 @@ use crate::prelude::*;
 pub struct Input {
     pub up: bool,
     pub down: bool,
-    pub forward: bool,
-    pub backward: bool,
+    pub left: bool,
+    pub right: bool,
     pub lp: bool,
     pub mp: bool,
     pub hp: bool,
@@ -15,16 +15,7 @@ pub struct Input {
 }
 
 impl Input {
-    pub fn reset(&mut self) {
-        *self = Self::default();
-    }
-    pub fn update(
-        &mut self,
-        rl: &mut RaylibHandle,
-        config: &InputConfig,
-        player: &Player,
-        flipped: bool,
-    ) {
+    pub fn update(&mut self, rl: &mut RaylibHandle, config: &InputConfig, player: &Player) {
         let port = match player {
             Player::One => 0,
             Player::Two => 1,
@@ -34,30 +25,10 @@ impl Input {
             || rl.is_gamepad_button_down(port, config.gamepad.up);
         self.down = rl.is_key_down(config.keyboard.down)
             || rl.is_gamepad_button_down(port, config.gamepad.down);
-        // Forward
-        {
-            if rl.is_key_down(config.keyboard.right)
-                || rl.is_gamepad_button_down(port, config.gamepad.right)
-            {
-                if flipped {
-                    self.backward = true;
-                } else {
-                    self.forward = true;
-                }
-            }
-        }
-        // Backward
-        {
-            if rl.is_key_down(config.keyboard.left)
-                || rl.is_gamepad_button_down(port, config.gamepad.left)
-            {
-                if flipped {
-                    self.forward = true;
-                } else {
-                    self.backward = true;
-                }
-            }
-        }
+        self.left = rl.is_key_down(config.keyboard.left)
+            || rl.is_gamepad_button_down(port, config.gamepad.left);
+        self.right = rl.is_key_down(config.keyboard.right)
+            || rl.is_gamepad_button_down(port, config.gamepad.right);
         self.lp = rl.is_key_down(config.keyboard.lp)
             || rl.is_gamepad_button_down(port, config.gamepad.lp);
         self.mp = rl.is_key_down(config.keyboard.mp)
@@ -72,9 +43,9 @@ impl Input {
             || rl.is_gamepad_button_down(port, config.gamepad.hk);
 
         // Horizontal Neutral SOCD
-        if self.backward && self.forward {
-            self.backward = false;
-            self.forward = false;
+        if self.left && self.right {
+            self.left = false;
+            self.right = false;
         }
 
         // Up priority SOCD

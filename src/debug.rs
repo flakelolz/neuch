@@ -442,34 +442,16 @@ pub fn show_inputs(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
         return;
     }
     world
-        .query::<(&Input, &InputBuffer, &Physics, &Player)>()
+        .query::<(&Input,  &Player)>()
         .iter()
-        .for_each(|(_, (input, buffer, physics, player))| {
+        .for_each(|(_, (input, player))| {
             let dir_size = 20.;
             let size = 10.;
             let pos = 70;
             let y = HEIGHT - 40;
             let font = d.gui_get_font();
 
-            let left = {
-                if physics.facing_left {
-                    input.forward
-                } else {
-                    input.backward
-                }
-            };
-            let right = {
-                if physics.facing_left {
-                    input.backward
-                } else {
-                    input.forward
-                }
-            };
-
             if player == &Player::One {
-                // println!("input:  {} {}", input.backward, input.forward);
-                // println!("inpt2:  {} {}", input.left, input.right);
-                // println!("buffer: {} {}", buffer.current().backward, buffer.current().forward);
                 let gray = Color::new(169, 169, 169, 150);
                 // Up
                 match input.up {
@@ -482,12 +464,12 @@ pub fn show_inputs(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
                     false => d.draw_text_pro( &font, ">", rvec2(62, y + 13), rvec2(0., 0.), 90., dir_size, 0., gray),
                 }
                 // Left
-                match left {
+                match input.left {
                     true => d.draw_text_pro( &font, ">", rvec2(44, y + 17), rvec2(0., 0.), 180., dir_size, 0., Color::WHITE),
                     false => d.draw_text_pro( &font, ">", rvec2(44, y + 17), rvec2(0., 0.), 180., dir_size, 0., gray),
                 }
                 // Right
-                match right {
+                match input.right {
                     true => d.draw_text_pro( &font, ">", rvec2(58, y - 5), rvec2(0., 0.), 0., dir_size, 0., Color::WHITE),
                     false => d.draw_text_pro( &font, ">", rvec2(58, y - 5), rvec2(0., 0.), 0., dir_size, 0., gray),
                 }

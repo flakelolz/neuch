@@ -1,7 +1,12 @@
 use crate::prelude::*;
 
 impl InputBuffer {
-    pub fn was_dash_executed(&self, motions: Motions, mut time_limit: usize) -> bool {
+    pub fn was_dash_executed(
+        &self,
+        motions: Motions,
+        mut time_limit: usize,
+        flipped: &bool,
+    ) -> bool {
         if time_limit > (self.buffer.len() + self.index) {
             time_limit = self.buffer.len() + self.index;
         }
@@ -21,19 +26,20 @@ impl InputBuffer {
                     let direction = motion[motion_index];
 
                     // Invalidate if there's a down or backward input
-                    if Inputs::Down.is_pressed_exclusive(&input_command)
-                        || Inputs::Backward.is_pressed_exclusive(&input_command)
+                    if Inputs::Down.is_pressed_exclusive(&input_command, flipped)
+                        || Inputs::Backward.is_pressed_exclusive(&input_command, flipped)
                     {
                         motion_index = 0;
                     }
 
                     // Invalidate if there's a down forward input before the last forward
-                    if motion_index == 2 && Inputs::DownForward.is_pressed_exclusive(&input_command)
+                    if motion_index == 2
+                        && Inputs::DownForward.is_pressed_exclusive(&input_command, flipped)
                     {
                         motion_index = 0;
                     }
 
-                    if direction.is_pressed(&input_command) {
+                    if direction.is_pressed(&input_command, flipped) {
                         motion_index += 1;
                     }
 
@@ -55,20 +61,20 @@ impl InputBuffer {
                     let direction = motion[motion_index];
 
                     // Invalidate if there's a down or forward input
-                    if Inputs::Down.is_pressed_exclusive(&input_command)
-                        || Inputs::Forward.is_pressed_exclusive(&input_command)
+                    if Inputs::Down.is_pressed_exclusive(&input_command, flipped)
+                        || Inputs::Forward.is_pressed_exclusive(&input_command, flipped)
                     {
                         motion_index = 0;
                     }
 
                     // Invalidate if there's a down back input before the last forward
                     if motion_index == 2
-                        && Inputs::DownBackward.is_pressed_exclusive(&input_command)
+                        && Inputs::DownBackward.is_pressed_exclusive(&input_command, flipped)
                     {
                         motion_index = 0;
                     }
 
-                    if direction.is_pressed(&input_command) {
+                    if direction.is_pressed(&input_command, flipped) {
                         motion_index += 1;
                     }
 
@@ -82,26 +88,26 @@ impl InputBuffer {
         }
     }
 
-    pub fn validate_dash(&mut self, ctx: &mut SubContext) {
+    pub fn validate_dash(&mut self, ctx: &mut SubContext, flipped: &bool) {
         let duration = 6;
-        if self.held(Inputs::Forward, duration) {
+        if self.held(Inputs::Forward, duration, flipped) {
             ctx.can_dash_f = false;
-        } else if self.held(Inputs::Neutral, duration)
-            || self.held(Inputs::Backward, duration)
-            || self.held(Inputs::Down, duration)
-            || self.held(Inputs::Up, duration)
-            || self.was_motion_executed(Motions::ForcedDashForward, self.dash + 5)
+        } else if self.held(Inputs::Neutral, duration, flipped)
+            || self.held(Inputs::Backward, duration, flipped)
+            || self.held(Inputs::Down, duration, flipped)
+            || self.held(Inputs::Up, duration, flipped)
+            || self.was_motion_executed(Motions::ForcedDashForward, self.dash + 5, flipped)
         {
             ctx.can_dash_f = true;
         }
 
-        if self.held(Inputs::Backward, duration) {
+        if self.held(Inputs::Backward, duration, flipped) {
             ctx.can_dash_b = false;
-        } else if self.held(Inputs::Neutral, duration)
-            || self.held(Inputs::Forward, duration)
-            || self.held(Inputs::Down, duration)
-            || self.held(Inputs::Up, duration)
-            || self.was_motion_executed(Motions::ForcedDashBackward, self.dash + 5)
+        } else if self.held(Inputs::Neutral, duration, flipped)
+            || self.held(Inputs::Forward, duration, flipped)
+            || self.held(Inputs::Down, duration, flipped)
+            || self.held(Inputs::Up, duration, flipped)
+            || self.was_motion_executed(Motions::ForcedDashBackward, self.dash + 5, flipped)
         {
             ctx.can_dash_b = true;
         }
@@ -109,7 +115,7 @@ impl InputBuffer {
 }
 
 impl Inputs {
-    pub fn is_pressed_exclusive(&self, current: &Input) -> bool {
+    pub fn is_pressed_exclusive(&self, current: &Input, flipped: &bool) -> bool {
         match self {
             Inputs::Up => {
                 *current
@@ -126,58 +132,110 @@ impl Inputs {
                     }
             }
             Inputs::Forward => {
-                *current
-                    == Input {
-                        forward: true,
-                        ..Default::default()
-                    }
+                if *flipped {
+                    *current
+                        == Input {
+                            left: true,
+                            ..Default::default()
+                        }
+                } else {
+                    *current
+                        == Input {
+                            right: true,
+                            ..Default::default()
+                        }
+                }
             }
             Inputs::Backward => {
-                *current
-                    == Input {
-                        backward: true,
-                        ..Default::default()
-                    }
+                if *flipped {
+                    *current
+                        == Input {
+                            right: true,
+                            ..Default::default()
+                        }
+                } else {
+                    *current
+                        == Input {
+                            left: true,
+                            ..Default::default()
+                        }
+                }
             }
             Inputs::UpForward => {
-                *current
-                    == Input {
-                        up: true,
-                        forward: true,
-                        ..Default::default()
-                    }
+                if *flipped {
+                    *current
+                        == Input {
+                            up: true,
+                            left: true,
+                            ..Default::default()
+                        }
+                } else {
+                    *current
+                        == Input {
+                            up: true,
+                            right: true,
+                            ..Default::default()
+                        }
+                }
             }
             Inputs::UpBackward => {
-                *current
-                    == Input {
-                        up: true,
-                        backward: true,
-                        ..Default::default()
-                    }
+                if *flipped {
+                    *current
+                        == Input {
+                            up: true,
+                            right: true,
+                            ..Default::default()
+                        }
+                } else {
+                    *current
+                        == Input {
+                            up: true,
+                            left: true,
+                            ..Default::default()
+                        }
+                }
             }
             Inputs::DownForward => {
-                *current
-                    == Input {
-                        down: true,
-                        forward: true,
-                        ..Default::default()
-                    }
+                if *flipped {
+                    *current
+                        == Input {
+                            down: true,
+                            left: true,
+                            ..Default::default()
+                        }
+                } else {
+                    *current
+                        == Input {
+                            down: true,
+                            right: true,
+                            ..Default::default()
+                        }
+                }
             }
             Inputs::DownBackward => {
-                *current
-                    == Input {
-                        down: true,
-                        backward: true,
-                        ..Default::default()
-                    }
+                if *flipped {
+                    *current
+                        == Input {
+                            down: true,
+                            right: true,
+                            ..Default::default()
+                        }
+                } else {
+                    *current
+                        == Input {
+                            down: true,
+                            left: true,
+                            ..Default::default()
+                        }
+                }
             }
             Inputs::Neutral => {
                 *current
                     == Input {
                         up: false,
                         down: false,
-                        forward: false,
-                        backward: false,
+                        right: false,
+                        left: false,
                         ..Default::default()
                     }
             }
@@ -236,12 +294,12 @@ mod tests {
         let mut buffer = InputBuffer::default();
         test_helper(&mut buffer, Inputs::Forward);
         let current = buffer.current();
-        assert!(Inputs::Forward.is_pressed_exclusive(current));
+        assert!(Inputs::Forward.is_pressed_exclusive(current, &false));
 
         let mut buffer = InputBuffer::default();
         test_helper(&mut buffer, Inputs::DownForward);
         let current = buffer.current();
-        assert!(!Inputs::Forward.is_pressed_exclusive(current));
+        assert!(!Inputs::Forward.is_pressed_exclusive(current, &false));
     }
 
     #[test]
@@ -250,7 +308,7 @@ mod tests {
         test_helper(&mut buffer, Inputs::Forward);
         test_helper(&mut buffer, Inputs::Neutral);
         test_helper(&mut buffer, Inputs::Forward);
-        assert!(buffer.was_dash_executed(Motions::DashForward, buffer.dash));
+        assert!(buffer.was_dash_executed(Motions::DashForward, buffer.dash, &false));
     }
 
     #[test]
@@ -259,7 +317,7 @@ mod tests {
         test_helper(&mut buffer, Inputs::Backward);
         test_helper(&mut buffer, Inputs::Neutral);
         test_helper(&mut buffer, Inputs::Backward);
-        assert!(buffer.was_dash_executed(Motions::DashBackward, buffer.dash));
+        assert!(buffer.was_dash_executed(Motions::DashBackward, buffer.dash, &false));
     }
 
     #[test]
@@ -270,7 +328,7 @@ mod tests {
         test_helper(&mut buffer, Inputs::Backward);
         test_helper(&mut buffer, Inputs::Neutral);
         test_helper(&mut buffer, Inputs::Forward);
-        assert!(!buffer.was_dash_executed(Motions::DashForward, buffer.dash));
+        assert!(!buffer.was_dash_executed(Motions::DashForward, buffer.dash, &false));
 
         let mut buffer = InputBuffer::default();
         test_helper(&mut buffer, Inputs::Backward);
@@ -278,7 +336,7 @@ mod tests {
         test_helper(&mut buffer, Inputs::Forward);
         test_helper(&mut buffer, Inputs::Neutral);
         test_helper(&mut buffer, Inputs::Backward);
-        assert!(!buffer.was_dash_executed(Motions::DashBackward, buffer.dash));
+        assert!(!buffer.was_dash_executed(Motions::DashBackward, buffer.dash, &false));
     }
 
     #[test]
@@ -288,7 +346,7 @@ mod tests {
         test_helper(&mut buffer, Inputs::Forward);
         test_helper(&mut buffer, Inputs::Neutral);
         test_helper(&mut buffer, Inputs::Forward);
-        assert!(buffer.was_dash_executed(Motions::DashForward, buffer.dash));
+        assert!(buffer.was_dash_executed(Motions::DashForward, buffer.dash, &false));
     }
 
     #[test]
@@ -296,11 +354,14 @@ mod tests {
         let mut buffer = InputBuffer::default();
         let mut ctx = SubContext::default();
         for _ in 1..=19 {
-            dash_helper(&mut buffer, Inputs::Backward, &mut ctx);
+            dash_helper(&mut buffer, Inputs::Backward, &mut ctx, &false);
         }
-        dash_helper(&mut buffer, Inputs::Neutral, &mut ctx);
-        dash_helper(&mut buffer, Inputs::Backward, &mut ctx);
-        assert!(!(buffer.was_dash_executed(Motions::DashBackward, buffer.dash) && ctx.can_dash_b));
+        dash_helper(&mut buffer, Inputs::Neutral, &mut ctx, &false);
+        dash_helper(&mut buffer, Inputs::Backward, &mut ctx, &false);
+        assert!(
+            !(buffer.was_dash_executed(Motions::DashBackward, buffer.dash, &false)
+                && ctx.can_dash_b)
+        );
     }
 
     #[test]
@@ -308,13 +369,16 @@ mod tests {
         let mut buffer = InputBuffer::default();
         let mut ctx = SubContext::default();
         for _ in 1..=10 {
-            dash_helper(&mut buffer, Inputs::Backward, &mut ctx);
+            dash_helper(&mut buffer, Inputs::Backward, &mut ctx, &false);
         }
-        dash_helper(&mut buffer, Inputs::Neutral, &mut ctx);
-        dash_helper(&mut buffer, Inputs::Backward, &mut ctx);
-        dash_helper(&mut buffer, Inputs::Neutral, &mut ctx);
-        dash_helper(&mut buffer, Inputs::Backward, &mut ctx);
-        assert!((buffer.was_dash_executed(Motions::DashBackward, buffer.dash) && ctx.can_dash_b));
+        dash_helper(&mut buffer, Inputs::Neutral, &mut ctx, &false);
+        dash_helper(&mut buffer, Inputs::Backward, &mut ctx, &false);
+        dash_helper(&mut buffer, Inputs::Neutral, &mut ctx, &false);
+        dash_helper(&mut buffer, Inputs::Backward, &mut ctx, &false);
+        assert!(
+            (buffer.was_dash_executed(Motions::DashBackward, buffer.dash, &false)
+                && ctx.can_dash_b)
+        );
     }
 
     #[test]
@@ -323,15 +387,18 @@ mod tests {
         let mut ctx = SubContext::default();
         for _ in 1..=19 {
             // This prevents the empty neutral spaces to force a dash
-            dash_helper(&mut buffer, Inputs::Down, &mut ctx);
+            dash_helper(&mut buffer, Inputs::Down, &mut ctx, &false);
         }
         for _ in 20..=27 {
-            dash_helper(&mut buffer, Inputs::DownBackward, &mut ctx);
+            dash_helper(&mut buffer, Inputs::DownBackward, &mut ctx, &false);
         }
-        dash_helper(&mut buffer, Inputs::Backward, &mut ctx);
-        dash_helper(&mut buffer, Inputs::Neutral, &mut ctx);
-        dash_helper(&mut buffer, Inputs::Backward, &mut ctx);
-        assert!(!(buffer.was_dash_executed(Motions::DashBackward, buffer.dash) && ctx.can_dash_b));
+        dash_helper(&mut buffer, Inputs::Backward, &mut ctx, &false);
+        dash_helper(&mut buffer, Inputs::Neutral, &mut ctx, &false);
+        dash_helper(&mut buffer, Inputs::Backward, &mut ctx, &false);
+        assert!(
+            !(buffer.was_dash_executed(Motions::DashBackward, buffer.dash, &false)
+                && ctx.can_dash_b)
+        );
     }
 
     #[test]
@@ -340,16 +407,19 @@ mod tests {
         let mut ctx = SubContext::default();
         for _ in 1..=19 {
             // This prevents the empty neutral spaces to force a dash
-            dash_helper(&mut buffer, Inputs::Down, &mut ctx);
+            dash_helper(&mut buffer, Inputs::Down, &mut ctx, &false);
         }
         for _ in 20..=27 {
-            dash_helper(&mut buffer, Inputs::DownBackward, &mut ctx);
+            dash_helper(&mut buffer, Inputs::DownBackward, &mut ctx, &false);
         }
-        dash_helper(&mut buffer, Inputs::Neutral, &mut ctx);
-        dash_helper(&mut buffer, Inputs::Backward, &mut ctx);
-        dash_helper(&mut buffer, Inputs::Neutral, &mut ctx);
-        dash_helper(&mut buffer, Inputs::Backward, &mut ctx);
-        assert!((buffer.was_dash_executed(Motions::DashBackward, buffer.dash) && ctx.can_dash_b));
+        dash_helper(&mut buffer, Inputs::Neutral, &mut ctx, &false);
+        dash_helper(&mut buffer, Inputs::Backward, &mut ctx, &false);
+        dash_helper(&mut buffer, Inputs::Neutral, &mut ctx, &false);
+        dash_helper(&mut buffer, Inputs::Backward, &mut ctx, &false);
+        assert!(
+            (buffer.was_dash_executed(Motions::DashBackward, buffer.dash, &false)
+                && ctx.can_dash_b)
+        );
     }
 
     #[test]
@@ -358,7 +428,7 @@ mod tests {
         test_helper(&mut buffer, Inputs::DownBackward);
         test_helper(&mut buffer, Inputs::Neutral);
         test_helper(&mut buffer, Inputs::Backward);
-        assert!(buffer.was_dash_executed(Motions::DashBackward, buffer.dash));
+        assert!(buffer.was_dash_executed(Motions::DashBackward, buffer.dash, &false));
     }
 
     #[test]
@@ -369,7 +439,7 @@ mod tests {
         test_helper(&mut buffer, Inputs::Down);
         test_helper(&mut buffer, Inputs::Neutral);
         test_helper(&mut buffer, Inputs::Backward);
-        assert!(!buffer.was_dash_executed(Motions::DashBackward, buffer.dash));
+        assert!(!buffer.was_dash_executed(Motions::DashBackward, buffer.dash, &false));
     }
 
     #[test]
@@ -379,7 +449,7 @@ mod tests {
         test_helper(&mut buffer, Inputs::DownBackward);
         test_helper(&mut buffer, Inputs::Neutral);
         test_helper(&mut buffer, Inputs::Backward);
-        assert!(buffer.was_dash_executed(Motions::DashBackward, buffer.dash));
+        assert!(buffer.was_dash_executed(Motions::DashBackward, buffer.dash, &false));
     }
 
     #[test]
@@ -389,6 +459,6 @@ mod tests {
         test_helper(&mut buffer, Inputs::Neutral);
         test_helper(&mut buffer, Inputs::DownBackward);
         test_helper(&mut buffer, Inputs::Backward);
-        assert!(!buffer.was_dash_executed(Motions::DashBackward, buffer.dash));
+        assert!(!buffer.was_dash_executed(Motions::DashBackward, buffer.dash, &false));
     }
 }

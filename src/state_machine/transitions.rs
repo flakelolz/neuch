@@ -170,21 +170,21 @@ pub fn attack_transitions(
 pub fn jump_transitions(
     context: &mut Context,
     buffer: &InputBuffer,
-    _physics: &mut Physics,
+    physics: &mut Physics,
 ) -> bool {
     if up(buffer) {
-        handle_jump_flags(&mut context.ctx, buffer);
+        handle_jump_flags(&mut context.ctx, buffer, physics);
         context.ctx.next = Some(Box::new(jumping::Start));
         return true;
     }
     false
 }
 
-pub fn handle_jump_flags(ctx: &mut SubContext, buffer: &InputBuffer) {
-    if up_forward(buffer) {
+pub fn handle_jump_flags(ctx: &mut SubContext, buffer: &InputBuffer, physics: &Physics) {
+    if up_forward(buffer, &physics.facing_left) {
         ctx.flags.jump = JumpFlags::Forward;
     }
-    if up_backward(buffer) {
+    if up_backward(buffer, &physics.facing_left) {
         ctx.flags.jump = JumpFlags::Backward;
     }
 }
@@ -209,23 +209,7 @@ pub fn handle_ground_collision(
 
 pub fn turn_transition(ctx: &mut SubContext, buffer: &InputBuffer, physics: &mut Physics) -> bool {
     if face_opponent(physics) {
-        // Attack transitions
-        if !ctx.airborne && Group::Normals.set(buffer, ctx, physics) {
-            return true;
-        }
-        if ctx.airborne && Group::AirNormals.set(buffer, ctx, physics) {
-            return true;
-        }
-        // Reverse stored dash direction
-        if buffer.was_motion_executed(Motions::DashForward, buffer.dash + 5) {
-            ctx.next = Some(Box::new(standing::DashBackward));
-            return true;
-        }
-        if buffer.was_motion_executed(Motions::DashBackward, buffer.dash + 5) {
-            ctx.next = Some(Box::new(standing::DashForward));
-            return true;
-        }
-        // Turn-around
+        // Base case
         if down(buffer) {
             ctx.next = Some(Box::new(crouching::Turn));
             return true;

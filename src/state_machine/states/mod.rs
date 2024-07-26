@@ -193,73 +193,92 @@ pub enum Standing {
 }
 
 impl Standing {
-    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, _physics: &mut Physics) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
         match self {
             Standing::LightPunch => {
-                if buffer.buffered(Inputs::LightPunch, buffer.attack) && !down(buffer) {
+                if buffer.buffered(Inputs::LightPunch, buffer.attack, &physics.facing_left)
+                    && !down(buffer)
+                {
                     ctx.next.replace(Box::new(standing::LightPunch));
                     return true;
                 }
                 false
             }
             Standing::MediumPunch => {
-                if buffer.buffered(Inputs::MediumPunch, buffer.attack) && !down(buffer) {
+                if buffer.buffered(Inputs::MediumPunch, buffer.attack, &physics.facing_left)
+                    && !down(buffer)
+                {
                     ctx.next.replace(Box::new(standing::MediumPunch));
                     return true;
                 }
                 false
             }
             Standing::HeavyPunch => {
-                if buffer.buffered(Inputs::HeavyPunch, buffer.attack) && !down(buffer) {
+                if buffer.buffered(Inputs::HeavyPunch, buffer.attack, &physics.facing_left)
+                    && !down(buffer)
+                {
                     ctx.next.replace(Box::new(standing::HeavyPunch));
                     return true;
                 }
                 false
             }
             Standing::LightKick => {
-                if buffer.buffered(Inputs::LightKick, buffer.attack) && !down(buffer) {
+                if buffer.buffered(Inputs::LightKick, buffer.attack, &physics.facing_left)
+                    && !down(buffer)
+                {
                     ctx.next.replace(Box::new(standing::LightKick));
                     return true;
                 }
                 false
             }
             Standing::MediumKick => {
-                if buffer.buffered(Inputs::MediumKick, buffer.attack) && !down(buffer) {
+                if buffer.buffered(Inputs::MediumKick, buffer.attack, &physics.facing_left)
+                    && !down(buffer)
+                {
                     ctx.next.replace(Box::new(standing::MediumKick));
                     return true;
                 }
                 false
             }
             Standing::HeavyKick => {
-                if buffer.buffered(Inputs::HeavyKick, buffer.attack) && !down(buffer) {
+                if buffer.buffered(Inputs::HeavyKick, buffer.attack, &physics.facing_left)
+                    && !down(buffer)
+                {
                     ctx.next.replace(Box::new(standing::HeavyKick));
                     return true;
                 }
                 false
             }
             Standing::DashForward => {
-                if buffer.was_dash_executed(Motions::DashForward, buffer.dash) && ctx.can_dash_f {
+                if buffer.was_dash_executed(Motions::DashForward, buffer.dash, &physics.facing_left)
+                    && ctx.can_dash_f
+                {
                     ctx.next.replace(Box::new(standing::DashForward));
                     return true;
                 }
                 false
             }
             Standing::DashBackward => {
-                if buffer.was_dash_executed(Motions::DashBackward, buffer.dash) && ctx.can_dash_b {
+                if buffer.was_dash_executed(
+                    Motions::DashBackward,
+                    buffer.dash,
+                    &physics.facing_left,
+                ) && ctx.can_dash_b
+                {
                     ctx.next.replace(Box::new(standing::DashBackward));
                     return true;
                 }
                 false
             }
             Standing::WalkForward => {
-                if forward(buffer) {
+                if forward(buffer, &physics.facing_left) {
                     ctx.next.replace(Box::new(standing::WalkForward));
                     return true;
                 }
                 false
             }
             Standing::WalkBackward => {
-                if backward(buffer) {
+                if backward(buffer, &physics.facing_left) {
                     ctx.next.replace(Box::new(standing::WalkBackward));
                     return true;
                 }
@@ -282,7 +301,7 @@ pub enum Crouching {
 }
 
 impl Crouching {
-    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, _physics: &mut Physics) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
         match self {
             Crouching::Start => {
                 if down(buffer) {
@@ -299,42 +318,54 @@ impl Crouching {
                 false
             }
             Crouching::LightPunch => {
-                if buffer.buffered(Inputs::LightPunch, buffer.attack) && down(buffer) {
+                if buffer.buffered(Inputs::LightPunch, buffer.attack, &physics.facing_left)
+                    && down(buffer)
+                {
                     ctx.next.replace(Box::new(crouching::LightPunch));
                     return true;
                 }
                 false
             }
             Crouching::MediumPunch => {
-                if buffer.buffered(Inputs::MediumPunch, buffer.attack) && down(buffer) {
+                if buffer.buffered(Inputs::MediumPunch, buffer.attack, &physics.facing_left)
+                    && down(buffer)
+                {
                     ctx.next.replace(Box::new(crouching::MediumPunch));
                     return true;
                 }
                 false
             }
             Crouching::HeavyPunch => {
-                if buffer.buffered(Inputs::HeavyPunch, buffer.attack) && down(buffer) {
+                if buffer.buffered(Inputs::HeavyPunch, buffer.attack, &physics.facing_left)
+                    && down(buffer)
+                {
                     ctx.next.replace(Box::new(crouching::HeavyPunch));
                     return true;
                 }
                 false
             }
             Crouching::LightKick => {
-                if buffer.buffered(Inputs::LightKick, buffer.attack) && down(buffer) {
+                if buffer.buffered(Inputs::LightKick, buffer.attack, &physics.facing_left)
+                    && down(buffer)
+                {
                     ctx.next.replace(Box::new(crouching::LightKick));
                     return true;
                 }
                 false
             }
             Crouching::MediumKick => {
-                if buffer.buffered(Inputs::MediumKick, buffer.attack) && down(buffer) {
+                if buffer.buffered(Inputs::MediumKick, buffer.attack, &physics.facing_left)
+                    && down(buffer)
+                {
                     ctx.next.replace(Box::new(crouching::MediumKick));
                     return true;
                 }
                 false
             }
             Crouching::HeavyKick => {
-                if buffer.buffered(Inputs::HeavyKick, buffer.attack) && down(buffer) {
+                if buffer.buffered(Inputs::HeavyKick, buffer.attack, &physics.facing_left)
+                    && down(buffer)
+                {
                     ctx.next.replace(Box::new(crouching::HeavyKick));
                     return true;
                 }
@@ -360,11 +391,11 @@ pub enum Jumping {
 }
 
 impl Jumping {
-    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, _physics: &mut Physics) -> bool {
+    pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
         match self {
             Jumping::Start => {
                 if up(buffer) && !ctx.airborne {
-                    handle_jump_flags(ctx, buffer);
+                    handle_jump_flags(ctx, buffer, physics);
                     ctx.next.replace(Box::new(jumping::Start));
                     return true;
                 }
@@ -376,13 +407,13 @@ impl Jumping {
                 }
             }
             Jumping::Forward => {
-                if up_forward(buffer) {
+                if up_forward(buffer, &physics.facing_left) {
                     ctx.next.replace(Box::new(jumping::Forward));
                     return true;
                 }
             }
             Jumping::Backward => {
-                if up_backward(buffer) {
+                if up_backward(buffer, &physics.facing_left) {
                     ctx.next.replace(Box::new(jumping::Backward));
                     return true;
                 }
@@ -394,37 +425,49 @@ impl Jumping {
                 }
             }
             Jumping::LightPunch => {
-                if buffer.buffered(Inputs::LightPunch, buffer.attack) && ctx.airborne {
+                if buffer.buffered(Inputs::LightPunch, buffer.attack, &physics.facing_left)
+                    && ctx.airborne
+                {
                     ctx.next.replace(Box::new(jumping::LightPunch));
                     return true;
                 }
             }
             Jumping::MediumPunch => {
-                if buffer.buffered(Inputs::MediumPunch, buffer.attack) && ctx.airborne {
+                if buffer.buffered(Inputs::MediumPunch, buffer.attack, &physics.facing_left)
+                    && ctx.airborne
+                {
                     ctx.next.replace(Box::new(jumping::MediumPunch));
                     return true;
                 }
             }
             Jumping::HeavyPunch => {
-                if buffer.buffered(Inputs::HeavyPunch, buffer.attack) && ctx.airborne {
+                if buffer.buffered(Inputs::HeavyPunch, buffer.attack, &physics.facing_left)
+                    && ctx.airborne
+                {
                     ctx.next.replace(Box::new(jumping::HeavyPunch));
                     return true;
                 }
             }
             Jumping::LightKick => {
-                if buffer.buffered(Inputs::LightKick, buffer.attack) && ctx.airborne {
+                if buffer.buffered(Inputs::LightKick, buffer.attack, &physics.facing_left)
+                    && ctx.airborne
+                {
                     ctx.next.replace(Box::new(jumping::LightKick));
                     return true;
                 }
             }
             Jumping::MediumKick => {
-                if buffer.buffered(Inputs::MediumKick, buffer.attack) && ctx.airborne {
+                if buffer.buffered(Inputs::MediumKick, buffer.attack, &physics.facing_left)
+                    && ctx.airborne
+                {
                     ctx.next.replace(Box::new(jumping::MediumKick));
                     return true;
                 }
             }
             Jumping::HeavyKick => {
-                if buffer.buffered(Inputs::HeavyKick, buffer.attack) && ctx.airborne {
+                if buffer.buffered(Inputs::HeavyKick, buffer.attack, &physics.facing_left)
+                    && ctx.airborne
+                {
                     ctx.next.replace(Box::new(jumping::HeavyKick));
                     return true;
                 }

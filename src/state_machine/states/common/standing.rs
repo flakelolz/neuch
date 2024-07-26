@@ -69,7 +69,7 @@ impl State for WalkForward {
             return;
         }
         // Base case & return to idle
-        if !forward(buffer) {
+        if !forward(buffer, &physics.facing_left) {
             context.ctx.next = Some(Box::new(standing::Idle));
         }
     }
@@ -110,7 +110,7 @@ impl State for WalkBackward {
             return;
         }
         // Base case & return to idle
-        if !backward(buffer) {
+        if !backward(buffer, &physics.facing_left) {
             context.ctx.next = Some(Box::new(standing::Idle));
         }
     }

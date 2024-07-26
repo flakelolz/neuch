@@ -35,7 +35,9 @@ pub struct HitEvent {
 }
 
 pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
-    for (id, (state, buffer)) in world.query_mut::<(&mut StateMachine, &mut InputBuffer)>() {
+    for (id, (state, buffer, physics)) in
+        world.query_mut::<(&mut StateMachine, &mut InputBuffer, &Physics)>()
+    {
         let reaction = &mut state.context.reaction;
         if reaction.hitstop > 0 {
             reaction.hitstop -= 1;
@@ -58,7 +60,7 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
             }
 
             if id == hit_event.defender {
-                if !buffer.current().backward {
+                if !backward(buffer, &physics.facing_left) {
                     if hit_event.proximity.is_some() {
                         continue;
                     }

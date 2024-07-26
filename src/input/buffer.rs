@@ -73,25 +73,29 @@ pub enum Inputs {
 }
 
 impl Inputs {
-    pub fn was_initially_pressed(&self, current: &Input, previous: &Input) -> bool {
+    pub fn was_initially_pressed(&self, current: &Input, previous: &Input, flipped: &bool) -> bool {
+        let forward = if *flipped {
+            current.left && !previous.left
+        } else {
+            current.right && !previous.right
+        };
+        let backward = if *flipped {
+            current.right && !previous.right
+        } else {
+            current.left && !previous.left
+        };
         match self {
             Inputs::Up => current.up && !previous.up,
             Inputs::Down => current.down && !previous.down,
-            Inputs::Forward => current.forward && !previous.forward,
-            Inputs::Backward => current.backward && !previous.backward,
-            Inputs::UpForward => current.up && current.forward && !previous.up && !previous.forward,
-            Inputs::UpBackward => {
-                current.up && current.backward && !previous.up && !previous.backward
-            }
-            Inputs::DownForward => {
-                current.down && current.forward && !previous.down && !previous.forward
-            }
-            Inputs::DownBackward => {
-                current.down && current.backward && !previous.down && !previous.backward
-            }
+            Inputs::Forward => forward,
+            Inputs::Backward => backward,
+            Inputs::UpForward => current.up && !previous.up && forward,
+            Inputs::UpBackward => current.up && !previous.up && backward,
+            Inputs::DownForward => current.down && !previous.down && forward,
+            Inputs::DownBackward => current.down && !previous.down && backward,
             Inputs::Neutral => {
-                (!current.up && !current.down && !current.forward && !current.backward)
-                    && (previous.up || previous.down || previous.forward || previous.backward)
+                (!current.up && !current.down && !current.right && !current.left)
+                    && (previous.up || previous.down || previous.right || previous.left)
             }
             Inputs::LightPunch => current.lp && !previous.lp,
             Inputs::MediumPunch => current.mp && !previous.mp,
@@ -102,19 +106,27 @@ impl Inputs {
         }
     }
 
-    pub fn is_pressed(&self, current: &Input) -> bool {
+    pub fn is_pressed(&self, current: &Input, flipped: &bool) -> bool {
+        let forward = if *flipped {
+            current.left
+        } else {
+            current.right
+        };
+        let backward = if *flipped {
+            current.right
+        } else {
+            current.left
+        };
         match self {
             Inputs::Up => current.up,
             Inputs::Down => current.down,
-            Inputs::Forward => current.forward,
-            Inputs::Backward => current.backward,
-            Inputs::UpForward => current.up && current.forward,
-            Inputs::UpBackward => current.up && current.backward,
-            Inputs::DownForward => current.down && current.forward,
-            Inputs::DownBackward => current.down && current.backward,
-            Inputs::Neutral => {
-                !current.up && !current.down && !current.forward && !current.backward
-            }
+            Inputs::Forward => forward,
+            Inputs::Backward => backward,
+            Inputs::UpForward => current.up && forward,
+            Inputs::UpBackward => current.up && backward,
+            Inputs::DownForward => current.down && forward,
+            Inputs::DownBackward => current.down && backward,
+            Inputs::Neutral => !current.up && !current.down && !current.right && !current.left,
             Inputs::LightPunch => current.lp,
             Inputs::MediumPunch => current.mp,
             Inputs::HeavyPunch => current.hp,
@@ -162,23 +174,23 @@ impl InputBuffer {
     }
 
     /// Check if the input is currently pressed
-    pub fn pressed(&self, inputs: Inputs) -> bool {
+    pub fn pressed(&self, inputs: Inputs, flipped: &bool) -> bool {
         let current = self.current();
-        inputs.is_pressed(current)
+        inputs.is_pressed(current, flipped)
     }
 
     /// Check if the input was pressed on a specific frame
-    fn pressed_on_frame(&self, inputs: Inputs, frame: usize) -> bool {
+    fn pressed_on_frame(&self, inputs: Inputs, frame: usize, flipped: &bool) -> bool {
         let buffer_index = frame % self.buffer.len();
         let input_command = self.buffer[buffer_index];
 
-        inputs.is_pressed(&input_command)
+        inputs.is_pressed(&input_command, flipped)
     }
 
     /// Check if an input was performed within a certain duration on the past frames
-    fn pressed_buffered(&self, input: Inputs, duration: usize) -> bool {
+    fn pressed_buffered(&self, input: Inputs, duration: usize, flipped: &bool) -> bool {
         for i in 0..duration + 1 {
-            if self.just_pressed_on_frame(input, self.buffer.len() + self.index - i) {
+            if self.just_pressed_on_frame(input, self.buffer.len() + self.index - i, flipped) {
                 return true;
             }
         }
@@ -187,33 +199,33 @@ impl InputBuffer {
     }
 
     /// Checks if the input was initially pressed this frame
-    fn just_pressed(&self, inputs: Inputs) -> bool {
+    fn just_pressed(&self, inputs: Inputs, flipped: &bool) -> bool {
         let current = self.current();
         let previous = self.previous();
 
-        inputs.was_initially_pressed(current, previous)
+        inputs.was_initially_pressed(current, previous, flipped)
     }
 
     /// Checks if the input was initially pressed on a specific frame
-    fn just_pressed_on_frame(&self, inputs: Inputs, frame: usize) -> bool {
+    fn just_pressed_on_frame(&self, inputs: Inputs, frame: usize, flipped: &bool) -> bool {
         let buffer_index = frame % self.buffer.len();
         let last_index = (self.buffer.len() + frame - 1) % self.buffer.len();
 
         let current = self.buffer[buffer_index];
         let previous = self.buffer[last_index];
 
-        inputs.was_initially_pressed(&current, &previous)
+        inputs.was_initially_pressed(&current, &previous, flipped)
     }
 
     /// Check if an input was performed within a certain duration on the past frames
-    pub fn buffered(&self, input: Inputs, duration: usize) -> bool {
-        self.pressed_buffered(input, duration)
+    pub fn buffered(&self, input: Inputs, duration: usize, flipped: &bool) -> bool {
+        self.pressed_buffered(input, duration, flipped)
     }
 
     /// Check if an input has been held for a certain amount of frames
-    pub fn held(&self, input: Inputs, duration: usize) -> bool {
+    pub fn held(&self, input: Inputs, duration: usize, flipped: &bool) -> bool {
         for i in 0..duration + 1 {
-            if self.pressed_on_frame(input, self.buffer.len() + self.index - i) {
+            if self.pressed_on_frame(input, self.buffer.len() + self.index - i, flipped) {
                 continue;
             } else {
                 return false;
@@ -224,7 +236,12 @@ impl InputBuffer {
     }
 
     /// Check if a motion was performed within a time limit
-    pub fn was_motion_executed(&self, motions: Motions, mut time_limit: usize) -> bool {
+    pub fn was_motion_executed(
+        &self,
+        motions: Motions,
+        mut time_limit: usize,
+        flipped: &bool,
+    ) -> bool {
         if time_limit > (self.buffer.len() + self.index) {
             time_limit = self.buffer.len() + self.index;
         }
@@ -240,7 +257,7 @@ impl InputBuffer {
                 let input_command = self.buffer[buffer_position];
                 let direction = motion[current_motion_index];
 
-                if check_numpad_direction(&input_command, direction) {
+                if check_numpad_direction(&input_command, direction, flipped) {
                     current_motion_index += 1;
 
                     if current_motion_index >= motion.len() {
@@ -255,17 +272,19 @@ impl InputBuffer {
 }
 
 /// Checks if a direction was pressed using numpad notation
-fn check_numpad_direction(input: &Input, direction: u8) -> bool {
+fn check_numpad_direction(input: &Input, direction: u8, flipped: &bool) -> bool {
+    let forward = if *flipped { input.left } else { input.right };
+    let backward = if *flipped { input.right } else { input.left };
     match direction {
-        1 => input.down && input.backward,
-        2 => input.down && !input.backward && !input.forward,
-        3 => input.down && input.forward,
-        4 => input.backward && !input.up && !input.down,
-        5 => !input.backward && !input.up && !input.down && !input.forward,
-        6 => input.forward && !input.up && !input.down,
-        7 => input.up && input.backward,
-        8 => input.up && !input.backward && !input.forward,
-        9 => input.up && input.forward,
+        1 => input.down && backward,
+        2 => input.down && !backward && !forward,
+        3 => input.down && forward,
+        4 => backward && !input.up && !input.down,
+        5 => !backward && !input.up && !input.down && !forward,
+        6 => forward && !input.up && !input.down,
+        7 => input.up && backward,
+        8 => input.up && !backward && !forward,
+        9 => input.up && forward,
         _ => false,
     }
 }
@@ -293,7 +312,7 @@ mod tests {
 
         let inputs = Inputs::Down;
 
-        assert!(inputs.was_initially_pressed(current, previous));
+        assert!(inputs.was_initially_pressed(current, previous, &false));
     }
 
     #[test]
@@ -302,7 +321,7 @@ mod tests {
 
         for _ in 0..1 {
             let input = Input {
-                forward: true,
+                right: true,
                 ..Default::default()
             };
 
@@ -316,14 +335,14 @@ mod tests {
 
         for _ in 2..3 {
             let input = Input {
-                forward: true,
+                right: true,
                 ..Default::default()
             };
 
             buffer.update(&input);
         }
 
-        assert!(buffer.just_pressed(Inputs::Forward));
+        assert!(buffer.just_pressed(Inputs::Forward, &false));
     }
 
     #[test]
@@ -344,8 +363,8 @@ mod tests {
 
         buffer.update(&input);
 
-        assert!(buffer.just_pressed_on_frame(Inputs::Down, 1));
-        assert!(!buffer.just_pressed_on_frame(Inputs::Up, 1));
+        assert!(buffer.just_pressed_on_frame(Inputs::Down, 1, &false));
+        assert!(!buffer.just_pressed_on_frame(Inputs::Up, 1, &false));
     }
 
     #[test]
@@ -373,8 +392,8 @@ mod tests {
             buffer.update(&input);
         }
 
-        assert!(buffer.pressed_buffered(Inputs::Up, 2));
-        assert!(buffer.pressed_buffered(Inputs::Down, 5));
+        assert!(buffer.pressed_buffered(Inputs::Up, 2, &false));
+        assert!(buffer.pressed_buffered(Inputs::Down, 5, &false));
     }
 
     #[test]
@@ -388,6 +407,6 @@ mod tests {
             buffer.update(&input);
         }
 
-        assert!(buffer.held(Inputs::Down, 4));
+        assert!(buffer.held(Inputs::Down, 4, &false));
     }
 }

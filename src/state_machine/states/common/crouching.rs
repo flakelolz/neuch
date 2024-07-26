@@ -42,7 +42,9 @@ impl State for Idle {
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Transitions
-        turn_transition(&mut context.ctx, buffer, physics);
+        if turn_transition(&mut context.ctx, buffer, physics) {
+            return;
+        }
         if attack_transitions(context, buffer, physics) {
             return;
         }
