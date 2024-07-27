@@ -38,13 +38,17 @@
 - [x] Fix Push logic
 - [x] Fix ordering of systems that might be adding a frame of input delay
 - [x] Fix flip logic and buffer system when flipping
+- [x] walls
+- [ ] Fix push behavior on a cornered character
+- [x] Apply knock-back to attacker when defender is cornered
+- [x] Pull character on cross-up hit
+- [ ] Fix cross-up hit pull logic, amount and feel
 - [ ] Fix not stun when hit on the first frame of the Turn animation
-- [ ] Camera and walls
 - [ ] Background
+- [ ] Camera
 - [ ] Proximity normals
-- [ ] Specials
+- [ ] Special moves
 - [ ] Special cancels
-- [ ] Add left and right inputs along with back and forward and make sure it doesn't break dashes
 
 ## Dash should fail
 
