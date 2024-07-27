@@ -81,7 +81,7 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
                 d.clear_background(Color::BLANK);
                 show_frame_count(&world, &mut d, &debug);
                 show_state(&world, &mut d, &debug);
-                show_context(&world, &mut d, &debug);
+                show_info(&world, &mut d, &debug);
                 show_inputs(&world, &mut d, &debug);
             }
         }

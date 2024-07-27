@@ -13,8 +13,8 @@
   },
   "pushbox": {
     "top": 8000,
-    "left": -23000,
     "bottom": -69000,
+    "left": -23000,
     "right": 26000
   },
   "actions": [
@@ -31,8 +31,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -43,8 +43,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -55,8 +55,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -67,8 +67,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -161,8 +161,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -173,8 +173,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -185,8 +185,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -197,8 +197,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -298,8 +298,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -310,8 +310,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -322,8 +322,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -334,8 +334,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -435,8 +435,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -447,8 +447,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -459,8 +459,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -471,8 +471,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -622,8 +622,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -634,8 +634,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -646,8 +646,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -658,8 +658,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -764,8 +764,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -776,8 +776,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -788,8 +788,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -800,8 +800,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -820,8 +820,8 @@
           },
           "value": {
             "top": 19000,
-            "left": 30000,
             "bottom": 5000,
+            "left": 30000,
             "right": 75000
           }
         }
@@ -849,8 +849,8 @@
           "duration": 7,
           "value": {
             "top": 20000,
-            "left": 30000,
             "bottom": -9000,
+            "left": 30000,
             "right": 150000
           }
         }
@@ -906,8 +906,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -918,8 +918,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -930,8 +930,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -942,8 +942,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -955,15 +955,15 @@
           "properties": {
             "hit_type": "Ground",
             "strength": "Mid",
-            "hitstop": 6,
+            "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
             "knockback": 8000
           },
           "value": {
             "top": 15000,
-            "left": 30000,
             "bottom": -1000,
+            "left": 30000,
             "right": 75000
           }
         }
@@ -976,8 +976,8 @@
           "duration": 9,
           "value": {
             "top": 20000,
-            "left": 30000,
             "bottom": -9000,
+            "left": 30000,
             "right": 150000
           }
         }
@@ -1054,8 +1054,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -1066,8 +1066,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -1078,8 +1078,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -1090,8 +1090,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -1110,8 +1110,8 @@
           },
           "value": {
             "top": 24000,
-            "left": 30000,
             "bottom": 7000,
+            "left": 30000,
             "right": 69000
           }
         }
@@ -1183,8 +1183,8 @@
           "duration": 7,
           "value": {
             "top": 20000,
-            "left": 30000,
             "bottom": -9000,
+            "left": 30000,
             "right": 150000
           }
         }
@@ -1289,8 +1289,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -1301,8 +1301,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -1313,8 +1313,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -1325,8 +1325,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -1345,8 +1345,8 @@
           },
           "value": {
             "top": -28000,
-            "left": 30000,
             "bottom": -56000,
+            "left": 30000,
             "right": 75000
           }
         }
@@ -1359,8 +1359,8 @@
           "duration": 7,
           "value": {
             "top": 20000,
-            "left": 30000,
             "bottom": -9000,
+            "left": 30000,
             "right": 150000
           }
         }
@@ -1423,8 +1423,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -1435,8 +1435,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -1447,8 +1447,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -1459,8 +1459,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -1479,8 +1479,8 @@
           },
           "value": {
             "top": 15000,
-            "left": 30000,
             "bottom": -1000,
+            "left": 30000,
             "right": 75000
           }
         }
@@ -1529,8 +1529,8 @@
           "duration": 7,
           "value": {
             "top": 20000,
-            "left": 30000,
             "bottom": -9000,
+            "left": 30000,
             "right": 150000
           }
         }
@@ -1642,8 +1642,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -1654,8 +1654,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -1666,8 +1666,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -1678,8 +1678,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -1698,8 +1698,8 @@
           },
           "value": {
             "top": -4000,
-            "left": 30000,
             "bottom": -24000,
+            "left": 30000,
             "right": 86000
           }
         }
@@ -1776,8 +1776,8 @@
           "duration": 12,
           "value": {
             "top": 20000,
-            "left": 30000,
             "bottom": -9000,
+            "left": 30000,
             "right": 150000
           }
         }
@@ -1896,8 +1896,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -1908,8 +1908,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -1920,8 +1920,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -1932,8 +1932,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -1990,8 +1990,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -69000,
+            "left": -30000,
             "right": 25000
           }
         },
@@ -2002,8 +2002,8 @@
           "invul": "None",
           "value": {
             "top": 15000,
-            "left": -30000,
             "bottom": -69500,
+            "left": -30000,
             "right": 25000
           }
         },
@@ -2014,8 +2014,8 @@
           "invul": "None",
           "value": {
             "top": -800,
-            "left": -30000,
             "bottom": -70000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -2073,8 +2073,8 @@
           "invul": "None",
           "value": {
             "top": 0,
-            "left": -30000,
             "bottom": -70000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -2125,8 +2125,8 @@
           "invul": "None",
           "value": {
             "top": 0,
-            "left": -30000,
             "bottom": -69000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -2170,8 +2170,8 @@
           "invul": "None",
           "value": {
             "top": 0,
-            "left": -30000,
             "bottom": -70000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -2186,12 +2186,12 @@
             "hitstop": 6,
             "hitstun": 12,
             "blockstun": 12,
-            "knockback": 8000
+            "knockback": 7500
           },
           "value": {
             "top": -16000,
-            "left": 19000,
             "bottom": -28000,
+            "left": 19000,
             "right": 65000
           }
         }
@@ -2219,8 +2219,8 @@
           "duration": 7,
           "value": {
             "top": 20000,
-            "left": 30000,
             "bottom": -9000,
+            "left": 30000,
             "right": 150000
           }
         }
@@ -2283,8 +2283,8 @@
           "invul": "None",
           "value": {
             "top": 0,
-            "left": -30000,
             "bottom": -70000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -2303,8 +2303,8 @@
           },
           "value": {
             "top": -14000,
-            "left": 25000,
             "bottom": -27000,
+            "left": 25000,
             "right": 70000
           }
         }
@@ -2317,8 +2317,8 @@
           "duration": 7,
           "value": {
             "top": 20000,
-            "left": 30000,
             "bottom": -9000,
+            "left": 30000,
             "right": 150000
           }
         }
@@ -2381,8 +2381,8 @@
           "invul": "None",
           "value": {
             "top": 0,
-            "left": -30000,
             "bottom": -70000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -2401,8 +2401,8 @@
           },
           "value": {
             "top": 2000,
-            "left": 30000,
             "bottom": -52000,
+            "left": 30000,
             "right": 59000
           }
         }
@@ -2415,8 +2415,8 @@
           "duration": 7,
           "value": {
             "top": 20000,
-            "left": 30000,
             "bottom": -9000,
+            "left": 30000,
             "right": 150000
           }
         }
@@ -2507,8 +2507,8 @@
           "invul": "None",
           "value": {
             "top": 0,
-            "left": -30000,
             "bottom": -70000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -2527,8 +2527,8 @@
           },
           "value": {
             "top": -54000,
-            "left": 26000,
             "bottom": -69000,
+            "left": 26000,
             "right": 69000
           }
         }
@@ -2556,8 +2556,8 @@
           "duration": 7,
           "value": {
             "top": 20000,
-            "left": 30000,
             "bottom": -9000,
+            "left": 30000,
             "right": 150000
           }
         }
@@ -2620,8 +2620,8 @@
           "invul": "None",
           "value": {
             "top": 0,
-            "left": -30000,
             "bottom": -70000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -2640,8 +2640,8 @@
           },
           "value": {
             "top": -56000,
-            "left": 41000,
             "bottom": -70000,
+            "left": 41000,
             "right": 80000
           }
         },
@@ -2658,8 +2658,8 @@
           },
           "value": {
             "top": -58000,
-            "left": 82000,
             "bottom": -70000,
+            "left": 82000,
             "right": 93000
           }
         }
@@ -2715,8 +2715,8 @@
           "duration": 7,
           "value": {
             "top": 20000,
-            "left": 30000,
             "bottom": -9000,
+            "left": 30000,
             "right": 150000
           }
         }
@@ -2807,8 +2807,8 @@
           "invul": "None",
           "value": {
             "top": 0,
-            "left": -30000,
             "bottom": -70000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -2827,8 +2827,8 @@
           },
           "value": {
             "top": 15000,
-            "left": 30000,
             "bottom": -1000,
+            "left": 30000,
             "right": 75000
           }
         }
@@ -2912,8 +2912,8 @@
           "duration": 7,
           "value": {
             "top": 20000,
-            "left": 30000,
             "bottom": -9000,
+            "left": 30000,
             "right": 150000
           }
         }
@@ -3018,8 +3018,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -69000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -3089,8 +3089,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -69000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -3116,10 +3116,10 @@
           "start_frame": 0,
           "duration": 100,
           "value": {
-            "top": 35000,
-            "left": -20000,
-            "bottom": -30000,
-            "right": 20000
+            "top": 20000,
+            "bottom": -20000,
+            "left": -23000,
+            "right": 26000
           }
         }
       ],
@@ -3131,8 +3131,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -30000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -3257,9 +3257,9 @@
           "duration": 100,
           "value": {
             "top": 20000,
-            "left": -20000,
             "bottom": -20000,
-            "right": 20000
+            "left": -23000,
+            "right": 26000
           }
         }
       ],
@@ -3271,8 +3271,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -30000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -3354,10 +3354,10 @@
           "start_frame": 0,
           "duration": 100,
           "value": {
-            "top": -30000,
-            "left": -25000,
-            "bottom": -80000,
-            "right": 18000
+            "top": 20000,
+            "bottom": -20000,
+            "left": -23000,
+            "right": 26000
           }
         }
       ],
@@ -3369,8 +3369,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -69000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -3456,8 +3456,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -69000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -3522,8 +3522,8 @@
           "duration": 100,
           "value": {
             "top": 20000,
-            "left": -26000,
             "bottom": -22000,
+            "left": -26000,
             "right": 25000
           }
         }
@@ -3543,8 +3543,8 @@
           },
           "value": {
             "top": 15000,
-            "left": 30000,
             "bottom": -1000,
+            "left": 30000,
             "right": 75000
           }
         }
@@ -3640,8 +3640,8 @@
           "duration": 100,
           "value": {
             "top": 20000,
-            "left": -26000,
             "bottom": -22000,
+            "left": -26000,
             "right": 25000
           }
         }
@@ -3661,8 +3661,8 @@
           },
           "value": {
             "top": 15000,
-            "left": 30000,
             "bottom": -1000,
+            "left": 30000,
             "right": 75000
           }
         }
@@ -3730,8 +3730,8 @@
           "duration": 100,
           "value": {
             "top": 20000,
-            "left": -26000,
             "bottom": -22000,
+            "left": -26000,
             "right": 25000
           }
         }
@@ -3751,8 +3751,8 @@
           },
           "value": {
             "top": 15000,
-            "left": 30000,
             "bottom": -1000,
+            "left": 30000,
             "right": 75000
           }
         }
@@ -3820,8 +3820,8 @@
           "duration": 100,
           "value": {
             "top": 20000,
-            "left": -26000,
             "bottom": -22000,
+            "left": -26000,
             "right": 25000
           }
         }
@@ -3841,8 +3841,8 @@
           },
           "value": {
             "top": 15000,
-            "left": 30000,
             "bottom": -1000,
+            "left": 30000,
             "right": 75000
           }
         }
@@ -3917,8 +3917,8 @@
           "duration": 100,
           "value": {
             "top": 20000,
-            "left": -26000,
             "bottom": -22000,
+            "left": -26000,
             "right": 25000
           }
         }
@@ -3938,8 +3938,8 @@
           },
           "value": {
             "top": 0,
-            "left": 15000,
             "bottom": -13000,
+            "left": 15000,
             "right": 66000
           }
         },
@@ -3956,8 +3956,8 @@
           },
           "value": {
             "top": -13000,
-            "left": -25000,
             "bottom": -26000,
+            "left": -25000,
             "right": 15000
           }
         }
@@ -4032,8 +4032,8 @@
           "duration": 100,
           "value": {
             "top": 20000,
-            "left": -26000,
             "bottom": -22000,
+            "left": -26000,
             "right": 25000
           }
         }
@@ -4053,8 +4053,8 @@
           },
           "value": {
             "top": 15000,
-            "left": 30000,
             "bottom": -1000,
+            "left": 30000,
             "right": 75000
           }
         }
@@ -4157,8 +4157,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -4169,8 +4169,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -4181,8 +4181,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -4193,8 +4193,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -4245,8 +4245,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -4257,8 +4257,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -4269,8 +4269,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -4281,8 +4281,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -4333,8 +4333,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -4345,8 +4345,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -4357,8 +4357,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -4369,8 +4369,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -4435,8 +4435,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -4447,8 +4447,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -4459,8 +4459,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -4471,8 +4471,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -4544,8 +4544,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -4556,8 +4556,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -4568,8 +4568,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -4580,8 +4580,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -4653,8 +4653,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -4665,8 +4665,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -4677,8 +4677,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -4689,8 +4689,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -4769,8 +4769,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -4781,8 +4781,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -4793,8 +4793,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -4805,8 +4805,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -4857,8 +4857,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -4869,8 +4869,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -4881,8 +4881,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -4893,8 +4893,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -4945,8 +4945,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -4957,8 +4957,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -4969,8 +4969,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -4981,8 +4981,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -5068,8 +5068,8 @@
           "invul": "None",
           "value": {
             "top": 38000,
-            "left": -7000,
             "bottom": 18000,
+            "left": -7000,
             "right": 18000
           }
         },
@@ -5080,8 +5080,8 @@
           "invul": "None",
           "value": {
             "top": 29000,
-            "left": -29000,
             "bottom": 9000,
+            "left": -29000,
             "right": 30000
           }
         },
@@ -5092,8 +5092,8 @@
           "invul": "None",
           "value": {
             "top": 10000,
-            "left": -27000,
             "bottom": -26000,
+            "left": -27000,
             "right": 25000
           }
         },
@@ -5104,8 +5104,8 @@
           "invul": "None",
           "value": {
             "top": -26000,
-            "left": -31000,
             "bottom": -69000,
+            "left": -31000,
             "right": 30000
           }
         }
@@ -5184,8 +5184,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -69000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -5229,8 +5229,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -69000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -5281,8 +5281,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -69000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -5347,8 +5347,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -69000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -5392,8 +5392,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -69000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -5437,8 +5437,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -69000,
+            "left": -30000,
             "right": 25000
           }
         }
@@ -5482,8 +5482,8 @@
           "invul": "None",
           "value": {
             "top": 35000,
-            "left": -30000,
             "bottom": -69000,
+            "left": -30000,
             "right": 25000
           }
         }

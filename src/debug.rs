@@ -222,7 +222,7 @@ pub fn show_frame_count(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
     });
 }
 
-pub fn show_context(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
+pub fn show_info(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
     if !debug.information {
         return;
     }
@@ -235,40 +235,62 @@ pub fn show_context(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
             if player == &Player::One {
                 d.draw_text_ex(
                     &font,
-                    &format!("F: {}", machine.context.ctx.can_dash_f),
+                    &format!("Dash F: {}", machine.context.ctx.can_dash_f),
                     rvec2(5., y),
                     TEXT_SIZE,
                     0.,
                     Color::WHITE,
                 );
+                let z = 10.;
                 d.draw_text_ex(
                     &font,
-                    &format!("B: {}", machine.context.ctx.can_dash_b),
-                    rvec2(5., y + TEXT_SIZE),
+                    &format!("Dash B: {}", machine.context.ctx.can_dash_b),
+                    rvec2(5., y + z),
                     TEXT_SIZE,
                     0.,
                     Color::WHITE,
                 );
+                let z = z + 10.;
+                d.draw_text_ex(
+                    &font,
+                    &format!("Airborne: {}", physics.airborne),
+                    rvec2(5., y + z),
+                    TEXT_SIZE,
+                    0.,
+                    Color::WHITE,
+                );
+                let z = z + 10.;
                 d.draw_text_ex(
                     &font,
                     &format!("Jump: {:#?}", machine.context.ctx.flags.jump),
-                    rvec2(5., y + TEXT_SIZE * 2.),
+                    rvec2(5., y + z),
                     TEXT_SIZE,
                     0.,
                     Color::WHITE,
                 );
+                let z = z + 10.;
+                d.draw_text_ex(
+                    &font,
+                    &format!("Cornered: {}", physics.cornered),
+                    rvec2(5., y + z),
+                    TEXT_SIZE,
+                    0.,
+                    Color::WHITE,
+                );
+                let z = z + 10.;
                 d.draw_text_ex(
                     &font,
                     &format!("Facing opponent: {:#?}", physics.facing_opponent),
-                    rvec2(5., y + TEXT_SIZE * 3.),
+                    rvec2(5., y + z),
                     TEXT_SIZE,
                     0.,
                     Color::WHITE,
                 );
+                let z = z + 10.;
                 d.draw_text_ex(
                     &font,
                     &format!("Facing left: {:#?}", physics.facing_left),
-                    rvec2(5., y + TEXT_SIZE * 4.),
+                    rvec2(5., y + z),
                     TEXT_SIZE,
                     0.,
                     Color::WHITE,
