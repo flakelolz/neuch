@@ -158,10 +158,10 @@ pub fn attack_transitions(
     buffer: &InputBuffer,
     physics: &mut Physics,
 ) -> bool {
-    if !context.ctx.airborne && Group::Normals.set(buffer, &mut context.ctx, physics) {
+    if !physics.airborne && Group::Normals.set(buffer, &mut context.ctx, physics) {
         return true;
     }
-    if context.ctx.airborne && Group::AirNormals.set(buffer, &mut context.ctx, physics) {
+    if physics.airborne && Group::AirNormals.set(buffer, &mut context.ctx, physics) {
         return true;
     }
     false
@@ -198,7 +198,7 @@ pub fn handle_ground_collision(
         physics.position.y = 0;
         physics.velocity = IVec2::zero();
         physics.acceleration.y = 0;
-        context.ctx.airborne = false;
+        physics.airborne = false;
         turn_transition(&mut context.ctx, buffer, physics);
         context.ctx.next = Some(Box::new(jumping::End));
 

@@ -73,7 +73,7 @@ impl Collisions {
     fn check(&self, world: &mut World, hit_events: &mut Vec<HitEvent>) {
         for (id, proximity) in self.proximity.iter() {
             for (defender, hurtbox) in self.hurtboxes.iter() {
-                if boxes_overlap(&proximity.value, &hurtbox.value) {
+                if boxes_overlap(&proximity.value, &hurtbox.value) && id != defender {
                     hit_events.push(HitEvent {
                         attacker: *id,
                         defender: *defender,
@@ -91,59 +91,87 @@ impl Collisions {
         for (attacker, hitbox) in self.hitboxes.iter() {
             for (defender, hurtbox) in self.hurtboxes.iter() {
                 if attacker != defender && boxes_overlap(&hitbox.value, &hurtbox.value) {
-                    let has_hit = &mut world
-                        .get::<&mut StateMachine>(*attacker)
-                        .unwrap()
-                        .context
-                        .reaction
-                        .has_hit;
+                    if let Ok((state, physics)) =
+                        world.query_one_mut::<(&mut StateMachine, &Physics)>(*attacker)
+                    {
+                        let has_hit = &mut state.context.reaction.has_hit;
+                        if *has_hit {
+                            continue;
+                        }
+                        *has_hit = true;
 
-                    if *has_hit {
-                        continue;
+                        let direction = if physics.facing_left { -1 } else { 1 };
+
+                        hit_events.push(HitEvent {
+                            attacker: *attacker,
+                            defender: *defender,
+                            height: hurtbox.height,
+                            properties: HitProperties {
+                                hit_type: hitbox.properties.hit_type,
+                                strength: hitbox.properties.strength,
+                                hitstop: hitbox.properties.hitstop,
+                                hitstun: hitbox.properties.hitstun,
+                                blockstun: hitbox.properties.blockstun,
+                                knockback: hitbox.properties.knockback * direction,
+                            },
+                            proximity: None,
+                        });
                     }
-
-                    *has_hit = true;
-                    hit_events.push(HitEvent {
-                        attacker: *attacker,
-                        defender: *defender,
-                        height: hurtbox.height,
-                        properties: HitProperties {
-                            hit_type: hitbox.properties.hit_type,
-                            strength: hitbox.properties.strength,
-                            hitstop: hitbox.properties.hitstop,
-                            hitstun: hitbox.properties.hitstun,
-                            blockstun: hitbox.properties.blockstun,
-                            knockback: hitbox.properties.knockback,
-                        },
-                        proximity: None,
-                    });
                 }
             }
         }
 
         let mut distance;
         for (attacker, a_pushbox) in self.pushboxes.iter() {
+            // Wall collision
+            if let Ok(mut physics) = world.get::<&mut Physics>(*attacker) {
+                cornered(a_pushbox, &mut physics);
+            }
             for (defender, b_pushbox) in self.pushboxes.iter() {
                 if attacker != defender && boxes_overlap(&a_pushbox.value, &b_pushbox.value) {
                     let left = a_pushbox.value.left.max(b_pushbox.value.left);
                     let right = a_pushbox.value.right.min(b_pushbox.value.right);
                     distance = right - left;
-                    // println!("left: {} right: {} distance: {}", left, right, distance);
                     let third = distance / 3;
-                    let mut players = world
-                        .query_mut::<&mut Physics>()
-                        .into_iter()
-                        .collect::<Vec<_>>();
-                    let split = &mut players.split_at_mut(1);
-                    let (p1, p2) = split;
-                    if let Some((_, a_physics)) = p1.get_mut(0) {
-                        if let Some((_, b_physics)) = p2.get_mut(0) {
-                            if a_physics.position.x < b_physics.position.x {
-                                a_physics.position.x -= third;
-                                b_physics.position.x += third;
-                            } else {
-                                a_physics.position.x += third;
-                                b_physics.position.x -= third;
+
+                    let mut players =
+                        world.query_many_mut::<&mut Physics, 2>([*attacker, *defender]);
+                    let (p1, p2) = players.split_at_mut(1);
+                    if let Some(Ok(a_physics)) = p1.get_mut(0) {
+                        if let Some(Ok(b_physics)) = p2.get_mut(0) {
+                            match a_physics.position.x.cmp(&b_physics.position.x) {
+                                std::cmp::Ordering::Less => {
+                                    if !a_physics.cornered {
+                                        a_physics.position.x -= third;
+                                    }
+                                    if !b_physics.cornered {
+                                        b_physics.position.x += third;
+                                    }
+                                }
+                                std::cmp::Ordering::Greater => {
+                                    if !a_physics.cornered {
+                                        a_physics.position.x += third;
+                                    }
+                                    if !b_physics.cornered {
+                                        b_physics.position.x -= third;
+                                    }
+                                }
+                                std::cmp::Ordering::Equal => {
+                                    if a_physics.cornered {
+                                        if a_physics.facing_left {
+                                            b_physics.position.x -= third;
+                                        } else {
+                                            b_physics.position.x += third;
+                                        }
+                                    }
+                                    if b_physics.cornered {
+                                        if b_physics.facing_left {
+                                            a_physics.position.x -= third;
+                                        } else {
+                                            a_physics.position.x += third;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -253,4 +281,26 @@ impl Boxes {
 /// Check if two boxes overlap
 fn boxes_overlap(a: &Boxes, b: &Boxes) -> bool {
     !((a.left > b.right) || (b.left > a.right) || (a.bottom > b.top) || (b.bottom > a.top))
+}
+
+fn cornered(pushbox: &Pushbox, physics: &mut Physics) {
+    let left = world_to_screen_num(pushbox.value.left);
+    let right = world_to_screen_num(pushbox.value.right);
+    let width = right - left;
+
+    if left <= 1 {
+        if !physics.facing_left {
+            physics.cornered = true;
+        }
+        physics.position.x = screen_to_world_num(width / 2);
+        return;
+    }
+    if right >= WIDTH_3S - 1 {
+        if physics.facing_left {
+            physics.cornered = true;
+        }
+        physics.position.x = screen_to_world_num(WIDTH_3S - (width / 2));
+        return;
+    }
+    physics.cornered = false;
 }

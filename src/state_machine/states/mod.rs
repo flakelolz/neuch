@@ -394,7 +394,7 @@ impl Jumping {
     pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
         match self {
             Jumping::Start => {
-                if up(buffer) && !ctx.airborne {
+                if up(buffer) && !physics.airborne {
                     handle_jump_flags(ctx, buffer, physics);
                     ctx.next.replace(Box::new(jumping::Start));
                     return true;
@@ -419,14 +419,14 @@ impl Jumping {
                 }
             }
             Jumping::End => {
-                if !up(buffer) && ctx.airborne {
+                if !up(buffer) && physics.airborne {
                     ctx.next.replace(Box::new(jumping::End));
                     return true;
                 }
             }
             Jumping::LightPunch => {
                 if buffer.buffered(Inputs::LightPunch, buffer.attack, &physics.facing_left)
-                    && ctx.airborne
+                    && physics.airborne
                 {
                     ctx.next.replace(Box::new(jumping::LightPunch));
                     return true;
@@ -434,7 +434,7 @@ impl Jumping {
             }
             Jumping::MediumPunch => {
                 if buffer.buffered(Inputs::MediumPunch, buffer.attack, &physics.facing_left)
-                    && ctx.airborne
+                    && physics.airborne
                 {
                     ctx.next.replace(Box::new(jumping::MediumPunch));
                     return true;
@@ -442,7 +442,7 @@ impl Jumping {
             }
             Jumping::HeavyPunch => {
                 if buffer.buffered(Inputs::HeavyPunch, buffer.attack, &physics.facing_left)
-                    && ctx.airborne
+                    && physics.airborne
                 {
                     ctx.next.replace(Box::new(jumping::HeavyPunch));
                     return true;
@@ -450,7 +450,7 @@ impl Jumping {
             }
             Jumping::LightKick => {
                 if buffer.buffered(Inputs::LightKick, buffer.attack, &physics.facing_left)
-                    && ctx.airborne
+                    && physics.airborne
                 {
                     ctx.next.replace(Box::new(jumping::LightKick));
                     return true;
@@ -458,7 +458,7 @@ impl Jumping {
             }
             Jumping::MediumKick => {
                 if buffer.buffered(Inputs::MediumKick, buffer.attack, &physics.facing_left)
-                    && ctx.airborne
+                    && physics.airborne
                 {
                     ctx.next.replace(Box::new(jumping::MediumKick));
                     return true;
@@ -466,7 +466,7 @@ impl Jumping {
             }
             Jumping::HeavyKick => {
                 if buffer.buffered(Inputs::HeavyKick, buffer.attack, &physics.facing_left)
-                    && ctx.airborne
+                    && physics.airborne
                 {
                     ctx.next.replace(Box::new(jumping::HeavyKick));
                     return true;

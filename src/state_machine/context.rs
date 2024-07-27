@@ -14,7 +14,6 @@ pub struct SubContext {
     pub next: Option<Box<dyn State>>,
     pub can_dash_f: bool,
     pub can_dash_b: bool,
-    pub airborne: bool,
     pub flags: Flags,
 }
 
@@ -24,7 +23,6 @@ impl Default for SubContext {
             next: None,
             can_dash_f: true,
             can_dash_b: true,
-            airborne: false,
             flags: Flags {
                 jump: JumpFlags::None,
             },

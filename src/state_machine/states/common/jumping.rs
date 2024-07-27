@@ -43,7 +43,7 @@ impl State for Neutral {
         if physics.position.y <= 0 {
             physics.velocity.y = context.character.unwrap_or_default().jump_velocity;
             physics.acceleration.y = context.character.unwrap_or_default().jump_deceleration;
-            context.ctx.airborne = true;
+            physics.airborne = true;
         }
     }
 
@@ -73,7 +73,7 @@ impl State for Forward {
             physics.velocity.y = context.character.unwrap_or_default().jump_velocity;
             physics.acceleration.y = context.character.unwrap_or_default().jump_deceleration;
             physics.set_forward_velocity(context.character.unwrap_or_default().jump_forward);
-            context.ctx.airborne = true;
+            physics.airborne = true;
         }
     }
 
@@ -103,7 +103,7 @@ impl State for Backward {
             physics.velocity.y = context.character.unwrap_or_default().jump_velocity;
             physics.acceleration.y = context.character.unwrap_or_default().jump_deceleration;
             physics.set_forward_velocity(context.character.unwrap_or_default().jump_backward);
-            context.ctx.airborne = true;
+            physics.airborne = true;
         }
     }
 

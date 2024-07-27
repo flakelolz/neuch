@@ -9,6 +9,8 @@ pub struct Physics {
     pub acceleration: IVec2,
     pub facing_left: bool,
     pub facing_opponent: bool,
+    pub airborne: bool,
+    pub cornered: bool,
 }
 
 impl Physics {
@@ -19,6 +21,8 @@ impl Physics {
             acceleration: IVec2::zero(),
             facing_left: false,
             facing_opponent: true,
+            airborne: false,
+            cornered: false,
         }
     }
 
@@ -29,6 +33,8 @@ impl Physics {
             acceleration: IVec2::zero(),
             facing_left: true,
             facing_opponent: true,
+            airborne: false,
+            cornered: false,
         }
     }
 
@@ -53,13 +59,13 @@ pub fn physics_system(world: &mut World) {
     if let Some((_, (player, _))) = p1.get_mut(0) {
         if let Some((_, (opponent, _))) = p2.get_mut(0) {
             // Make player 1 face the opponent
-            player.facing_opponent = ((opponent.position.x < player.position.x)
+            player.facing_opponent = ((opponent.position.x <= player.position.x)
                 && player.facing_left)
-                || ((opponent.position.x > player.position.x) && !player.facing_left);
+                || ((opponent.position.x >= player.position.x) && !player.facing_left);
             // Make player 2 face the opponent
-            opponent.facing_opponent = ((player.position.x < opponent.position.x)
+            opponent.facing_opponent = ((player.position.x <= opponent.position.x)
                 && opponent.facing_left)
-                || ((player.position.x > opponent.position.x) && !opponent.facing_left);
+                || ((player.position.x >= opponent.position.x) && !opponent.facing_left);
         }
     }
     // Update physics
@@ -72,14 +78,17 @@ pub fn physics_system(world: &mut World) {
 
             // Apply knockback to the position
             if reaction.knockback != 0 {
-                if physics.facing_left {
-                    physics.position.x += reaction.knockback;
-                } else {
-                    physics.position.x += -reaction.knockback;
-                }
+                physics.position.x += reaction.knockback;
 
                 // Decelerate
-                reaction.knockback -= DECELERATION;
+                if reaction.knockback > 0 {
+                    reaction.knockback -= DECELERATION;
+                }
+
+                if reaction.knockback < 0 {
+                    reaction.knockback += DECELERATION;
+                }
+
                 if reaction.knockback.abs() < THRESHOLD {
                     reaction.knockback = 0;
                 }

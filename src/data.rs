@@ -26,7 +26,7 @@ pub enum HitType {
     Projectile,
 }
 
-#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
+#[derive(Debug, Clone, Copy, Default, Deserialize, Serialize, PartialEq)]
 pub struct HitProperties {
     pub hit_type: HitType,
     pub strength: Strength,
@@ -119,8 +119,8 @@ pub struct CancelModifier {
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
 pub struct Boxes {
     pub top: i32,
-    pub left: i32,
     pub bottom: i32,
+    pub left: i32,
     pub right: i32,
 }
 
