@@ -32,7 +32,8 @@ pub fn update_state(world: &mut World) {
                 }
             }
             None => {
-                eprintln!("Action not found");
+                eprintln!("Action not found!!!");
+                context.ctx.next = Some(Box::new(standing::Idle));
             }
         }
 

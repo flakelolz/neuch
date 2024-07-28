@@ -3094,6 +3094,546 @@
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
     "duration": 1
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 0.aseprite",
+    "frame": { "x": 0, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 1.aseprite",
+    "frame": { "x": 384, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 2.aseprite",
+    "frame": { "x": 768, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 3.aseprite",
+    "frame": { "x": 1152, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 4.aseprite",
+    "frame": { "x": 1536, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 5.aseprite",
+    "frame": { "x": 1920, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 6.aseprite",
+    "frame": { "x": 2304, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 7.aseprite",
+    "frame": { "x": 2688, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 8.aseprite",
+    "frame": { "x": 3072, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 9.aseprite",
+    "frame": { "x": 3456, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 10.aseprite",
+    "frame": { "x": 3840, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 11.aseprite",
+    "frame": { "x": 4224, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 12.aseprite",
+    "frame": { "x": 4608, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 13.aseprite",
+    "frame": { "x": 4992, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 14.aseprite",
+    "frame": { "x": 5376, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 15.aseprite",
+    "frame": { "x": 5760, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 16.aseprite",
+    "frame": { "x": 6144, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 0.aseprite",
+    "frame": { "x": 768, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 1.aseprite",
+    "frame": { "x": 1152, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 2.aseprite",
+    "frame": { "x": 1536, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 3.aseprite",
+    "frame": { "x": 1920, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 4.aseprite",
+    "frame": { "x": 2304, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 5.aseprite",
+    "frame": { "x": 2688, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 6.aseprite",
+    "frame": { "x": 3072, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 7.aseprite",
+    "frame": { "x": 3456, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 8.aseprite",
+    "frame": { "x": 3840, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 9.aseprite",
+    "frame": { "x": 4224, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 10.aseprite",
+    "frame": { "x": 4608, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 11.aseprite",
+    "frame": { "x": 4992, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 12.aseprite",
+    "frame": { "x": 5376, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 13.aseprite",
+    "frame": { "x": 5760, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 14.aseprite",
+    "frame": { "x": 6144, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 0.aseprite",
+    "frame": { "x": 0, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 1.aseprite",
+    "frame": { "x": 384, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 2.aseprite",
+    "frame": { "x": 768, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 3.aseprite",
+    "frame": { "x": 1152, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 4.aseprite",
+    "frame": { "x": 1536, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 128
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 5.aseprite",
+    "frame": { "x": 1920, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 6.aseprite",
+    "frame": { "x": 2304, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 7.aseprite",
+    "frame": { "x": 2688, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 8.aseprite",
+    "frame": { "x": 3072, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 9.aseprite",
+    "frame": { "x": 3456, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 10.aseprite",
+    "frame": { "x": 3840, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 11.aseprite",
+    "frame": { "x": 4224, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 12.aseprite",
+    "frame": { "x": 4608, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 13.aseprite",
+    "frame": { "x": 4992, "y": 10976, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Ken Hadouken 0.aseprite",
+    "frame": { "x": 0, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 1.aseprite",
+    "frame": { "x": 384, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 2.aseprite",
+    "frame": { "x": 768, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 3.aseprite",
+    "frame": { "x": 1152, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 4.aseprite",
+    "frame": { "x": 1536, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 5.aseprite",
+    "frame": { "x": 1920, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 6.aseprite",
+    "frame": { "x": 2304, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 7.aseprite",
+    "frame": { "x": 2688, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 8.aseprite",
+    "frame": { "x": 3072, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 9.aseprite",
+    "frame": { "x": 3456, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 10.aseprite",
+    "frame": { "x": 3840, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 11.aseprite",
+    "frame": { "x": 4224, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 12.aseprite",
+    "frame": { "x": 4608, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 13.aseprite",
+    "frame": { "x": 4992, "y": 11200, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
    }
  ],
  "meta": {
@@ -3101,7 +3641,7 @@
   "version": "1.3.7-x64",
   "image": "Ken.png",
   "format": "RGBA8888",
-  "size": { "w": 4992, "h": 10752 },
+  "size": { "w": 6528, "h": 11424 },
   "scale": "1",
   "frameTags": [
    { "name": "St Idle", "from": 0, "to": 9, "direction": "forward", "color": "#000000ff" },
@@ -3154,7 +3694,11 @@
    { "name": "Rxn GrdStandPre", "from": 333, "to": 335, "direction": "forward", "color": "#000000ff" },
    { "name": "Rxn GrdStandEnd", "from": 336, "to": 338, "direction": "forward", "color": "#000000ff" },
    { "name": "Rxn GrdCrouchPre", "from": 339, "to": 341, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn GrdCrouchEnd", "from": 342, "to": 343, "direction": "forward", "color": "#000000ff" }
+   { "name": "Rxn GrdCrouchEnd", "from": 342, "to": 343, "direction": "forward", "color": "#000000ff" },
+   { "name": "Ken ShoryukenH", "from": 344, "to": 360, "direction": "forward", "color": "#000000ff" },
+   { "name": "Ken ShoryukenM", "from": 361, "to": 375, "direction": "forward", "color": "#000000ff" },
+   { "name": "Ken ShoryukenL", "from": 376, "to": 389, "direction": "forward", "color": "#000000ff" },
+   { "name": "Ken Hadouken", "from": 390, "to": 403, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },

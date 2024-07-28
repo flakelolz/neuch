@@ -11,6 +11,9 @@ impl State for Start {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if specials_transitions(context, buffer, physics) {
+            return;
+        }
         // Set jump direction
         if context.ctx.flags.jump == JumpFlags::None {
             handle_jump_flags(&mut context.ctx, buffer, physics);
@@ -53,6 +56,9 @@ impl State for Neutral {
             return;
         }
         // Transitions
+        if specials_transitions(context, buffer, physics) {
+            return;
+        }
         attack_transitions(context, buffer, physics);
     }
 
@@ -83,6 +89,9 @@ impl State for Forward {
             return;
         }
         // Transitions
+        if specials_transitions(context, buffer, physics) {
+            return;
+        }
         attack_transitions(context, buffer, physics);
     }
 
@@ -113,6 +122,9 @@ impl State for Backward {
             return;
         }
         // Transitions
+        if specials_transitions(context, buffer, physics) {
+            return;
+        }
         attack_transitions(context, buffer, physics);
     }
 
@@ -135,6 +147,9 @@ impl State for End {
         // Base case
         if context.elapsed > context.duration {
             // Transitions
+            if specials_transitions(context, buffer, physics) {
+                return;
+            }
             if attack_transitions(context, buffer, physics) {
                 return;
             }

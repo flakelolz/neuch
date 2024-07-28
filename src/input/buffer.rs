@@ -6,7 +6,7 @@ const BUFFER_SIZE: usize = 50;
 pub enum Motions {
     Qcf,
     Qcb,
-    Dp,
+    Dpf,
     RDp,
     Hcf,
     Hcb,
@@ -14,6 +14,7 @@ pub enum Motions {
     DashBackward,
     ForcedDashForward,
     ForcedDashBackward,
+    ForcedQcf,
 }
 
 impl Motions {
@@ -34,11 +35,14 @@ impl Motions {
             Motions::Qcf => {
                 vec![vec![2, 3, 6]]
             }
+            Motions::ForcedQcf => {
+                vec![vec![1, 2, 3, 6]]
+            }
             Motions::Qcb => {
                 vec![vec![2, 1, 4]]
             }
-            Motions::Dp => {
-                vec![vec![6, 2, 3], vec![3, 2, 3], vec![6, 3, 6]]
+            Motions::Dpf => {
+                vec![vec![6, 2, 3], vec![2, 3, 2, 3]]
             }
             Motions::RDp => {
                 vec![vec![4, 2, 1], vec![1, 2, 1], vec![4, 1, 4]]

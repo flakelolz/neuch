@@ -1,6 +1,8 @@
 pub mod common;
+pub mod custom;
 
 pub use self::common::*;
+pub use self::custom::*;
 
 use crate::prelude::*;
 
@@ -10,6 +12,7 @@ pub enum States {
     Standing(Standing),
     Crouching(Crouching),
     Jumping(Jumping),
+    Ken(ken::Ken),
 }
 
 impl States {
@@ -19,6 +22,7 @@ impl States {
             States::Standing(states) => states.set(buffer, ctx, physics),
             States::Crouching(states) => states.set(buffer, ctx, physics),
             States::Jumping(states) => states.set(buffer, ctx, physics),
+            States::Ken(states) => states.set(buffer, ctx, physics),
         }
     }
 }

@@ -20,6 +20,9 @@ impl State for Idle {
         if jump_transitions(context, buffer, physics) {
             return;
         }
+        if specials_transitions(context, buffer, physics) {
+            return;
+        }
         if attack_transitions(context, buffer, physics) {
             return;
         }
@@ -57,6 +60,9 @@ impl State for WalkForward {
             return;
         }
         if jump_transitions(context, buffer, physics) {
+            return;
+        }
+        if specials_transitions(context, buffer, physics) {
             return;
         }
         if attack_transitions(context, buffer, physics) {
@@ -103,6 +109,9 @@ impl State for WalkBackward {
         if jump_transitions(context, buffer, physics) {
             return;
         }
+        if specials_transitions(context, buffer, physics) {
+            return;
+        }
         if attack_transitions(context, buffer, physics) {
             return;
         }
@@ -137,6 +146,9 @@ impl State for DashForward {
         if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
+                return;
+            }
+            if specials_transitions(context, buffer, physics) {
                 return;
             }
             if attack_transitions(context, buffer, physics) {
@@ -176,6 +188,9 @@ impl State for DashBackward {
         if context.elapsed > context.duration {
             // Transitions
             if turn_transition(&mut context.ctx, buffer, physics) {
+                return;
+            }
+            if specials_transitions(context, buffer, physics) {
                 return;
             }
             if attack_transitions(context, buffer, physics) {
@@ -327,6 +342,9 @@ impl State for Turn {
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Transitions
         if context.elapsed > context.duration {
+            if specials_transitions(context, buffer, physics) {
+                return;
+            }
             if attack_transitions(context, buffer, physics) {
                 return;
             }

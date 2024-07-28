@@ -23,6 +23,7 @@ pub fn handle_transition(
             // Character info
             // FIX: This only needs to be set once.
             if context.character.is_none() {
+                context.name = character.name.clone();
                 context.character = Some(character.info);
             }
             // Setup action data
@@ -60,6 +61,9 @@ pub fn common_standing_attack_transitions(
         if turn_transition(&mut context.ctx, buffer, physics) {
             return;
         }
+        if specials_transitions(context, buffer, physics) {
+            return;
+        }
         if attack_transitions(context, buffer, physics) {
             return;
         }
@@ -85,10 +89,18 @@ pub fn common_crouching_attack_transitions(
     buffer: &InputBuffer,
     physics: &mut Physics,
 ) {
+    if context.elapsed == 2 {
+        if specials_transitions(context, buffer, physics) {
+            return;
+        }
+    }
     // Base case
     if context.elapsed > context.duration {
         // Transitions
         if jump_transitions(context, buffer, physics) {
+            return;
+        }
+        if specials_transitions(context, buffer, physics) {
             return;
         }
         if attack_transitions(context, buffer, physics) {
@@ -216,6 +228,23 @@ pub fn turn_transition(ctx: &mut SubContext, buffer: &InputBuffer, physics: &mut
         }
         ctx.next = Some(Box::new(standing::Turn));
         return true;
+    }
+    false
+}
+
+pub fn specials_transitions(
+    context: &mut Context,
+    buffer: &InputBuffer,
+    physics: &mut Physics,
+) -> bool {
+    match context.name.as_str() {
+        "Ken" => {
+            if States::Ken(ken::Ken::Specials).set(buffer, &mut context.ctx, physics) {
+                return true;
+            }
+        }
+        "Ryu" => println!("Ryu"),
+        _ => (),
     }
     false
 }

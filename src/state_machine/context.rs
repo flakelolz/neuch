@@ -2,6 +2,7 @@ use crate::prelude::*;
 
 #[derive(Default)]
 pub struct Context {
+    pub name: String,
     pub character: Option<CharacterInfo>,
     pub elapsed: u32,
     pub duration: u32,
