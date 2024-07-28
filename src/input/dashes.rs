@@ -283,6 +283,192 @@ impl Inputs {
             }
         }
     }
+
+    pub fn is_pressed_exclusive_dir(&self, current: &Input, flipped: &bool) -> bool {
+        match self {
+            Inputs::Up => matches!(
+                current,
+                Input {
+                    up: true,
+                    down: false,
+                    left: false,
+                    right: false,
+                    ..
+                }
+            ),
+            Inputs::Down => matches!(
+                current,
+                Input {
+                    down: true,
+                    up: false,
+                    left: false,
+                    right: false,
+                    ..
+                }
+            ),
+            Inputs::Forward => {
+                if *flipped {
+                    matches!(
+                        current,
+                        Input {
+                            left: true,
+                            up: false,
+                            down: false,
+                            right: false,
+                            ..
+                        }
+                    )
+                } else {
+                    matches!(
+                        current,
+                        Input {
+                            right: true,
+                            up: false,
+                            down: false,
+                            left: false,
+                            ..
+                        }
+                    )
+                }
+            }
+            Inputs::Backward => {
+                if *flipped {
+                    matches!(
+                        current,
+                        Input {
+                            right: true,
+                            left: false,
+                            up: false,
+                            down: false,
+                            ..
+                        }
+                    )
+                } else {
+                    matches!(
+                        current,
+                        Input {
+                            left: true,
+                            right: false,
+                            up: false,
+                            down: false,
+                            ..
+                        }
+                    )
+                }
+            }
+            Inputs::UpForward => {
+                if *flipped {
+                    matches!(
+                        current,
+                        Input {
+                            up: true,
+                            left: true,
+                            right: false,
+                            down: false,
+                            ..
+                        }
+                    )
+                } else {
+                    matches!(
+                        current,
+                        Input {
+                            up: true,
+                            right: true,
+                            left: false,
+                            down: false,
+                            ..
+                        }
+                    )
+                }
+            }
+            Inputs::UpBackward => {
+                if *flipped {
+                    matches!(
+                        current,
+                        Input {
+                            up: true,
+                            right: true,
+                            left: false,
+                            down: false,
+                            ..
+                        }
+                    )
+                } else {
+                    matches!(
+                        current,
+                        Input {
+                            up: true,
+                            left: true,
+                            right: false,
+                            down: false,
+                            ..
+                        }
+                    )
+                }
+            }
+            Inputs::DownForward => {
+                if *flipped {
+                    matches!(
+                        current,
+                        Input {
+                            down: true,
+                            left: true,
+                            right: false,
+                            up: false,
+                            ..
+                        }
+                    )
+                } else {
+                    matches!(
+                        current,
+                        Input {
+                            down: true,
+                            right: true,
+                            left: false,
+                            up: false,
+                            ..
+                        }
+                    )
+                }
+            }
+            Inputs::DownBackward => {
+                if *flipped {
+                    matches!(
+                        current,
+                        Input {
+                            down: true,
+                            right: true,
+                            left: false,
+                            up: false,
+                            ..
+                        }
+                    )
+                } else {
+                    matches!(
+                        current,
+                        Input {
+                            down: true,
+                            left: true,
+                            right: false,
+                            up: false,
+                            ..
+                        }
+                    )
+                }
+            }
+            Inputs::Neutral => matches!(
+                current,
+                Input {
+                    down: false,
+                    up: false,
+                    left: false,
+                    right: false,
+                    ..
+                }
+            ),
+            _ => panic!("Only for directions"),
+        }
+    }
 }
 
 #[cfg(test)]

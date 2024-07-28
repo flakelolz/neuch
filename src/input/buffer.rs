@@ -191,6 +191,20 @@ impl InputBuffer {
         inputs.is_pressed(&input_command, flipped)
     }
 
+    fn pressed_on_frame_exclusive(&self, inputs: Inputs, frame: usize, flipped: &bool) -> bool {
+        let buffer_index = frame % self.buffer.len();
+        let input_command = self.buffer[buffer_index];
+
+        inputs.is_pressed_exclusive(&input_command, flipped)
+    }
+
+    fn pressed_on_frame_exclusive_dir(&self, inputs: Inputs, frame: usize, flipped: &bool) -> bool {
+        let buffer_index = frame % self.buffer.len();
+        let input_command = self.buffer[buffer_index];
+
+        inputs.is_pressed_exclusive_dir(&input_command, flipped)
+    }
+
     /// Check if an input was performed within a certain duration on the past frames
     fn pressed_buffered(&self, input: Inputs, duration: usize, flipped: &bool) -> bool {
         for i in 0..duration + 1 {
@@ -239,6 +253,34 @@ impl InputBuffer {
         true
     }
 
+    pub fn held_exclusive(&self, input: Inputs, duration: usize, flipped: &bool) -> bool {
+        for i in 0..duration + 1 {
+            if self.pressed_on_frame_exclusive(input, self.buffer.len() + self.index - i, flipped) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+
+        true
+    }
+
+    pub fn held_exclusive_dir(&self, input: Inputs, duration: usize, flipped: &bool) -> bool {
+        for i in 0..duration + 1 {
+            if self.pressed_on_frame_exclusive_dir(
+                input,
+                self.buffer.len() + self.index - i,
+                flipped,
+            ) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+
+        true
+    }
+
     /// Check if a motion was performed within a time limit
     pub fn was_motion_executed(
         &self,
@@ -251,9 +293,11 @@ impl InputBuffer {
         }
 
         let motion_list = motions.notation();
-        let mut current_motion_index = 0;
+        let mut current_motion_index;
 
-        for motion in motion_list {
+        for motion in &motion_list {
+            current_motion_index = 0;
+
             for count in 0..time_limit {
                 let buffer_position =
                     (self.buffer.len() + self.index - (time_limit - 1) + count) % self.buffer.len();
@@ -263,7 +307,6 @@ impl InputBuffer {
 
                 if check_numpad_direction(&input_command, direction, flipped) {
                     current_motion_index += 1;
-
                     if current_motion_index >= motion.len() {
                         return true;
                     }
