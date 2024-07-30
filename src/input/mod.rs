@@ -2,12 +2,15 @@ mod buffer;
 mod config;
 mod dashes;
 mod inputs;
+mod motions;
 mod test;
 mod utils;
 
 pub use buffer::*;
 pub use config::*;
+pub use dashes::*;
 pub use inputs::*;
+pub use motions::*;
 pub use utils::*;
 
 use crate::prelude::*;
@@ -27,6 +30,6 @@ pub fn update_input_buffers(world: &mut World) {
         .into_iter()
         .for_each(|(_, (input, buffer, machine, physics))| {
             buffer.update(input);
-            buffer.validate_dash(&mut machine.context.ctx, &physics.facing_left);
+            buffer.lockout_dash(&mut machine.context.ctx, &physics.facing_left, 6);
         });
 }

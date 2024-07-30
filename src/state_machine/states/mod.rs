@@ -254,7 +254,7 @@ impl Standing {
                 false
             }
             Standing::DashForward => {
-                if buffer.was_dash_executed(Motions::DashForward, buffer.dash, &physics.facing_left)
+                if buffer.was_dash_executed(Dashes::Forward, buffer.dash, &physics.facing_left)
                     && ctx.can_dash_f
                 {
                     ctx.next.replace(Box::new(standing::DashForward));
@@ -263,11 +263,8 @@ impl Standing {
                 false
             }
             Standing::DashBackward => {
-                if buffer.was_dash_executed(
-                    Motions::DashBackward,
-                    buffer.dash,
-                    &physics.facing_left,
-                ) && ctx.can_dash_b
+                if buffer.was_dash_executed(Dashes::Backward, buffer.dash, &physics.facing_left)
+                    && ctx.can_dash_b
                 {
                     ctx.next.replace(Box::new(standing::DashBackward));
                     return true;

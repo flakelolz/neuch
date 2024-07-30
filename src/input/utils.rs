@@ -137,5 +137,5 @@ pub fn test_helper(buffer: &mut InputBuffer, inputs: Inputs) {
 
 pub fn dash_helper(buffer: &mut InputBuffer, inputs: Inputs, ctx: &mut SubContext, flipped: &bool) {
     test_helper(buffer, inputs);
-    buffer.validate_dash(ctx, flipped);
+    buffer.lockout_dash(ctx, flipped, 6);
 }

@@ -3,61 +3,6 @@ use crate::prelude::*;
 const BUFFER_SIZE: usize = 50;
 
 #[derive(Debug, Clone, Copy)]
-pub enum Motions {
-    Qcf,
-    Qcb,
-    Dpf,
-    RDp,
-    Hcf,
-    Hcb,
-    DashForward,
-    DashBackward,
-    ForcedDashForward,
-    ForcedDashBackward,
-    ForcedQcf,
-}
-
-impl Motions {
-    pub fn notation(&self) -> Vec<Vec<u8>> {
-        match self {
-            Motions::DashForward => {
-                vec![vec![6, 5, 6]]
-            }
-            Motions::DashBackward => {
-                vec![vec![4, 5, 4]]
-            }
-            Motions::ForcedDashForward => {
-                vec![vec![5, 6, 5, 6]]
-            }
-            Motions::ForcedDashBackward => {
-                vec![vec![5, 4, 5, 4]]
-            }
-            Motions::Qcf => {
-                vec![vec![2, 3, 6]]
-            }
-            Motions::ForcedQcf => {
-                vec![vec![1, 2, 3, 6]]
-            }
-            Motions::Qcb => {
-                vec![vec![2, 1, 4]]
-            }
-            Motions::Dpf => {
-                vec![vec![6, 2, 3], vec![2, 3, 2, 3]]
-            }
-            Motions::RDp => {
-                vec![vec![4, 2, 1], vec![1, 2, 1], vec![4, 1, 4]]
-            }
-            Motions::Hcf => {
-                vec![vec![4, 1, 2, 3, 6], vec![4, 1, 3, 6], vec![4, 2, 6]]
-            }
-            Motions::Hcb => {
-                vec![vec![6, 3, 2, 1, 4], vec![6, 3, 1, 4], vec![6, 2, 4]]
-            }
-        }
-    }
-}
-
-#[derive(Debug, Clone, Copy)]
 pub enum Inputs {
     Up,
     Down,
@@ -122,10 +67,10 @@ impl Inputs {
             current.left
         };
         match self {
-            Inputs::Up => current.up,
-            Inputs::Down => current.down,
-            Inputs::Forward => forward,
-            Inputs::Backward => backward,
+            Inputs::Up => current.up && !backward && !forward,
+            Inputs::Down => current.down && !backward && !forward,
+            Inputs::Forward => forward && !current.down && !current.up,
+            Inputs::Backward => backward && !current.down && !current.up,
             Inputs::UpForward => current.up && forward,
             Inputs::UpBackward => current.up && backward,
             Inputs::DownForward => current.down && forward,
@@ -198,13 +143,6 @@ impl InputBuffer {
         inputs.is_pressed_exclusive(&input_command, flipped)
     }
 
-    fn pressed_on_frame_exclusive_dir(&self, inputs: Inputs, frame: usize, flipped: &bool) -> bool {
-        let buffer_index = frame % self.buffer.len();
-        let input_command = self.buffer[buffer_index];
-
-        inputs.is_pressed_exclusive_dir(&input_command, flipped)
-    }
-
     /// Check if an input was performed within a certain duration on the past frames
     fn pressed_buffered(&self, input: Inputs, duration: usize, flipped: &bool) -> bool {
         for i in 0..duration + 1 {
@@ -263,76 +201,6 @@ impl InputBuffer {
         }
 
         true
-    }
-
-    pub fn held_exclusive_dir(&self, input: Inputs, duration: usize, flipped: &bool) -> bool {
-        for i in 0..duration + 1 {
-            if self.pressed_on_frame_exclusive_dir(
-                input,
-                self.buffer.len() + self.index - i,
-                flipped,
-            ) {
-                continue;
-            } else {
-                return false;
-            }
-        }
-
-        true
-    }
-
-    /// Check if a motion was performed within a time limit
-    pub fn was_motion_executed(
-        &self,
-        motions: Motions,
-        mut time_limit: usize,
-        flipped: &bool,
-    ) -> bool {
-        if time_limit > (self.buffer.len() + self.index) {
-            time_limit = self.buffer.len() + self.index;
-        }
-
-        let motion_list = motions.notation();
-        let mut current_motion_index;
-
-        for motion in &motion_list {
-            current_motion_index = 0;
-
-            for count in 0..time_limit {
-                let buffer_position =
-                    (self.buffer.len() + self.index - (time_limit - 1) + count) % self.buffer.len();
-
-                let input_command = self.buffer[buffer_position];
-                let direction = motion[current_motion_index];
-
-                if check_numpad_direction(&input_command, direction, flipped) {
-                    current_motion_index += 1;
-                    if current_motion_index >= motion.len() {
-                        return true;
-                    }
-                }
-            }
-        }
-
-        false
-    }
-}
-
-/// Checks if a direction was pressed using numpad notation
-fn check_numpad_direction(input: &Input, direction: u8, flipped: &bool) -> bool {
-    let forward = if *flipped { input.left } else { input.right };
-    let backward = if *flipped { input.right } else { input.left };
-    match direction {
-        1 => input.down && backward,
-        2 => input.down && !backward && !forward,
-        3 => input.down && forward,
-        4 => backward && !input.up && !input.down,
-        5 => !backward && !input.up && !input.down && !forward,
-        6 => forward && !input.up && !input.down,
-        7 => input.up && backward,
-        8 => input.up && !backward && !forward,
-        9 => input.up && forward,
-        _ => false,
     }
 }
 

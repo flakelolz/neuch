@@ -60,36 +60,35 @@ impl Specials {
         let flipped = &physics.facing_left;
         match self {
             Specials::Hadouken => {
-                if buffer.was_motion_executed(Motions::Qcf, 30, flipped)
-                    && buffer.buffered(Inputs::LightPunch, 3, flipped)
-                    && ctx.can_qcf
+                if buffer.was_motion_executed(Motions::Qcf, Inputs::LightPunch, flipped)
+                    && buffer.buffered(Inputs::LightPunch, buffer.attack, flipped)
                     && !physics.airborne
                 {
                     ctx.next.replace(Box::new(Hadouken));
+
                     return true;
                 }
+
                 false
             }
             Specials::ForcedHadouken => {
-                if (buffer.was_motion_executed(Motions::ForcedQcf, 30, flipped)
-                    || buffer.was_motion_executed(Motions::Hcf, 30, flipped))
-                    && buffer.buffered(Inputs::LightPunch, 3, flipped)
-                    && ctx.can_qcf
+                if buffer.was_motion_executed(Motions::Hcf, Inputs::LightPunch, flipped)
+                    && buffer.buffered(Inputs::LightPunch, buffer.attack, flipped)
                     && !physics.airborne
                 {
-                    ctx.can_dpf = false;
                     ctx.next.replace(Box::new(Hadouken));
+
                     return true;
                 }
                 false
             }
             Specials::ShoryukenL => {
-                if buffer.was_motion_executed(Motions::Dpf, 30, flipped)
-                    && buffer.buffered(Inputs::LightPunch, 3, flipped)
-                    && ctx.can_dpf
+                if buffer.was_motion_executed(Motions::Dpf, Inputs::LightPunch, flipped)
+                    && buffer.buffered(Inputs::LightPunch, buffer.attack, flipped)
                     && !physics.airborne
                 {
                     ctx.next.replace(Box::new(ShoryukenL));
+
                     return true;
                 }
                 false

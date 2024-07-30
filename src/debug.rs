@@ -20,7 +20,7 @@ pub struct Debug {
 impl Default for Debug {
     fn default() -> Self {
         Self {
-            information: false,
+            information: true,
             position: true,
             state: true,
             inputs: true,
@@ -227,74 +227,116 @@ pub fn show_info(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
         return;
     }
     let font = d.gui_get_font();
-    let y = 12.;
     world
         .query::<(&StateMachine, &Physics, &Player)>()
         .into_iter()
         .for_each(|(_, (machine, physics, player))| {
             if player == &Player::One {
-                d.draw_text_ex(
-                    &font,
-                    &format!("Dash F: {}", machine.context.ctx.can_dash_f),
-                    rvec2(5., y),
-                    TEXT_SIZE,
-                    0.,
-                    Color::WHITE,
-                );
-                let z = 10.;
-                d.draw_text_ex(
-                    &font,
-                    &format!("Dash B: {}", machine.context.ctx.can_dash_b),
-                    rvec2(5., y + z),
-                    TEXT_SIZE,
-                    0.,
-                    Color::WHITE,
-                );
-                let z = z + 10.;
-                d.draw_text_ex(
-                    &font,
-                    &format!("Airborne: {}", physics.airborne),
-                    rvec2(5., y + z),
-                    TEXT_SIZE,
-                    0.,
-                    Color::WHITE,
-                );
-                let z = z + 10.;
-                d.draw_text_ex(
-                    &font,
-                    &format!("Jump: {:#?}", machine.context.ctx.flags.jump),
-                    rvec2(5., y + z),
-                    TEXT_SIZE,
-                    0.,
-                    Color::WHITE,
-                );
-                let z = z + 10.;
-                d.draw_text_ex(
-                    &font,
-                    &format!("Cornered: {}", physics.cornered),
-                    rvec2(5., y + z),
-                    TEXT_SIZE,
-                    0.,
-                    Color::WHITE,
-                );
-                let z = z + 10.;
-                d.draw_text_ex(
-                    &font,
-                    &format!("Facing opponent: {:#?}", physics.facing_opponent),
-                    rvec2(5., y + z),
-                    TEXT_SIZE,
-                    0.,
-                    Color::WHITE,
-                );
-                let z = z + 10.;
-                d.draw_text_ex(
-                    &font,
-                    &format!("Facing left: {:#?}", physics.facing_left),
-                    rvec2(5., y + z),
-                    TEXT_SIZE,
-                    0.,
-                    Color::WHITE,
-                );
+                {
+                    let y = 12.;
+                    d.draw_text_ex(
+                        &font,
+                        &format!("Airborne: {}", physics.airborne),
+                        rvec2(5., y),
+                        TEXT_SIZE,
+                        0.,
+                        Color::WHITE,
+                    );
+                    let z = 10.;
+                    d.draw_text_ex(
+                        &font,
+                        &format!("Jump: {:#?}", machine.context.ctx.flags.jump),
+                        rvec2(5., y + z),
+                        TEXT_SIZE,
+                        0.,
+                        Color::WHITE,
+                    );
+                    let z = z + 10.;
+                    d.draw_text_ex(
+                        &font,
+                        &format!("Cornered: {}", physics.cornered),
+                        rvec2(5., y + z),
+                        TEXT_SIZE,
+                        0.,
+                        Color::WHITE,
+                    );
+                    let z = z + 10.;
+                    d.draw_text_ex(
+                        &font,
+                        &format!("Facing opponent: {:#?}", physics.facing_opponent),
+                        rvec2(5., y + z),
+                        TEXT_SIZE,
+                        0.,
+                        Color::WHITE,
+                    );
+                    let z = z + 10.;
+                    d.draw_text_ex(
+                        &font,
+                        &format!("Facing left: {:#?}", physics.facing_left),
+                        rvec2(5., y + z),
+                        TEXT_SIZE,
+                        0.,
+                        Color::WHITE,
+                    );
+                }
+                // LOCKOUTS
+                {
+                    let y = 2.;
+                    let z = 10.;
+                    let x = 120.;
+                    d.draw_text_ex(
+                        &font,
+                        &format!("Dash F: {}", machine.context.ctx.can_dash_f),
+                        rvec2(x, y),
+                        TEXT_SIZE,
+                        0.,
+                        Color::WHITE,
+                    );
+                    d.draw_text_ex(
+                        &font,
+                        &format!("Dash B: {}", machine.context.ctx.can_dash_b),
+                        rvec2(x, y + z),
+                        TEXT_SIZE,
+                        0.,
+                        Color::WHITE,
+                    );
+                    // let z = z + 10.;
+                    // d.draw_text_ex(
+                    //     &font,
+                    //     &format!("QCF: {}", machine.context.ctx.can_qcf),
+                    //     rvec2(x, y + z),
+                    //     TEXT_SIZE,
+                    //     0.,
+                    //     Color::WHITE,
+                    // );
+                    // let z = z + 10.;
+                    // d.draw_text_ex(
+                    //     &font,
+                    //     &format!("QCB: {}", machine.context.ctx.can_qcb),
+                    //     rvec2(x, y + z),
+                    //     TEXT_SIZE,
+                    //     0.,
+                    //     Color::WHITE,
+                    // );
+                    // let z = z + 10.;
+                    // d.draw_text_ex(
+                    //     &font,
+                    //     &format!("Dpf: {}", machine.context.ctx.can_dpf),
+                    //     rvec2(x, y + z),
+                    //     TEXT_SIZE,
+                    //     0.,
+                    //     Color::WHITE,
+                    // );
+                    // let z = z + 10.;
+                    // d.draw_text_ex(
+                    //     &font,
+                    //     &format!("Hcf: {}", machine.context.ctx.can_hcf),
+                    //     rvec2(x, y + z),
+                    //     TEXT_SIZE,
+                    //     0.,
+                    //     Color::WHITE,
+                    // );
+                }
             }
         });
 }
