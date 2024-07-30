@@ -101,49 +101,49 @@ impl InputBuffer {
         let limit = 9;
 
         let mut translated = Vec::with_capacity(9);
-            // Pointer to the end of the slice
-            let mut right = self.index;
-            // Left if looking 9 frames into the past of the buffer
-            let mut left = (self.buffer.len() + right - (limit - 1) - 1) % self.buffer.len();
-            // Make the attack button part of the motion and the 9 frame limit
-            translated.push(button);
+        // Pointer to the end of the slice
+        let mut right = self.index;
+        // Left if looking 9 frames into the past of the buffer
+        let mut left = (self.buffer.len() + right - (limit - 1) - 1) % self.buffer.len();
+        // Make the attack button part of the motion and the 9 frame limit
+        translated.push(button);
 
-            // Translate the &[u8] to actual inputs
-            for direction in motion.iter().rev() {
-                translated.push(numpad_to_inputs(*direction));
-            }
+        // Translate the &[u8] to actual inputs
+        for direction in motion.iter().rev() {
+            translated.push(numpad_to_inputs(*direction));
+        }
 
-            motion_index = 0;
+        motion_index = 0;
 
-            for _ in translated.iter() {
-                // Buffer slice of the last 9 inputs
-                let slice = if left > right {
-                    // When left is greater than right take whats everything from left pointer to
-                    // the end and everything from 0 to right pointer and contactenate them
-                    let left_slice = &self.buffer[left..];
-                    let right_slice = &self.buffer[..=right];
-                    [left_slice, right_slice].concat()
-                } else {
-                    self.buffer[left..=right].to_vec()
-                };
+        for _ in translated.iter() {
+            // Buffer slice of the last 9 inputs
+            let slice = if left > right {
+                // When left is greater than right take whats everything from left pointer to
+                // the end and everything from 0 to right pointer and contactenate them
+                let left_slice = &self.buffer[left..];
+                let right_slice = &self.buffer[..=right];
+                [left_slice, right_slice].concat()
+            } else {
+                self.buffer[left..=right].to_vec()
+            };
 
-                // Inputs in the motion
-                let inputs = &translated[motion_index];
+            // Inputs in the motion
+            let inputs = &translated[motion_index];
 
-                for (i, current) in slice.iter().rev().enumerate() {
-                    if inputs.is_pressed(current, &current.facing_left) {
-                        // Update buffer slice based on where the input was found
-                        right = (self.buffer.len() + right - i) % self.buffer.len();
-                        left = (self.buffer.len() + right - (limit - 1) - 1) % self.buffer.len();
-                        // Update input for the motion
-                        motion_index += 1;
-                        break;
-                    }
-                }
-                if motion_index >= translated.len() {
-                    return true;
+            for (i, current) in slice.iter().rev().enumerate() {
+                if inputs.is_pressed(current, &current.facing_left) {
+                    // Update buffer slice based on where the input was found
+                    right = (self.buffer.len() + right - i) % self.buffer.len();
+                    left = (self.buffer.len() + right - (limit - 1) - 1) % self.buffer.len();
+                    // Update input for the motion
+                    motion_index += 1;
+                    break;
                 }
             }
+            if motion_index >= translated.len() {
+                return true;
+            }
+        }
 
         false
     }

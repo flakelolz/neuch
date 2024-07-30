@@ -11,8 +11,24 @@ impl Ken {
         match self {
             Ken::Normals => false,
             Ken::Specials => {
-                if Specials::ForcedHadouken.set(buffer, ctx, physics) {
-                    return true;
+                // Priority Hadouken with half-circle motion
+                {
+                    let lp = Inputs::LightPunch;
+                    let mp = Inputs::MediumPunch;
+                    let hp = Inputs::HeavyPunch;
+                    let hcf = [4, 1, 2, 3, 6];
+                    if (buffer.was_motion_executed_exact(&hcf, lp)
+                        || buffer.was_motion_executed_exact(&hcf, mp)
+                        || buffer.was_motion_executed_exact(&hcf, hp))
+                        && (buffer.buffered(lp, buffer.attack, &physics.facing_left)
+                            || buffer.buffered(mp, buffer.attack, &physics.facing_left)
+                            || buffer.buffered(hp, buffer.attack, &physics.facing_left))
+                        && !physics.airborne
+                    {
+                        ctx.next.replace(Box::new(Hadouken));
+
+                        return true;
+                    }
                 }
                 if Specials::Shoryuken.set(buffer, ctx, physics) {
                     return true;
@@ -48,10 +64,10 @@ impl Normals {
         }
     }
 }
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Deserialize, Serialize)]
 pub enum Specials {
     Hadouken,
-    ForcedHadouken,
     Shoryuken,
 }
 
@@ -60,21 +76,15 @@ impl Specials {
         let flipped = &physics.facing_left;
         match self {
             Specials::Hadouken => {
-                if buffer.was_motion_executed(Motions::Qcf, Inputs::LightPunch)
-                    && buffer.buffered(Inputs::LightPunch, buffer.attack, flipped)
-                    && !physics.airborne
-                {
-                    ctx.next.replace(Box::new(Hadouken));
-
-                    return true;
-                }
-
-                false
-            }
-            Specials::ForcedHadouken => {
-                let hcf = [4, 1, 2, 3, 6];
-                if buffer.was_motion_executed_exact(&hcf, Inputs::LightPunch)
-                    && buffer.buffered(Inputs::LightPunch, buffer.attack, flipped)
+                let lp = Inputs::LightPunch;
+                let mp = Inputs::MediumPunch;
+                let hp = Inputs::HeavyPunch;
+                if (buffer.was_motion_executed(Motions::Qcf, lp)
+                    || buffer.was_motion_executed(Motions::Qcf, mp)
+                    || buffer.was_motion_executed(Motions::Qcf, hp))
+                    && (buffer.buffered(lp, buffer.attack, flipped)
+                        || buffer.buffered(mp, buffer.attack, flipped)
+                        || buffer.buffered(hp, buffer.attack, flipped))
                     && !physics.airborne
                 {
                     ctx.next.replace(Box::new(Hadouken));
@@ -106,6 +116,13 @@ impl State for Hadouken {
 
     fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Ken Hadouken on_enter");
+        // TODO: Set how fast a fireball is going to move based on the button currently pressed
+        println!(
+            "lp: {}, mp: {}, hp: {}",
+            _buffer.current().lp,
+            _buffer.current().mp,
+            _buffer.current().hp
+        );
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
@@ -125,7 +142,7 @@ impl State for ShoryukenL {
         "Ken ShoryukenL".into()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, physics: &mut Physics) {
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Ken ShoryukenL on_enter");
     }
 
