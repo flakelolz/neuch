@@ -48,10 +48,11 @@
 - [ ] Background
 - [ ] Camera
 - [ ] Proximity normals
-- [ ] Special moves
+- [x] Special moves
 - [ ] Special cancels
-- [ ] Implement cross-cut DPs
+- [x] Implement cross-cut DPs
 - [ ] Implement all knockdown states
+- [ ] Separate checking for a button press and a direction press with flipped flag
 - [ ] Learn how to do an input and buffer systems with bitwise operations
 
 ## Dash should fail
