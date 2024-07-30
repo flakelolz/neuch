@@ -41,6 +41,7 @@
 - [x] walls
 - [ ] Fix push behavior on a cornered character
 - [x] Apply knock-back to attacker when defender is cornered
+- [ ] Fix wall knock-back implementation
 - [x] Pull character on cross-up hit
 - [ ] Fix cross-up hit pull logic, amount and feel
 - [ ] Fix not stun when hit on the first frame of the Turn animation
@@ -49,6 +50,9 @@
 - [ ] Proximity normals
 - [ ] Special moves
 - [ ] Special cancels
+- [ ] Implement cross-cut DPs
+- [ ] Implement all knockdown states
+- [ ] Learn how to do an input and buffer systems with bitwise operations
 
 ## Dash should fail
 
@@ -66,3 +70,11 @@
 - [x] *5...* (standing) -> *1* > *5* > *4*
 - [x] *5...* (standing) -> *4* > *6* > *5* > *6*
 - [x] *5...* (standing) -> *6* > *3* > *5* > *6*
+
+
+# Motions
+I will most likely need to read them backwards but also have priority between motions
+
+- [ ] *6*... -> *2* > *3* > *6* => DP
+- [ ] *6*... -> *4* > *1* > *2* > *3* > *6* => QCF
+
