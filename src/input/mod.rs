@@ -29,6 +29,7 @@ pub fn update_input_buffers(world: &mut World) {
         .query_mut::<(&mut Input, &mut InputBuffer, &mut StateMachine, &Physics)>()
         .into_iter()
         .for_each(|(_, (input, buffer, machine, physics))| {
+            input.facing_left = physics.facing_left;
             buffer.update(input);
             buffer.lockout_dash(&mut machine.context.ctx, &physics.facing_left, 6);
         });

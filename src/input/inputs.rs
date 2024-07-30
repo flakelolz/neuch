@@ -12,6 +12,7 @@ pub struct Input {
     pub lk: bool,
     pub mk: bool,
     pub hk: bool,
+    pub facing_left: bool,
 }
 
 impl Input {

@@ -10,7 +10,7 @@ mod tests {
         test_helper(&mut buffer, Inputs::Down);
         test_helper(&mut buffer, Inputs::DownForward);
         test_helper(&mut buffer, Inputs::Forward);
-        assert!(buffer.was_motion_executed_in_time(Motions::Qcf, 3, &false));
+        assert!(buffer.was_motion_executed_in_time(Motions::Qcf, 3));
     }
 
     #[test]
@@ -21,7 +21,7 @@ mod tests {
         test_helper(&mut buffer, Inputs::Down);
         test_helper(&mut buffer, Inputs::DownForward);
         test_helper(&mut buffer, Inputs::Forward);
-        assert!(buffer.was_motion_executed_in_time(Motions::Hcf, 5, &false));
+        assert!(buffer.was_motion_executed_in_time(Motions::Hcf, 5));
     }
 
     #[test]
@@ -31,7 +31,7 @@ mod tests {
         test_helper(&mut buffer, Inputs::DownBackward);
         test_helper(&mut buffer, Inputs::DownForward);
         test_helper(&mut buffer, Inputs::Forward);
-        assert!(buffer.was_motion_executed_in_time(Motions::Hcf, 4, &false));
+        assert!(buffer.was_motion_executed_in_time(Motions::Hcf, 4));
     }
 
     #[test]
@@ -40,7 +40,7 @@ mod tests {
         test_helper(&mut buffer, Inputs::Backward);
         test_helper(&mut buffer, Inputs::Down);
         test_helper(&mut buffer, Inputs::Forward);
-        assert!(buffer.was_motion_executed_in_time(Motions::Hcf, 3, &false));
+        assert!(buffer.was_motion_executed_in_time(Motions::Hcf, 3));
     }
 
     #[test]
@@ -50,6 +50,6 @@ mod tests {
         test_helper(&mut buffer, Inputs::Down);
         test_helper(&mut buffer, Inputs::DownForward);
         test_helper(&mut buffer, Inputs::Forward);
-        assert!(!buffer.was_motion_executed_in_time(Motions::Hcf, 4, &false));
+        assert!(!buffer.was_motion_executed_in_time(Motions::Hcf, 4));
     }
 }

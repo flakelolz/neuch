@@ -23,7 +23,7 @@ impl Motions {
                 vec![vec![6, 2, 3], vec![2, 3, 2, 3]]
             }
             Motions::Dpb => {
-                vec![vec![4, 2, 1], vec![1, 2, 1], vec![4, 1, 4]]
+                vec![vec![4, 2, 1], vec![2, 1, 2, 1]]
             }
             Motions::Hcf => {
                 vec![vec![4, 1, 2, 3, 6], vec![4, 1, 3, 6], vec![4, 2, 6]]
@@ -38,10 +38,10 @@ impl Motions {
 impl InputBuffer {
     // Checks if a motion was executed with less than 10 frames between each step of the motion and
     // the button
-    pub fn was_motion_executed(&self, motions: Motions, button: Inputs, flipped: &bool) -> bool {
+    pub fn was_motion_executed(&self, motions: Motions, button: Inputs) -> bool {
         let motion_list = motions.notation();
         let mut motion_index;
-        let limit = 10;
+        let limit = 9;
 
         let mut translated = Vec::with_capacity(9);
         for motion in motion_list.iter() {
@@ -75,7 +75,7 @@ impl InputBuffer {
                 let inputs = &translated[motion_index];
 
                 for (i, current) in slice.iter().rev().enumerate() {
-                    if inputs.is_pressed(current, flipped) {
+                    if inputs.is_pressed(current, &current.facing_left) {
                         // Update buffer slice based on where the input was found
                         right = (self.buffer.len() + right - i) % self.buffer.len();
                         left = (self.buffer.len() + right - (limit - 1) - 1) % self.buffer.len();
@@ -95,13 +95,61 @@ impl InputBuffer {
         false
     }
 
+    /// Checks only on the directions given as a &[u8] instead of the notation list of each motion
+    pub fn was_motion_executed_exact(&self, motion: &[u8], button: Inputs) -> bool {
+        let mut motion_index;
+        let limit = 9;
+
+        let mut translated = Vec::with_capacity(9);
+            // Pointer to the end of the slice
+            let mut right = self.index;
+            // Left if looking 9 frames into the past of the buffer
+            let mut left = (self.buffer.len() + right - (limit - 1) - 1) % self.buffer.len();
+            // Make the attack button part of the motion and the 9 frame limit
+            translated.push(button);
+
+            // Translate the &[u8] to actual inputs
+            for direction in motion.iter().rev() {
+                translated.push(numpad_to_inputs(*direction));
+            }
+
+            motion_index = 0;
+
+            for _ in translated.iter() {
+                // Buffer slice of the last 9 inputs
+                let slice = if left > right {
+                    // When left is greater than right take whats everything from left pointer to
+                    // the end and everything from 0 to right pointer and contactenate them
+                    let left_slice = &self.buffer[left..];
+                    let right_slice = &self.buffer[..=right];
+                    [left_slice, right_slice].concat()
+                } else {
+                    self.buffer[left..=right].to_vec()
+                };
+
+                // Inputs in the motion
+                let inputs = &translated[motion_index];
+
+                for (i, current) in slice.iter().rev().enumerate() {
+                    if inputs.is_pressed(current, &current.facing_left) {
+                        // Update buffer slice based on where the input was found
+                        right = (self.buffer.len() + right - i) % self.buffer.len();
+                        left = (self.buffer.len() + right - (limit - 1) - 1) % self.buffer.len();
+                        // Update input for the motion
+                        motion_index += 1;
+                        break;
+                    }
+                }
+                if motion_index >= translated.len() {
+                    return true;
+                }
+            }
+
+        false
+    }
+
     /// Check if a motion was performed within a time limit
-    pub fn was_motion_executed_in_time(
-        &self,
-        motions: Motions,
-        mut time_limit: usize,
-        flipped: &bool,
-    ) -> bool {
+    pub fn was_motion_executed_in_time(&self, motions: Motions, mut time_limit: usize) -> bool {
         if time_limit > (self.buffer.len() + self.index) {
             time_limit = self.buffer.len() + self.index;
         }
@@ -119,7 +167,7 @@ impl InputBuffer {
                 let input_command = self.buffer[buffer_position];
                 let direction = motion[current_motion_index];
 
-                if check_numpad_direction(&input_command, direction, flipped) {
+                if check_numpad_direction(&input_command, direction, &input_command.facing_left) {
                     current_motion_index += 1;
                     if current_motion_index >= motion.len() {
                         return true;
@@ -128,10 +176,6 @@ impl InputBuffer {
             }
         }
         false
-    }
-
-    pub fn lockout_motions(&self, ctx: &mut SubContext, flipped: &bool) {
-        self.lockout_dash(ctx, flipped, 6);
     }
 }
 

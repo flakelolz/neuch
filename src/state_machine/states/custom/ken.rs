@@ -14,7 +14,7 @@ impl Ken {
                 if Specials::ForcedHadouken.set(buffer, ctx, physics) {
                     return true;
                 }
-                if Specials::ShoryukenL.set(buffer, ctx, physics) {
+                if Specials::Shoryuken.set(buffer, ctx, physics) {
                     return true;
                 }
                 if Specials::Hadouken.set(buffer, ctx, physics) {
@@ -52,7 +52,7 @@ impl Normals {
 pub enum Specials {
     Hadouken,
     ForcedHadouken,
-    ShoryukenL,
+    Shoryuken,
 }
 
 impl Specials {
@@ -60,7 +60,7 @@ impl Specials {
         let flipped = &physics.facing_left;
         match self {
             Specials::Hadouken => {
-                if buffer.was_motion_executed(Motions::Qcf, Inputs::LightPunch, flipped)
+                if buffer.was_motion_executed(Motions::Qcf, Inputs::LightPunch)
                     && buffer.buffered(Inputs::LightPunch, buffer.attack, flipped)
                     && !physics.airborne
                 {
@@ -72,7 +72,8 @@ impl Specials {
                 false
             }
             Specials::ForcedHadouken => {
-                if buffer.was_motion_executed(Motions::Hcf, Inputs::LightPunch, flipped)
+                let hcf = [4, 1, 2, 3, 6];
+                if buffer.was_motion_executed_exact(&hcf, Inputs::LightPunch)
                     && buffer.buffered(Inputs::LightPunch, buffer.attack, flipped)
                     && !physics.airborne
                 {
@@ -82,8 +83,8 @@ impl Specials {
                 }
                 false
             }
-            Specials::ShoryukenL => {
-                if buffer.was_motion_executed(Motions::Dpf, Inputs::LightPunch, flipped)
+            Specials::Shoryuken => {
+                if buffer.was_motion_executed(Motions::Dpf, Inputs::LightPunch)
                     && buffer.buffered(Inputs::LightPunch, buffer.attack, flipped)
                     && !physics.airborne
                 {
