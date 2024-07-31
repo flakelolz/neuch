@@ -110,7 +110,7 @@ impl Editor {
         if d.gui_label_button(rrect(x + 32, 24, 30, 8), Some(c"<-")) {
             self.loaded = false;
             if self.index > 0 {
-                self.index -= 1;
+                 self.index = self.index.saturating_sub(1);
             }
         }
         if d.gui_label_button(rrect(x + 70, 24, 1, 8), Some(c"->")) {
