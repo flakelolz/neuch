@@ -27,10 +27,14 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
 
         // Debug frame advance
         let mut advance = false;
-        if rl.is_key_pressed(KeyboardKey::KEY_ENTER) {
+        if rl.is_key_pressed(KeyboardKey::KEY_ENTER)
+            || rl.is_gamepad_button_pressed(0, GamepadButton::GAMEPAD_BUTTON_MIDDLE_RIGHT)
+        {
             paused = !paused;
             println!("Paused");
-        } else if rl.is_key_pressed(KeyboardKey::KEY_BACKSLASH) {
+        } else if rl.is_key_pressed(KeyboardKey::KEY_BACKSLASH)
+            || rl.is_gamepad_button_pressed(0, GamepadButton::GAMEPAD_BUTTON_MIDDLE_LEFT)
+        {
             advance = true;
         }
 
