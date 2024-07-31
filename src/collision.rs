@@ -2,6 +2,8 @@ use crate::prelude::*;
 
 #[derive(Clone, Default)]
 pub struct Collisions {
+    /// For checking if there's a gap between two hitboxes and allow multi-hit attacks
+    pub counter: usize,
     pub proximity: Vec<(Entity, ProximityBox)>,
     pub hitboxes: Vec<(Entity, Hitbox)>,
     pub hurtboxes: Vec<(Entity, Hurtbox)>,
@@ -16,7 +18,7 @@ impl Collisions {
     }
     pub fn store(&mut self, world: &mut World) {
         for (id, (character, physics, state)) in
-            world.query_mut::<(&Character, &Physics, &StateMachine)>()
+            world.query_mut::<(&Character, &Physics, &mut StateMachine)>()
         {
             let offset = physics.position;
 
@@ -34,6 +36,26 @@ impl Collisions {
                         let hitbox = hitbox.translated(offset, physics.facing_left);
                         if hitbox.is_active(state.context.elapsed) {
                             self.hitboxes.push((id, hitbox));
+                        }
+                    }
+
+                    {
+                        let first = action.hitboxes.as_ref().unwrap().first().unwrap();
+                        let last = action.hitboxes.as_ref().unwrap().last().unwrap();
+
+                        // If there's a gap between hitboxes, it means that the action is multi-hit and needs to be
+                        // able to hit again
+                        if state.context.elapsed >= first.start_frame
+                            && state.context.elapsed <= last.start_frame
+                            && state.context.ctx.reaction.hitstop == 0
+                        {
+                            if let Some(hitbox) = hitboxes.get(self.counter) {
+                                if !hitbox.is_active(state.context.elapsed) {
+                                    state.context.ctx.reaction.has_hit = false;
+                                } else {
+                                    self.counter += 1;
+                                }
+                            }
                         }
                     }
                 }
