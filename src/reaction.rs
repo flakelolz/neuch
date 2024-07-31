@@ -2,11 +2,24 @@ use crate::prelude::*;
 
 #[derive(Default, Debug, Clone, Copy)]
 pub struct Reaction {
+    /// Attacker's attack has made contact with hurtbox
     pub has_hit: bool,
+    /// Attacker's attack was blocked
+    pub blocked: bool,
+    /// Attacker's attack can be canceled out of
+    pub can_cancel: bool,
+    /// Everyone's hitstop
     pub hitstop: u32,
+    /// Everyone's hitstun
     pub hitstun: u32,
+    /// Everyone's blockstun
     pub blockstun: u32,
+    /// Everyone's knockback
     pub knockback: i32,
+    /// The defender has blocked and attack
+    pub blocking: bool,
+    /// Which way the defender is blocking
+    pub block_height: Block,
 }
 
 impl Reaction {
@@ -25,18 +38,28 @@ impl Reaction {
     }
 }
 
+#[derive(Default, Debug, Clone, Copy, PartialEq)]
+pub enum Block {
+    #[default]
+    None,
+    High,
+    Low,
+}
+
 #[derive(Debug, Clone, Copy)]
 pub struct HitEvent {
     pub attacker: Entity,
     pub defender: Entity,
+    /// Height of the hurtbox that was hit, to know which animation to transition to
     pub height: Height,
     pub properties: HitProperties,
-    pub proximity: Option<ProximityBox>,
+    /// Proximity block boxes
+    pub proximity: Option<(ProximityBox, u32)>,
 }
 
 pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
     for (_, state) in world.query_mut::<&mut StateMachine>() {
-        let reaction = &mut state.context.reaction;
+        let reaction = &mut state.context.ctx.reaction;
         if reaction.hitstop > 0 {
             reaction.hitstop -= 1;
         }
@@ -61,23 +84,27 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
                 let (a_state, _a_buffer, _a_physics) = p1;
                 let (b_state, b_buffer, b_physics) = p2;
                 if event.proximity.is_none() {
-                    a_state.context.reaction.hitstop = event.properties.hitstop;
-                    b_state.context.reaction.hitstop = event.properties.hitstop;
+                    a_state.context.ctx.reaction.hitstop = event.properties.hitstop;
+                    b_state.context.ctx.reaction.hitstop = event.properties.hitstop;
                     // KNOCKBACK
                     if b_physics.cornered {
-                        a_state.context.reaction.knockback = -event.properties.knockback;
+                        a_state.context.ctx.reaction.knockback = -event.properties.knockback;
                     } else {
-                        b_state.context.reaction.knockback = event.properties.knockback;
+                        b_state.context.ctx.reaction.knockback = event.properties.knockback;
                     }
 
                     // HIT
                     {
-                        b_state.context.reaction.hitstun = event.properties.hitstun;
+                        a_state.context.ctx.reaction.blocked = false;
+                        b_state.context.ctx.reaction.hitstun = event.properties.hitstun;
                         hit_reaction_transitions(&mut b_state.context, b_buffer, event)
                     }
                 }
                 // GUARD
-                if backward(b_buffer, &b_physics.facing_left) {
+                if b_state.context.ctx.reaction.block_height == Block::High
+                    || b_state.context.ctx.reaction.block_height == Block::Low
+                {
+                    a_state.context.ctx.reaction.blocked = true;
                     guard_reaction_transitions(&mut b_state.context, b_buffer, event);
                 }
             }
@@ -88,10 +115,10 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
 }
 
 pub fn hit_animation(animator: &mut Animator, context: &mut Context, timeline: &[Keyframe]) {
-    context.duration = context.reaction.hitstun;
+    context.duration = context.ctx.reaction.hitstun;
     let length = timeline.len();
-    let avg = context.reaction.hitstun / length as u32;
-    let residue = context.reaction.hitstun - avg * length as u32;
+    let avg = context.ctx.reaction.hitstun / length as u32;
+    let residue = context.ctx.reaction.hitstun - avg * length as u32;
 
     animator.reset();
     animator.keyframes.clear();
@@ -114,10 +141,10 @@ pub fn hit_animation(animator: &mut Animator, context: &mut Context, timeline: &
 }
 
 pub fn guard_animation(animator: &mut Animator, context: &mut Context, timeline: &[Keyframe]) {
-    context.duration = context.reaction.blockstun;
+    context.duration = context.ctx.reaction.blockstun;
     let length = timeline.len();
-    let avg = context.reaction.blockstun / length as u32;
-    let residue = context.reaction.blockstun - avg * length as u32;
+    let avg = context.duration / length as u32;
+    let residue = context.duration - avg * length as u32;
 
     animator.reset();
     animator.keyframes.clear();
@@ -200,11 +227,11 @@ fn hit_reaction_transitions(context: &mut Context, buffer: &InputBuffer, hit_eve
 }
 
 fn guard_reaction_transitions(context: &mut Context, buffer: &InputBuffer, hit_event: &HitEvent) {
-    let reaction = &mut context.reaction;
+    let reaction = &mut context.ctx.reaction;
     let next = &mut context.ctx.next;
     if hit_event.proximity.is_some() {
-        if !reaction.block() {
-            reaction.blockstun = hit_event.properties.blockstun;
+        if !reaction.blocking {
+            reaction.blockstun = hit_event.proximity.unwrap().1;
             if buffer.current().down {
                 *next = Some(Box::new(reacting::GrdCrouchPre))
             } else {

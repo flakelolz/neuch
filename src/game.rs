@@ -38,7 +38,7 @@ pub fn game(rl: &mut RaylibHandle, thread: &RaylibThread, configs: &mut Configs)
             // Logic
             update_input_buffers(&mut world);
             physics_system(&mut world);
-            update_state(&mut world);
+            update_state(&mut world, &mut collisions);
             collisions.update(&mut world, &mut hit_events);
             reaction_system(&mut world, &mut hit_events);
             frame_count(&mut world);

@@ -20,9 +20,9 @@ impl Ken {
                     if (buffer.was_motion_executed_exact(&hcf, lp)
                         || buffer.was_motion_executed_exact(&hcf, mp)
                         || buffer.was_motion_executed_exact(&hcf, hp))
-                        && (buffer.buffered(lp, buffer.attack, &physics.facing_left)
-                            || buffer.buffered(mp, buffer.attack, &physics.facing_left)
-                            || buffer.buffered(hp, buffer.attack, &physics.facing_left))
+                        && (buffer.buffered(lp, buffer.cancels, &physics.facing_left)
+                            || buffer.buffered(mp, buffer.cancels, &physics.facing_left)
+                            || buffer.buffered(hp, buffer.cancels, &physics.facing_left))
                         && !physics.airborne
                     {
                         ctx.next.replace(Box::new(Hadouken));
@@ -82,9 +82,9 @@ impl Specials {
                 if (buffer.was_motion_executed(Motions::Qcf, lp)
                     || buffer.was_motion_executed(Motions::Qcf, mp)
                     || buffer.was_motion_executed(Motions::Qcf, hp))
-                    && (buffer.buffered(lp, buffer.attack, flipped)
-                        || buffer.buffered(mp, buffer.attack, flipped)
-                        || buffer.buffered(hp, buffer.attack, flipped))
+                    && (buffer.buffered(lp, buffer.cancels, flipped)
+                        || buffer.buffered(mp, buffer.cancels, flipped)
+                        || buffer.buffered(hp, buffer.cancels, flipped))
                     && !physics.airborne
                 {
                     ctx.next.replace(Box::new(Hadouken));
@@ -95,7 +95,7 @@ impl Specials {
             }
             Specials::Shoryuken => {
                 if buffer.was_motion_executed(Motions::Dpf, Inputs::LightPunch)
-                    && buffer.buffered(Inputs::LightPunch, buffer.attack, flipped)
+                    && buffer.buffered(Inputs::LightPunch, 20, flipped)
                     && !physics.airborne
                 {
                     ctx.next.replace(Box::new(ShoryukenL));

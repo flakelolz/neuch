@@ -84,6 +84,43 @@ impl Inputs {
             Inputs::HeavyKick => current.hk,
         }
     }
+    pub fn is_pressed_for_motion(&self, current: &Input, left: &bool, opponent: &bool) -> bool {
+        let forward;
+        let backward;
+
+        if *left {
+            if *opponent {
+                forward = current.left;
+                backward = current.right;
+            } else {
+                forward = current.right;
+                backward = current.left;
+            }
+        } else if *opponent {
+            forward = current.right;
+            backward = current.left;
+        } else {
+            forward = current.left;
+            backward = current.right;
+        }
+        match self {
+            Inputs::Up => current.up && !backward && !forward,
+            Inputs::Down => current.down && !backward && !forward,
+            Inputs::Forward => forward && !current.down && !current.up,
+            Inputs::Backward => backward && !current.down && !current.up,
+            Inputs::UpForward => current.up && forward,
+            Inputs::UpBackward => current.up && backward,
+            Inputs::DownForward => current.down && forward,
+            Inputs::DownBackward => current.down && backward,
+            Inputs::Neutral => !current.up && !current.down && !current.right && !current.left,
+            Inputs::LightPunch => current.lp,
+            Inputs::MediumPunch => current.mp,
+            Inputs::HeavyPunch => current.hp,
+            Inputs::LightKick => current.lk,
+            Inputs::MediumKick => current.mk,
+            Inputs::HeavyKick => current.hk,
+        }
+    }
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -92,6 +129,7 @@ pub struct InputBuffer {
     pub buffer: [Input; BUFFER_SIZE],
     pub dash: usize,
     pub attack: usize,
+    pub cancels: usize,
 }
 
 impl Default for InputBuffer {
@@ -101,6 +139,7 @@ impl Default for InputBuffer {
             buffer: [Input::default(); BUFFER_SIZE],
             dash: 8,
             attack: 2,
+            cancels: 2,
         }
     }
 }

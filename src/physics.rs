@@ -70,7 +70,7 @@ pub fn physics_system(world: &mut World) {
     }
     // Update physics
     for (_, (physics, state)) in world.query_mut::<(&mut Physics, &mut StateMachine)>() {
-        let reaction = &mut state.context.reaction;
+        let reaction = &mut state.context.ctx.reaction;
         if reaction.hitstop == 0 {
             // Move position based on current velocity
             physics.position += physics.velocity;

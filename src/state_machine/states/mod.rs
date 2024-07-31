@@ -34,6 +34,7 @@ pub enum Group {
     StNormals,
     CrNormals,
     AirNormals,
+    Specials,
     Movement,
     Dashes,
     Walks,
@@ -44,6 +45,9 @@ impl Group {
     pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
         match self {
             Group::All => {
+                if Group::Specials.set(buffer, ctx, physics) {
+                    return true;
+                }
                 if Group::Normals.set(buffer, ctx, physics) {
                     return true;
                 }
@@ -52,6 +56,18 @@ impl Group {
                 }
                 if Group::Movement.set(buffer, ctx, physics) {
                     return true;
+                }
+                false
+            }
+            Group::Specials => {
+                match ctx.name.as_str() {
+                    "Ken" => {
+                        if States::Ken(ken::Ken::Specials).set(buffer, ctx, physics) {
+                            return true;
+                        }
+                    }
+                    "Ryu" => println!("Ryu"),
+                    _ => (),
                 }
                 false
             }
@@ -200,7 +216,7 @@ impl Standing {
     pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
         match self {
             Standing::LightPunch => {
-                if buffer.buffered(Inputs::LightPunch, buffer.attack, &physics.facing_left)
+                if buffer.buffered(Inputs::LightPunch, buffer.cancels, &physics.facing_left)
                     && !down(buffer)
                 {
                     ctx.next.replace(Box::new(standing::LightPunch));
@@ -227,7 +243,7 @@ impl Standing {
                 false
             }
             Standing::LightKick => {
-                if buffer.buffered(Inputs::LightKick, buffer.attack, &physics.facing_left)
+                if buffer.buffered(Inputs::LightKick, buffer.cancels, &physics.facing_left)
                     && !down(buffer)
                 {
                     ctx.next.replace(Box::new(standing::LightKick));
@@ -319,7 +335,7 @@ impl Crouching {
                 false
             }
             Crouching::LightPunch => {
-                if buffer.buffered(Inputs::LightPunch, buffer.attack, &physics.facing_left)
+                if buffer.buffered(Inputs::LightPunch, buffer.cancels, &physics.facing_left)
                     && down(buffer)
                 {
                     ctx.next.replace(Box::new(crouching::LightPunch));
@@ -346,7 +362,7 @@ impl Crouching {
                 false
             }
             Crouching::LightKick => {
-                if buffer.buffered(Inputs::LightKick, buffer.attack, &physics.facing_left)
+                if buffer.buffered(Inputs::LightKick, buffer.cancels, &physics.facing_left)
                     && down(buffer)
                 {
                     ctx.next.replace(Box::new(crouching::LightKick));

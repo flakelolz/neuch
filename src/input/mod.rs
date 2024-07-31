@@ -30,6 +30,7 @@ pub fn update_input_buffers(world: &mut World) {
         .into_iter()
         .for_each(|(_, (input, buffer, machine, physics))| {
             input.facing_left = physics.facing_left;
+            input.facing_opponent = physics.facing_opponent;
             buffer.update(input);
             buffer.lockout_dash(&mut machine.context.ctx, &physics.facing_left, 6);
         });

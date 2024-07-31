@@ -75,7 +75,11 @@ impl InputBuffer {
                 let inputs = &translated[motion_index];
 
                 for (i, current) in slice.iter().rev().enumerate() {
-                    if inputs.is_pressed(current, &current.facing_left) {
+                    if inputs.is_pressed_for_motion(
+                        current,
+                        &current.facing_left,
+                        &current.facing_opponent,
+                    ) {
                         // Update buffer slice based on where the input was found
                         right = (self.buffer.len() + right - i) % self.buffer.len();
                         left = (self.buffer.len() + right - (limit - 1) - 1) % self.buffer.len();
@@ -131,7 +135,11 @@ impl InputBuffer {
             let inputs = &translated[motion_index];
 
             for (i, current) in slice.iter().rev().enumerate() {
-                if inputs.is_pressed(current, &current.facing_left) {
+                if inputs.is_pressed_for_motion(
+                    current,
+                    &current.facing_left,
+                    &current.facing_opponent,
+                ) {
                     // Update buffer slice based on where the input was found
                     right = (self.buffer.len() + right - i) % self.buffer.len();
                     left = (self.buffer.len() + right - (limit - 1) - 1) % self.buffer.len();

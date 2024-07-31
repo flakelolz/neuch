@@ -99,10 +99,9 @@ impl Collisions {
                     hit_events.push(HitEvent {
                         attacker: *id,
                         defender: *defender,
-                        proximity: Some(*proximity),
                         height: hurtbox.height,
+                        proximity: Some((*proximity, proximity.duration)),
                         properties: HitProperties {
-                            blockstun: proximity.duration,
                             ..Default::default()
                         },
                     });
@@ -113,10 +112,21 @@ impl Collisions {
         for (attacker, hitbox) in self.hitboxes.iter() {
             for (defender, hurtbox) in self.hurtboxes.iter() {
                 if attacker != defender && boxes_overlap(&hitbox.value, &hurtbox.value) {
-                    if let Ok((state, physics)) =
-                        world.query_one_mut::<(&mut StateMachine, &Physics)>(*attacker)
+                    if let Ok((state, physics, buffer)) =
+                        world.query_one_mut::<(&mut StateMachine, &Physics, &mut InputBuffer)>(
+                            *attacker,
+                        )
                     {
-                        let has_hit = &mut state.context.reaction.has_hit;
+                        // If the action has any cancels, set the cancel flag
+                        if let Some(instructions) = &state.context.modifiers.instructions {
+                            if instructions.cancels.is_some() {
+                                state.context.ctx.reaction.can_cancel = true;
+                                // Extend the cancel window to account for hitstop
+                                buffer.cancels = buffer.attack + hitbox.properties.hitstop as usize;
+                            }
+                        }
+                        // Don't hit with the same hitbox
+                        let has_hit = &mut state.context.ctx.reaction.has_hit;
                         if *has_hit {
                             continue;
                         }

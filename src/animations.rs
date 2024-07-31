@@ -76,7 +76,7 @@ pub fn animation(d: &mut impl RaylibDraw, world: &World, assets: &Assets) {
             let keyframe = animator.keyframes[animator.index];
             animator.flipped = physics.facing_left;
             animator.duration = keyframe.duration;
-            let reaction = &state.context.reaction;
+            let reaction = &state.context.ctx.reaction;
 
             let pos_x = physics.position.x;
             let pos_y = -physics.position.y;

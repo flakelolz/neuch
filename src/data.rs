@@ -110,10 +110,18 @@ pub struct PositionModifier {
 
 #[derive(Debug, Clone, Default, Deserialize, Serialize)]
 pub struct CancelModifier {
-    // on: Vec<CollisionType>, // Whiff, Hit, Block, Parry
+    pub on: Vec<CollisionType>,
     pub after_frame: u32,
-    // pub until_frame: Option<u32>,
+    pub until_frame: Option<u32>,
     pub states: Vec<States>,
+}
+
+#[derive(Debug, Clone, Default, Deserialize, Serialize)]
+pub enum CollisionType {
+    #[default]
+    Hit,
+    Block,
+    // Parry,
 }
 
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
