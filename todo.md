@@ -39,18 +39,20 @@
 - [x] Fix ordering of systems that might be adding a frame of input delay
 - [x] Fix flip logic and buffer system when flipping
 - [x] walls
-- [ ] Fix push behavior on a cornered character
 - [x] Apply knock-back to attacker when defender is cornered
-- [ ] Fix wall knock-back implementation
 - [x] Pull character on cross-up hit
+- [ ] Fix wall knock-back implementation
+- [ ] Fix push behavior on a cornered character
 - [ ] Fix cross-up hit pull logic, amount and feel
-- [ ] Fix not stun when hit on the first frame of the Turn animation
+- [x] Fix not stun when hit on the first frame of the Turn animation
 - [ ] Background
 - [ ] Camera
 - [ ] Proximity normals
+- [x] Fix chain attacks
 - [x] Special moves
-- [ ] Special cancels
+- [x] Special cancels
 - [x] Implement cross-cut DPs
+- [x] Fix direction of motion when crossing-up the opponent in the air
 - [ ] Implement all knockdown states
 - [ ] Separate checking for a button press and a direction press with flipped flag
 - [ ] Learn how to do an input and buffer systems with bitwise operations
@@ -76,6 +78,9 @@
 # Motions
 I will most likely need to read them backwards but also have priority between motions
 
-- [ ] *6*... -> *2* > *3* > *6* => DP
-- [ ] *6*... -> *4* > *1* > *2* > *3* > *6* => QCF
+- [x] *6*... -> *2* > *3* > *6* => DP
+- [x] *6*... -> *4* > *1* > *2* > *3* > *6* => QCF
+
+This needs to have a bigger input leniency
+- [ ] *6*... -> *2* > *cr mk* > *3* > *lp* > => Cr MK xx DP
 
