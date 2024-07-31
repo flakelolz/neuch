@@ -38,6 +38,9 @@ impl Debug {
     pub fn toggle(&mut self, rl: &mut RaylibHandle) {
         if rl.is_key_pressed(KeyboardKey::KEY_F1) {
             self.editor = !self.editor;
+            if self.information {
+                self.information = false;
+            }
             println!("Editor: {}", self.editor);
         }
         if rl.is_key_pressed(KeyboardKey::KEY_F2) {
@@ -273,6 +276,15 @@ pub fn show_info(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
                     d.draw_text_ex(
                         &font,
                         &format!("Facing left: {:#?}", physics.facing_left),
+                        rvec2(5., y + z),
+                        TEXT_SIZE,
+                        0.,
+                        Color::WHITE,
+                    );
+                    let z = z + 10.;
+                    d.draw_text_ex(
+                        &font,
+                        &format!("Can Cancel: {:#?}", machine.context.ctx.reaction.can_cancel),
                         rvec2(5., y + z),
                         TEXT_SIZE,
                         0.,
