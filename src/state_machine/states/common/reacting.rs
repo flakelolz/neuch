@@ -11,29 +11,7 @@ impl State for UpperWeak {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -52,29 +30,7 @@ impl State for UpperMid {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -93,29 +49,7 @@ impl State for UpperStrong {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -134,29 +68,7 @@ impl State for UpperRising {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -175,29 +87,7 @@ impl State for FrontSpin {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -216,29 +106,7 @@ impl State for BackSpin {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -257,29 +125,7 @@ impl State for LowerWeak {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -298,29 +144,7 @@ impl State for LowerMid {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -339,29 +163,7 @@ impl State for LowerStrong {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -380,29 +182,7 @@ impl State for LowerRising {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -421,30 +201,7 @@ impl State for CrouchWeak {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if buffer.current().down {
-                context.ctx.next = Some(Box::new(crouching::Idle));
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_crouching_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -463,30 +220,7 @@ impl State for CrouchMid {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if buffer.current().down {
-                context.ctx.next = Some(Box::new(crouching::Idle));
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_crouching_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -505,30 +239,7 @@ impl State for CrouchStrong {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if buffer.current().down {
-                context.ctx.next = Some(Box::new(crouching::Idle));
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_crouching_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -547,29 +258,7 @@ impl State for GrdStandPre {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -583,38 +272,18 @@ impl State for GrdStandEnd {
         "Rxn GrdStandEnd".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_enter(&mut self, context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Rxn GrdStandEnd on_enter");
+        context.ctx.reaction.blocking = true;
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if crouch_transition(context, buffer, physics) {
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_standing_reaction_transitions(context, buffer, physics);
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_exit(&mut self, context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Rxn GrdStandEnd on_exit");
+        context.ctx.reaction.blocking = false;
     }
 }
 
@@ -629,30 +298,7 @@ impl State for GrdCrouchPre {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if buffer.current().down {
-                context.ctx.next = Some(Box::new(crouching::Idle));
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_crouching_reaction_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -666,38 +312,17 @@ impl State for GrdCrouchEnd {
         "Rxn GrdCrouchEnd".to_owned()
     }
 
-    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_enter(&mut self, context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Rxn GrdCrouchEnd on_enter");
+        context.ctx.reaction.blocking = true;
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > context.duration {
-            // Transitions
-            if turn_transition(&mut context.ctx, buffer, physics) {
-                return;
-            }
-            if attack_transitions(context, buffer, physics) {
-                return;
-            }
-            if jump_transitions(context, buffer, physics) {
-                return;
-            }
-            if buffer.current().down {
-                context.ctx.next = Some(Box::new(crouching::Idle));
-                return;
-            }
-            if dash_transitions(context, buffer, physics) {
-                return;
-            }
-            if walk_transition(context, buffer, physics) {
-                return;
-            }
-            // Return to idle
-            context.ctx.next = Some(Box::new(standing::Idle));
-        }
+        common_crouching_reaction_transitions(context, buffer, physics);
     }
 
-    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+    fn on_exit(&mut self, context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
         println!("Rxn GrdCrouchEnd on_exit");
+        context.ctx.reaction.blocking = false;
     }
 }

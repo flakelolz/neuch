@@ -12,6 +12,9 @@ impl State for Start {
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Transitions
+        if turn_transition(&mut context.ctx, buffer, physics) {
+            return;
+        }
         if specials_transitions(context, buffer, physics) {
             return;
         }
@@ -80,23 +83,25 @@ impl State for End {
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
         // Transitions
-        if jump_transitions(context, buffer, physics) {
-            return;
-        }
-        if specials_transitions(context, buffer, physics) {
-            return;
-        }
-        if attack_transitions(context, buffer, physics) {
-            return;
-        }
-        if crouch_transition(context, buffer, physics) {
-            return;
-        }
-        if dash_transitions(context, buffer, physics) {
-            return;
-        }
-        if walk_transition(context, buffer, physics) {
-            return;
+        if context.ctx.reaction.blockstun == 0 {
+            if jump_transitions(context, buffer, physics) {
+                return;
+            }
+            if specials_transitions(context, buffer, physics) {
+                return;
+            }
+            if attack_transitions(context, buffer, physics) {
+                return;
+            }
+            if crouch_transition(context, buffer, physics) {
+                return;
+            }
+            if dash_transitions(context, buffer, physics) {
+                return;
+            }
+            if walk_transition(context, buffer, physics) {
+                return;
+            }
         }
         // Base case & return to idle
         if context.elapsed > context.duration {
