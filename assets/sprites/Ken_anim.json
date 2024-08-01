@@ -441,26 +441,8 @@
     "duration": 16
    },
    {
-    "filename": "Ken #St MediumPunch 0.aseprite",
+    "filename": "Ken #Cl LightPunch 0.aseprite",
     "frame": { "x": 0, "y": 1344, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #St MediumPunch 1.aseprite",
-    "frame": { "x": 384, "y": 1344, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #St MediumPunch 2.aseprite",
-    "frame": { "x": 768, "y": 1344, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -468,8 +450,8 @@
     "duration": 32
    },
    {
-    "filename": "Ken #St MediumPunch 3.aseprite",
-    "frame": { "x": 1152, "y": 1344, "w": 384, "h": 224 },
+    "filename": "Ken #Cl LightPunch 1.aseprite",
+    "frame": { "x": 384, "y": 1344, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -477,7 +459,25 @@
     "duration": 16
    },
    {
-    "filename": "Ken #St MediumPunch 4.aseprite",
+    "filename": "Ken #Cl LightPunch 2.aseprite",
+    "frame": { "x": 768, "y": 1344, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Cl LightPunch 3.aseprite",
+    "frame": { "x": 1152, "y": 1344, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Cl LightPunch 4.aseprite",
     "frame": { "x": 1536, "y": 1344, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -486,34 +486,16 @@
     "duration": 32
    },
    {
-    "filename": "Ken #St MediumPunch 5.aseprite",
+    "filename": "Ken #Cl LightPunch 5.aseprite",
     "frame": { "x": 1920, "y": 1344, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 96
+    "duration": 80
    },
    {
-    "filename": "Ken #St MediumPunch 6.aseprite",
-    "frame": { "x": 2304, "y": 1344, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #St MediumPunch 7.aseprite",
-    "frame": { "x": 2688, "y": 1344, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #St HeavyPunch 0.aseprite",
+    "filename": "Ken #St MediumPunch 0.aseprite",
     "frame": { "x": 0, "y": 1568, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -522,7 +504,7 @@
     "duration": 16
    },
    {
-    "filename": "Ken #St HeavyPunch 1.aseprite",
+    "filename": "Ken #St MediumPunch 1.aseprite",
     "frame": { "x": 384, "y": 1568, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -531,17 +513,8 @@
     "duration": 48
    },
    {
-    "filename": "Ken #St HeavyPunch 2.aseprite",
+    "filename": "Ken #St MediumPunch 2.aseprite",
     "frame": { "x": 768, "y": 1568, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #St HeavyPunch 3.aseprite",
-    "frame": { "x": 1152, "y": 1568, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -549,7 +522,16 @@
     "duration": 32
    },
    {
-    "filename": "Ken #St HeavyPunch 4.aseprite",
+    "filename": "Ken #St MediumPunch 3.aseprite",
+    "frame": { "x": 1152, "y": 1568, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #St MediumPunch 4.aseprite",
     "frame": { "x": 1536, "y": 1568, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -558,26 +540,17 @@
     "duration": 32
    },
    {
-    "filename": "Ken #St HeavyPunch 5.aseprite",
+    "filename": "Ken #St MediumPunch 5.aseprite",
     "frame": { "x": 1920, "y": 1568, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
+    "duration": 96
    },
    {
-    "filename": "Ken #St HeavyPunch 6.aseprite",
+    "filename": "Ken #St MediumPunch 6.aseprite",
     "frame": { "x": 2304, "y": 1568, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #St HeavyPunch 7.aseprite",
-    "frame": { "x": 2688, "y": 1568, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -585,35 +558,8 @@
     "duration": 48
    },
    {
-    "filename": "Ken #St HeavyPunch 8.aseprite",
-    "frame": { "x": 3072, "y": 1568, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 80
-   },
-   {
-    "filename": "Ken #St HeavyPunch 9.aseprite",
-    "frame": { "x": 3456, "y": 1568, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 80
-   },
-   {
-    "filename": "Ken #St HeavyPunch 10.aseprite",
-    "frame": { "x": 3840, "y": 1568, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #St HeavyPunch 11.aseprite",
-    "frame": { "x": 4224, "y": 1568, "w": 384, "h": 224 },
+    "filename": "Ken #St MediumPunch 7.aseprite",
+    "frame": { "x": 2688, "y": 1568, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -621,16 +567,16 @@
     "duration": 16
    },
    {
-    "filename": "Ken #Cl HeavyPunch 0.aseprite",
+    "filename": "Ken #Cl MediumPunch 0.aseprite",
     "frame": { "x": 0, "y": 1792, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
+    "duration": 16
    },
    {
-    "filename": "Ken #Cl HeavyPunch 1.aseprite",
+    "filename": "Ken #Cl MediumPunch 1.aseprite",
     "frame": { "x": 384, "y": 1792, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -639,7 +585,7 @@
     "duration": 32
    },
    {
-    "filename": "Ken #Cl HeavyPunch 2.aseprite",
+    "filename": "Ken #Cl MediumPunch 2.aseprite",
     "frame": { "x": 768, "y": 1792, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -648,26 +594,8 @@
     "duration": 16
    },
    {
-    "filename": "Ken #Cl HeavyPunch 3.aseprite",
+    "filename": "Ken #Cl MediumPunch 3.aseprite",
     "frame": { "x": 1152, "y": 1792, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Cl HeavyPunch 4.aseprite",
-    "frame": { "x": 1536, "y": 1792, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Cl HeavyPunch 5.aseprite",
-    "frame": { "x": 1920, "y": 1792, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -675,17 +603,17 @@
     "duration": 32
    },
    {
-    "filename": "Ken #Cl HeavyPunch 6.aseprite",
-    "frame": { "x": 2304, "y": 1792, "w": 384, "h": 224 },
+    "filename": "Ken #Cl MediumPunch 4.aseprite",
+    "frame": { "x": 1536, "y": 1792, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
+    "duration": 32
    },
    {
-    "filename": "Ken #Cl HeavyPunch 7.aseprite",
-    "frame": { "x": 2688, "y": 1792, "w": 384, "h": 224 },
+    "filename": "Ken #Cl MediumPunch 5.aseprite",
+    "frame": { "x": 1920, "y": 1792, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -693,44 +621,8 @@
     "duration": 80
    },
    {
-    "filename": "Ken #Cl HeavyPunch 8.aseprite",
-    "frame": { "x": 3072, "y": 1792, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Cl HeavyPunch 9.aseprite",
-    "frame": { "x": 3456, "y": 1792, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Cl HeavyPunch 10.aseprite",
-    "frame": { "x": 3840, "y": 1792, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Cl HeavyPunch 11.aseprite",
-    "frame": { "x": 4224, "y": 1792, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Cl HeavyPunch 12.aseprite",
-    "frame": { "x": 4608, "y": 1792, "w": 384, "h": 224 },
+    "filename": "Ken #Cl MediumPunch 6.aseprite",
+    "frame": { "x": 2304, "y": 1792, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -738,52 +630,61 @@
     "duration": 64
    },
    {
-    "filename": "Ken #St LightKick 0.aseprite",
+    "filename": "Ken #Cl MediumPunch 7.aseprite",
+    "frame": { "x": 2688, "y": 1792, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #St HeavyPunch 0.aseprite",
     "frame": { "x": 0, "y": 2016, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
+    "duration": 16
    },
    {
-    "filename": "Ken #St LightKick 1.aseprite",
+    "filename": "Ken #St HeavyPunch 1.aseprite",
     "frame": { "x": 384, "y": 2016, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
+    "duration": 48
    },
    {
-    "filename": "Ken #St LightKick 2.aseprite",
+    "filename": "Ken #St HeavyPunch 2.aseprite",
     "frame": { "x": 768, "y": 2016, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
+    "duration": 48
    },
    {
-    "filename": "Ken #St LightKick 3.aseprite",
+    "filename": "Ken #St HeavyPunch 3.aseprite",
     "frame": { "x": 1152, "y": 2016, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
+    "duration": 32
    },
    {
-    "filename": "Ken #St LightKick 4.aseprite",
+    "filename": "Ken #St HeavyPunch 4.aseprite",
     "frame": { "x": 1536, "y": 2016, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
+    "duration": 32
    },
    {
-    "filename": "Ken #St LightKick 5.aseprite",
+    "filename": "Ken #St HeavyPunch 5.aseprite",
     "frame": { "x": 1920, "y": 2016, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -792,7 +693,61 @@
     "duration": 16
    },
    {
-    "filename": "Ken #St MediumKick 0.aseprite",
+    "filename": "Ken #St HeavyPunch 6.aseprite",
+    "frame": { "x": 2304, "y": 2016, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #St HeavyPunch 7.aseprite",
+    "frame": { "x": 2688, "y": 2016, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St HeavyPunch 8.aseprite",
+    "frame": { "x": 3072, "y": 2016, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 80
+   },
+   {
+    "filename": "Ken #St HeavyPunch 9.aseprite",
+    "frame": { "x": 3456, "y": 2016, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 80
+   },
+   {
+    "filename": "Ken #St HeavyPunch 10.aseprite",
+    "frame": { "x": 3840, "y": 2016, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #St HeavyPunch 11.aseprite",
+    "frame": { "x": 4224, "y": 2016, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Cl HeavyPunch 0.aseprite",
     "frame": { "x": 0, "y": 2240, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -801,17 +756,8 @@
     "duration": 32
    },
    {
-    "filename": "Ken #St MediumKick 1.aseprite",
+    "filename": "Ken #Cl HeavyPunch 1.aseprite",
     "frame": { "x": 384, "y": 2240, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #St MediumKick 2.aseprite",
-    "frame": { "x": 768, "y": 2240, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -819,7 +765,16 @@
     "duration": 32
    },
    {
-    "filename": "Ken #St MediumKick 3.aseprite",
+    "filename": "Ken #Cl HeavyPunch 2.aseprite",
+    "frame": { "x": 768, "y": 2240, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Cl HeavyPunch 3.aseprite",
     "frame": { "x": 1152, "y": 2240, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -828,25 +783,25 @@
     "duration": 16
    },
    {
-    "filename": "Ken #St MediumKick 4.aseprite",
+    "filename": "Ken #Cl HeavyPunch 4.aseprite",
     "frame": { "x": 1536, "y": 2240, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
+    "duration": 16
    },
    {
-    "filename": "Ken #St MediumKick 5.aseprite",
+    "filename": "Ken #Cl HeavyPunch 5.aseprite",
     "frame": { "x": 1920, "y": 2240, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
+    "duration": 32
    },
    {
-    "filename": "Ken #St MediumKick 6.aseprite",
+    "filename": "Ken #Cl HeavyPunch 6.aseprite",
     "frame": { "x": 2304, "y": 2240, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -855,8 +810,17 @@
     "duration": 48
    },
    {
-    "filename": "Ken #St MediumKick 7.aseprite",
+    "filename": "Ken #Cl HeavyPunch 7.aseprite",
     "frame": { "x": 2688, "y": 2240, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 80
+   },
+   {
+    "filename": "Ken #Cl HeavyPunch 8.aseprite",
+    "frame": { "x": 3072, "y": 2240, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -864,34 +828,25 @@
     "duration": 48
    },
    {
-    "filename": "Ken #St MediumKick 8.aseprite",
-    "frame": { "x": 3072, "y": 2240, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #St MediumKick 9.aseprite",
+    "filename": "Ken #Cl HeavyPunch 9.aseprite",
     "frame": { "x": 3456, "y": 2240, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
+    "duration": 48
    },
    {
-    "filename": "Ken #St MediumKick 10.aseprite",
+    "filename": "Ken #Cl HeavyPunch 10.aseprite",
     "frame": { "x": 3840, "y": 2240, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
+    "duration": 48
    },
    {
-    "filename": "Ken #St MediumKick 11.aseprite",
+    "filename": "Ken #Cl HeavyPunch 11.aseprite",
     "frame": { "x": 4224, "y": 2240, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -900,43 +855,16 @@
     "duration": 48
    },
    {
-    "filename": "Ken #St MediumKick 12.aseprite",
+    "filename": "Ken #Cl HeavyPunch 12.aseprite",
     "frame": { "x": 4608, "y": 2240, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
+    "duration": 64
    },
    {
-    "filename": "Ken #St HeavyKick 0.aseprite",
-    "frame": { "x": 0, "y": 2240, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #St HeavyKick 1.aseprite",
-    "frame": { "x": 384, "y": 2240, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #St HeavyKick 2.aseprite",
-    "frame": { "x": 768, "y": 2240, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #St HeavyKick 3.aseprite",
+    "filename": "Ken #St LightKick 0.aseprite",
     "frame": { "x": 0, "y": 2464, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -945,7 +873,7 @@
     "duration": 32
    },
    {
-    "filename": "Ken #St HeavyKick 4.aseprite",
+    "filename": "Ken #St LightKick 1.aseprite",
     "frame": { "x": 384, "y": 2464, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -954,16 +882,16 @@
     "duration": 32
    },
    {
-    "filename": "Ken #St HeavyKick 5.aseprite",
+    "filename": "Ken #St LightKick 2.aseprite",
     "frame": { "x": 768, "y": 2464, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
+    "duration": 64
    },
    {
-    "filename": "Ken #St HeavyKick 6.aseprite",
+    "filename": "Ken #St LightKick 3.aseprite",
     "frame": { "x": 1152, "y": 2464, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -972,7 +900,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #St HeavyKick 7.aseprite",
+    "filename": "Ken #St LightKick 4.aseprite",
     "frame": { "x": 1536, "y": 2464, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -981,8 +909,206 @@
     "duration": 48
    },
    {
-    "filename": "Ken #St HeavyKick 8.aseprite",
+    "filename": "Ken #St LightKick 5.aseprite",
     "frame": { "x": 1920, "y": 2464, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #St MediumKick 0.aseprite",
+    "frame": { "x": 0, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St MediumKick 1.aseprite",
+    "frame": { "x": 384, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St MediumKick 2.aseprite",
+    "frame": { "x": 768, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St MediumKick 3.aseprite",
+    "frame": { "x": 1152, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #St MediumKick 4.aseprite",
+    "frame": { "x": 1536, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #St MediumKick 5.aseprite",
+    "frame": { "x": 1920, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St MediumKick 6.aseprite",
+    "frame": { "x": 2304, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St MediumKick 7.aseprite",
+    "frame": { "x": 2688, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St MediumKick 8.aseprite",
+    "frame": { "x": 3072, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St MediumKick 9.aseprite",
+    "frame": { "x": 3456, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St MediumKick 10.aseprite",
+    "frame": { "x": 3840, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St MediumKick 11.aseprite",
+    "frame": { "x": 4224, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St MediumKick 12.aseprite",
+    "frame": { "x": 4608, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #St HeavyKick 0.aseprite",
+    "frame": { "x": 0, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St HeavyKick 1.aseprite",
+    "frame": { "x": 384, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St HeavyKick 2.aseprite",
+    "frame": { "x": 768, "y": 2688, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St HeavyKick 3.aseprite",
+    "frame": { "x": 0, "y": 2912, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St HeavyKick 4.aseprite",
+    "frame": { "x": 384, "y": 2912, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #St HeavyKick 5.aseprite",
+    "frame": { "x": 768, "y": 2912, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St HeavyKick 6.aseprite",
+    "frame": { "x": 1152, "y": 2912, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St HeavyKick 7.aseprite",
+    "frame": { "x": 1536, "y": 2912, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #St HeavyKick 8.aseprite",
+    "frame": { "x": 1920, "y": 2912, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -991,7 +1117,7 @@
    },
    {
     "filename": "Ken #St HeavyKick 9.aseprite",
-    "frame": { "x": 2304, "y": 2464, "w": 384, "h": 224 },
+    "frame": { "x": 2304, "y": 2912, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1000,7 +1126,7 @@
    },
    {
     "filename": "Ken #St HeavyKick 10.aseprite",
-    "frame": { "x": 3840, "y": 2240, "w": 384, "h": 224 },
+    "frame": { "x": 3840, "y": 2688, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1009,7 +1135,7 @@
    },
    {
     "filename": "Ken #St HeavyKick 11.aseprite",
-    "frame": { "x": 4224, "y": 2240, "w": 384, "h": 224 },
+    "frame": { "x": 4224, "y": 2688, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1018,7 +1144,7 @@
    },
    {
     "filename": "Ken #St HeavyKick 12.aseprite",
-    "frame": { "x": 4608, "y": 2240, "w": 384, "h": 224 },
+    "frame": { "x": 4608, "y": 2688, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1036,7 +1162,7 @@
    },
    {
     "filename": "Ken #St Turn 0.aseprite",
-    "frame": { "x": 0, "y": 2688, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 3136, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1045,7 +1171,7 @@
    },
    {
     "filename": "Ken #St Turn 1.aseprite",
-    "frame": { "x": 384, "y": 2688, "w": 384, "h": 224 },
+    "frame": { "x": 384, "y": 3136, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1054,7 +1180,7 @@
    },
    {
     "filename": "Ken #St Turn 2.aseprite",
-    "frame": { "x": 768, "y": 2688, "w": 384, "h": 224 },
+    "frame": { "x": 768, "y": 3136, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1063,7 +1189,7 @@
    },
    {
     "filename": "Ken #Cr Start 0.aseprite",
-    "frame": { "x": 0, "y": 2912, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 3360, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1072,7 +1198,7 @@
    },
    {
     "filename": "Ken #Cr Start 1.aseprite",
-    "frame": { "x": 384, "y": 2912, "w": 384, "h": 224 },
+    "frame": { "x": 384, "y": 3360, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1081,7 +1207,7 @@
    },
    {
     "filename": "Ken #Cr Start 2.aseprite",
-    "frame": { "x": 768, "y": 2912, "w": 384, "h": 224 },
+    "frame": { "x": 768, "y": 3360, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1090,7 +1216,7 @@
    },
    {
     "filename": "Ken #Cr Start 3.aseprite",
-    "frame": { "x": 1152, "y": 2912, "w": 384, "h": 224 },
+    "frame": { "x": 1152, "y": 3360, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1099,7 +1225,7 @@
    },
    {
     "filename": "Ken #Cr Start 4.aseprite",
-    "frame": { "x": 1536, "y": 2912, "w": 384, "h": 224 },
+    "frame": { "x": 1536, "y": 3360, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1108,7 +1234,7 @@
    },
    {
     "filename": "Ken #Cr Idle 0.aseprite",
-    "frame": { "x": 0, "y": 3136, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 3584, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1117,7 +1243,7 @@
    },
    {
     "filename": "Ken #Cr Idle 1.aseprite",
-    "frame": { "x": 384, "y": 3136, "w": 384, "h": 224 },
+    "frame": { "x": 384, "y": 3584, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1126,7 +1252,7 @@
    },
    {
     "filename": "Ken #Cr Idle 2.aseprite",
-    "frame": { "x": 768, "y": 3136, "w": 384, "h": 224 },
+    "frame": { "x": 768, "y": 3584, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1135,7 +1261,7 @@
    },
    {
     "filename": "Ken #Cr Idle 3.aseprite",
-    "frame": { "x": 1152, "y": 3136, "w": 384, "h": 224 },
+    "frame": { "x": 1152, "y": 3584, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1144,7 +1270,7 @@
    },
    {
     "filename": "Ken #Cr End 0.aseprite",
-    "frame": { "x": 0, "y": 3360, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 3808, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1153,141 +1279,6 @@
    },
    {
     "filename": "Ken #Cr End 1.aseprite",
-    "frame": { "x": 384, "y": 3360, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Cr End 2.aseprite",
-    "frame": { "x": 768, "y": 3360, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Cr LightPunch 0.aseprite",
-    "frame": { "x": 0, "y": 3584, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Cr LightPunch 1.aseprite",
-    "frame": { "x": 384, "y": 3584, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Cr LightPunch 2.aseprite",
-    "frame": { "x": 768, "y": 3584, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Cr LightPunch 3.aseprite",
-    "frame": { "x": 1152, "y": 3584, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Cr LightPunch 4.aseprite",
-    "frame": { "x": 1536, "y": 3584, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Cr LightPunch 5.aseprite",
-    "frame": { "x": 1920, "y": 3584, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Cr MediumPunch 0.aseprite",
-    "frame": { "x": 0, "y": 3584, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 80
-   },
-   {
-    "filename": "Ken #Cr MediumPunch 1.aseprite",
-    "frame": { "x": 384, "y": 3584, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Cr MediumPunch 2.aseprite",
-    "frame": { "x": 768, "y": 3584, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 80
-   },
-   {
-    "filename": "Ken #Cr MediumPunch 3.aseprite",
-    "frame": { "x": 1152, "y": 3584, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Cr MediumPunch 4.aseprite",
-    "frame": { "x": 1536, "y": 3584, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Cr MediumPunch 5.aseprite",
-    "frame": { "x": 1920, "y": 3584, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Cr HeavyPunch 0.aseprite",
-    "frame": { "x": 0, "y": 3808, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Cr HeavyPunch 1.aseprite",
     "frame": { "x": 384, "y": 3808, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -1296,88 +1287,25 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Cr HeavyPunch 2.aseprite",
+    "filename": "Ken #Cr End 2.aseprite",
     "frame": { "x": 768, "y": 3808, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Cr HeavyPunch 3.aseprite",
-    "frame": { "x": 1152, "y": 3808, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Cr HeavyPunch 4.aseprite",
-    "frame": { "x": 1536, "y": 3808, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 128
-   },
-   {
-    "filename": "Ken #Cr HeavyPunch 5.aseprite",
-    "frame": { "x": 1920, "y": 3808, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
     "duration": 48
    },
    {
-    "filename": "Ken #Cr HeavyPunch 6.aseprite",
-    "frame": { "x": 2304, "y": 3808, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Cr HeavyPunch 7.aseprite",
-    "frame": { "x": 2688, "y": 3808, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Cr HeavyPunch 8.aseprite",
-    "frame": { "x": 3072, "y": 3808, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Cr HeavyPunch 9.aseprite",
-    "frame": { "x": 3456, "y": 3808, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Cr LightKick 0.aseprite",
+    "filename": "Ken #Cr LightPunch 0.aseprite",
     "frame": { "x": 0, "y": 4032, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 80
+    "duration": 64
    },
    {
-    "filename": "Ken #Cr LightKick 1.aseprite",
+    "filename": "Ken #Cr LightPunch 1.aseprite",
     "frame": { "x": 384, "y": 4032, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -1386,7 +1314,7 @@
     "duration": 16
    },
    {
-    "filename": "Ken #Cr LightKick 2.aseprite",
+    "filename": "Ken #Cr LightPunch 2.aseprite",
     "frame": { "x": 768, "y": 4032, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -1395,116 +1323,188 @@
     "duration": 32
    },
    {
-    "filename": "Ken #Cr LightKick 3.aseprite",
+    "filename": "Ken #Cr LightPunch 3.aseprite",
     "frame": { "x": 1152, "y": 4032, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
+    "duration": 32
    },
    {
-    "filename": "Ken #Cr LightKick 4.aseprite",
-    "frame": { "x": 0, "y": 4032, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Cr LightKick 5.aseprite",
+    "filename": "Ken #Cr LightPunch 4.aseprite",
     "frame": { "x": 1536, "y": 4032, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
+    "duration": 32
    },
    {
-    "filename": "Ken #Cr MediumKick 0.aseprite",
+    "filename": "Ken #Cr LightPunch 5.aseprite",
+    "frame": { "x": 1920, "y": 4032, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Cr MediumPunch 0.aseprite",
+    "frame": { "x": 0, "y": 4032, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 80
+   },
+   {
+    "filename": "Ken #Cr MediumPunch 1.aseprite",
+    "frame": { "x": 384, "y": 4032, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Cr MediumPunch 2.aseprite",
+    "frame": { "x": 768, "y": 4032, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 80
+   },
+   {
+    "filename": "Ken #Cr MediumPunch 3.aseprite",
+    "frame": { "x": 1152, "y": 4032, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Cr MediumPunch 4.aseprite",
+    "frame": { "x": 1536, "y": 4032, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Cr MediumPunch 5.aseprite",
+    "frame": { "x": 1920, "y": 4032, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Cr HeavyPunch 0.aseprite",
     "frame": { "x": 0, "y": 4256, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
+    "duration": 64
    },
    {
-    "filename": "Ken #Cr MediumKick 1.aseprite",
+    "filename": "Ken #Cr HeavyPunch 1.aseprite",
     "frame": { "x": 384, "y": 4256, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
+    "duration": 48
    },
    {
-    "filename": "Ken #Cr MediumKick 2.aseprite",
+    "filename": "Ken #Cr HeavyPunch 2.aseprite",
     "frame": { "x": 768, "y": 4256, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
+    "duration": 16
    },
    {
-    "filename": "Ken #Cr MediumKick 3.aseprite",
+    "filename": "Ken #Cr HeavyPunch 3.aseprite",
     "frame": { "x": 1152, "y": 4256, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
+    "duration": 32
    },
    {
-    "filename": "Ken #Cr MediumKick 4.aseprite",
+    "filename": "Ken #Cr HeavyPunch 4.aseprite",
     "frame": { "x": 1536, "y": 4256, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
+    "duration": 128
    },
    {
-    "filename": "Ken #Cr MediumKick 5.aseprite",
+    "filename": "Ken #Cr HeavyPunch 5.aseprite",
     "frame": { "x": 1920, "y": 4256, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 96
+    "duration": 48
    },
    {
-    "filename": "Ken #Cr MediumKick 6.aseprite",
+    "filename": "Ken #Cr HeavyPunch 6.aseprite",
     "frame": { "x": 2304, "y": 4256, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
+    "duration": 48
    },
    {
-    "filename": "Ken #Cr MediumKick 7.aseprite",
-    "frame": { "x": 384, "y": 4256, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Cr MediumKick 8.aseprite",
+    "filename": "Ken #Cr HeavyPunch 7.aseprite",
     "frame": { "x": 2688, "y": 4256, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
+    "duration": 32
    },
    {
-    "filename": "Ken #Cr MediumKick 9.aseprite",
+    "filename": "Ken #Cr HeavyPunch 8.aseprite",
     "frame": { "x": 3072, "y": 4256, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Cr HeavyPunch 9.aseprite",
+    "frame": { "x": 3456, "y": 4256, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Cr LightKick 0.aseprite",
+    "frame": { "x": 0, "y": 4480, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 80
+   },
+   {
+    "filename": "Ken #Cr LightKick 1.aseprite",
+    "frame": { "x": 384, "y": 4480, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1512,34 +1512,7 @@
     "duration": 16
    },
    {
-    "filename": "Ken #Cr HeavyKick 0.aseprite",
-    "frame": { "x": 0, "y": 4256, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Cr HeavyKick 1.aseprite",
-    "frame": { "x": 0, "y": 4480, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Cr HeavyKick 2.aseprite",
-    "frame": { "x": 384, "y": 4480, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Cr HeavyKick 3.aseprite",
+    "filename": "Ken #Cr LightKick 2.aseprite",
     "frame": { "x": 768, "y": 4480, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -1548,7 +1521,7 @@
     "duration": 32
    },
    {
-    "filename": "Ken #Cr HeavyKick 4.aseprite",
+    "filename": "Ken #Cr LightKick 3.aseprite",
     "frame": { "x": 1152, "y": 4480, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -1557,71 +1530,8 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Cr HeavyKick 5.aseprite",
-    "frame": { "x": 1536, "y": 4480, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 80
-   },
-   {
-    "filename": "Ken #Cr HeavyKick 6.aseprite",
-    "frame": { "x": 1920, "y": 4480, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Cr HeavyKick 7.aseprite",
-    "frame": { "x": 2304, "y": 4480, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Cr HeavyKick 8.aseprite",
-    "frame": { "x": 2688, "y": 4480, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Cr HeavyKick 9.aseprite",
-    "frame": { "x": 384, "y": 4256, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Cr HeavyKick 10.aseprite",
-    "frame": { "x": 2688, "y": 4256, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Cr HeavyKick 11.aseprite",
-    "frame": { "x": 3072, "y": 4256, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Cr Turn 0.aseprite",
-    "frame": { "x": 0, "y": 4704, "w": 384, "h": 224 },
+    "filename": "Ken #Cr LightKick 4.aseprite",
+    "frame": { "x": 0, "y": 4480, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1629,7 +1539,25 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Cr Turn 1.aseprite",
+    "filename": "Ken #Cr LightKick 5.aseprite",
+    "frame": { "x": 1536, "y": 4480, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Cr MediumKick 0.aseprite",
+    "frame": { "x": 0, "y": 4704, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Cr MediumKick 1.aseprite",
     "frame": { "x": 384, "y": 4704, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -1638,7 +1566,7 @@
     "duration": 32
    },
    {
-    "filename": "Ken #Cr Turn 2.aseprite",
+    "filename": "Ken #Cr MediumKick 2.aseprite",
     "frame": { "x": 768, "y": 4704, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -1647,8 +1575,206 @@
     "duration": 32
    },
    {
-    "filename": "Ken #Cr Turn 3.aseprite",
+    "filename": "Ken #Cr MediumKick 3.aseprite",
     "frame": { "x": 1152, "y": 4704, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Cr MediumKick 4.aseprite",
+    "frame": { "x": 1536, "y": 4704, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Cr MediumKick 5.aseprite",
+    "frame": { "x": 1920, "y": 4704, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 96
+   },
+   {
+    "filename": "Ken #Cr MediumKick 6.aseprite",
+    "frame": { "x": 2304, "y": 4704, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Cr MediumKick 7.aseprite",
+    "frame": { "x": 384, "y": 4704, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Cr MediumKick 8.aseprite",
+    "frame": { "x": 2688, "y": 4704, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Cr MediumKick 9.aseprite",
+    "frame": { "x": 3072, "y": 4704, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Cr HeavyKick 0.aseprite",
+    "frame": { "x": 0, "y": 4704, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Cr HeavyKick 1.aseprite",
+    "frame": { "x": 0, "y": 4928, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Cr HeavyKick 2.aseprite",
+    "frame": { "x": 384, "y": 4928, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Cr HeavyKick 3.aseprite",
+    "frame": { "x": 768, "y": 4928, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Cr HeavyKick 4.aseprite",
+    "frame": { "x": 1152, "y": 4928, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Cr HeavyKick 5.aseprite",
+    "frame": { "x": 1536, "y": 4928, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 80
+   },
+   {
+    "filename": "Ken #Cr HeavyKick 6.aseprite",
+    "frame": { "x": 1920, "y": 4928, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Cr HeavyKick 7.aseprite",
+    "frame": { "x": 2304, "y": 4928, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Cr HeavyKick 8.aseprite",
+    "frame": { "x": 2688, "y": 4928, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Cr HeavyKick 9.aseprite",
+    "frame": { "x": 384, "y": 4704, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Cr HeavyKick 10.aseprite",
+    "frame": { "x": 2688, "y": 4704, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Cr HeavyKick 11.aseprite",
+    "frame": { "x": 3072, "y": 4704, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Cr Turn 0.aseprite",
+    "frame": { "x": 0, "y": 5152, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Cr Turn 1.aseprite",
+    "frame": { "x": 384, "y": 5152, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Cr Turn 2.aseprite",
+    "frame": { "x": 768, "y": 5152, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Cr Turn 3.aseprite",
+    "frame": { "x": 1152, "y": 5152, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1666,7 +1792,7 @@
    },
    {
     "filename": "Ken #Jmp Neutral 0.aseprite",
-    "frame": { "x": 0, "y": 4928, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 5376, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1675,7 +1801,7 @@
    },
    {
     "filename": "Ken #Jmp Neutral 1.aseprite",
-    "frame": { "x": 384, "y": 4928, "w": 384, "h": 224 },
+    "frame": { "x": 384, "y": 5376, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1684,7 +1810,7 @@
    },
    {
     "filename": "Ken #Jmp Neutral 2.aseprite",
-    "frame": { "x": 0, "y": 4928, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 5376, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1693,7 +1819,7 @@
    },
    {
     "filename": "Ken #Jmp Neutral 3.aseprite",
-    "frame": { "x": 384, "y": 4928, "w": 384, "h": 224 },
+    "frame": { "x": 384, "y": 5376, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1702,7 +1828,7 @@
    },
    {
     "filename": "Ken #Jmp Neutral 4.aseprite",
-    "frame": { "x": 0, "y": 4928, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 5376, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1711,7 +1837,7 @@
    },
    {
     "filename": "Ken #Jmp Neutral 5.aseprite",
-    "frame": { "x": 384, "y": 4928, "w": 384, "h": 224 },
+    "frame": { "x": 384, "y": 5376, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1720,186 +1846,6 @@
    },
    {
     "filename": "Ken #Jmp Neutral 6.aseprite",
-    "frame": { "x": 768, "y": 4928, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp Neutral 7.aseprite",
-    "frame": { "x": 1152, "y": 4928, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp Neutral 8.aseprite",
-    "frame": { "x": 1536, "y": 4928, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp Neutral 9.aseprite",
-    "frame": { "x": 1920, "y": 4928, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp Neutral 10.aseprite",
-    "frame": { "x": 2304, "y": 4928, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp Neutral 11.aseprite",
-    "frame": { "x": 2688, "y": 4928, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp Neutral 12.aseprite",
-    "frame": { "x": 3072, "y": 4928, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp Neutral 13.aseprite",
-    "frame": { "x": 3456, "y": 4928, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp Neutral 14.aseprite",
-    "frame": { "x": 3840, "y": 4928, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 80
-   },
-   {
-    "filename": "Ken #Jmp Forward 0.aseprite",
-    "frame": { "x": 0, "y": 5152, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 160
-   },
-   {
-    "filename": "Ken #Jmp Forward 1.aseprite",
-    "frame": { "x": 384, "y": 5152, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Jmp Forward 2.aseprite",
-    "frame": { "x": 768, "y": 5152, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp Forward 3.aseprite",
-    "frame": { "x": 1152, "y": 5152, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp Forward 4.aseprite",
-    "frame": { "x": 1536, "y": 5152, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Jmp Forward 5.aseprite",
-    "frame": { "x": 1920, "y": 5152, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Jmp Forward 6.aseprite",
-    "frame": { "x": 2304, "y": 5152, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Jmp Forward 7.aseprite",
-    "frame": { "x": 2688, "y": 5152, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Jmp Forward 8.aseprite",
-    "frame": { "x": 3072, "y": 5152, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 96
-   },
-   {
-    "filename": "Ken #Jmp Backward 0.aseprite",
-    "frame": { "x": 0, "y": 5376, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 160
-   },
-   {
-    "filename": "Ken #Jmp Backward 1.aseprite",
-    "frame": { "x": 384, "y": 5376, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Jmp Backward 2.aseprite",
     "frame": { "x": 768, "y": 5376, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -1908,7 +1854,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Jmp Backward 3.aseprite",
+    "filename": "Ken #Jmp Neutral 7.aseprite",
     "frame": { "x": 1152, "y": 5376, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -1917,8 +1863,188 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Jmp Backward 4.aseprite",
+    "filename": "Ken #Jmp Neutral 8.aseprite",
     "frame": { "x": 1536, "y": 5376, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp Neutral 9.aseprite",
+    "frame": { "x": 1920, "y": 5376, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp Neutral 10.aseprite",
+    "frame": { "x": 2304, "y": 5376, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp Neutral 11.aseprite",
+    "frame": { "x": 2688, "y": 5376, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp Neutral 12.aseprite",
+    "frame": { "x": 3072, "y": 5376, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp Neutral 13.aseprite",
+    "frame": { "x": 3456, "y": 5376, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp Neutral 14.aseprite",
+    "frame": { "x": 3840, "y": 5376, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 80
+   },
+   {
+    "filename": "Ken #Jmp Forward 0.aseprite",
+    "frame": { "x": 0, "y": 5600, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 160
+   },
+   {
+    "filename": "Ken #Jmp Forward 1.aseprite",
+    "frame": { "x": 384, "y": 5600, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Jmp Forward 2.aseprite",
+    "frame": { "x": 768, "y": 5600, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp Forward 3.aseprite",
+    "frame": { "x": 1152, "y": 5600, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp Forward 4.aseprite",
+    "frame": { "x": 1536, "y": 5600, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Jmp Forward 5.aseprite",
+    "frame": { "x": 1920, "y": 5600, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Jmp Forward 6.aseprite",
+    "frame": { "x": 2304, "y": 5600, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Jmp Forward 7.aseprite",
+    "frame": { "x": 2688, "y": 5600, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Jmp Forward 8.aseprite",
+    "frame": { "x": 3072, "y": 5600, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 96
+   },
+   {
+    "filename": "Ken #Jmp Backward 0.aseprite",
+    "frame": { "x": 0, "y": 5824, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 160
+   },
+   {
+    "filename": "Ken #Jmp Backward 1.aseprite",
+    "frame": { "x": 384, "y": 5824, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Jmp Backward 2.aseprite",
+    "frame": { "x": 768, "y": 5824, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp Backward 3.aseprite",
+    "frame": { "x": 1152, "y": 5824, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp Backward 4.aseprite",
+    "frame": { "x": 1536, "y": 5824, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1927,7 +2053,7 @@
    },
    {
     "filename": "Ken #Jmp Backward 5.aseprite",
-    "frame": { "x": 1920, "y": 5376, "w": 384, "h": 224 },
+    "frame": { "x": 1920, "y": 5824, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1936,7 +2062,7 @@
    },
    {
     "filename": "Ken #Jmp Backward 6.aseprite",
-    "frame": { "x": 2304, "y": 5376, "w": 384, "h": 224 },
+    "frame": { "x": 2304, "y": 5824, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1945,7 +2071,7 @@
    },
    {
     "filename": "Ken #Jmp Backward 7.aseprite",
-    "frame": { "x": 2688, "y": 5376, "w": 384, "h": 224 },
+    "frame": { "x": 2688, "y": 5824, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1954,7 +2080,7 @@
    },
    {
     "filename": "Ken #Jmp Backward 8.aseprite",
-    "frame": { "x": 3072, "y": 5376, "w": 384, "h": 224 },
+    "frame": { "x": 3072, "y": 5824, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1963,7 +2089,7 @@
    },
    {
     "filename": "Ken #Jmp End 0.aseprite",
-    "frame": { "x": 0, "y": 5600, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 6048, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1972,7 +2098,7 @@
    },
    {
     "filename": "Ken #Jmp End 1.aseprite",
-    "frame": { "x": 384, "y": 5600, "w": 384, "h": 224 },
+    "frame": { "x": 384, "y": 6048, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1981,7 +2107,7 @@
    },
    {
     "filename": "Ken #Jmp End 2.aseprite",
-    "frame": { "x": 768, "y": 5600, "w": 384, "h": 224 },
+    "frame": { "x": 768, "y": 6048, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1990,7 +2116,7 @@
    },
    {
     "filename": "Ken #Jmp LightPunch 0.aseprite",
-    "frame": { "x": 0, "y": 5824, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 6272, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -1999,7 +2125,7 @@
    },
    {
     "filename": "Ken #Jmp LightPunch 1.aseprite",
-    "frame": { "x": 384, "y": 5824, "w": 384, "h": 224 },
+    "frame": { "x": 384, "y": 6272, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2008,7 +2134,7 @@
    },
    {
     "filename": "Ken #Jmp LightPunch 2.aseprite",
-    "frame": { "x": 768, "y": 5824, "w": 384, "h": 224 },
+    "frame": { "x": 768, "y": 6272, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2017,7 +2143,7 @@
    },
    {
     "filename": "Ken #Jmp LightPunch 3.aseprite",
-    "frame": { "x": 1152, "y": 5824, "w": 384, "h": 224 },
+    "frame": { "x": 1152, "y": 6272, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2026,7 +2152,7 @@
    },
    {
     "filename": "Ken #Jmp LightPunch 4.aseprite",
-    "frame": { "x": 1536, "y": 5824, "w": 384, "h": 224 },
+    "frame": { "x": 1536, "y": 6272, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2035,7 +2161,7 @@
    },
    {
     "filename": "Ken #Jmp LightPunch 5.aseprite",
-    "frame": { "x": 1920, "y": 5824, "w": 384, "h": 224 },
+    "frame": { "x": 1920, "y": 6272, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2044,7 +2170,7 @@
    },
    {
     "filename": "Ken #Jmp LightPunch 6.aseprite",
-    "frame": { "x": 1152, "y": 5824, "w": 384, "h": 224 },
+    "frame": { "x": 1152, "y": 6272, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2053,7 +2179,7 @@
    },
    {
     "filename": "Ken #Jmp LightPunch 7.aseprite",
-    "frame": { "x": 1536, "y": 5824, "w": 384, "h": 224 },
+    "frame": { "x": 1536, "y": 6272, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2062,7 +2188,7 @@
    },
    {
     "filename": "Ken #Jmp LightPunch 8.aseprite",
-    "frame": { "x": 1920, "y": 5824, "w": 384, "h": 224 },
+    "frame": { "x": 1920, "y": 6272, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2071,7 +2197,7 @@
    },
    {
     "filename": "Ken #Jmp LightPunch 9.aseprite",
-    "frame": { "x": 1152, "y": 5824, "w": 384, "h": 224 },
+    "frame": { "x": 1152, "y": 6272, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2080,7 +2206,7 @@
    },
    {
     "filename": "Ken #Jmp LightPunch 10.aseprite",
-    "frame": { "x": 1536, "y": 5824, "w": 384, "h": 224 },
+    "frame": { "x": 1536, "y": 6272, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2089,7 +2215,7 @@
    },
    {
     "filename": "Ken #Jmp MediumPunch 0.aseprite",
-    "frame": { "x": 0, "y": 6048, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 6496, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2098,222 +2224,6 @@
    },
    {
     "filename": "Ken #Jmp MediumPunch 1.aseprite",
-    "frame": { "x": 384, "y": 6048, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Jmp MediumPunch 2.aseprite",
-    "frame": { "x": 768, "y": 6048, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Jmp MediumPunch 3.aseprite",
-    "frame": { "x": 1152, "y": 6048, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Jmp MediumPunch 4.aseprite",
-    "frame": { "x": 1536, "y": 6048, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp MediumPunch 5.aseprite",
-    "frame": { "x": 1920, "y": 6048, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp MediumPunch 6.aseprite",
-    "frame": { "x": 2304, "y": 6048, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Jmp HeavyPunch 0.aseprite",
-    "frame": { "x": 0, "y": 6048, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp HeavyPunch 1.aseprite",
-    "frame": { "x": 384, "y": 6048, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp HeavyPunch 2.aseprite",
-    "frame": { "x": 768, "y": 6048, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Jmp HeavyPunch 3.aseprite",
-    "frame": { "x": 1152, "y": 6048, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Jmp HeavyPunch 4.aseprite",
-    "frame": { "x": 1536, "y": 6048, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Jmp HeavyPunch 5.aseprite",
-    "frame": { "x": 1920, "y": 6048, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Jmp HeavyPunch 6.aseprite",
-    "frame": { "x": 2304, "y": 6048, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Jmp LightKick 0.aseprite",
-    "frame": { "x": 0, "y": 6272, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Jmp LightKick 1.aseprite",
-    "frame": { "x": 384, "y": 6272, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Jmp LightKick 2.aseprite",
-    "frame": { "x": 768, "y": 6272, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Jmp LightKick 3.aseprite",
-    "frame": { "x": 1152, "y": 6272, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp LightKick 4.aseprite",
-    "frame": { "x": 1536, "y": 6272, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp LightKick 5.aseprite",
-    "frame": { "x": 1920, "y": 6272, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp LightKick 6.aseprite",
-    "frame": { "x": 2304, "y": 6272, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp LightKick 7.aseprite",
-    "frame": { "x": 2688, "y": 6272, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp MediumKick 0.aseprite",
-    "frame": { "x": 0, "y": 6272, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Jmp MediumKick 1.aseprite",
-    "frame": { "x": 384, "y": 6272, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Jmp MediumKick 2.aseprite",
-    "frame": { "x": 0, "y": 6496, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Jmp MediumKick 3.aseprite",
     "frame": { "x": 384, "y": 6496, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2322,8 +2232,224 @@
     "duration": 32
    },
    {
-    "filename": "Ken #Jmp MediumKick 4.aseprite",
+    "filename": "Ken #Jmp MediumPunch 2.aseprite",
     "frame": { "x": 768, "y": 6496, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Jmp MediumPunch 3.aseprite",
+    "frame": { "x": 1152, "y": 6496, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Jmp MediumPunch 4.aseprite",
+    "frame": { "x": 1536, "y": 6496, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp MediumPunch 5.aseprite",
+    "frame": { "x": 1920, "y": 6496, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp MediumPunch 6.aseprite",
+    "frame": { "x": 2304, "y": 6496, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Jmp HeavyPunch 0.aseprite",
+    "frame": { "x": 0, "y": 6496, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp HeavyPunch 1.aseprite",
+    "frame": { "x": 384, "y": 6496, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp HeavyPunch 2.aseprite",
+    "frame": { "x": 768, "y": 6496, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Jmp HeavyPunch 3.aseprite",
+    "frame": { "x": 1152, "y": 6496, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Jmp HeavyPunch 4.aseprite",
+    "frame": { "x": 1536, "y": 6496, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Jmp HeavyPunch 5.aseprite",
+    "frame": { "x": 1920, "y": 6496, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Jmp HeavyPunch 6.aseprite",
+    "frame": { "x": 2304, "y": 6496, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Jmp LightKick 0.aseprite",
+    "frame": { "x": 0, "y": 6720, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Jmp LightKick 1.aseprite",
+    "frame": { "x": 384, "y": 6720, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Jmp LightKick 2.aseprite",
+    "frame": { "x": 768, "y": 6720, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Jmp LightKick 3.aseprite",
+    "frame": { "x": 1152, "y": 6720, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp LightKick 4.aseprite",
+    "frame": { "x": 1536, "y": 6720, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp LightKick 5.aseprite",
+    "frame": { "x": 1920, "y": 6720, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp LightKick 6.aseprite",
+    "frame": { "x": 2304, "y": 6720, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp LightKick 7.aseprite",
+    "frame": { "x": 2688, "y": 6720, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp MediumKick 0.aseprite",
+    "frame": { "x": 0, "y": 6720, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Jmp MediumKick 1.aseprite",
+    "frame": { "x": 384, "y": 6720, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Jmp MediumKick 2.aseprite",
+    "frame": { "x": 0, "y": 6944, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Jmp MediumKick 3.aseprite",
+    "frame": { "x": 384, "y": 6944, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Jmp MediumKick 4.aseprite",
+    "frame": { "x": 768, "y": 6944, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2332,7 +2458,7 @@
    },
    {
     "filename": "Ken #Jmp MediumKick 5.aseprite",
-    "frame": { "x": 1152, "y": 6496, "w": 384, "h": 224 },
+    "frame": { "x": 1152, "y": 6944, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2341,7 +2467,7 @@
    },
    {
     "filename": "Ken #Jmp MediumKick 6.aseprite",
-    "frame": { "x": 1536, "y": 6496, "w": 384, "h": 224 },
+    "frame": { "x": 1536, "y": 6944, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2350,7 +2476,7 @@
    },
    {
     "filename": "Ken #Jmp MediumKick 7.aseprite",
-    "frame": { "x": 2688, "y": 6272, "w": 384, "h": 224 },
+    "frame": { "x": 2688, "y": 6720, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2359,7 +2485,7 @@
    },
    {
     "filename": "Ken #Jmp HeavyKick 0.aseprite",
-    "frame": { "x": 0, "y": 6272, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 6720, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2368,7 +2494,7 @@
    },
    {
     "filename": "Ken #Jmp HeavyKick 1.aseprite",
-    "frame": { "x": 384, "y": 6272, "w": 384, "h": 224 },
+    "frame": { "x": 384, "y": 6720, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2377,7 +2503,7 @@
    },
    {
     "filename": "Ken #Jmp HeavyKick 2.aseprite",
-    "frame": { "x": 0, "y": 6720, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 7168, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2386,7 +2512,7 @@
    },
    {
     "filename": "Ken #Jmp HeavyKick 3.aseprite",
-    "frame": { "x": 384, "y": 6720, "w": 384, "h": 224 },
+    "frame": { "x": 384, "y": 7168, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2395,7 +2521,7 @@
    },
    {
     "filename": "Ken #Jmp HeavyKick 4.aseprite",
-    "frame": { "x": 768, "y": 6720, "w": 384, "h": 224 },
+    "frame": { "x": 768, "y": 7168, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2404,7 +2530,7 @@
    },
    {
     "filename": "Ken #Jmp HeavyKick 5.aseprite",
-    "frame": { "x": 1152, "y": 6720, "w": 384, "h": 224 },
+    "frame": { "x": 1152, "y": 7168, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2413,7 +2539,7 @@
    },
    {
     "filename": "Ken #Jmp HeavyKick 6.aseprite",
-    "frame": { "x": 1536, "y": 6496, "w": 384, "h": 224 },
+    "frame": { "x": 1536, "y": 6944, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2422,7 +2548,7 @@
    },
    {
     "filename": "Ken #Jmp HeavyKick 7.aseprite",
-    "frame": { "x": 2688, "y": 6272, "w": 384, "h": 224 },
+    "frame": { "x": 2688, "y": 6720, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2431,7 +2557,7 @@
    },
    {
     "filename": "Ken #Jmp AttackEnd 0.aseprite",
-    "frame": { "x": 0, "y": 6944, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 7392, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2440,7 +2566,7 @@
    },
    {
     "filename": "Ken #Jmp AttackEnd 1.aseprite",
-    "frame": { "x": 384, "y": 6944, "w": 384, "h": 224 },
+    "frame": { "x": 384, "y": 7392, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2449,7 +2575,7 @@
    },
    {
     "filename": "Ken #Rxn UpperWeak 0.aseprite",
-    "frame": { "x": 0, "y": 7168, "w": 384, "h": 224 },
+    "frame": { "x": 0, "y": 7616, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2458,78 +2584,6 @@
    },
    {
     "filename": "Ken #Rxn UpperWeak 1.aseprite",
-    "frame": { "x": 384, "y": 7168, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn UpperWeak 2.aseprite",
-    "frame": { "x": 768, "y": 7168, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn UpperWeak 3.aseprite",
-    "frame": { "x": 1152, "y": 7168, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn UpperMid 0.aseprite",
-    "frame": { "x": 0, "y": 7392, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn UpperMid 1.aseprite",
-    "frame": { "x": 384, "y": 7392, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn UpperMid 2.aseprite",
-    "frame": { "x": 768, "y": 7392, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn UpperMid 3.aseprite",
-    "frame": { "x": 1152, "y": 7392, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn UpperStrong 0.aseprite",
-    "frame": { "x": 0, "y": 7616, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn UpperStrong 1.aseprite",
     "frame": { "x": 384, "y": 7616, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2538,7 +2592,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn UpperStrong 2.aseprite",
+    "filename": "Ken #Rxn UpperWeak 2.aseprite",
     "frame": { "x": 768, "y": 7616, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2547,7 +2601,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn UpperStrong 3.aseprite",
+    "filename": "Ken #Rxn UpperWeak 3.aseprite",
     "frame": { "x": 1152, "y": 7616, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2556,25 +2610,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn UpperStrong 4.aseprite",
-    "frame": { "x": 1536, "y": 7616, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn UpperStrong 5.aseprite",
-    "frame": { "x": 1920, "y": 7616, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn UpperRising 0.aseprite",
+    "filename": "Ken #Rxn UpperMid 0.aseprite",
     "frame": { "x": 0, "y": 7840, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2583,7 +2619,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn UpperRising 1.aseprite",
+    "filename": "Ken #Rxn UpperMid 1.aseprite",
     "frame": { "x": 384, "y": 7840, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2592,7 +2628,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn UpperRising 2.aseprite",
+    "filename": "Ken #Rxn UpperMid 2.aseprite",
     "frame": { "x": 768, "y": 7840, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2601,7 +2637,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn UpperRising 3.aseprite",
+    "filename": "Ken #Rxn UpperMid 3.aseprite",
     "frame": { "x": 1152, "y": 7840, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2610,43 +2646,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn UpperRising 4.aseprite",
-    "frame": { "x": 1536, "y": 7840, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn UpperRising 5.aseprite",
-    "frame": { "x": 1920, "y": 7840, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn UpperRising 6.aseprite",
-    "frame": { "x": 2304, "y": 7840, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn FrontSpin 0.aseprite",
-    "frame": { "x": 0, "y": 7616, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn FrontSpin 1.aseprite",
+    "filename": "Ken #Rxn UpperStrong 0.aseprite",
     "frame": { "x": 0, "y": 8064, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2655,7 +2655,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn FrontSpin 2.aseprite",
+    "filename": "Ken #Rxn UpperStrong 1.aseprite",
     "frame": { "x": 384, "y": 8064, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2664,7 +2664,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn FrontSpin 3.aseprite",
+    "filename": "Ken #Rxn UpperStrong 2.aseprite",
     "frame": { "x": 768, "y": 8064, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2673,7 +2673,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn FrontSpin 4.aseprite",
+    "filename": "Ken #Rxn UpperStrong 3.aseprite",
     "frame": { "x": 1152, "y": 8064, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2682,7 +2682,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn FrontSpin 5.aseprite",
+    "filename": "Ken #Rxn UpperStrong 4.aseprite",
     "frame": { "x": 1536, "y": 8064, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2691,7 +2691,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn FrontSpin 6.aseprite",
+    "filename": "Ken #Rxn UpperStrong 5.aseprite",
     "frame": { "x": 1920, "y": 8064, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2700,7 +2700,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn BackSpin 0.aseprite",
+    "filename": "Ken #Rxn UpperRising 0.aseprite",
     "frame": { "x": 0, "y": 8288, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2709,7 +2709,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn BackSpin 1.aseprite",
+    "filename": "Ken #Rxn UpperRising 1.aseprite",
     "frame": { "x": 384, "y": 8288, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2718,7 +2718,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn BackSpin 2.aseprite",
+    "filename": "Ken #Rxn UpperRising 2.aseprite",
     "frame": { "x": 768, "y": 8288, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2727,7 +2727,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn BackSpin 3.aseprite",
+    "filename": "Ken #Rxn UpperRising 3.aseprite",
     "frame": { "x": 1152, "y": 8288, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2736,7 +2736,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn BackSpin 4.aseprite",
+    "filename": "Ken #Rxn UpperRising 4.aseprite",
     "frame": { "x": 1536, "y": 8288, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2745,7 +2745,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn BackSpin 5.aseprite",
+    "filename": "Ken #Rxn UpperRising 5.aseprite",
     "frame": { "x": 1920, "y": 8288, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2754,7 +2754,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn BackSpin 6.aseprite",
+    "filename": "Ken #Rxn UpperRising 6.aseprite",
     "frame": { "x": 2304, "y": 8288, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2763,8 +2763,8 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn BackSpin 7.aseprite",
-    "frame": { "x": 2688, "y": 8288, "w": 384, "h": 224 },
+    "filename": "Ken #Rxn FrontSpin 0.aseprite",
+    "frame": { "x": 0, "y": 8064, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -2772,7 +2772,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerWeak 0.aseprite",
+    "filename": "Ken #Rxn FrontSpin 1.aseprite",
     "frame": { "x": 0, "y": 8512, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2781,7 +2781,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerWeak 1.aseprite",
+    "filename": "Ken #Rxn FrontSpin 2.aseprite",
     "frame": { "x": 384, "y": 8512, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2790,7 +2790,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerWeak 2.aseprite",
+    "filename": "Ken #Rxn FrontSpin 3.aseprite",
     "frame": { "x": 768, "y": 8512, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2799,7 +2799,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerWeak 3.aseprite",
+    "filename": "Ken #Rxn FrontSpin 4.aseprite",
     "frame": { "x": 1152, "y": 8512, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2808,7 +2808,25 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerMid 0.aseprite",
+    "filename": "Ken #Rxn FrontSpin 5.aseprite",
+    "frame": { "x": 1536, "y": 8512, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn FrontSpin 6.aseprite",
+    "frame": { "x": 1920, "y": 8512, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn BackSpin 0.aseprite",
     "frame": { "x": 0, "y": 8736, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2817,7 +2835,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerMid 1.aseprite",
+    "filename": "Ken #Rxn BackSpin 1.aseprite",
     "frame": { "x": 384, "y": 8736, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2826,7 +2844,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerMid 2.aseprite",
+    "filename": "Ken #Rxn BackSpin 2.aseprite",
     "frame": { "x": 768, "y": 8736, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2835,7 +2853,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerMid 3.aseprite",
+    "filename": "Ken #Rxn BackSpin 3.aseprite",
     "frame": { "x": 1152, "y": 8736, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2844,7 +2862,43 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerStrong 0.aseprite",
+    "filename": "Ken #Rxn BackSpin 4.aseprite",
+    "frame": { "x": 1536, "y": 8736, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn BackSpin 5.aseprite",
+    "frame": { "x": 1920, "y": 8736, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn BackSpin 6.aseprite",
+    "frame": { "x": 2304, "y": 8736, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn BackSpin 7.aseprite",
+    "frame": { "x": 2688, "y": 8736, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn LowerWeak 0.aseprite",
     "frame": { "x": 0, "y": 8960, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2853,7 +2907,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerStrong 1.aseprite",
+    "filename": "Ken #Rxn LowerWeak 1.aseprite",
     "frame": { "x": 384, "y": 8960, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2862,7 +2916,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerStrong 2.aseprite",
+    "filename": "Ken #Rxn LowerWeak 2.aseprite",
     "frame": { "x": 768, "y": 8960, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2871,7 +2925,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerStrong 3.aseprite",
+    "filename": "Ken #Rxn LowerWeak 3.aseprite",
     "frame": { "x": 1152, "y": 8960, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2880,52 +2934,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerStrong 4.aseprite",
-    "frame": { "x": 1536, "y": 8960, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn LowerStrong 5.aseprite",
-    "frame": { "x": 1920, "y": 8960, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn LowerStrong 6.aseprite",
-    "frame": { "x": 2304, "y": 8960, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn LowerStrong 7.aseprite",
-    "frame": { "x": 2688, "y": 8960, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn LowerStrong 8.aseprite",
-    "frame": { "x": 3072, "y": 8960, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn LowerRising 0.aseprite",
+    "filename": "Ken #Rxn LowerMid 0.aseprite",
     "frame": { "x": 0, "y": 9184, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2934,7 +2943,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerRising 1.aseprite",
+    "filename": "Ken #Rxn LowerMid 1.aseprite",
     "frame": { "x": 384, "y": 9184, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2943,7 +2952,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerRising 2.aseprite",
+    "filename": "Ken #Rxn LowerMid 2.aseprite",
     "frame": { "x": 768, "y": 9184, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2952,7 +2961,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerRising 3.aseprite",
+    "filename": "Ken #Rxn LowerMid 3.aseprite",
     "frame": { "x": 1152, "y": 9184, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -2961,43 +2970,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn LowerRising 4.aseprite",
-    "frame": { "x": 1536, "y": 9184, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn LowerRising 5.aseprite",
-    "frame": { "x": 1920, "y": 9184, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn LowerRising 6.aseprite",
-    "frame": { "x": 2304, "y": 9184, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn LowerRising 7.aseprite",
-    "frame": { "x": 2688, "y": 9184, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn CrouchWeak 0.aseprite",
+    "filename": "Ken #Rxn LowerStrong 0.aseprite",
     "frame": { "x": 0, "y": 9408, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3006,7 +2979,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn CrouchWeak 1.aseprite",
+    "filename": "Ken #Rxn LowerStrong 1.aseprite",
     "frame": { "x": 384, "y": 9408, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3015,7 +2988,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn CrouchWeak 2.aseprite",
+    "filename": "Ken #Rxn LowerStrong 2.aseprite",
     "frame": { "x": 768, "y": 9408, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3024,7 +2997,61 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn CrouchMid 0.aseprite",
+    "filename": "Ken #Rxn LowerStrong 3.aseprite",
+    "frame": { "x": 1152, "y": 9408, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn LowerStrong 4.aseprite",
+    "frame": { "x": 1536, "y": 9408, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn LowerStrong 5.aseprite",
+    "frame": { "x": 1920, "y": 9408, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn LowerStrong 6.aseprite",
+    "frame": { "x": 2304, "y": 9408, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn LowerStrong 7.aseprite",
+    "frame": { "x": 2688, "y": 9408, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn LowerStrong 8.aseprite",
+    "frame": { "x": 3072, "y": 9408, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn LowerRising 0.aseprite",
     "frame": { "x": 0, "y": 9632, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3033,7 +3060,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn CrouchMid 1.aseprite",
+    "filename": "Ken #Rxn LowerRising 1.aseprite",
     "frame": { "x": 384, "y": 9632, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3042,7 +3069,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn CrouchMid 2.aseprite",
+    "filename": "Ken #Rxn LowerRising 2.aseprite",
     "frame": { "x": 768, "y": 9632, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3051,7 +3078,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn CrouchMid 3.aseprite",
+    "filename": "Ken #Rxn LowerRising 3.aseprite",
     "frame": { "x": 1152, "y": 9632, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3060,7 +3087,43 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn CrouchStrong 0.aseprite",
+    "filename": "Ken #Rxn LowerRising 4.aseprite",
+    "frame": { "x": 1536, "y": 9632, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn LowerRising 5.aseprite",
+    "frame": { "x": 1920, "y": 9632, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn LowerRising 6.aseprite",
+    "frame": { "x": 2304, "y": 9632, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn LowerRising 7.aseprite",
+    "frame": { "x": 2688, "y": 9632, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn CrouchWeak 0.aseprite",
     "frame": { "x": 0, "y": 9856, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3069,7 +3132,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn CrouchStrong 1.aseprite",
+    "filename": "Ken #Rxn CrouchWeak 1.aseprite",
     "frame": { "x": 384, "y": 9856, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3078,7 +3141,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn CrouchStrong 2.aseprite",
+    "filename": "Ken #Rxn CrouchWeak 2.aseprite",
     "frame": { "x": 768, "y": 9856, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3087,34 +3150,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn CrouchStrong 3.aseprite",
-    "frame": { "x": 1152, "y": 9856, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn CrouchStrong 4.aseprite",
-    "frame": { "x": 1536, "y": 9856, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn CrouchStrong 5.aseprite",
-    "frame": { "x": 1920, "y": 9856, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 1
-   },
-   {
-    "filename": "Ken #Rxn GrdStandPre 0.aseprite",
+    "filename": "Ken #Rxn CrouchMid 0.aseprite",
     "frame": { "x": 0, "y": 10080, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3123,7 +3159,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdStandPre 1.aseprite",
+    "filename": "Ken #Rxn CrouchMid 1.aseprite",
     "frame": { "x": 384, "y": 10080, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3132,7 +3168,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdStandPre 2.aseprite",
+    "filename": "Ken #Rxn CrouchMid 2.aseprite",
     "frame": { "x": 768, "y": 10080, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3141,7 +3177,16 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdStandEnd 0.aseprite",
+    "filename": "Ken #Rxn CrouchMid 3.aseprite",
+    "frame": { "x": 1152, "y": 10080, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn CrouchStrong 0.aseprite",
     "frame": { "x": 0, "y": 10304, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3150,7 +3195,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdStandEnd 1.aseprite",
+    "filename": "Ken #Rxn CrouchStrong 1.aseprite",
     "frame": { "x": 384, "y": 10304, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3159,7 +3204,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdStandEnd 2.aseprite",
+    "filename": "Ken #Rxn CrouchStrong 2.aseprite",
     "frame": { "x": 768, "y": 10304, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3168,7 +3213,34 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdCrouchPre 0.aseprite",
+    "filename": "Ken #Rxn CrouchStrong 3.aseprite",
+    "frame": { "x": 1152, "y": 10304, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn CrouchStrong 4.aseprite",
+    "frame": { "x": 1536, "y": 10304, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn CrouchStrong 5.aseprite",
+    "frame": { "x": 1920, "y": 10304, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn GrdStandPre 0.aseprite",
     "frame": { "x": 0, "y": 10528, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3177,7 +3249,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdCrouchPre 1.aseprite",
+    "filename": "Ken #Rxn GrdStandPre 1.aseprite",
     "frame": { "x": 384, "y": 10528, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3186,7 +3258,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdCrouchPre 2.aseprite",
+    "filename": "Ken #Rxn GrdStandPre 2.aseprite",
     "frame": { "x": 768, "y": 10528, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3195,7 +3267,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdCrouchEnd 0.aseprite",
+    "filename": "Ken #Rxn GrdStandEnd 0.aseprite",
     "frame": { "x": 0, "y": 10752, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3204,7 +3276,7 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Rxn GrdCrouchEnd 1.aseprite",
+    "filename": "Ken #Rxn GrdStandEnd 1.aseprite",
     "frame": { "x": 384, "y": 10752, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3213,421 +3285,61 @@
     "duration": 1
    },
    {
-    "filename": "Ken #Ken ShoryukenH 0.aseprite",
+    "filename": "Ken #Rxn GrdStandEnd 2.aseprite",
+    "frame": { "x": 768, "y": 10752, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 1
+   },
+   {
+    "filename": "Ken #Rxn GrdCrouchPre 0.aseprite",
     "frame": { "x": 0, "y": 10976, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
+    "duration": 1
    },
    {
-    "filename": "Ken #Ken ShoryukenH 1.aseprite",
+    "filename": "Ken #Rxn GrdCrouchPre 1.aseprite",
     "frame": { "x": 384, "y": 10976, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
+    "duration": 1
    },
    {
-    "filename": "Ken #Ken ShoryukenH 2.aseprite",
+    "filename": "Ken #Rxn GrdCrouchPre 2.aseprite",
     "frame": { "x": 768, "y": 10976, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
+    "duration": 1
    },
    {
-    "filename": "Ken #Ken ShoryukenH 3.aseprite",
-    "frame": { "x": 1152, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenH 4.aseprite",
-    "frame": { "x": 1536, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenH 5.aseprite",
-    "frame": { "x": 1920, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenH 6.aseprite",
-    "frame": { "x": 2304, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenH 7.aseprite",
-    "frame": { "x": 2688, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenH 8.aseprite",
-    "frame": { "x": 3072, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenH 9.aseprite",
-    "frame": { "x": 3456, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenH 10.aseprite",
-    "frame": { "x": 3840, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenH 11.aseprite",
-    "frame": { "x": 4224, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenH 12.aseprite",
-    "frame": { "x": 4608, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenH 13.aseprite",
-    "frame": { "x": 4992, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Ken ShoryukenH 14.aseprite",
-    "frame": { "x": 5376, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Ken ShoryukenH 15.aseprite",
-    "frame": { "x": 5760, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Ken ShoryukenH 16.aseprite",
-    "frame": { "x": 6144, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 0.aseprite",
-    "frame": { "x": 768, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 1.aseprite",
-    "frame": { "x": 1152, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 2.aseprite",
-    "frame": { "x": 1536, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 3.aseprite",
-    "frame": { "x": 1920, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 4.aseprite",
-    "frame": { "x": 2304, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 5.aseprite",
-    "frame": { "x": 2688, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 6.aseprite",
-    "frame": { "x": 3072, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 7.aseprite",
-    "frame": { "x": 3456, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 8.aseprite",
-    "frame": { "x": 3840, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 9.aseprite",
-    "frame": { "x": 4224, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 10.aseprite",
-    "frame": { "x": 4608, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 11.aseprite",
-    "frame": { "x": 4992, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 12.aseprite",
-    "frame": { "x": 5376, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 13.aseprite",
-    "frame": { "x": 5760, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Ken ShoryukenM 14.aseprite",
-    "frame": { "x": 6144, "y": 10976, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Ken ShoryukenL 0.aseprite",
+    "filename": "Ken #Rxn GrdCrouchEnd 0.aseprite",
     "frame": { "x": 0, "y": 11200, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
+    "duration": 1
    },
    {
-    "filename": "Ken #Ken ShoryukenL 1.aseprite",
+    "filename": "Ken #Rxn GrdCrouchEnd 1.aseprite",
     "frame": { "x": 384, "y": 11200, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
+    "duration": 1
    },
    {
-    "filename": "Ken #Ken ShoryukenL 2.aseprite",
-    "frame": { "x": 768, "y": 11200, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Ken ShoryukenL 3.aseprite",
-    "frame": { "x": 1152, "y": 11200, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Ken ShoryukenL 4.aseprite",
-    "frame": { "x": 1536, "y": 11200, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 128
-   },
-   {
-    "filename": "Ken #Ken ShoryukenL 5.aseprite",
-    "frame": { "x": 1920, "y": 11200, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Ken ShoryukenL 6.aseprite",
-    "frame": { "x": 2304, "y": 11200, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 64
-   },
-   {
-    "filename": "Ken #Ken ShoryukenL 7.aseprite",
-    "frame": { "x": 2688, "y": 11200, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenL 8.aseprite",
-    "frame": { "x": 3072, "y": 11200, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 48
-   },
-   {
-    "filename": "Ken #Ken ShoryukenL 9.aseprite",
-    "frame": { "x": 3456, "y": 11200, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Ken ShoryukenL 10.aseprite",
-    "frame": { "x": 3840, "y": 11200, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Ken ShoryukenL 11.aseprite",
-    "frame": { "x": 4224, "y": 11200, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Ken ShoryukenL 12.aseprite",
-    "frame": { "x": 4608, "y": 11200, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 32
-   },
-   {
-    "filename": "Ken #Ken ShoryukenL 13.aseprite",
-    "frame": { "x": 4992, "y": 11200, "w": 384, "h": 224 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
-    "sourceSize": { "w": 384, "h": 224 },
-    "duration": 16
-   },
-   {
-    "filename": "Ken #Ken Hadouken 0.aseprite",
+    "filename": "Ken #Ken ShoryukenH 0.aseprite",
     "frame": { "x": 0, "y": 11424, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3636,7 +3348,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Ken Hadouken 1.aseprite",
+    "filename": "Ken #Ken ShoryukenH 1.aseprite",
     "frame": { "x": 384, "y": 11424, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3645,7 +3357,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Ken Hadouken 2.aseprite",
+    "filename": "Ken #Ken ShoryukenH 2.aseprite",
     "frame": { "x": 768, "y": 11424, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3654,7 +3366,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Ken Hadouken 3.aseprite",
+    "filename": "Ken #Ken ShoryukenH 3.aseprite",
     "frame": { "x": 1152, "y": 11424, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3663,7 +3375,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Ken Hadouken 4.aseprite",
+    "filename": "Ken #Ken ShoryukenH 4.aseprite",
     "frame": { "x": 1536, "y": 11424, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3672,7 +3384,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Ken Hadouken 5.aseprite",
+    "filename": "Ken #Ken ShoryukenH 5.aseprite",
     "frame": { "x": 1920, "y": 11424, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3681,7 +3393,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Ken Hadouken 6.aseprite",
+    "filename": "Ken #Ken ShoryukenH 6.aseprite",
     "frame": { "x": 2304, "y": 11424, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3690,7 +3402,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Ken Hadouken 7.aseprite",
+    "filename": "Ken #Ken ShoryukenH 7.aseprite",
     "frame": { "x": 2688, "y": 11424, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3699,7 +3411,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Ken Hadouken 8.aseprite",
+    "filename": "Ken #Ken ShoryukenH 8.aseprite",
     "frame": { "x": 3072, "y": 11424, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3708,7 +3420,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Ken Hadouken 9.aseprite",
+    "filename": "Ken #Ken ShoryukenH 9.aseprite",
     "frame": { "x": 3456, "y": 11424, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3717,7 +3429,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Ken Hadouken 10.aseprite",
+    "filename": "Ken #Ken ShoryukenH 10.aseprite",
     "frame": { "x": 3840, "y": 11424, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3726,7 +3438,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Ken Hadouken 11.aseprite",
+    "filename": "Ken #Ken ShoryukenH 11.aseprite",
     "frame": { "x": 4224, "y": 11424, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3735,7 +3447,7 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Ken Hadouken 12.aseprite",
+    "filename": "Ken #Ken ShoryukenH 12.aseprite",
     "frame": { "x": 4608, "y": 11424, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
@@ -3744,8 +3456,422 @@
     "duration": 48
    },
    {
-    "filename": "Ken #Ken Hadouken 13.aseprite",
+    "filename": "Ken #Ken ShoryukenH 13.aseprite",
     "frame": { "x": 4992, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 14.aseprite",
+    "frame": { "x": 5376, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 15.aseprite",
+    "frame": { "x": 5760, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenH 16.aseprite",
+    "frame": { "x": 6144, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 0.aseprite",
+    "frame": { "x": 768, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 1.aseprite",
+    "frame": { "x": 1152, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 2.aseprite",
+    "frame": { "x": 1536, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 3.aseprite",
+    "frame": { "x": 1920, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 4.aseprite",
+    "frame": { "x": 2304, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 5.aseprite",
+    "frame": { "x": 2688, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 6.aseprite",
+    "frame": { "x": 3072, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 7.aseprite",
+    "frame": { "x": 3456, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 8.aseprite",
+    "frame": { "x": 3840, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 9.aseprite",
+    "frame": { "x": 4224, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 10.aseprite",
+    "frame": { "x": 4608, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 11.aseprite",
+    "frame": { "x": 4992, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 12.aseprite",
+    "frame": { "x": 5376, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 13.aseprite",
+    "frame": { "x": 5760, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenM 14.aseprite",
+    "frame": { "x": 6144, "y": 11424, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 0.aseprite",
+    "frame": { "x": 0, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 1.aseprite",
+    "frame": { "x": 384, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 2.aseprite",
+    "frame": { "x": 768, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 3.aseprite",
+    "frame": { "x": 1152, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 4.aseprite",
+    "frame": { "x": 1536, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 128
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 5.aseprite",
+    "frame": { "x": 1920, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 6.aseprite",
+    "frame": { "x": 2304, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 64
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 7.aseprite",
+    "frame": { "x": 2688, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 8.aseprite",
+    "frame": { "x": 3072, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 9.aseprite",
+    "frame": { "x": 3456, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 10.aseprite",
+    "frame": { "x": 3840, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 11.aseprite",
+    "frame": { "x": 4224, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 12.aseprite",
+    "frame": { "x": 4608, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 32
+   },
+   {
+    "filename": "Ken #Ken ShoryukenL 13.aseprite",
+    "frame": { "x": 4992, "y": 11648, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 16
+   },
+   {
+    "filename": "Ken #Ken Hadouken 0.aseprite",
+    "frame": { "x": 0, "y": 11872, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 1.aseprite",
+    "frame": { "x": 384, "y": 11872, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 2.aseprite",
+    "frame": { "x": 768, "y": 11872, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 3.aseprite",
+    "frame": { "x": 1152, "y": 11872, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 4.aseprite",
+    "frame": { "x": 1536, "y": 11872, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 5.aseprite",
+    "frame": { "x": 1920, "y": 11872, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 6.aseprite",
+    "frame": { "x": 2304, "y": 11872, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 7.aseprite",
+    "frame": { "x": 2688, "y": 11872, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 8.aseprite",
+    "frame": { "x": 3072, "y": 11872, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 9.aseprite",
+    "frame": { "x": 3456, "y": 11872, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 10.aseprite",
+    "frame": { "x": 3840, "y": 11872, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 11.aseprite",
+    "frame": { "x": 4224, "y": 11872, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 12.aseprite",
+    "frame": { "x": 4608, "y": 11872, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Ken Hadouken 13.aseprite",
+    "frame": { "x": 4992, "y": 11872, "w": 384, "h": 224 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
@@ -3758,7 +3884,7 @@
   "version": "1.3.7-x64",
   "image": "Ken.png",
   "format": "RGBA8888",
-  "size": { "w": 6528, "h": 11648 },
+  "size": { "w": 6528, "h": 12096 },
   "scale": "1",
   "frameTags": [
    { "name": "St Idle", "from": 0, "to": 9, "direction": "forward", "color": "#000000ff" },
@@ -3767,59 +3893,62 @@
    { "name": "St DashForward", "from": 32, "to": 37, "direction": "forward", "color": "#000000ff" },
    { "name": "St DashBackward", "from": 38, "to": 43, "direction": "forward", "color": "#000000ff" },
    { "name": "St LightPunch", "from": 44, "to": 48, "direction": "forward", "color": "#000000ff" },
-   { "name": "St MediumPunch", "from": 49, "to": 56, "direction": "forward", "color": "#000000ff" },
-   { "name": "St HeavyPunch", "from": 57, "to": 68, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cl HeavyPunch", "from": 69, "to": 81, "direction": "forward", "color": "#000000ff" },
-   { "name": "St LightKick", "from": 82, "to": 87, "direction": "forward", "color": "#000000ff" },
-   { "name": "St MediumKick", "from": 88, "to": 100, "direction": "forward", "color": "#000000ff" },
-   { "name": "St HeavyKick", "from": 101, "to": 114, "direction": "forward", "color": "#000000ff" },
-   { "name": "St Turn", "from": 115, "to": 117, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cr Start", "from": 118, "to": 122, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cr Idle", "from": 123, "to": 126, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cr End", "from": 127, "to": 129, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cr LightPunch", "from": 130, "to": 135, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cr MediumPunch", "from": 136, "to": 141, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cr HeavyPunch", "from": 142, "to": 151, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cr LightKick", "from": 152, "to": 157, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cr MediumKick", "from": 158, "to": 167, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cr HeavyKick", "from": 168, "to": 179, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cr Turn", "from": 180, "to": 183, "direction": "forward", "color": "#000000ff" },
-   { "name": "Jmp Start", "from": 184, "to": 184, "direction": "forward", "color": "#000000ff" },
-   { "name": "Jmp Neutral", "from": 185, "to": 199, "direction": "forward", "color": "#000000ff" },
-   { "name": "Jmp Forward", "from": 200, "to": 208, "direction": "forward", "color": "#000000ff" },
-   { "name": "Jmp Backward", "from": 209, "to": 217, "direction": "forward", "color": "#000000ff" },
-   { "name": "Jmp End", "from": 218, "to": 220, "direction": "forward", "color": "#000000ff" },
-   { "name": "Jmp LightPunch", "from": 221, "to": 231, "direction": "forward", "color": "#000000ff" },
-   { "name": "Jmp MediumPunch", "from": 232, "to": 238, "direction": "forward", "color": "#000000ff" },
-   { "name": "Jmp HeavyPunch", "from": 239, "to": 245, "direction": "forward", "color": "#000000ff" },
-   { "name": "Jmp LightKick", "from": 246, "to": 253, "direction": "forward", "color": "#000000ff" },
-   { "name": "Jmp MediumKick", "from": 254, "to": 261, "direction": "forward", "color": "#000000ff" },
-   { "name": "Jmp HeavyKick", "from": 262, "to": 269, "direction": "forward", "color": "#000000ff" },
-   { "name": "Jmp AttackEnd", "from": 270, "to": 271, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn UpperWeak", "from": 272, "to": 275, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn UpperMid", "from": 276, "to": 279, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn UpperStrong", "from": 280, "to": 285, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn UpperRising", "from": 286, "to": 292, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn FrontSpin", "from": 293, "to": 299, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn BackSpin", "from": 300, "to": 307, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn LowerWeak", "from": 308, "to": 311, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn LowerMid", "from": 312, "to": 315, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn LowerStrong", "from": 316, "to": 324, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn LowerRising", "from": 325, "to": 332, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn CrouchWeak", "from": 333, "to": 335, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn CrouchMid", "from": 336, "to": 339, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn CrouchStrong", "from": 340, "to": 345, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn GrdStandPre", "from": 346, "to": 348, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn GrdStandEnd", "from": 349, "to": 351, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn GrdCrouchPre", "from": 352, "to": 354, "direction": "forward", "color": "#000000ff" },
-   { "name": "Rxn GrdCrouchEnd", "from": 355, "to": 356, "direction": "forward", "color": "#000000ff" },
-   { "name": "Ken ShoryukenH", "from": 357, "to": 373, "direction": "forward", "color": "#000000ff" },
-   { "name": "Ken ShoryukenM", "from": 374, "to": 388, "direction": "forward", "color": "#000000ff" },
-   { "name": "Ken ShoryukenL", "from": 389, "to": 402, "direction": "forward", "color": "#000000ff" },
-   { "name": "Ken Hadouken", "from": 403, "to": 416, "direction": "forward", "color": "#000000ff" }
+   { "name": "Cl LightPunch", "from": 49, "to": 54, "direction": "forward", "color": "#000000ff" },
+   { "name": "St MediumPunch", "from": 55, "to": 62, "direction": "forward", "color": "#000000ff" },
+   { "name": "Cl MediumPunch", "from": 63, "to": 70, "direction": "forward", "color": "#000000ff" },
+   { "name": "St HeavyPunch", "from": 71, "to": 82, "direction": "forward", "color": "#000000ff" },
+   { "name": "Cl HeavyPunch", "from": 83, "to": 95, "direction": "forward", "color": "#000000ff" },
+   { "name": "St LightKick", "from": 96, "to": 101, "direction": "forward", "color": "#000000ff" },
+   { "name": "St MediumKick", "from": 102, "to": 114, "direction": "forward", "color": "#000000ff" },
+   { "name": "St HeavyKick", "from": 115, "to": 128, "direction": "forward", "color": "#000000ff" },
+   { "name": "St Turn", "from": 129, "to": 131, "direction": "forward", "color": "#000000ff" },
+   { "name": "Cr Start", "from": 132, "to": 136, "direction": "forward", "color": "#000000ff" },
+   { "name": "Cr Idle", "from": 137, "to": 140, "direction": "forward", "color": "#000000ff" },
+   { "name": "Cr End", "from": 141, "to": 143, "direction": "forward", "color": "#000000ff" },
+   { "name": "Cr LightPunch", "from": 144, "to": 149, "direction": "forward", "color": "#000000ff" },
+   { "name": "Cr MediumPunch", "from": 150, "to": 155, "direction": "forward", "color": "#000000ff" },
+   { "name": "Cr HeavyPunch", "from": 156, "to": 165, "direction": "forward", "color": "#000000ff" },
+   { "name": "Cr LightKick", "from": 166, "to": 171, "direction": "forward", "color": "#000000ff" },
+   { "name": "Cr MediumKick", "from": 172, "to": 181, "direction": "forward", "color": "#000000ff" },
+   { "name": "Cr HeavyKick", "from": 182, "to": 193, "direction": "forward", "color": "#000000ff" },
+   { "name": "Cr Turn", "from": 194, "to": 197, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jmp Start", "from": 198, "to": 198, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jmp Neutral", "from": 199, "to": 213, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jmp Forward", "from": 214, "to": 222, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jmp Backward", "from": 223, "to": 231, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jmp End", "from": 232, "to": 234, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jmp LightPunch", "from": 235, "to": 245, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jmp MediumPunch", "from": 246, "to": 252, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jmp HeavyPunch", "from": 253, "to": 259, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jmp LightKick", "from": 260, "to": 267, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jmp MediumKick", "from": 268, "to": 275, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jmp HeavyKick", "from": 276, "to": 283, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jmp AttackEnd", "from": 284, "to": 285, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn UpperWeak", "from": 286, "to": 289, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn UpperMid", "from": 290, "to": 293, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn UpperStrong", "from": 294, "to": 299, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn UpperRising", "from": 300, "to": 306, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn FrontSpin", "from": 307, "to": 313, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn BackSpin", "from": 314, "to": 321, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn LowerWeak", "from": 322, "to": 325, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn LowerMid", "from": 326, "to": 329, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn LowerStrong", "from": 330, "to": 338, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn LowerRising", "from": 339, "to": 346, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn CrouchWeak", "from": 347, "to": 349, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn CrouchMid", "from": 350, "to": 353, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn CrouchStrong", "from": 354, "to": 359, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn GrdStandPre", "from": 360, "to": 362, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn GrdStandEnd", "from": 363, "to": 365, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn GrdCrouchPre", "from": 366, "to": 368, "direction": "forward", "color": "#000000ff" },
+   { "name": "Rxn GrdCrouchEnd", "from": 369, "to": 370, "direction": "forward", "color": "#000000ff" },
+   { "name": "Ken ShoryukenH", "from": 371, "to": 387, "direction": "forward", "color": "#000000ff" },
+   { "name": "Ken ShoryukenM", "from": 388, "to": 402, "direction": "forward", "color": "#000000ff" },
+   { "name": "Ken ShoryukenL", "from": 403, "to": 416, "direction": "forward", "color": "#000000ff" },
+   { "name": "Ken Hadouken", "from": 417, "to": 430, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
-   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 2", "opacity": 255, "blendMode": "normal" }
   ],
   "slices": [
   ]

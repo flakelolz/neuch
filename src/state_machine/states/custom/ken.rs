@@ -10,7 +10,13 @@ impl Ken {
     pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
         match self {
             Ken::Normals => {
-                if Normals::ClHeavyPunch.set(buffer, ctx, physics) {
+                if Normals::HeavyPunch.set(buffer, ctx, physics) {
+                    return true;
+                }
+                if Normals::MediumPunch.set(buffer, ctx, physics) {
+                    return true;
+                }
+                if Normals::LightPunch.set(buffer, ctx, physics) {
                     return true;
                 }
                 false
@@ -49,9 +55,9 @@ impl Ken {
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Deserialize, Serialize)]
 pub enum Normals {
-    ClLightPunch,
-    ClMediumPunch,
-    ClHeavyPunch,
+    LightPunch,
+    MediumPunch,
+    HeavyPunch,
     BckMediumKick,
     FwdMediumKick,
     FwdHeavyKick,
@@ -59,11 +65,25 @@ pub enum Normals {
 
 impl Normals {
     pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
-        match self {
-            Normals::ClLightPunch => todo!(),
-            Normals::ClMediumPunch => todo!(),
-            Normals::ClHeavyPunch => {
                 let distance = world_to_screen_num(physics.distance as i32);
+        match self {
+            Normals::LightPunch => {
+                if buffer.buffered(Inputs::LightPunch, buffer.attack, &physics.facing_left) && distance < 35 {
+                    ctx.next.replace(Box::new(ken::LightPunch));
+                    return true;
+                }
+                false
+            }
+            Normals::MediumPunch => {
+                if buffer.buffered(Inputs::MediumPunch, buffer.attack, &physics.facing_left)
+                    && distance < 40
+                {
+                    ctx.next.replace(Box::new(ken::MediumPunch));
+                    return true;
+                }
+                false
+            }
+            Normals::HeavyPunch => {
                 if buffer.buffered(Inputs::HeavyPunch, buffer.attack, &physics.facing_left)
                     && distance < 48
                 {
@@ -119,6 +139,48 @@ impl Specials {
                 false
             }
         }
+    }
+}
+
+pub struct LightPunch;
+impl State for LightPunch {
+    fn name(&self) -> String {
+        "Cl LightPunch".into()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Cl LightPunch on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        common_standing_attack_transitions(context, buffer, physics);
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Cl LightPunch on_exit");
+    }
+}
+
+pub struct MediumPunch;
+impl State for MediumPunch {
+    fn name(&self) -> String {
+        "Cl MediumPunch".into()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Cl MediumPunch on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if context.elapsed > 8 && buffer.buffered(Inputs::HeavyPunch, buffer.cancels, &physics.facing_left) {
+            context.ctx.next.replace(Box::new(HeavyPunch));
+            return;
+        }
+        common_standing_attack_transitions(context, buffer, physics);
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Cl MediumPunch on_exit");
     }
 }
 

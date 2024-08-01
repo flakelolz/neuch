@@ -166,43 +166,45 @@ impl Collisions {
                     let left = a_pushbox.value.left.max(b_pushbox.value.left);
                     let right = a_pushbox.value.right.min(b_pushbox.value.right);
                     distance = right - left;
-                    let third = distance / 3;
+                    let distance = distance / 8;
 
-                    let mut players =
-                        world.query_many_mut::<&mut Physics, 2>([*attacker, *defender]);
+                    let mut players = world
+                        .query_many_mut::<(&mut Physics, &StateMachine), 2>([*attacker, *defender]);
                     let (p1, p2) = players.split_at_mut(1);
-                    if let Some(Ok(a_physics)) = p1.get_mut(0) {
-                        if let Some(Ok(b_physics)) = p2.get_mut(0) {
+                    if let Some(Ok((a_physics, a_state))) = p1.get_mut(0) {
+                        if let Some(Ok((b_physics, b_state))) = p2.get_mut(0) {
+                            let a_reaction = a_state.context.ctx.reaction;
+                            let b_reaction = b_state.context.ctx.reaction;
                             match a_physics.position.x.cmp(&b_physics.position.x) {
                                 std::cmp::Ordering::Less => {
-                                    if !a_physics.cornered {
-                                        a_physics.position.x -= third;
+                                    if !a_physics.cornered && a_reaction.hitstop == 0 {
+                                        a_physics.position.x -= distance;
                                     }
-                                    if !b_physics.cornered {
-                                        b_physics.position.x += third;
+                                    if !b_physics.cornered && b_reaction.hitstop == 0 {
+                                        b_physics.position.x += distance;
                                     }
                                 }
                                 std::cmp::Ordering::Greater => {
-                                    if !a_physics.cornered {
-                                        a_physics.position.x += third;
+                                    if !a_physics.cornered && a_reaction.hitstop == 0 {
+                                        a_physics.position.x += distance;
                                     }
-                                    if !b_physics.cornered {
-                                        b_physics.position.x -= third;
+                                    if !b_physics.cornered && b_reaction.hitstop == 0 {
+                                        b_physics.position.x -= distance;
                                     }
                                 }
                                 std::cmp::Ordering::Equal => {
-                                    if a_physics.cornered {
+                                    if a_physics.cornered && a_reaction.hitstop == 0 {
                                         if a_physics.facing_left {
-                                            b_physics.position.x -= third;
+                                            b_physics.position.x -= distance;
                                         } else {
-                                            b_physics.position.x += third;
+                                            b_physics.position.x += distance;
                                         }
                                     }
-                                    if b_physics.cornered {
+                                    if b_physics.cornered && b_reaction.hitstop == 0 {
                                         if b_physics.facing_left {
-                                            a_physics.position.x -= third;
+                                            a_physics.position.x -= distance;
                                         } else {
-                                            a_physics.position.x += third;
+                                            a_physics.position.x += distance;
                                         }
                                     }
                                 }
