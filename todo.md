@@ -47,7 +47,7 @@
 - [x] Fix not stun when hit on the first frame of the Turn animation
 - [ ] Background
 - [ ] Camera
-- [ ] Proximity normals
+- [x] Proximity normals
 - [x] Fix chain attacks
 - [x] Special moves
 - [x] Special cancels
