@@ -42,13 +42,14 @@
 - [x] Apply knock-back to attacker when defender is cornered
 - [x] Pull character on cross-up hit
 - [ ] Fix wall knock-back implementation
+- [ ] Fix push behavior to allow more consistent target combos and chains
 - [ ] Fix push behavior on a cornered character
 - [ ] Fix cross-up hit pull logic, amount and feel
 - [x] Fix not stun when hit on the first frame of the Turn animation
 - [ ] Background
 - [ ] Camera
 - [x] Proximity normals
-- [x] Fix chain attacks
+- [x] Target Combo
 - [x] Special moves
 - [x] Special cancels
 - [x] Implement cross-cut DPs
