@@ -18,7 +18,7 @@ impl Collisions {
     }
     pub fn store(&mut self, world: &mut World) {
         for (id, (character, physics, state)) in
-            world.query_mut::<(&Character, &Physics, &mut StateMachine)>()
+            world.query_mut::<(&Character, &mut Physics, &mut StateMachine)>()
         {
             let offset = physics.position;
 
@@ -71,6 +71,7 @@ impl Collisions {
                     for pushbox in pushboxes.iter() {
                         let pushbox = pushbox.translated(offset, physics.facing_left);
                         if pushbox.is_active(state.context.elapsed) {
+                            physics.width = (pushbox.value.right - pushbox.value.left) as u32;
                             self.pushboxes.push((id, pushbox));
                         }
                     }
@@ -80,6 +81,7 @@ impl Collisions {
                     } else {
                         character.info.pushbox.translate(offset)
                     };
+                    physics.width = (pushbox.right - pushbox.left) as u32;
                     self.pushboxes.push((
                         id,
                         Pushbox {

@@ -18,7 +18,7 @@ impl State for Start {
         if specials_transitions(context, buffer, physics) {
             return;
         }
-        if attack_transitions(context, buffer, physics) {
+        if normals_transitions(context, buffer, physics) {
             return;
         }
         if jump_transitions(context, buffer, physics) {
@@ -57,7 +57,7 @@ impl State for Idle {
         if specials_transitions(context, buffer, physics) {
             return;
         }
-        if attack_transitions(context, buffer, physics) {
+        if normals_transitions(context, buffer, physics) {
             return;
         }
         // Base case
@@ -90,7 +90,7 @@ impl State for End {
             if specials_transitions(context, buffer, physics) {
                 return;
             }
-            if attack_transitions(context, buffer, physics) {
+            if normals_transitions(context, buffer, physics) {
                 return;
             }
             if crouch_transition(context, buffer, physics) {
@@ -244,7 +244,7 @@ impl State for Turn {
             if specials_transitions(context, buffer, physics) {
                 return;
             }
-            if attack_transitions(context, buffer, physics) {
+            if normals_transitions(context, buffer, physics) {
                 return;
             }
             if down(buffer) {

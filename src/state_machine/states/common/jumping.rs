@@ -59,7 +59,7 @@ impl State for Neutral {
         if specials_transitions(context, buffer, physics) {
             return;
         }
-        attack_transitions(context, buffer, physics);
+        normals_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -92,7 +92,7 @@ impl State for Forward {
         if specials_transitions(context, buffer, physics) {
             return;
         }
-        attack_transitions(context, buffer, physics);
+        normals_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -125,7 +125,7 @@ impl State for Backward {
         if specials_transitions(context, buffer, physics) {
             return;
         }
-        attack_transitions(context, buffer, physics);
+        normals_transitions(context, buffer, physics);
     }
 
     fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
@@ -150,7 +150,7 @@ impl State for End {
             if specials_transitions(context, buffer, physics) {
                 return;
             }
-            if attack_transitions(context, buffer, physics) {
+            if normals_transitions(context, buffer, physics) {
                 return;
             }
             if jump_transitions(context, buffer, physics) {

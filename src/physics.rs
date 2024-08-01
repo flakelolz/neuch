@@ -4,12 +4,23 @@ const THRESHOLD: i32 = 1100;
 
 #[derive(Debug, Clone, Copy, Default)]
 pub struct Physics {
+    /// Player's position on the world
     pub position: IVec2,
+    /// Player's current velocity
     pub velocity: IVec2,
+    /// Player's current acceleration
     pub acceleration: IVec2,
+    /// Player's facing direction
     pub facing_left: bool,
+    /// Whether or not the player is facing the opponent
     pub facing_opponent: bool,
+    /// Whether or not the player is airborne
     pub airborne: bool,
+    /// Characters pushbox width
+    pub width: u32,
+    /// Distance from the opponent
+    pub distance: u32,
+    /// Whether or not the player is cornered
     pub cornered: bool,
 }
 
@@ -22,6 +33,8 @@ impl Physics {
             facing_left: false,
             facing_opponent: true,
             airborne: false,
+            width: 0,
+            distance: 0,
             cornered: false,
         }
     }
@@ -34,6 +47,8 @@ impl Physics {
             facing_left: true,
             facing_opponent: true,
             airborne: false,
+            width: 0,
+            distance: 0,
             cornered: false,
         }
     }
@@ -66,6 +81,32 @@ pub fn physics_system(world: &mut World) {
             opponent.facing_opponent = ((player.position.x <= opponent.position.x)
                 && opponent.facing_left)
                 || ((player.position.x >= opponent.position.x) && !opponent.facing_left);
+
+            // Calculate Player 1 distance
+            player.distance = player.position.x.abs_diff(if player.facing_left {
+                if player.facing_opponent {
+                    opponent.position.x + (opponent.width / 2) as i32
+                } else {
+                    opponent.position.x - (opponent.width / 2) as i32
+                }
+            } else if player.facing_opponent {
+                opponent.position.x - (opponent.width / 2) as i32
+            } else {
+                opponent.position.x + (opponent.width / 2) as i32
+            });
+
+            // Calculate Player 2 distance
+            opponent.distance = opponent.position.x.abs_diff(if opponent.facing_left {
+                if opponent.facing_opponent {
+                    player.position.x + (player.width / 2) as i32
+                } else {
+                    player.position.x - (player.width / 2) as i32
+                }
+            } else if opponent.facing_opponent {
+                player.position.x - (player.width / 2) as i32
+            } else {
+                player.position.x + (player.width / 2) as i32
+            });
         }
     }
     // Update physics

@@ -33,6 +33,7 @@ pub enum Group {
     Normals,
     StNormals,
     CrNormals,
+    ChNormals,
     AirNormals,
     Specials,
     Movement,
@@ -46,6 +47,9 @@ impl Group {
         match self {
             Group::All => {
                 if Group::Specials.set(buffer, ctx, physics) {
+                    return true;
+                }
+                if Group::ChNormals.set(buffer, ctx, physics) {
                     return true;
                 }
                 if Group::Normals.set(buffer, ctx, physics) {
@@ -71,8 +75,23 @@ impl Group {
                 }
                 false
             }
+            Group::ChNormals => {
+                match ctx.name.as_str() {
+                    "Ken" => {
+                        if States::Ken(ken::Ken::Normals).set(buffer, ctx, physics) {
+                            return true;
+                        }
+                    }
+                    "Ryu" => println!("Ryu"),
+                    _ => (),
+                }
+                false
+            }
             Group::Normals => {
                 if Group::CrNormals.set(buffer, ctx, physics) {
+                    return true;
+                }
+                if Group::ChNormals.set(buffer, ctx, physics) {
                     return true;
                 }
                 if Group::StNormals.set(buffer, ctx, physics) {

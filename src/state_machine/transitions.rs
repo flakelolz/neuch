@@ -73,7 +73,7 @@ pub fn common_standing_attack_transitions(
         if specials_transitions(context, buffer, physics) {
             return;
         }
-        if attack_transitions(context, buffer, physics) {
+        if normals_transitions(context, buffer, physics) {
             return;
         }
         if jump_transitions(context, buffer, physics) {
@@ -111,7 +111,7 @@ pub fn common_crouching_attack_transitions(
         if specials_transitions(context, buffer, physics) {
             return;
         }
-        if attack_transitions(context, buffer, physics) {
+        if normals_transitions(context, buffer, physics) {
             return;
         }
         if !down(buffer) {
@@ -157,7 +157,7 @@ pub fn common_standing_reaction_transitions(
         if specials_transitions(context, buffer, physics) {
             return;
         }
-        if attack_transitions(context, buffer, physics) {
+        if normals_transitions(context, buffer, physics) {
             return;
         }
         if jump_transitions(context, buffer, physics) {
@@ -190,7 +190,7 @@ pub fn common_crouching_reaction_transitions(
         if specials_transitions(context, buffer, physics) {
             return;
         }
-        if attack_transitions(context, buffer, physics) {
+        if normals_transitions(context, buffer, physics) {
             return;
         }
         if jump_transitions(context, buffer, physics) {
@@ -240,7 +240,7 @@ pub fn dash_transitions(
     false
 }
 
-pub fn attack_transitions(
+pub fn normals_transitions(
     context: &mut Context,
     buffer: &InputBuffer,
     physics: &mut Physics,

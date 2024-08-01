@@ -23,7 +23,7 @@ impl State for Idle {
         if specials_transitions(context, buffer, physics) {
             return;
         }
-        if attack_transitions(context, buffer, physics) {
+        if normals_transitions(context, buffer, physics) {
             return;
         }
         if crouch_transition(context, buffer, physics) {
@@ -65,7 +65,7 @@ impl State for WalkForward {
         if specials_transitions(context, buffer, physics) {
             return;
         }
-        if attack_transitions(context, buffer, physics) {
+        if normals_transitions(context, buffer, physics) {
             return;
         }
         if crouch_transition(context, buffer, physics) {
@@ -112,7 +112,7 @@ impl State for WalkBackward {
         if specials_transitions(context, buffer, physics) {
             return;
         }
-        if attack_transitions(context, buffer, physics) {
+        if normals_transitions(context, buffer, physics) {
             return;
         }
         if crouch_transition(context, buffer, physics) {
@@ -151,7 +151,7 @@ impl State for DashForward {
             if specials_transitions(context, buffer, physics) {
                 return;
             }
-            if attack_transitions(context, buffer, physics) {
+            if normals_transitions(context, buffer, physics) {
                 return;
             }
             if crouch_transition(context, buffer, physics) {
@@ -193,7 +193,7 @@ impl State for DashBackward {
             if specials_transitions(context, buffer, physics) {
                 return;
             }
-            if attack_transitions(context, buffer, physics) {
+            if normals_transitions(context, buffer, physics) {
                 return;
             }
             if crouch_transition(context, buffer, physics) {
@@ -345,7 +345,7 @@ impl State for Turn {
             if specials_transitions(context, buffer, physics) {
                 return;
             }
-            if attack_transitions(context, buffer, physics) {
+            if normals_transitions(context, buffer, physics) {
                 return;
             }
             if jump_transitions(context, buffer, physics) {

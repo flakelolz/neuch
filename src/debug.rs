@@ -290,6 +290,15 @@ pub fn show_info(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
                         0.,
                         Color::WHITE,
                     );
+                    let z = z + 10.;
+                    d.draw_text_ex(
+                        &font,
+                        &format!("Distance: {:#?}", world_to_screen_num(physics.distance as i32)),
+                        rvec2(5., y + z),
+                        TEXT_SIZE,
+                        0.,
+                        Color::WHITE,
+                    );
                 }
                 // LOCKOUTS
                 {

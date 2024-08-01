@@ -9,7 +9,12 @@ pub enum Ken {
 impl Ken {
     pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
         match self {
-            Ken::Normals => false,
+            Ken::Normals => {
+                if Normals::ClHeavyPunch.set(buffer, ctx, physics) {
+                    return true;
+                }
+                false
+            }
             Ken::Specials => {
                 // Priority Hadouken with half-circle motion
                 {
@@ -57,7 +62,16 @@ impl Normals {
         match self {
             Normals::ClLightPunch => todo!(),
             Normals::ClMediumPunch => todo!(),
-            Normals::ClHeavyPunch => todo!(),
+            Normals::ClHeavyPunch => {
+                let distance = world_to_screen_num(physics.distance as i32);
+                if buffer.buffered(Inputs::HeavyPunch, buffer.attack, &physics.facing_left)
+                    && distance < 48
+                {
+                    ctx.next.replace(Box::new(ken::HeavyPunch));
+                    return true;
+                }
+                false
+            }
             Normals::BckMediumKick => todo!(),
             Normals::FwdMediumKick => todo!(),
             Normals::FwdHeavyKick => todo!(),
@@ -105,6 +119,25 @@ impl Specials {
                 false
             }
         }
+    }
+}
+
+pub struct HeavyPunch;
+impl State for HeavyPunch {
+    fn name(&self) -> String {
+        "Cl HeavyPunch".into()
+    }
+
+    fn on_enter(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Cl HeavyPunch on_enter");
+    }
+
+    fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        common_standing_attack_transitions(context, buffer, physics);
+    }
+
+    fn on_exit(&mut self, _context: &mut Context, _buffer: &InputBuffer, _physics: &mut Physics) {
+        println!("Cl HeavyPunch on_exit");
     }
 }
 
