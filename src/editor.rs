@@ -110,7 +110,7 @@ impl Editor {
         if d.gui_label_button(rrect(x + 32, 24, 30, 8), Some(c"<-")) {
             self.loaded = false;
             if self.index > 0 {
-                 self.index = self.index.saturating_sub(1);
+                self.index = self.index.saturating_sub(1);
             }
         }
         if d.gui_label_button(rrect(x + 70, 24, 1, 8), Some(c"->")) {
@@ -903,8 +903,11 @@ enum State {
     StWalkForward,
     StWalkBackward,
     StLightPunch,
+    ClLightPunch,
     StMediumPunch,
+    ClMediumPunch,
     StHeavyPunch,
+    ClHeavyPunch,
     StLightKick,
     StMediumKick,
     StHeavyKick,
@@ -927,6 +930,7 @@ enum State {
     JmpLightKick,
     JmpMediumKick,
     JmpHeavyKick,
+    KenShoryukenL,
 }
 
 impl State {
@@ -936,8 +940,11 @@ impl State {
             State::StWalkForward => "St WalkForward".to_string(),
             State::StWalkBackward => "St WalkBackward".to_string(),
             State::StLightPunch => "St LightPunch".to_string(),
+            State::ClLightPunch => "Cl LightPunch".to_string(),
             State::StMediumPunch => "St MediumPunch".to_string(),
+            State::ClMediumPunch => "Cl MediumPunch".to_string(),
             State::StHeavyPunch => "St HeavyPunch".to_string(),
+            State::ClHeavyPunch => "Cl HeavyPunch".to_string(),
             State::StLightKick => "St LightKick".to_string(),
             State::StMediumKick => "St MediumKick".to_string(),
             State::StHeavyKick => "St HeavyKick".to_string(),
@@ -960,6 +967,7 @@ impl State {
             State::JmpLightKick => "Jmp LightKick".to_string(),
             State::JmpMediumKick => "Jmp MediumKick".to_string(),
             State::JmpHeavyKick => "Jmp HeavyKick".to_string(),
+            State::KenShoryukenL => "Ken ShoryukenL".to_string(),
         }
     }
 }
