@@ -975,8 +975,8 @@
       ],
       "hitboxes": [
         {
-          "start_frame": 6,
-          "duration": 2,
+          "start_frame": 5,
+          "duration": 4,
           "properties": {
             "hit_type": "Ground",
             "strength": "Weak",
@@ -986,10 +986,10 @@
             "knockback": 8000
           },
           "value": {
-            "top": 19000,
-            "bottom": 5000,
+            "top": 30000,
+            "bottom": 18000,
             "left": 30000,
-            "right": 75000
+            "right": 55000
           }
         }
       ],
@@ -1150,7 +1150,7 @@
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
-            "knockback": 8000
+            "knockback": 6000
           },
           "value": {
             "top": 15000,
@@ -1290,21 +1290,21 @@
       ],
       "hitboxes": [
         {
-          "start_frame": 7,
-          "duration": 6,
+          "start_frame": 6,
+          "duration": 4,
           "properties": {
             "hit_type": "Ground",
             "strength": "Mid",
             "hitstop": 8,
             "hitstun": 17,
             "blockstun": 12,
-            "knockback": 8000
+            "knockback": 6500
           },
           "value": {
-            "top": 15000,
-            "bottom": -1000,
-            "left": 30000,
-            "right": 75000
+            "top": -2000,
+            "bottom": -15000,
+            "left": 37000,
+            "right": 58000
           }
         }
       ],
@@ -1316,7 +1316,7 @@
               "Block"
             ],
             "after_frame": 8,
-            "until_frame": 11,
+            "until_frame": 10,
             "states": [
               {
                 "Group": "Specials"
@@ -1703,10 +1703,10 @@
       "hitboxes": [
         {
           "start_frame": 7,
-          "duration": 3,
+          "duration": 5,
           "properties": {
             "hit_type": "Ground",
-            "strength": "FrontSpin",
+            "strength": "Rising",
             "hitstop": 10,
             "hitstun": 17,
             "blockstun": 12,
@@ -1714,9 +1714,9 @@
           },
           "value": {
             "top": 24000,
-            "bottom": 7000,
+            "bottom": -15000,
             "left": 30000,
-            "right": 69000
+            "right": 53000
           }
         }
       ],
@@ -1728,7 +1728,7 @@
               "Block"
             ],
             "after_frame": 7,
-            "until_frame": 10,
+            "until_frame": 9,
             "states": [
               {
                 "Group": "Specials"
@@ -3183,6 +3183,9 @@
             "states": [
               {
                 "Group": "Specials"
+              },
+              {
+                "Ken": "LightPunch"
               },
               {
                 "Standing": "LightPunch"
@@ -6297,14 +6300,33 @@
           "height": "Upper",
           "invul": "None",
           "value": {
-            "top": 35000,
+            "top": 9000,
             "bottom": -69000,
             "left": -30000,
             "right": 25000
           }
         }
       ],
-      "hitboxes": null,
+      "hitboxes": [
+        {
+          "start_frame": 3,
+          "duration": 2,
+          "properties": {
+            "hit_type": "Ground",
+            "strength": "Rising",
+            "hitstop": 6,
+            "hitstun": 25,
+            "blockstun": 15,
+            "knockback": 8000
+          },
+          "value": {
+            "top": 2000,
+            "bottom": -51000,
+            "left": 30000,
+            "right": 66000
+          }
+        }
+      ],
       "modifiers": null,
       "timeline": [
         {

@@ -2,6 +2,9 @@ use crate::prelude::*;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Deserialize, Serialize)]
 pub enum Ken {
+    LightPunch,
+    MediumPunch,
+    HeavyPunch,
     Normals,
     Specials,
 }
@@ -16,6 +19,24 @@ impl Ken {
                 if Normals::MediumPunch.set(buffer, ctx, physics) {
                     return true;
                 }
+                if Normals::LightPunch.set(buffer, ctx, physics) {
+                    return true;
+                }
+                false
+            }
+            Ken::HeavyPunch => {
+                if Normals::HeavyPunch.set(buffer, ctx, physics) {
+                    return true;
+                }
+                false
+            }
+            Ken::MediumPunch => {
+                if Normals::MediumPunch.set(buffer, ctx, physics) {
+                    return true;
+                }
+                false
+            }
+            Ken::LightPunch => {
                 if Normals::LightPunch.set(buffer, ctx, physics) {
                     return true;
                 }
@@ -65,10 +86,12 @@ pub enum Normals {
 
 impl Normals {
     pub fn set(&self, buffer: &InputBuffer, ctx: &mut SubContext, physics: &mut Physics) -> bool {
-                let distance = world_to_screen_num(physics.distance as i32);
+        let distance = world_to_screen_num(physics.distance as i32);
         match self {
             Normals::LightPunch => {
-                if buffer.buffered(Inputs::LightPunch, buffer.attack, &physics.facing_left) && distance < 35 {
+                if buffer.buffered(Inputs::LightPunch, buffer.attack, &physics.facing_left)
+                    && distance < 35
+                {
                     ctx.next.replace(Box::new(ken::LightPunch));
                     return true;
                 }
@@ -172,7 +195,9 @@ impl State for MediumPunch {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
-        if context.elapsed > 8 && buffer.buffered(Inputs::HeavyPunch, buffer.cancels, &physics.facing_left) {
+        if context.elapsed > 8
+            && buffer.buffered(Inputs::HeavyPunch, buffer.cancels, &physics.facing_left)
+        {
             context.ctx.next.replace(Box::new(HeavyPunch));
             return;
         }
@@ -242,6 +267,9 @@ impl State for ShoryukenL {
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {
+        if context.elapsed == 3 && context.ctx.reaction.hitstop == 0 {
+            physics.position.x += 5000;
+        }
         if context.elapsed == 5 {
             physics.velocity.y = 9000;
             physics.acceleration.y = -750;
