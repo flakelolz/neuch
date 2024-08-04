@@ -117,6 +117,46 @@ pub fn animation(d: &mut impl RaylibDraw, world: &World, assets: &Assets) {
     draw(d, buffer, &assets.ken);
 }
 
+pub fn animation2(d: &mut impl RaylibDraw, world: &World, assets: &Assets) {
+    let mut buffer: Vec<Draw> = Vec::new();
+    world
+        .query::<(&Physics, &mut Animator)>()
+        .into_iter()
+        .for_each(|(_, (physics, animator))| {
+            let keyframe = animator.keyframes[animator.index];
+            animator.flipped = physics.facing_left;
+            animator.duration = keyframe.duration;
+
+            let pos_x = physics.position.x;
+            let pos_y = -physics.position.y;
+            let draw = Draw {
+                x: keyframe.x,
+                y: keyframe.y,
+                w: keyframe.w,
+                h: keyframe.h,
+                flip: animator.flipped,
+                w_scale: animator.w_scale,
+                h_scale: animator.h_scale,
+                origin: animator.origin,
+                z_index: animator.z_index,
+                pos: IVec2::new(pos_x, pos_y),
+            };
+
+            if animator.tick >= animator.duration {
+                animator.tick = 0;
+                animator.index += 1;
+
+                if animator.index >= animator.keyframes.len() {
+                    animator.index = 0;
+                }
+            }
+
+            buffer.push(draw);
+        });
+
+    draw(d, buffer, &assets.ken);
+}
+
 fn draw(d: &mut impl RaylibDraw, mut commands: Vec<Draw>, texture: &Texture2D) {
     commands.sort_by(|a, b| a.z_index.cmp(&b.z_index));
     for command in commands {

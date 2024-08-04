@@ -243,6 +243,39 @@ impl State for Hadouken {
             _buffer.current().mp,
             _buffer.current().hp
         );
+        let offset = IVec2 {
+            x: {
+                if _physics.facing_left {
+                    -70000
+                } else {
+                    70000
+                }
+            },
+            y: 0,
+        };
+        let mut physics = Physics {
+            position: _physics.position + offset,
+            facing_left: _physics.facing_left,
+            facing_opponent: _physics.facing_opponent,
+            ..Default::default()
+        };
+
+        if _buffer.current().lp {
+            physics.set_forward_velocity(3000);
+        }
+        if _buffer.current().mp {
+            physics.set_forward_velocity(4000);
+        }
+        if _buffer.current().hp {
+            physics.set_forward_velocity(5000);
+        }
+        _context.spawn.replace(Projectile {
+            owner: None,
+            name: "Obj Fireball".into(),
+            physics,
+            timing: 13,
+            duration: 100,
+        });
     }
 
     fn on_update(&mut self, context: &mut Context, buffer: &InputBuffer, physics: &mut Physics) {

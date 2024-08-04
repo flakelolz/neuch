@@ -20,6 +20,7 @@ pub struct Reaction {
     pub blocking: bool,
     /// Which way the defender is blocking
     pub block_height: Block,
+    pub crouching: bool,
 }
 
 impl Reaction {
@@ -72,17 +73,16 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
     }
 
     for event in hit_events.iter() {
-        let mut players = world
-            .query_many_mut::<(&mut StateMachine, &mut InputBuffer, &mut Physics), 2>([
-                event.attacker,
-                event.defender,
-            ]);
+        let mut players = world.query_many_mut::<(&mut StateMachine, &mut Physics), 2>([
+            event.attacker,
+            event.defender,
+        ]);
 
         let (p1, p2) = players.split_at_mut(1);
         if let Some(Ok(p1)) = p1.get_mut(0) {
             if let Some(Ok(p2)) = p2.get_mut(0) {
-                let (a_state, _a_buffer, _a_physics) = p1;
-                let (b_state, b_buffer, b_physics) = p2;
+                let (a_state, _a_physics) = p1;
+                let (b_state, b_physics) = p2;
                 if event.proximity.is_none() {
                     a_state.context.ctx.reaction.hitstop = event.properties.hitstop;
                     b_state.context.ctx.reaction.hitstop = event.properties.hitstop;
@@ -97,7 +97,8 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
                     {
                         a_state.context.ctx.reaction.blocked = false;
                         b_state.context.ctx.reaction.hitstun = event.properties.hitstun;
-                        hit_reaction_transitions(&mut b_state.context, b_buffer, event)
+                        let crouching = b_state.context.ctx.reaction.crouching;
+                        hit_reaction_transitions(&mut b_state.context, crouching, event)
                     }
                 }
                 // GUARD
@@ -105,7 +106,8 @@ pub fn reaction_system(world: &mut World, hit_events: &mut Vec<HitEvent>) {
                     || b_state.context.ctx.reaction.block_height == Block::Low
                 {
                     a_state.context.ctx.reaction.blocked = true;
-                    guard_reaction_transitions(&mut b_state.context, b_buffer, event);
+                    let crouching = b_state.context.ctx.reaction.crouching;
+                    guard_reaction_transitions(&mut b_state.context, crouching, event);
                 }
             }
         }
@@ -166,25 +168,25 @@ pub fn guard_animation(animator: &mut Animator, context: &mut Context, timeline:
     }
 }
 
-fn hit_reaction_transitions(context: &mut Context, buffer: &InputBuffer, hit_event: &HitEvent) {
+fn hit_reaction_transitions(context: &mut Context, crouching: bool, hit_event: &HitEvent) {
     let next = &mut context.ctx.next;
     match hit_event.properties.strength {
         Strength::BackSpin => {
-            if buffer.current().down {
+            if crouching {
                 *next = Some(Box::new(reacting::CrouchStrong));
             } else {
                 *next = Some(Box::new(reacting::BackSpin));
             }
         }
         Strength::FrontSpin => {
-            if buffer.current().down {
+            if crouching {
                 *next = Some(Box::new(reacting::CrouchStrong));
             } else {
                 *next = Some(Box::new(reacting::FrontSpin));
             }
         }
         Strength::Rising => {
-            if buffer.current().down {
+            if crouching {
                 *next = Some(Box::new(reacting::CrouchStrong));
             } else {
                 match hit_event.height {
@@ -194,7 +196,7 @@ fn hit_reaction_transitions(context: &mut Context, buffer: &InputBuffer, hit_eve
             }
         }
         Strength::Strong => {
-            if buffer.current().down {
+            if crouching {
                 *next = Some(Box::new(reacting::CrouchStrong));
             } else {
                 match hit_event.height {
@@ -204,7 +206,7 @@ fn hit_reaction_transitions(context: &mut Context, buffer: &InputBuffer, hit_eve
             }
         }
         Strength::Mid => {
-            if buffer.current().down {
+            if crouching {
                 *next = Some(Box::new(reacting::CrouchMid));
             } else {
                 match hit_event.height {
@@ -214,7 +216,7 @@ fn hit_reaction_transitions(context: &mut Context, buffer: &InputBuffer, hit_eve
             }
         }
         Strength::Weak => {
-            if buffer.current().down {
+            if crouching {
                 *next = Some(Box::new(reacting::CrouchWeak));
             } else {
                 match hit_event.height {
@@ -226,13 +228,13 @@ fn hit_reaction_transitions(context: &mut Context, buffer: &InputBuffer, hit_eve
     }
 }
 
-fn guard_reaction_transitions(context: &mut Context, buffer: &InputBuffer, hit_event: &HitEvent) {
+fn guard_reaction_transitions(context: &mut Context, crouching: bool, hit_event: &HitEvent) {
     let reaction = &mut context.ctx.reaction;
     let next = &mut context.ctx.next;
     if hit_event.proximity.is_some() {
         if !reaction.blocking {
             reaction.blockstun = hit_event.proximity.unwrap().1;
-            if buffer.current().down {
+            if crouching {
                 *next = Some(Box::new(reacting::GrdCrouchPre))
             } else {
                 *next = Some(Box::new(reacting::GrdStandPre))
@@ -241,7 +243,7 @@ fn guard_reaction_transitions(context: &mut Context, buffer: &InputBuffer, hit_e
     } else {
         reaction.hitstop = hit_event.properties.hitstop;
         reaction.blockstun = hit_event.properties.blockstun;
-        if buffer.current().down {
+        if crouching {
             *next = Some(Box::new(reacting::GrdCrouchEnd))
         } else {
             *next = Some(Box::new(reacting::GrdStandEnd))

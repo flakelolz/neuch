@@ -13,6 +13,7 @@ mod editor;
 mod game;
 mod input;
 mod physics;
+mod projectiles;
 mod reaction;
 mod rendering;
 mod state_machine;
@@ -34,7 +35,7 @@ mod prelude {
     pub use crate::state_machine::*;
     pub use crate::utils::*;
     pub use crate::world::*;
-    pub use hecs::{Entity, World};
+    pub use hecs::{CommandBuffer, Entity, Without, World};
     pub use include_dir::{include_dir, Dir};
     pub use raylib::prelude::*;
     pub use serde::{Deserialize, Serialize};

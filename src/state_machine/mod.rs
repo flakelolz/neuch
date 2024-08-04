@@ -13,15 +13,19 @@ pub fn update_state(world: &mut World, collisions: &mut Collisions) {
         &Character,
         &mut Animator,
     )>() {
-        state.context.ctx.reaction.block_height = if backward(buffer, &physics.facing_left) {
-            if down(buffer) {
-                Block::Low
-            } else {
-                Block::High
+        state.context.ctx.reaction.block_height = Block::None;
+        if down(buffer) {
+            state.context.ctx.reaction.crouching = true;
+
+            if backward(buffer, &physics.facing_left) {
+                state.context.ctx.reaction.block_height = Block::Low;
             }
+        } else if backward(buffer, &physics.facing_left) {
+            state.context.ctx.reaction.block_height = Block::High;
+            state.context.ctx.reaction.crouching = false;
         } else {
-            Block::None
-        };
+            state.context.ctx.reaction.block_height = Block::None;
+        }
 
         match find_action(character, &state.processor.current.name()) {
             Some(action) => {
@@ -50,6 +54,7 @@ pub fn update_state(world: &mut World, collisions: &mut Collisions) {
             .on_update(&mut state.context, buffer, physics);
 
         handle_transition(state, buffer, physics, character, animator, collisions);
+        // handle_spawns(state, physics, character, animator);
         handle_modifiers(&mut state.context, buffer, physics);
     }
 }
@@ -76,5 +81,11 @@ impl Default for StateProcessor {
         Self {
             current: Box::new(standing::Idle),
         }
+    }
+}
+
+impl StateProcessor {
+    pub fn new(state: Box<dyn State>) -> Self {
+        Self { current: state }
     }
 }

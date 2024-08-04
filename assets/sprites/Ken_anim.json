@@ -3877,6 +3877,195 @@
     "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
     "sourceSize": { "w": 384, "h": 224 },
     "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 0.aseprite",
+    "frame": { "x": 0, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 1.aseprite",
+    "frame": { "x": 384, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 2.aseprite",
+    "frame": { "x": 768, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 3.aseprite",
+    "frame": { "x": 1152, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 4.aseprite",
+    "frame": { "x": 1536, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 5.aseprite",
+    "frame": { "x": 1920, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 6.aseprite",
+    "frame": { "x": 2304, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 7.aseprite",
+    "frame": { "x": 2688, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 8.aseprite",
+    "frame": { "x": 3072, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 9.aseprite",
+    "frame": { "x": 3456, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 10.aseprite",
+    "frame": { "x": 3840, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 11.aseprite",
+    "frame": { "x": 4224, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 12.aseprite",
+    "frame": { "x": 4608, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 13.aseprite",
+    "frame": { "x": 4992, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 14.aseprite",
+    "frame": { "x": 768, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 15.aseprite",
+    "frame": { "x": 5376, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 16.aseprite",
+    "frame": { "x": 5760, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 17.aseprite",
+    "frame": { "x": 6144, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 18.aseprite",
+    "frame": { "x": 2304, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 19.aseprite",
+    "frame": { "x": 6528, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
+   },
+   {
+    "filename": "Ken #Obj Fireball 20.aseprite",
+    "frame": { "x": 6912, "y": 12096, "w": 384, "h": 224 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 384, "h": 224 },
+    "sourceSize": { "w": 384, "h": 224 },
+    "duration": 48
    }
  ],
  "meta": {
@@ -3884,7 +4073,7 @@
   "version": "1.3.7-x64",
   "image": "Ken.png",
   "format": "RGBA8888",
-  "size": { "w": 6528, "h": 12096 },
+  "size": { "w": 7296, "h": 12320 },
   "scale": "1",
   "frameTags": [
    { "name": "St Idle", "from": 0, "to": 9, "direction": "forward", "color": "#000000ff" },
@@ -3944,7 +4133,8 @@
    { "name": "Ken ShoryukenH", "from": 371, "to": 387, "direction": "forward", "color": "#000000ff" },
    { "name": "Ken ShoryukenM", "from": 388, "to": 402, "direction": "forward", "color": "#000000ff" },
    { "name": "Ken ShoryukenL", "from": 403, "to": 416, "direction": "forward", "color": "#000000ff" },
-   { "name": "Ken Hadouken", "from": 417, "to": 430, "direction": "forward", "color": "#000000ff" }
+   { "name": "Ken Hadouken", "from": 417, "to": 430, "direction": "forward", "color": "#000000ff" },
+   { "name": "Obj Fireball", "from": 431, "to": 451, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },

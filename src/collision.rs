@@ -11,9 +11,14 @@ pub struct Collisions {
 }
 
 impl Collisions {
-    pub fn update(&mut self, world: &mut World, hit_events: &mut Vec<HitEvent>) {
+    pub fn update(
+        &mut self,
+        world: &mut World,
+        commands: &mut CommandBuffer,
+        hit_events: &mut Vec<HitEvent>,
+    ) {
         self.store(world);
-        self.check(world, hit_events);
+        self.check(world, commands, hit_events);
         self.clear();
     }
     pub fn store(&mut self, world: &mut World) {
@@ -93,8 +98,71 @@ impl Collisions {
                 }
             }
         }
+        for (id, (action, physics, state)) in
+            world.query_mut::<(&Action, &mut Physics, &mut StateMachine)>()
+        {
+            let offset = physics.position;
+
+            if let Some(modifiers) = &action.modifiers {
+                if let Some(proximity) = modifiers.proximity {
+                    let proximity = proximity.translated(offset, physics.facing_left);
+                    if proximity.is_active(state.context.elapsed) {
+                        self.proximity.push((id, proximity));
+                    }
+                }
+            }
+            if let Some(hitboxes) = &action.hitboxes {
+                for hitbox in hitboxes.iter() {
+                    let hitbox = hitbox.translated(offset, physics.facing_left);
+                    if hitbox.is_active(state.context.elapsed) {
+                        self.hitboxes.push((id, hitbox));
+                    }
+                }
+                {
+                    let first = action.hitboxes.as_ref().unwrap().first().unwrap();
+                    let last = action.hitboxes.as_ref().unwrap().last().unwrap();
+
+                    // If there's a gap between hitboxes, it means that the action is multi-hit and needs to be
+                    // able to hit again
+                    if state.context.elapsed >= first.start_frame
+                        && state.context.elapsed <= last.start_frame
+                        && state.context.ctx.reaction.hitstop == 0
+                    {
+                        if let Some(hitbox) = hitboxes.get(self.counter) {
+                            if !hitbox.is_active(state.context.elapsed) {
+                                state.context.ctx.reaction.has_hit = false;
+                            } else {
+                                self.counter += 1;
+                            }
+                        }
+                    }
+                }
+            }
+            if let Some(hurtboxes) = &action.hurtboxes {
+                for hurtbox in hurtboxes.iter() {
+                    let hurtbox = hurtbox.translated(offset, physics.facing_left);
+                    if hurtbox.is_active(state.context.elapsed) {
+                        self.hurtboxes.push((id, hurtbox));
+                    }
+                }
+            }
+            if let Some(pushboxes) = &action.pushboxes {
+                for pushbox in pushboxes.iter() {
+                    let pushbox = pushbox.translated(offset, physics.facing_left);
+                    if pushbox.is_active(state.context.elapsed) {
+                        physics.width = (pushbox.value.right - pushbox.value.left) as u32;
+                        self.pushboxes.push((id, pushbox));
+                    }
+                }
+            }
+        }
     }
-    fn check(&self, world: &mut World, hit_events: &mut Vec<HitEvent>) {
+    fn check(
+        &self,
+        world: &mut World,
+        commands: &mut CommandBuffer,
+        hit_events: &mut Vec<HitEvent>,
+    ) {
         for (id, proximity) in self.proximity.iter() {
             for (defender, hurtbox) in self.hurtboxes.iter() {
                 if boxes_overlap(&proximity.value, &hurtbox.value) && id != defender {
@@ -150,6 +218,38 @@ impl Collisions {
                             },
                             proximity: None,
                         });
+                    }
+                    if let Ok((state, physics, projectile)) =
+                        world.query_one_mut::<(&mut StateMachine, &Physics, &Projectile)>(*attacker)
+                    {
+                        if projectile.owner.as_ref().unwrap() == defender {
+                            continue;
+                        }
+                        // Don't hit with the same hitbox
+                        let has_hit = &mut state.context.ctx.reaction.has_hit;
+                        if *has_hit {
+                            continue;
+                        }
+                        *has_hit = true;
+
+                        let direction = if physics.facing_left { -1 } else { 1 };
+
+                        hit_events.push(HitEvent {
+                            attacker: *attacker,
+                            defender: *defender,
+                            height: hurtbox.height,
+                            properties: HitProperties {
+                                hit_type: hitbox.properties.hit_type,
+                                strength: hitbox.properties.strength,
+                                hitstop: hitbox.properties.hitstop,
+                                hitstun: hitbox.properties.hitstun,
+                                blockstun: hitbox.properties.blockstun,
+                                knockback: hitbox.properties.knockback * direction,
+                            },
+                            proximity: None,
+                        });
+
+                        commands.despawn(*attacker);
                     }
                 }
             }

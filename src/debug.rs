@@ -293,7 +293,10 @@ pub fn show_info(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
                     let z = z + 10.;
                     d.draw_text_ex(
                         &font,
-                        &format!("Distance: {:#?}", world_to_screen_num(physics.distance as i32)),
+                        &format!(
+                            "Distance: {:#?}",
+                            world_to_screen_num(physics.distance as i32)
+                        ),
                         rvec2(5., y + z),
                         TEXT_SIZE,
                         0.,
@@ -412,6 +415,27 @@ pub fn show_hitboxes(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
             }
         }
     }
+    for (_, (action, physics, state)) in world.query::<(&Action, &Physics, &StateMachine)>().iter()
+    {
+        if let Some(hitboxes) = &action.hitboxes {
+            let offset = physics.position;
+            for hitbox in hitboxes.iter() {
+                let translated = if physics.facing_left {
+                    hitbox.value.translate_flipped(offset)
+                } else {
+                    hitbox.value.translate(offset)
+                };
+
+                let left = world_to_sprite_to_ui_num(translated.left);
+                let top = -world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
+                let width = world_to_sprite_to_ui_num(translated.right - translated.left);
+                let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
+                if hitbox.is_active(state.context.elapsed) {
+                    d.draw_rectangle_lines(left, top, width, height, Color::RED);
+                }
+            }
+        }
+    }
 }
 
 pub fn show_proximity_boxes(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
@@ -443,6 +467,27 @@ pub fn show_proximity_boxes(world: &World, d: &mut impl RaylibDraw, debug: &Debu
             }
         }
     }
+    for (_, (action, physics, state)) in world.query::<(&Action, &Physics, &StateMachine)>().iter()
+    {
+        let offset = physics.position;
+        if let Some(modifiers) = &action.modifiers {
+            if let Some(proximity) = modifiers.proximity {
+                let translated = if physics.facing_left {
+                    proximity.value.translate_flipped(offset)
+                } else {
+                    proximity.value.translate(offset)
+                };
+
+                let left = world_to_sprite_to_ui_num(translated.left);
+                let top = -world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
+                let width = world_to_sprite_to_ui_num(translated.right - translated.left);
+                let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
+                if proximity.is_active(state.context.elapsed) {
+                    d.draw_rectangle_lines(left, top, width, height, Color::YELLOW);
+                }
+            }
+        }
+    }
 }
 
 pub fn show_hurtboxes(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
@@ -470,6 +515,27 @@ pub fn show_hurtboxes(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
                     if hurtbox.is_active(state.context.elapsed) {
                         d.draw_rectangle_lines(left, top, width, height, Color::BLUE);
                     }
+                }
+            }
+        }
+    }
+    for (_, (action, physics, state)) in world.query::<(&Action, &Physics, &StateMachine)>().iter()
+    {
+        if let Some(hurtboxes) = &action.hurtboxes {
+            for hurtbox in hurtboxes.iter() {
+                let offset = physics.position;
+                let translated = if physics.facing_left {
+                    hurtbox.value.translate_flipped(offset)
+                } else {
+                    hurtbox.value.translate(offset)
+                };
+
+                let left = world_to_sprite_to_ui_num(translated.left);
+                let top = -world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
+                let width = world_to_sprite_to_ui_num(translated.right - translated.left);
+                let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
+                if hurtbox.is_active(state.context.elapsed) {
+                    d.draw_rectangle_lines(left, top, width, height, Color::BLUE);
                 }
             }
         }
@@ -516,6 +582,28 @@ pub fn show_pushboxes(world: &World, d: &mut impl RaylibDraw, debug: &Debug) {
                 let width = world_to_sprite_to_ui_num(translated.right - translated.left);
                 let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
                 d.draw_rectangle_lines(left, top, width, height, Color::MAGENTA);
+            }
+        }
+    }
+    for (_, (action, physics, state)) in world.query::<(&Action, &Physics, &StateMachine)>().iter()
+    {
+        let offset = physics.position;
+
+        if let Some(pushboxes) = &action.pushboxes {
+            for pushbox in pushboxes.iter() {
+                let translated = if physics.facing_left {
+                    pushbox.value.translate_flipped(offset)
+                } else {
+                    pushbox.value.translate(offset)
+                };
+
+                let left = world_to_sprite_to_ui_num(translated.left);
+                let top = -world_to_sprite_to_ui_num(translated.top) + GROUND_OFFSET;
+                let width = world_to_sprite_to_ui_num(translated.right - translated.left);
+                let height = world_to_sprite_to_ui_num(translated.top - translated.bottom);
+                if pushbox.is_active(state.context.elapsed) {
+                    d.draw_rectangle_lines(left, top, width, height, Color::MAGENTA);
+                }
             }
         }
     }

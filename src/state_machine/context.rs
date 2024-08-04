@@ -6,6 +6,7 @@ pub struct Context {
     pub elapsed: u32,
     pub duration: u32,
     pub modifiers: Instructions,
+    pub spawn: Option<Projectile>,
     pub ctx: SubContext,
 }
 
@@ -14,10 +15,6 @@ pub struct SubContext {
     pub next: Option<Box<dyn State>>,
     pub can_dash_f: bool,
     pub can_dash_b: bool,
-    // pub can_qcf: bool,
-    // pub can_qcb: bool,
-    // pub can_dpf: bool,
-    // pub can_hcf: bool,
     pub reaction: Reaction,
     pub flags: Flags,
 }
@@ -29,16 +26,21 @@ impl Default for SubContext {
             next: None,
             can_dash_f: true,
             can_dash_b: true,
-            // can_qcf: true,
-            // can_qcb: true,
-            // can_dpf: true,
-            // can_hcf: true,
             reaction: Reaction::default(),
             flags: Flags {
                 jump: JumpFlags::None,
             },
         }
     }
+}
+
+#[derive(Default, Clone)]
+pub struct Projectile {
+    pub owner: Option<Entity>,
+    pub name: String,
+    pub physics: Physics,
+    pub timing: u32,
+    pub duration: u32,
 }
 
 #[derive(Debug, Default)]
