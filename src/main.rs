@@ -65,8 +65,31 @@ fn main() {
     let (mut rl, thread) = raylib::init().size(WIDTH, HEIGHT).title("Neuch").build();
     rl.set_target_fps(60);
 
+
+    // FIX: Why can't I see the font when doing it this way?
+
+    // let font_file = get_file("Kenney Mini.ttf");
+    // match font_file {
+    //     Some(data) => {
+    //         let font = rl
+    //             .load_font_from_memory(&thread, ".ttf", data, 512, None)
+    //             .expect("Failed to load font");
+    //
+    //         rl.gui_set_font(&font);
+    //     }
+    //     None => {
+    //         eprintln!("ERROR: Failed to find font file");
+    //     }
+    // }
+
     let font = rl
-        .load_font_ex(&thread, "assets/Kenney Mini.ttf", 512, None)
+        .load_font_from_memory(
+            &thread,
+            ".ttf",
+            get_file("Kenney Mini.ttf").unwrap(),
+            512,
+            None,
+        )
         .expect("Failed to load font");
 
     rl.gui_set_font(&font);
